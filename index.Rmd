@@ -1,9 +1,13 @@
 --- 
-title: "YOUR TITLE HERE"
-author: "YOUR NAME HERE"
+title: "Introdução à Teoria dos Jogos para Ciências Sociais"
+author: "Manoel Galdino"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-# Down the rabbit-hole
+# - Prefácio
+
+Esse livro é o resultado das notas de aulas do curso de graduação da USP Teoria dos Jogos para Cientistas Sociais.
+
+O livro é largamente inspirado no de Steven Tadelis, Game Theory, an introduction, além de muitos materiais na internet para poder citá-los individualmente.
 
