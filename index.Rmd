@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-#- Prefácio
+# Prefácio
 
 Esse livro é o resultado das notas de aulas do curso de graduação da USP Teoria dos Jogos para Cientistas Sociais.
 

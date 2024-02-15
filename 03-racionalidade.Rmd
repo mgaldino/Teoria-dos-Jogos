@@ -1,5 +1,7 @@
 # Racionalidade
 
+Vamos falar de Racionalidade
+
 ## Relações
 
 O conceito de relação (binária) na matemática está associada à presença de um tipo de vínculo específico entre elementos de um conjunto. Suponha o conjunto $A = {1,2, 3}$. A Relação $\geq$, entendida por "maior ou igual que" expressa uma relação de comparação de magnitude entre os elementos do conjunto. Assim, podemos dizer que $3 > 2$, ou que $2 = 2$ e assim por diante. Em geral, podemos dizer que para quaisquer pares $x e y \in A$ podemos estabelecer a relação $x \geq y$.
