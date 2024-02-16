@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo2 Introducao | Introdução à Teoria dos Jogos para Ciências Sociais</title>
-  <meta name="description" content="Capítulo2 Introducao | Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <title>Capítulo7 Equilíbrio de Nash | Introdução à Teoria dos Jogos para Ciências Sociais</title>
+  <meta name="description" content="Capítulo7 Equilíbrio de Nash | Introdução à Teoria dos Jogos para Ciências Sociais" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo2 Introducao | Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <meta property="og:title" content="Capítulo7 Equilíbrio de Nash | Introdução à Teoria dos Jogos para Ciências Sociais" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo2 Introducao | Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <meta name="twitter:title" content="Capítulo7 Equilíbrio de Nash | Introdução à Teoria dos Jogos para Ciências Sociais" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="racionalidade-e-relações-de-preferência.html"/>
+<link rel="prev" href="solucao-de-um-jogo.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -228,140 +228,137 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introducao" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Capítulo2</span> Introducao<a href="introducao.html#introducao" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Uma das principais preocupações durante as eleições gerais de 2022 no Brasil era a disseminação de desinformação, conhecida popularmente como “fake news”. A utilização de redes sociais e aplicativos de mensagens para promover desinformação por eleitores e candidatos representava um importante ponto de potencial controle sobre a desinformação. Foi comum observar o Tribunal Superior Eleitoral determinando que plataformas removessem conteúdos contendo “fake news” eleitorais<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. No entanto, essa situação se assemelhava a um jogo de “gato e rato”, uma vez que nada impedia que os divulgadores de fake news criassem novas postagens, perpetuando a disseminação de desinformação. Esse tipo de cenário político, no qual os atores precisam tomar decisões estratégicas, ou seja, planejar suas ações tentando antecipar as respostas dos outros, é exatamente o que a teoria dos jogos busca modelar e analisar.</p>
-<p>A política é repleta de situações em que um indivíduo deve agir supondo que os demais participantes do jogo político reagirão às suas ações e até mesmo tentarão antecipar seus movimentos, fazendo suposições e conjecturas sobre os outros. Isso representa uma das maiores dificuldades para os cientistas políticos na previsão dos efeitos de reformas eleitorais, por exemplo. Apesar de ser um tema frequentemente debatido e solicitado pela sociedade, muitas propostas são elaboradas como se o mundo não fosse estratégico, ou seja, como se os agentes políticos não fossem modificar seu comportamento devido às novas regras adotadas. Considere, por exemplo, a proibição de doações privadas de empresas para campanhas eleitorais, implementada no Brasil após decisão da Suprema Corte Federal em 2016. Muitos esperavam que isso reduzisse a influência do dinheiro nas eleições. No entanto, com o tempo, políticos aprovaram um fundo eleitoral com recursos públicos, aumentaram esse fundo sucessivamente e ainda aprovaram o que ficou conhecido como “Orçamento Secreto” para também aumentar as chances nas eleições, entre outros objetivos menos legítimos. Comparando o total de valores envolvidos após a decisão do STF com os valores anteriores, mesmo considerando o caixa dois, o montante provavelmente supera o que se gastava em eleições anteriores a 2016. É evidente que medidas como o “Orçamento Secreto” poderiam ser adotadas mesmo se o financiamento por empresas continuasse permitido, mas a mera possibilidade de que todas essas medidas sejam uma reação dos políticos à decisão do STF mostra quão difícil é antecipar as consequências de mudanças nas regras do jogo e que considerações estratégicas são fundamentais para entender a política.</p>
-<p>Portanto, a teoria dos jogos é um ramo da matemática aplicada que visa modelar situações estratégicas como essa. Um exemplo simples, mas muito esclarecedor, de como a teoria dos jogos pode elucidar essas questões é o Dilema do Prisioneiro, que apresentaremos a seguir.</p>
-<div id="dilema-do-prisioneiro" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Dilema do Prisioneiro<a href="introducao.html#dilema-do-prisioneiro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Esse é talvez o mais famoso da história da Teoria do Jogos, chamado Dilema do Prisioneiro, e que foi proposto em 1951 por Merrill Flood em 1951, e primeiramente formalizado por Albert W. Tucker.</p>
-<p>A história é mais ou menos assim. A polícia prendeu dois suspeitos de cometer um crime. Tem evidência de um crime de pena menor, mas gostaria de condená-los por crimes com penas maiores. Se um ou ambos confessarem o crime maior, podem conseguir obter o que precisam.</p>
-<p>Para dar concretude, imaginem que a Polícia Federal prendeu dois executivos suspeitos de corrupção e lavagem de dinheiro, a dez anos de prisão. Possuem provas suficientes para condená-los por um crime menor, como tráfico de influência (dois anos de prisão), mas gostariam de condená-los pelo crime de pena maior. A PF colocou os dois presos em celas separadas e decidiu fazer a seguinte oferta para eles:</p>
-<p>“Nós temos evidência suficiente para condená-los, você e seu parceiro, pelo crime de tráfico de influência, que dá 2 anos de prisão para cada. Contudo, se você assinar um acordo de colaboração premiada com a gente e confessar o crime de corrupção e lavagem de dinheiro, você sairá livre e seu parceiro será condenado a dez anos de prisão. Um outro policial está na cela do seu parceiro, neste exato momento, fazendo a mesma oferta a ele. Se ele aceitar confessar o crime, e você não, então ele sairá livre e você ficará preso dez anos. Por fim, se ambos confessarem o crime, a pena de dez anos será reduzida à metade e vocês ficarão cinco anos presos. Essa proposta está por escrito, incluindo o fato de que seu parceiro está recebendo proposta igual”.</p>
-<p>O que você faria?</p>
+<div id="equilíbrio-de-nash-1" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Capítulo7</span> Equilíbrio de Nash<a href="equilíbrio-de-nash-1.html#equilíbrio-de-nash-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Para introduzir o conceito mais importante da teoria dos jogos não-cooperativa, vamos começar por um jogo chamado de “p-beuaty contest”.</p>
+<div id="p-beauty-contest" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> P-beauty contest<a href="equilíbrio-de-nash-1.html#p-beauty-contest" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Escolha um número inteiro, entre 0 e 100. Vence o desafio quem acertar a metade da média dos números escolhidos por
+todos os jogadores. Em outras palavras, vou anotar os números de cada um, computar a média e depois dividir a média
+por 2. Portanto, vocês devem advinhar não a média dos números, mas a média dividida por 2.</p>
+<p>Advinhar metade da média
+Dividir em grupos de 10 (3 grupos).</p>
+<p>Previsões: primeira vez 25. (uma rodada de dominância)
+Segunda vez 10 (às vezes 5 ou 6) - duas ou três rodadas de dominância
+Terceira vez: 3 ou 4. Mais uma rodada de dominância. Vários zeros.</p>
+</div>
+<div id="melhor-resposta-1" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Melhor resposta<a href="equilíbrio-de-nash-1.html#melhor-resposta-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A ideia de melhor resposta é um conceito central para a teoria dos jogos, de modo que vale a pena defini-lo formalmente.</p>
+<p>Definição 4.1: Melhor resposta: A estratégia <span class="math inline">\(s_i \in Si\)</span> é a melhor resposta do jogador <span class="math inline">\(i\)</span> às estratégias de seus oponentes <span class="math inline">\(s_{-i} \in S_{-i}\)</span> se</p>
+<p><span class="math inline">\(v_i(s_i, s_{-i}) &gt;= v_i(s^\prime_i, s_{-i})\)</span> para todo <span class="math inline">\(s^\prime_i \in S_i\)</span></p>
+<p>Em palavras: a utilidade (ou payoff) do jogador <span class="math inline">\(i\)</span> resultante da sua estratégia e das estratégias dos oponentes é pelo menos tão boa quanto qualquer outra estratégia que <span class="math inline">\(i\)</span> possa vir a adotar.</p>
+<p>Considere o jogo da bandeira, do reality show Survivor. Se é sua vez de jogar existem, digamos 20 bandeira, não importa o que você faça, irá perder o jogo se o outro time for racional. Portanto, sua melhor estratégia pode ser tanto 1, 2 ou 3 bandeiras. Esse exemplo mostra que a melhor estratégia pode 1: incluir múltiplas ações; 2. serem igualmente ruins e não fazer diferença nenhuma e resultar todas no mesmo payoff.</p>
+</div>
+<div id="equilíbrio-de-nash-2" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Equilíbrio de Nash<a href="equilíbrio-de-nash-1.html#equilíbrio-de-nash-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Um perfil de estratégias é um equilíbrio de Nash se cada jogador está escolhendo a melhor resposta para o que acredita que os demais jogadores farão. Ou seja, todo mundo está simultaneamente escolhendo a melhor resposta uns para os outros.</p>
+<p>O equilíbrio de dominância estrita requer apenas racionalidade, enquanto o equilíbrio de EIEED requeria racionalidade e conhecimento comum de crenças (e racionalidade). Agora, iremos fazer uma suposição mais forte ainda, de que as crenças, em certo sentido, estejam corretas. Isso dará origem ao equilíbrio de Nash, formulado pela primeir vez por John Nash em 1950.</p>
+<p>Definição 5.1. O perfil de estratégias puras <span class="math inline">\(s^\star = (s^\star_1, s^\star_2, ..., s^\star_n) \in S\)</span> é um equilíbrio de Nash se <span class="math inline">\(s^\star_i\)</span> é uma melhor resposta a <span class="math inline">\(s^\star_{-i}\)</span> para todo <span class="math inline">\(i \in N\)</span>. Ou seja,</p>
+<p><span class="math inline">\(v_i(s^\star_i, s^\star_{-i}) &gt;= v_i(s^\prime_i, s^\star_{-i})\)</span>, para toda <span class="math inline">\(s^\prime_i \in S_i\)</span> e todo <span class="math inline">\(i \in N\)</span>.</p>
+<p>Considere o jogo abaixo. O único equilibrio de EIEED é (Alto, Esquerda). Esse também é um equilíbrio de Nash, pois Alto é a melhor resposta a L, e L é a melhor resposta para Alto.</p>
 <table>
 <thead>
 <tr class="header">
 <th align="left"></th>
-<th align="left">Coopera</th>
-<th align="left">Não coopera</th>
+<th align="left">Esquerda</th>
+<th align="left">Centro</th>
+<th align="left">Direita</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Coopera</td>
-<td align="left">(1,1)</td>
-<td align="left">(20,0)</td>
+<td align="left">Alto</td>
+<td align="left">(4,3)</td>
+<td align="left">(5,1)</td>
+<td align="left">(6,2)</td>
 </tr>
 <tr class="even">
-<td align="left">Não coopera</td>
-<td align="left">(0,20)</td>
-<td align="left">(10,10)</td>
+<td align="left">Médio</td>
+<td align="left">(2,1)</td>
+<td align="left">(8,4)</td>
+<td align="left">(3,6)</td>
+</tr>
+<tr class="odd">
+<td align="left">Baixo</td>
+<td align="left">(3,0)</td>
+<td align="left">(9,6)</td>
+<td align="left">(2,8)</td>
 </tr>
 </tbody>
 </table>
-<p>Todo problema de tomada de decisão consiste de três componentes básicos:
-1. Ações : todas as alternativas que um jogador pode escolher
-2. Resultados: As consequências que resultam de cada ação
-3. Preferências: descreve como os jogadores ranqueiam os possíveis resultados, do mais desejado para o menos.</p>
-</div>
-<div id="dilema-da-ação-coletiva" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Dilema da Ação Coletiva<a href="introducao.html#dilema-da-ação-coletiva" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>O Dilema do Prisioneiro é muito utilizado como base para pensar problemas de ação coletiva. A cooperação produz resultados socialmente melhores, porém a estratégia dominante individualmente é não cooperar.</p>
-<p>A partir do conhecimento da lógica do Dilema do Prisioneiro, podemos aplicá-la para outras situações de ação coletiva.</p>
-</div>
-<div id="plano-cruzado" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Plano cruzado<a href="introducao.html#plano-cruzado" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Na década de 80, o Brasil enfrentou um grave problema de hiperinflação, levando o país a adotar o Plano Cruzado durante a presidência de Sarney para combater a inflação. O plano incluía várias medidas, sendo o congelamento de preços a principal delas, o que impedia que os preços fossem aumentados sem autorização governamental. Apesar do sucesso inicial em reduzir a inflação, o plano eventualmente fracassou, e os preços voltaram a subir. Uma parte do diagnóstico do Plano Cruzado é que existia um conflito distributivo entre trabalhadores e empresários, contribuindo para a espiral inflacionária. Essa situação pode ser modelada como um Dilema do Prisioneiro.</p>
-<p>Para simplificar, suponhamos que temos apenas dois jogadores: empresários e sindicatos. O resultado da cooperação seria o congelamento tanto de preços quanto de salários, eliminando a inflação. Tal cenário seria vantajoso para ambos os jogadores, pois preservaria o poder de compra dos salários e aumentaria os lucros devido à maior demanda. No entanto, com os salários congelados e os preços subindo, os empresários obteriam superlucros, enquanto os trabalhadores sofreriam uma redução no salário real. Por outro lado, aumentos de salários com preços congelados resultariam em um aumento do salário real para os trabalhadores, mas em uma redução dos lucros para os empresários.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introducao.html#cb1-1" tabindex="-1"></a><span class="co"># Define Variables</span></span>
-<span id="cb1-2"><a href="introducao.html#cb1-2" tabindex="-1"></a>M<span class="ot">=</span><span class="dv">1</span></span>
-<span id="cb1-3"><a href="introducao.html#cb1-3" tabindex="-1"></a>R<span class="ot">=</span><span class="dv">20</span></span>
-<span id="cb1-4"><a href="introducao.html#cb1-4" tabindex="-1"></a>P<span class="ot">=</span><span class="dv">10</span></span>
-<span id="cb1-5"><a href="introducao.html#cb1-5" tabindex="-1"></a>S<span class="ot">=</span><span class="dv">0</span></span>
-<span id="cb1-6"><a href="introducao.html#cb1-6" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="introducao.html#cb1-7" tabindex="-1"></a><span class="co"># Assign Pairs</span></span>
-<span id="cb1-8"><a href="introducao.html#cb1-8" tabindex="-1"></a>pair <span class="ot">&lt;-</span> <span class="cf">function</span>(x,y) <span class="fu">sprintf</span>(<span class="st">&quot;(%d,%d)&quot;</span>, x,y)</span>
-<span id="cb1-9"><a href="introducao.html#cb1-9" tabindex="-1"></a>all_pairs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">pair</span>(M,M), <span class="fu">pair</span>(S,R), <span class="fu">pair</span>(R,S), <span class="fu">pair</span>(P,P))</span>
-<span id="cb1-10"><a href="introducao.html#cb1-10" tabindex="-1"></a>payoff.mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(all_pairs, <span class="at">nrow=</span><span class="dv">2</span>)</span>
-<span id="cb1-11"><a href="introducao.html#cb1-11" tabindex="-1"></a><span class="fu">dimnames</span>(payoff.mat) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;Coopera&quot;</span>,<span class="st">&quot;Não coopera&quot;</span>)), <span class="dv">2</span>))</span>
-<span id="cb1-12"><a href="introducao.html#cb1-12" tabindex="-1"></a>results <span class="ot">=</span> <span class="st">&quot;asis&quot;</span></span>
-<span id="cb1-13"><a href="introducao.html#cb1-13" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="introducao.html#cb1-14" tabindex="-1"></a><span class="co"># Plot </span></span>
-<span id="cb1-15"><a href="introducao.html#cb1-15" tabindex="-1"></a><span class="fu">kable</span>(payoff.mat)</span></code></pre></div>
+<p>Considerem o Dilema do Prisioneiro. É fácil ver também que (C,C) é também um equilíbrio de Nash.</p>
+<p>Não é coincidência que Dominância estrita, EIEED e racionazabilidade sempre sejam equilíbrios de Nash. Se um equilíbrio é de dominância estrita, o único sobrevivente de EIEED e de racionazabilidade, então é o único equilíbrio de Nash.</p>
+<p>Considere o seguinte jogo. Duas jogadoras devem escolher um número inteiro entre 1 e 9. Se a soma dos números for menor ou igual a dez, elas ganham o valor em reais que cada jogadora escolheu. Se a soma for maior que dez, não ganham nada. Esse jogo é dado por <span class="math inline">\(G = [N = 1,2; S_i = (1, 2, ..., 9), v_i(s_1, s_2) = s_i, se s_1 + s_2 &lt;= 10\)</span> <span class="math inline">\(0\)</span>, c.c.]$</p>
+<p>Quaaisquer pares <span class="math inline">\((1,9);(9,1)\)</span>, <span class="math inline">\((2,8), (8,2)\)</span> etc. formam equilíbrios de Nash. Em particular, uma vez revelados, nenhum jogador possui qualquer incentivo <strong>unilateral</strong> a mudar sua estratégia.</p>
+<p>Vamos enfatizar a palavra <strong>unilateral</strong> aqui. Vamos mudar o jogo anterior para o seguinte. Em vez das jogadoras ganharem os números ecolhidos cuja soma for 10, elas (cada uma) ganham a soma dos quadrados dos núemeros escolhidos. Assim, (1,9) e (9,1) geram <span class="math inline">\(1^2 + 9^2 = 1 + 81 = 82\)</span> reais, enquanto <span class="math inline">\(2^2 + 8^2 = 4 + 64 = 68\)</span> e <span class="math inline">\(5^2 + 5^2 = 50\)</span>, de forma que o melhor resultado para as jogadoras é (9,1) ou (1,9). Porém, se jogarem (2,8), nenhuma delas possui incentivo <strong>unilateral</strong> para mudar sua estratégia, pois elas constituem melhores respostas as estratégias umas das outras.</p>
+<p>Uma das lições que precisamos tirar de modelos de teoria dos jogos é que não basta boa vontade ou objetivos comuns para uma ação coletiva. É preciso que os equilíbrios sejam tal que nenhum ator tenha um incentivo unilateral para mudar sua estratégia. Em certo sentido, os equilíbrios de Nash são sustentáveis, no sentido de que não há incentivo para desviar, uma vez estando em um deles.</p>
+<p>Vamos começar modelando um exemplo “simples”. Em 1964, no Chile, Salvador Allende era o candidato da esquerda. Liberais e Conservadores acetaram apoiar o candidato do centro Eduardo Frei, que ganhou a eleição com 56,1% dos votos contra 38,9% de Allende. Em 1970, Allende ganhou a eleição com menos votos do que havia recebido em 64, 36,2%, enquanto o centrista Randomiro Tomic ganhou 27,8% e direitsta Jorge Allesandri 34,9% dos votos. Especula-se que, se um dos candidatos desistisse da eleição, Allende não teria conquistado o poder.</p>
+<p>Vamos então fazer um modelo simples para ilustrar a questão.</p>
+<p>Suponha um eleitorado com três tipos de ordenamento de preferências de candidatas <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> e <span class="math inline">\(C\)</span>.
+1. <span class="math inline">\(A \succ B \succ C\)</span>
+2. <span class="math inline">\(B \succ C \succ A\)</span>
+3. <span class="math inline">\(C \succ B \succ A\)</span></p>
+<p>Vamos supor adicionalmente que 40% do eleitoradotem preferências do tipo 1 o restante igualmente dividido entre o tipo 2 e 3 (30% cada).</p>
+<p>Se cada eleitor votar sinceramente (isto é, para sua candidata preferida), <span class="math inline">\(A\)</span> teira 40% dos votos, <span class="math inline">\(B\)</span> 30% e <span class="math inline">\(C\)</span> 30%. Se a regra for como no Brasil 1945-64, em que não havia segundo turno e a candidata mais votada vence, <span class="math inline">\(A\)</span> seria eleita. Se porém parearmos <span class="math inline">\(A\)</span> contra <span class="math inline">\(B\)</span>, a vencedora seria <span class="math inline">\(B\)</span> com 60% dos votos, e <span class="math inline">\(B\)</span> contra <span class="math inline">\(C\)</span> também daria a vitória para <span class="math inline">\(B\)</span>, com <span class="math inline">\(70\%\)</span> dos votos. Em casos como esse, em que há uma vencedora que ganha todas as disputas 2x2, chamamos de vencedora de Condorcet (Condorcet winner). <span class="math inline">\(B\)</span> e <span class="math inline">\(C\)</span>, portanto, poderiam ser estratégicas e votarem não na candidata preferida para obter um resultado mais favorável. O problema que <span class="math inline">\(B\)</span> e <span class="math inline">\(C\)</span> enfrentam pode, portanto, ser modelado do seguinte modo.</p>
 <table>
 <thead>
 <tr class="header">
 <th align="left"></th>
-<th align="left">Coopera</th>
-<th align="left">Não coopera</th>
+<th align="left">Votar em B</th>
+<th align="left">Votar em C</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Coopera</td>
-<td align="left">(1,1)</td>
-<td align="left">(20,0)</td>
+<td align="left">Votar em B</td>
+<td align="left">B ganha</td>
+<td align="left">A ganha</td>
 </tr>
 <tr class="even">
-<td align="left">Não coopera</td>
-<td align="left">(0,20)</td>
-<td align="left">(10,10)</td>
+<td align="left">Votar em C</td>
+<td align="left">A ganha</td>
+<td align="left">C ganha</td>
 </tr>
 </tbody>
 </table>
+<p>Esse jogo é muito parecido com o jogo de coordenação Bach-Stravinsky. Há dois equilíbrios de Nash, B ganha e C ganha. Porém, a escolha de qual equilíbrio acontecerá requer coordenação entre eleitores do tipo 2 e 3. Se falharem em coordenar os votos, contudo, A ganhará. Se B ou C desistir de disputar a eleição, a coordenação estará garantida, como ocorreu no Chile em 1964. Na ausência de tal coalizão, eleitores terão muita dificuldade de coordenar seu voto.</p>
+<p>Do ponto de vista da Ciência Política, é importante enfatizar alguns pontos dessa discussão:
+1. É muito mais fácil para as elites polítics coordenarem entre si do que entre os eleitores, que não possuem uma forma fácil de comunicação.
+2. Informações sobre candidatas com maiores intenções de voto em simulações de segundo turno permite ajudar os eleitores a tomarem decisões melhores e coordenarem seus votos. Portanto, quando vocês virem pessoas reclamando de pesquisas d intenção de voto, que isso influenciar o eleitor e faz com que ele vote estrategicamente, pergunte-se: é realmente ruim que o eleitorado vote estrategicamente? Voltaremos a essa discussão em aulas futuras.
+3. Na presença de segundo turno, existe necessidade de haver coordenação antecipada? Não para evitar que A seja eleito. B ou C irá para o segundo turno contra A.</p>
 </div>
-<div id="happy-hour" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Happy hour<a href="introducao.html#happy-hour" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Ocorrências prosaicas do dia a dia frequentemente refletem um cenário análogo ao Dilema do Prisioneiro.</p>
-<p>É comum que colegas de trabalho ou de faculdade decidam sair para o “happy hour” após o expediente ou término de aulas. E também é comum que ao final a conta seja dividida igualmente entre os presentes. E inevitavelmente alguém irá reclamar de que bebeu ou comeu pouco e está pagando mais do que deveria. Isso pode ser pensado como um exemplo do Dilema do Prisioneiro.</p>
+<div id="aplicações-de-equilíbrio-de-nash" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Aplicações de Equilíbrio de Nash<a href="equilíbrio-de-nash-1.html#aplicações-de-equilíbrio-de-nash" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Quando as pessoas pensam em eleições, muitos acreditam que políticos anunciam as plataformas que acreditam, e eleitores escolhem a que preferem. Contudo, na ciência política é comum assumir que, mesmo que políticos se preocupem com suas plataformas serem implementadas, sabem que para isso primeiro precisam ganhar eleições. Portanto, seja porque estão preocupados apenas com o poder ou porque precisam estar preocupados com o poder para implementar plataformas, o fato é que uma supoição comum é assumir que políticos maximizam suas chances de serem eleitos. Essa é a base do modelo discutido por Hotelling (1929). Após contribuições de Duncan Black (Black,
+1948) e Anthony Downs (Downs, 1957), a ideia entrou definitvamente na Ciência Política e ficaria conhecida como Teorema do Eleitor Mediano.</p>
+<p>O modelo do Hotelling tem inspiração em um modelo de competição espacial entre firmas. Ele desenvolve um jogo em dois estágios, em que duas firmas, competindo em uma rua, devem escolher sua localização geográfica no primeiro estágio, e em seguida os consumidores escolhem onde vão comprar os produtos, levando em consideração não apenas o preço dos produtos, mas o custo do transporte. E ele acha um equilíbrio de Nash (sem usar esse termo, obviamente) em que as empresas tendem a se concentrar no meio da rua. E ele notou que essa ideia poderia ser aplicada par competição política entre partidos. Nós apresenramos aqui uma versão simplificada da ideia do Hotelling e do Teorema do Eleitor Mediano.</p>
+<p>Suponha dois políticos, que se importam apenas em ganhar a eleição. Existem 101 eleitores, com preferências uniformimente distribuídas em uma úncia dimensão do espectro político-ideológico. Em particular, suponha que oeleitor mais a esquerda está na posição -50, em seguida -49 e assim por diante, cada um com um número inteiro, até a extrema-direita, +50.</p>
+<p>Cada candidato <span class="math inline">\(i\)</span> escolhe uma plataforma <span class="math inline">\(a_i\)</span> no espectro político-ideológico <span class="math inline">\([-50, -49, ..., +49, +50]\)</span>. Cada eleitor escolhe a plataforma mais próxima da sua posição ideal. Por exemplo, de candidato 1 anuncia -20 como plataforma e o candidato 2 anuncia 31, o eleitor mais perto de -20 do que de 31 vota por 1, enquanto quem estiver mais perto de 31 vota por 2.</p>
 </div>
-<div id="dilema-da-segurança" class="section level2 hasAnchor" number="2.5">
-<h2><span class="header-section-number">2.5</span> Dilema da Segurança<a href="introducao.html#dilema-da-segurança" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Nas Relações Internacionais, o chamado Dilema da Segurança entre duas potência pode ser resumido da seguinte forma: ambos os países se beneficiam mais se ambos se desarmarem do que se ambos se armarem, mas cada um tem uma vantagem individual se for o único a se armar. Portanto, em equilíbrio, temos uma corrida armamentista. Mais uma vez, há similaridade com o Dilema do Prisioneiro aqui, já que a cooperação seria mutuamente benéfica, mas os países acabam em uma situação racionalmente indidivudal mas que é pior para todos.</p>
-</div>
-<div id="cuidar-da-casa" class="section level2 hasAnchor" number="2.6">
-<h2><span class="header-section-number">2.6</span> Cuidar da casa<a href="introducao.html#cuidar-da-casa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A limpeza de uma casa é algo que benefícia a todos os membros da casa. No entanto, limpar a casa é custoso e limpar apenas a sujeira que você causou tem pouco impacto sobre a limpeza geral da casa, especialmente quando a casa é grande. Assim, mais uma vez temos uma esturtura similar ao Dilema do Prisioneiro, em que a cooperação seria benéfica, mas o equilíbrio é a não-cooperação, já que embora todos prefiram uma casa limpa a uma suja, o equilíbrio é ninguém limpar a casa.</p>
-<div class="blackbox">
-<h2>
-Implicações da Teoria dos Jogos para questões mais complexas
-</h2>
-<p>A dinâmica de limpeza em um lar reflete não apenas a organização doméstica, mas também revela estruturas sociais mais profundas, como o patriarcado e o racismo. Historicamente, no Brasil, o cuidado com a casa e a geração do bem comum dentro do lar foram frequentemente atribuídos às mulheres, uma manifestação direta do patriarcado. Este arranjo social impõe o ônus da manutenção do lar majoritariamente sobre elas, enquanto os homens são poupados desse trabalho.</p>
-<p>Além disso, em contextos de classe média e alta, o racismo estrutural tem permitido que mulheres brancas transferissem a responsabilidade do trabalho doméstico para mulheres negras. Inicialmente, essa transferência ocorria por meio da escravidão e, posteriormente, através da contratação de empregadas domésticas. Essas empregadas, até muito recentemente, desempenhavam suas funções com poucos ou nenhum direito trabalhista, o que reflete não apenas uma desvalorização do trabalho doméstico, mas também a perpetuação de desigualdades raciais e de gênero.</p>
-<p>A aprovação da PEC das Domésticas marca um ponto de inflexão nesse cenário. Ao garantir direitos trabalhistas às empregadas domésticas, a PEC aumenta os custos associados à contratação desse tipo de serviço. Esse aumento de custo desafia o equilíbrio anterior, baseado na exploração e na desigualdade. Se por um lado a PEC contribui para uma redistribuição dos custos do bem comum doméstico, favorecendo a equidade racial ao impor responsabilidades financeiras mais justas às empregadoras, por outro, não resolve completamente as questões de gênero. A menos que o equilíbrio patriarcal também seja abordado, a responsabilidade pelo trabalho doméstico continuará a recair desproporcionalmente sobre as mulheres, seja dentro do contexto familiar ou no mercado de trabalho doméstico.</p>
-<p>Portanto, a mudança real exige uma abordagem que não apenas redistribua o custo do trabalho doméstico de maneira mais equitativa entre as raças, mas que também desafie e transforme as normas de gênero que atribuem esse trabalho principalmente às mulheres.</p>
-</div>
-</div>
-<div id="referências" class="section level2 hasAnchor" number="2.7">
-<h2><span class="header-section-number">2.7</span> Referências<a href="introducao.html#referências" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Kollock, P. (1998). Social dilemmas: The anatomy of cooperation. Annual review of sociology, 183-214.</p>
-<p>Roxborough, I. (1992). Inflação e pacto social no Brasil e no México. Lua Nova: Revista de Cultura e Política, 197-224.</p>
+<div id="determinar-os-eleitores-pivot-do-exemplo." class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> determinar os eleitores pivot do exemplo.<a href="equilíbrio-de-nash-1.html#determinar-os-eleitores-pivot-do-exemplo." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>É eleito quem obtiver mais voto. Como há um número ímpar de eleitores, a menos que alguém seja indiferente, não há empate. Se alguém for indiferente, o eleitor não vai votar e há um empate.
+A melhor resposta do jogador <span class="math inline">\(i\)</span> é:
+Se <span class="math inline">\(j\)</span> escolher uma plataforma <span class="math inline">\(a_j &gt; 0\)</span>, então <span class="math inline">\(a_i = a_j\)</span> ou <span class="math inline">\(a_i = -a_j\)</span> e dá um empate. Se <span class="math inline">\(i\)</span> escolher <span class="math inline">\(a_i &gt; a_j\)</span> ou <span class="math inline">\(a_i &lt; -a_j\)</span>, perde com certeza. E escolhendo entre <span class="math inline">\(a_i = a_j -1\)</span> e <span class="math inline">\(a_i = -a_j + 1\)</span> irá ganhar com certeza. <span class="math inline">\(a_i \in [-a_j + 1, a_j -1]\)</span>. Por um argumento similar se <span class="math inline">\(a_j &lt; 0\)</span>, temos que a estratégia vencedora é no intervalo <span class="math inline">\(a_i \in [a_j + 1, -a_j -1]\)</span>. Por fim, a melhor resposta para <span class="math inline">\(a_j = 0\)</span> é <span class="math inline">\(a_i = 0\)</span>.
+Como é tudo simétrico, as melhores respostas de cada jogador são similares.</p>
+<p>Existe um único equilíbrio de Nash, em que ambos candidatos jogam (0,0), que é o centro do espectro político. Essa é a base para o teorema do eleitor mediano, presente já no trabalho do Hotelling.</p>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Seleciona todos os elementos <strong> que contêm o texto "Exercise" dentro de <div class="exercise">
-  document.querySelectorAll('div.exercise strong').forEach(function(el) {
-    el.textContent = el.textContent.replace('Exercise', 'Exercício');
-  });
-});
-</script>
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p><a href="https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/combate-a-desinformacao-tse-derruba-mais-de-uma-centena-de-postagens-com-narrativas-enganosas" class="uri">https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/combate-a-desinformacao-tse-derruba-mais-de-uma-centena-de-postagens-com-narrativas-enganosas</a><a href="introducao.html#fnref1" class="footnote-back">↩︎</a></p></li>
-</ol>
-</div>
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="racionalidade-e-relações-de-preferência.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="solucao-de-um-jogo.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -392,7 +389,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/mgaldino/Teoria-dos-Jogos/edit/main/02-Introducao.Rmd",
+"link": "https://github.com/mgaldino/Teoria-dos-Jogos/edit/main/07-equilibrio-nash.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -400,7 +397,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/mgaldino/Teoria-dos-Jogos/blob/main/02-Introducao.Rmd",
+"link": "https://github.com/mgaldino/Teoria-dos-Jogos/blob/main/07-equilibrio-nash.Rmd",
 "text": null
 },
 "download": null,

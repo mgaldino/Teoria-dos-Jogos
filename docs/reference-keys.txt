@@ -55,3 +55,9 @@ eliminação-iterativa-de-estratégias-estritamente-dominadas-iesds-em-inglês-e
 racionalização-rationalizability-ou-racionalizabilidade-de-estratégias
 melhor-resposta
 equilíbrio-de-nash
+equilíbrio-de-nash-1
+p-beauty-contest
+melhor-resposta-1
+equilíbrio-de-nash-2
+aplicações-de-equilíbrio-de-nash
+determinar-os-eleitores-pivot-do-exemplo.
