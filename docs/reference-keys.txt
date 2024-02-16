@@ -43,3 +43,15 @@ votos-em-comissão
 modelo-de-competição-eleitoral-e-o-teorema-do-eleitor-mediano
 soluções-de-equilíbrio
 histórico-machista---guerra-dos-sexos
+solucao-de-um-jogo
+avaliando-conceitos-de-solução
+existência
+unicidade
+invariância
+dominância
+estratégia-dominante
+equilíbrio-de-estratégia-dominante.
+eliminação-iterativa-de-estratégias-estritamente-dominadas-iesds-em-inglês-eieed-em-pt
+racionalização-rationalizability-ou-racionalizabilidade-de-estratégias
+melhor-resposta
+equilíbrio-de-nash

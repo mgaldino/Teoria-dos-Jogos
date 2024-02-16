@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo6 Solucao de um jogo | Introdução à Teoria dos Jogos para Ciências Sociais</title>
+  <meta name="description" content="Capítulo6 Solucao de um jogo | Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo6 Solucao de um jogo | Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo6 Solucao de um jogo | Introdução à Teoria dos Jogos para Ciências Sociais" />
+  
+  
+  
+
+<meta name="author" content="Manoel Galdino" />
+
+
+<meta name="date" content="2024-02-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="jogos-na-forma-normal.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">TJ CS</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prefácio</a></li>
+<li class="chapter" data-level="2" data-path="introducao.html"><a href="introducao.html"><i class="fa fa-check"></i><b>2</b> Introducao</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introducao.html"><a href="introducao.html#dilema-do-prisioneiro"><i class="fa fa-check"></i><b>2.1</b> Dilema do Prisioneiro</a></li>
+<li class="chapter" data-level="2.2" data-path="introducao.html"><a href="introducao.html#dilema-da-ação-coletiva"><i class="fa fa-check"></i><b>2.2</b> Dilema da Ação Coletiva</a></li>
+<li class="chapter" data-level="2.3" data-path="introducao.html"><a href="introducao.html#plano-cruzado"><i class="fa fa-check"></i><b>2.3</b> Plano cruzado</a></li>
+<li class="chapter" data-level="2.4" data-path="introducao.html"><a href="introducao.html#happy-hour"><i class="fa fa-check"></i><b>2.4</b> Happy hour</a></li>
+<li class="chapter" data-level="2.5" data-path="introducao.html"><a href="introducao.html#dilema-da-segurança"><i class="fa fa-check"></i><b>2.5</b> Dilema da Segurança</a></li>
+<li class="chapter" data-level="2.6" data-path="introducao.html"><a href="introducao.html#cuidar-da-casa"><i class="fa fa-check"></i><b>2.6</b> Cuidar da casa</a></li>
+<li class="chapter" data-level="2.7" data-path="introducao.html"><a href="introducao.html#referências"><i class="fa fa-check"></i><b>2.7</b> Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="racionalidade-e-relações-de-preferência.html"><a href="racionalidade-e-relações-de-preferência.html"><i class="fa fa-check"></i><b>3</b> Racionalidade e Relações de Preferência</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="racionalidade-e-relações-de-preferência.html"><a href="racionalidade-e-relações-de-preferência.html#tomada-de-decisão"><i class="fa fa-check"></i><b>3.1</b> Tomada de decisão</a></li>
+<li class="chapter" data-level="3.2" data-path="racionalidade-e-relações-de-preferência.html"><a href="racionalidade-e-relações-de-preferência.html#relações"><i class="fa fa-check"></i><b>3.2</b> Relações</a></li>
+<li class="chapter" data-level="3.3" data-path="racionalidade-e-relações-de-preferência.html"><a href="racionalidade-e-relações-de-preferência.html#mais-sobre-relações-binárias"><i class="fa fa-check"></i><b>3.3</b> Mais sobre relações binárias</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="racionalidade-e-relações-de-preferência.html"><a href="racionalidade-e-relações-de-preferência.html#relação-de-inclusão"><i class="fa fa-check"></i><b>3.3.1</b> Relação de “inclusão”</a></li>
+<li class="chapter" data-level="3.3.2" data-path="racionalidade-e-relações-de-preferência.html"><a href="racionalidade-e-relações-de-preferência.html#relação-de-antecessorsucessor"><i class="fa fa-check"></i><b>3.3.2</b> Relação de “antecessor/sucessor”</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="racionalidade-e-relações-de-preferência.html"><a href="racionalidade-e-relações-de-preferência.html#racionalidade"><i class="fa fa-check"></i><b>3.4</b> Racionalidade</a></li>
+<li class="chapter" data-level="3.5" data-path="racionalidade-e-relações-de-preferência.html"><a href="racionalidade-e-relações-de-preferência.html#funções-de-payoff"><i class="fa fa-check"></i><b>3.5</b> Funções de Payoff</a></li>
+<li class="chapter" data-level="3.6" data-path="racionalidade-e-relações-de-preferência.html"><a href="racionalidade-e-relações-de-preferência.html#utilidade-ordinal"><i class="fa fa-check"></i><b>3.6</b> Utilidade Ordinal</a></li>
+<li class="chapter" data-level="3.7" data-path="racionalidade-e-relações-de-preferência.html"><a href="racionalidade-e-relações-de-preferência.html#exercícios"><i class="fa fa-check"></i><b>3.7</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="incerteza-risco-e-utilidade-esperada.html"><a href="incerteza-risco-e-utilidade-esperada.html"><i class="fa fa-check"></i><b>4</b> Incerteza, risco e utilidade esperada</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="incerteza-risco-e-utilidade-esperada.html"><a href="incerteza-risco-e-utilidade-esperada.html#risco"><i class="fa fa-check"></i><b>4.1</b> Risco</a></li>
+<li class="chapter" data-level="4.2" data-path="incerteza-risco-e-utilidade-esperada.html"><a href="incerteza-risco-e-utilidade-esperada.html#incerteza"><i class="fa fa-check"></i><b>4.2</b> Incerteza</a></li>
+<li class="chapter" data-level="4.3" data-path="incerteza-risco-e-utilidade-esperada.html"><a href="incerteza-risco-e-utilidade-esperada.html#risco-versos-incerteza"><i class="fa fa-check"></i><b>4.3</b> Risco versos Incerteza</a></li>
+<li class="chapter" data-level="4.4" data-path="incerteza-risco-e-utilidade-esperada.html"><a href="incerteza-risco-e-utilidade-esperada.html#aversão-a-risco"><i class="fa fa-check"></i><b>4.4</b> Aversão a risco</a></li>
+<li class="chapter" data-level="4.5" data-path="incerteza-risco-e-utilidade-esperada.html"><a href="incerteza-risco-e-utilidade-esperada.html#teoria-e-prática"><i class="fa fa-check"></i><b>4.5</b> Teoria e Prática</a></li>
+<li class="chapter" data-level="4.6" data-path="incerteza-risco-e-utilidade-esperada.html"><a href="incerteza-risco-e-utilidade-esperada.html#preferências-sobre-loterias"><i class="fa fa-check"></i><b>4.6</b> Preferências sobre loterias</a></li>
+<li class="chapter" data-level="4.7" data-path="incerteza-risco-e-utilidade-esperada.html"><a href="incerteza-risco-e-utilidade-esperada.html#referências-1"><i class="fa fa-check"></i><b>4.7</b> Referências</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="jogos-na-forma-normal.html"><a href="jogos-na-forma-normal.html"><i class="fa fa-check"></i><b>5</b> Jogos na Forma Normal</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="jogos-na-forma-normal.html"><a href="jogos-na-forma-normal.html#conhecimento-comum."><i class="fa fa-check"></i><b>5.1</b> Conhecimento Comum.</a></li>
+<li class="chapter" data-level="5.2" data-path="jogos-na-forma-normal.html"><a href="jogos-na-forma-normal.html#estratégias"><i class="fa fa-check"></i><b>5.2</b> Estratégias</a></li>
+<li class="chapter" data-level="5.3" data-path="jogos-na-forma-normal.html"><a href="jogos-na-forma-normal.html#jogos-na-forma-normal-ou-estratégica"><i class="fa fa-check"></i><b>5.3</b> Jogos na forma normal ou estratégica</a></li>
+<li class="chapter" data-level="5.4" data-path="jogos-na-forma-normal.html"><a href="jogos-na-forma-normal.html#votos-em-comissão"><i class="fa fa-check"></i><b>5.4</b> Votos em comissão</a></li>
+<li class="chapter" data-level="5.5" data-path="jogos-na-forma-normal.html"><a href="jogos-na-forma-normal.html#modelo-de-competição-eleitoral-e-o-teorema-do-eleitor-mediano"><i class="fa fa-check"></i><b>5.5</b> Modelo de competição eleitoral e o Teorema do Eleitor Mediano</a></li>
+<li class="chapter" data-level="5.6" data-path="jogos-na-forma-normal.html"><a href="jogos-na-forma-normal.html#soluções-de-equilíbrio"><i class="fa fa-check"></i><b>5.6</b> Soluções de equilíbrio</a></li>
+<li class="chapter" data-level="5.7" data-path="jogos-na-forma-normal.html"><a href="jogos-na-forma-normal.html#histórico-machista---guerra-dos-sexos"><i class="fa fa-check"></i><b>5.7</b> Histórico machista - guerra dos sexos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="solucao-de-um-jogo.html"><a href="solucao-de-um-jogo.html"><i class="fa fa-check"></i><b>6</b> Solucao de um jogo</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="solucao-de-um-jogo.html"><a href="solucao-de-um-jogo.html#avaliando-conceitos-de-solução"><i class="fa fa-check"></i><b>6.1</b> Avaliando conceitos de solução</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="solucao-de-um-jogo.html"><a href="solucao-de-um-jogo.html#existência"><i class="fa fa-check"></i><b>6.1.1</b> Existência</a></li>
+<li class="chapter" data-level="6.1.2" data-path="solucao-de-um-jogo.html"><a href="solucao-de-um-jogo.html#unicidade"><i class="fa fa-check"></i><b>6.1.2</b> Unicidade</a></li>
+<li class="chapter" data-level="6.1.3" data-path="solucao-de-um-jogo.html"><a href="solucao-de-um-jogo.html#invariância"><i class="fa fa-check"></i><b>6.1.3</b> Invariância</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="solucao-de-um-jogo.html"><a href="solucao-de-um-jogo.html#dominância"><i class="fa fa-check"></i><b>6.2</b> Dominância</a></li>
+<li class="chapter" data-level="6.3" data-path="solucao-de-um-jogo.html"><a href="solucao-de-um-jogo.html#estratégia-dominante"><i class="fa fa-check"></i><b>6.3</b> Estratégia dominante</a></li>
+<li class="chapter" data-level="6.4" data-path="solucao-de-um-jogo.html"><a href="solucao-de-um-jogo.html#equilíbrio-de-estratégia-dominante."><i class="fa fa-check"></i><b>6.4</b> Equilíbrio de estratégia dominante.</a></li>
+<li class="chapter" data-level="6.5" data-path="solucao-de-um-jogo.html"><a href="solucao-de-um-jogo.html#eliminação-iterativa-de-estratégias-estritamente-dominadas-iesds-em-inglês-eieed-em-pt"><i class="fa fa-check"></i><b>6.5</b> Eliminação Iterativa de Estratégias Estritamente Dominadas (IESDS em inglês, EIEED em PT)</a></li>
+<li class="chapter" data-level="6.6" data-path="solucao-de-um-jogo.html"><a href="solucao-de-um-jogo.html#racionalização-rationalizability-ou-racionalizabilidade-de-estratégias"><i class="fa fa-check"></i><b>6.6</b> Racionalização (Rationalizability ou Racionalizabilidade) de estratégias</a></li>
+<li class="chapter" data-level="6.7" data-path="solucao-de-um-jogo.html"><a href="solucao-de-um-jogo.html#melhor-resposta"><i class="fa fa-check"></i><b>6.7</b> Melhor resposta</a></li>
+<li class="chapter" data-level="6.8" data-path="solucao-de-um-jogo.html"><a href="solucao-de-um-jogo.html#equilíbrio-de-nash"><i class="fa fa-check"></i><b>6.8</b> Equilíbrio de Nash</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introdução à Teoria dos Jogos para Ciências Sociais</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="solucao-de-um-jogo" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Capítulo6</span> Solucao de um jogo<a href="solucao-de-um-jogo.html#solucao-de-um-jogo" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Conceitos de solução de um jogo</p>
+<p>Para fazer previsões sobre um jogo, precisamos fazer suposições sobre o comportamento e crenças dos jogadores. Estamos em busca do que chamamos de um conceito de solução.</p>
+<p>Essas soluções nós vamos chamar de equilíbrio.</p>
+<div id="avaliando-conceitos-de-solução" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Avaliando conceitos de solução<a href="solucao-de-um-jogo.html#avaliando-conceitos-de-solução" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="existência" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Existência<a href="solucao-de-um-jogo.html#existência" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A existência de um equilíbrio diz respeito à frequência com que ele existe em diferentes tipos de jogos. Quanto mais frequente um tipo de equilíbrio para diferentes tipos de jogos, melhor o conceito de solução.</p>
+</div>
+<div id="unicidade" class="section level3 hasAnchor" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Unicidade<a href="solucao-de-um-jogo.html#unicidade" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Unicidade diz respeito à quanto nosso conceito de equilíbrio retringe os comportamentos previstos. Se tudo pode acontecer, se tudo é um equilíbrio, o conceito é pouco útil.</p>
+</div>
+<div id="invariância" class="section level3 hasAnchor" number="6.1.3">
+<h3><span class="header-section-number">6.1.3</span> Invariância<a href="solucao-de-um-jogo.html#invariância" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Nosso conceito de equilíbrio deve ser robusto à pequenas mudanças. Se você muda o jogo só um pouco e a previsão muda, então teremos pouca confiança sobre a previsão dada por uma solução qualquer.
+Por pequenas mudanças, estamos entendendo variações nos payoffs dos jogadores apenas. Mudanças no número de jogadores e no conjunto de estratégias disponíveis não são pequenas mudanças, pois alteram radicalmente a estrutura de um jogo.</p>
+<p>Por fim, queremos avaliar os resultados do nosso conceito de solução, em particular, suas propriedades distributivas. E um critério para isso é o “ótimo de Pareto”.</p>
+<p>Formalmente, dizemos que um perfil de estratégia <span class="math inline">\(s \in S\)</span> domina no sentido de pareto o perfil de estratégia <span class="math inline">\(s^\prime \in S\)</span> se <span class="math inline">\(v_i(s) &gt;= v_i(s^\prime)\)</span> para todo <span class="math inline">\(i\)</span> e <span class="math inline">\(v_i(s) &gt; v_i(s^\prime)\)</span> para pelo menos um <span class="math inline">\(i\)</span>. Nesse caso, diremos também que <span class="math inline">\(s^\prime \in S\)</span> é dominada no sentido de pareto por <span class="math inline">\(s\)</span>. Por fim, dizemos que um perfil de estratégia é ótimo no sentido de Pareto se não é dominado no sentido de Pareto por nenhuma outra estratégia.</p>
+<p>Vamos agora introduzir alguns conceitos de solução informalmente e discutir em alguns jogos, para depois formalizá-los</p>
+</div>
+</div>
+<div id="dominância" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Dominância<a href="solucao-de-um-jogo.html#dominância" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Vamos introduzir algumas notações.
+Se eu tenho dois jogadores, e os dois jogadores possuem apenas duas estratégias cada (como no DP, Bach-Stravinski, Chichken e Stag Hunt), nós dedignamos o payoff do jogador <span class="math inline">\(i\)</span> decorrente de um dado perfil de estratégias <span class="math inline">\(s = (s_1, s_2)\)</span> de <span class="math inline">\(v_i(s)\)</span>. Por exemplo, se <span class="math inline">\(s_1 = &quot;desvia&quot; e s_2 = &quot;desvia&quot;\)</span> no jogo do chicken, então o payoff do jogador <span class="math inline">\(1\)</span>, <span class="math inline">\(v_1(s) = 0\)</span>. Se um jogo qualquer com <span class="math inline">\(n\)</span> jogadores, pode ser conveniente ordenar os perfis de estratégias associados a um dado payoff da seguinte maneira: <span class="math inline">\(s = (s_1, s_2, ..., s_{i-1}, s_i, s_{i+1}, ..., s_n)\)</span> para um payoff <span class="math inline">\(v_1(s) = 0\)</span>.</p>
+<p>Em breve será útil se referir às estratégias de todos os jogadores que não <span class="math inline">\(i\)</span>. Para isso, diremos que <span class="math inline">\(s_{-i} = (s_1, s_2, ..., s_{i-1}, s_{i+1}, ..., s_n)\)</span>. Notem que pulamos <span class="math inline">\(s_i\)</span>, a estratégia do jogador i.</p>
+<p>Exercício: Se <span class="math inline">\(s_1 \in S_1\)</span>, o conjunto de estratégias do jogador <span class="math inline">\(1\)</span>, e <span class="math inline">\(s_2 \in S_2\)</span>, então escrevemos que um perfil de estratégia específico <span class="math inline">\(s = (s_1, s_2) \in S_1 * S_2\)</span>, isto é pertence ao conjunto dado pelo produto cartesiano dos conjuntos <span class="math inline">\(S_1 e S_2\)</span>. Escreva o produto cartesiano ao qual <span class="math inline">\((s_1, s_2, ..., s_{i-1}, s_{i+1}, ..., s_n)\)</span> pertence.</p>
+<p>Resposta: <span class="math inline">\(S_1 * S_2 * ... * S_{i-1} * S_{i+1} * ... * S_n)\)</span></p>
+<p>Para simplificar a notação iremos usar o seguinte atalho: Vamos definir <span class="math inline">\(S_{-i} \equiv S_1 * S_2 * ... * S_{i-1} * S_{i+1} * ... * S_n)\)</span> como o conjunto de <strong>todas</strong> as estratégias de todos os jogadores que não o jogador <span class="math inline">\(i\)</span>. E, finalmente, agora podemos definir <span class="math inline">\(s_{-i} \in S_{-i}\)</span> como um perfil particular de estratégias possíveis para todos os jogadores que não <span class="math inline">\(i\)</span>. Portanto, podemos reescrever o payoff do jogador <span class="math inline">\(i\)</span> em função de um particular perfil de estrateǵia <span class="math inline">\(s\)</span> como <span class="math inline">\(v_i(s_i, s_{-i})\)</span>, em que <span class="math inline">\(s = (s_i, s_{-i})\)</span>.</p>
+</div>
+<div id="estratégia-dominante" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Estratégia dominante<a href="solucao-de-um-jogo.html#estratégia-dominante" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dizemos que uma estrateǵia <span class="math inline">\(s^\prime_i \in S_i\)</span> é estritamente dominada por outra estratégia <span class="math inline">\(s_i \in S_i\)</span> se <span class="math inline">\(s^\prime_i\)</span> é estritamente pior do que <span class="math inline">\(s_i\)</span> não importa o que os outros jogadores façam (isto é, para quaisquer estratégias que os demais jogadores escolham). Mais formalmente, <span class="math inline">\(s^\prime_i \in S_i\)</span> é estritamente dominada por outra estratégia <span class="math inline">\(s_i \in S_i\)</span> se para qualquer combinação de estratégias dos outros jogadores <span class="math inline">\(s_{-i} \in S_{-i}\)</span>, <span class="math inline">\(v_i(s_i, s_{-i}) &gt; v_i(s^\prime_i, s_{-i})\)</span> para todo <span class="math inline">\(s_{-i} \in S_{-i}\)</span>.</p>
+<p>Proposição: Um jogador racional jamais jogará um estratégia estritamente dominada.</p>
+<p>Exemplo de um jogo, 4.1.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Esquerda</th>
+<th align="left">Direita</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Alto</td>
+<td align="left">(2,3)</td>
+<td align="left">(5,0)</td>
+</tr>
+<tr class="even">
+<td align="left">Baixo</td>
+<td align="left">(1,0)</td>
+<td align="left">(4,3)</td>
+</tr>
+</tbody>
+</table>
+<p>Do ponto de vista do jogador 1, Alto é uma estratégia dominante. Se 2 jogar esquerda, alto é a melhor resposta. E se 2 jogar direita, alto é a melhor resposta. Vejam que para o jogador 2, não há estratégia dominante. Nos termos de nossa definição Baixo é dominado por Alto e um jogador racional jamais deveria jogar Baixo.</p>
+<p>Exemplo 4.2.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Esquerda</th>
+<th align="left">Centro</th>
+<th align="left">Direita</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Alto</td>
+<td align="left">(8,3)</td>
+<td align="left">(0,4)</td>
+<td align="left">(4,4)</td>
+</tr>
+<tr class="even">
+<td align="left">Médio</td>
+<td align="left">(4,2)</td>
+<td align="left">(1,5)</td>
+<td align="left">(5,3)</td>
+</tr>
+<tr class="odd">
+<td align="left">Baixo</td>
+<td align="left">(3,7)</td>
+<td align="left">(0,1)</td>
+<td align="left">(2,0)</td>
+</tr>
+</tbody>
+</table>
+<p>Nesse exemplo, “Baixo” é dominado por “Médio”. Portanto, um jogador racional jamais deveria jogar “Baixo”.</p>
+</div>
+<div id="equilíbrio-de-estratégia-dominante." class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Equilíbrio de estratégia dominante.<a href="solucao-de-um-jogo.html#equilíbrio-de-estratégia-dominante." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Estratégia dominante. Definição informal: <span class="math inline">\(s_i\)</span> é um estratégia estritamente dominante para <span class="math inline">\(i\)</span> se todas as outras estratégias forem estritamente dominadas por ela. Mais formalmente, temos <span class="math inline">\(v_i(s_i, s_{-i}) &gt; v_i(s^\prime_i, s_{-i})\)</span> para toda <span class="math inline">\(s^\prime_i \in S_i\)</span>, <span class="math inline">\(s^\prime_i \neq s_i\)</span> e toda <span class="math inline">\(S_{-i} \in S_{-i}\)</span>.</p>
+<p>Se, como no DP, todo jogador tem uma estratégia desse tipo (isto é, uma estratégia dominante), então nossa previsão do jogo é que todos os jogadores jogarão essa estratégia dominante.</p>
+<p>Mais formalmente, dizemos que um perfil de estratégia <span class="math inline">\(s^D \in S\)</span> é um <strong>equilíbrio de estratégia dominante estrita</strong> se <span class="math inline">\(s^D_i \in S_i\)</span> é um perfril de estratégia dominante para todo <span class="math inline">\(i \in N\)</span>.</p>
+<p>Portanto, temos agora uma definição formal da nossa previsão no DP. É um equilíbrio de estratégia estritamente dominante, dado por (Confessar, Confessar), e que rende o pyaoff 5 anos de prisão, 5 anos de prisão.</p>
+<p>Note que o equilíbrio é o conjunto e estratégias, e não o conjunto de payoff. É um erro comum entre estudantes (eu mesmo cometia esse erro quando estava aprendendo Teoria dos Jogos) descrever os payoffs como equilíbrio, e não as estratégias. Nosso equilíbrio sempre se refere ao que jogadores irão fazer, e não ao que irá acontecer com eles.</p>
+</div>
+<div id="eliminação-iterativa-de-estratégias-estritamente-dominadas-iesds-em-inglês-eieed-em-pt" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Eliminação Iterativa de Estratégias Estritamente Dominadas (IESDS em inglês, EIEED em PT)<a href="solucao-de-um-jogo.html#eliminação-iterativa-de-estratégias-estritamente-dominadas-iesds-em-inglês-eieed-em-pt" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Racionalidade + Conhecimento comum</p>
+<p>Se um jogador racional nunca irá jogar uma estratégia estritamente dominada e isso é de conhecimento comum, então é razoável supor que todos sabem que essa estratégia nunca será jogada, e todos sabem que todos sabem e assim por diante até infinito. Podemos, portanto, eliminá-la do jogo.</p>
+<p>Consideremos o jogo do exemplo 4.2. A estratégia “Baixo” para o jogador 1 é estritamente dominada por “Médio”. Portanto, podemos eliminá-la do jogo, e ter uma nova matriz de payoff:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Esquerda</th>
+<th align="left">Centro</th>
+<th align="left">Direita</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Alto</td>
+<td align="left">(8,3)</td>
+<td align="left">(0,4)</td>
+<td align="left">(4,4)</td>
+</tr>
+<tr class="even">
+<td align="left">Médio</td>
+<td align="left">(4,2)</td>
+<td align="left">(1,5)</td>
+<td align="left">(5,3)</td>
+</tr>
+</tbody>
+</table>
+<p>Na nova matriz de payoff, “Esquerda” é estritamente dominada por “centro” para o jogador 2. Podemos, portanto, eliminar “Esquerda” do jogo, resultando na seguinte nova matriz de payoff.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Centro</th>
+<th align="left">Direita</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Alto</td>
+<td align="left">(0,4)</td>
+<td align="left">(4,4)</td>
+</tr>
+<tr class="even">
+<td align="left">Médio</td>
+<td align="left">(1,5)</td>
+<td align="left">(5,3)</td>
+</tr>
+</tbody>
+</table>
+<p>Agora, Alto é estritamente dominada por Médio para o jogador 1. Novamente, podemos eliminar essa estratégiado jogo.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Centro</th>
+<th align="left">Direita</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Médio</td>
+<td align="left">(1,5)</td>
+<td align="left">(5,3)</td>
+</tr>
+</tbody>
+</table>
+<p>Por fim, “Direita” é estritamente dominada por “Centro” para o jogador 2, de modo que o equilíbrio do jogo é (“Médio”, “Centro”), com payoffs (1,5).</p>
+<p>Vejam que esse equilíbrio é inferior ao par de estratégias (“Alto”, “Esquerda”). Ou seja, é um equilíbrio que é Pareto inferior.</p>
+<p>Notem que o equilíbrio depende dos seguintes passos: 1. O jogador “1” é racional e elimina a estratégia “Baixo”. No passo 2. o jogador “2” é racional e sabe que “1” é racional, portanto sabendo que “baixo” nuncaserá jogada, elimina de suas estratégias a jogada “Esquerda”. No terceiro passo, o jogador 1, racional, sabe que dois é racional e sabe que 1 é racional e, portanto, eliminou a estratégia “Esquerda”. Por isso ele pode eliminar “Alto” do jogo. No quarto passo, o jogador 2 sabe que 1 fez a primeira eliminação, que 1 sabe que 2 elimnou “Esquerda”, e 2 sabe, com isso, que 1 elimina “Alto”. Pode, portanto, eliminar “Direita”.</p>
+<p>Ou seja, aqui a iteração os jogadores sabem que eles sabem que eles sabem… não precisa ir até o infinito. Três níveis de sabe que sabe que sabe é suficiente para o equilíbri do jogo.</p>
+<p>Como vimos, para um equilíbrio de estratégia dominante, bastavamos supor racionalidade dos agentes. Contudo, para um equilíbrio de EIEED, é necessário supor também conhecimento comum da racionalidade dos jogadores.</p>
+<p>Note que o equilíbrio de EIEED (que nós não definimos formalmente) é o que resta após a eliminação sucessiva de estratégias estritamente dominadas. Quando não há mais estratégias dominadas para exluir, o que restar é a previsão do jogo.</p>
+<p>Considere o jogo Bach-Stravinski.
+Não há estratégias estritamente dominadas. Portanto, o equilíbrio do jogo é que quaisquer pares de estratégias são possíveis. Nesse caso, há múltiplos equilíbrios e esse conceito de solução não faz previsões útgeis para nós.</p>
+</div>
+<div id="racionalização-rationalizability-ou-racionalizabilidade-de-estratégias" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Racionalização (Rationalizability ou Racionalizabilidade) de estratégias<a href="solucao-de-um-jogo.html#racionalização-rationalizability-ou-racionalizabilidade-de-estratégias" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Considere novamente o jogo do DP</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Coopera</th>
+<th align="left">Não coopera</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Coopera</td>
+<td align="left">(2,2)</td>
+<td align="left">(10,0)</td>
+</tr>
+<tr class="even">
+<td align="left">Não coopera</td>
+<td align="left">(0,10)</td>
+<td align="left">(5,5)</td>
+</tr>
+</tbody>
+</table>
+<p>Para facilitar a exposição, vou mudar os payoffs um pouco, mas o jogo ficará igual. Aqui, quanto maior o número, melhor para o jogador. Como os payoffs representam apenas preferências ordinais, não mudamos a essência do jogo.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Silencia</th>
+<th align="left">Confessa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Silencia</td>
+<td align="left">(2,2)</td>
+<td align="left">(0,3)</td>
+</tr>
+<tr class="even">
+<td align="left">Confessa</td>
+<td align="left">(3,0)</td>
+<td align="left">(1,1)</td>
+</tr>
+</tbody>
+</table>
+<p>O equilíbrio é que ambos os jogadores escolhem confessar. Uma forma de ver isso é dizer que, qualquer que seja a crença do jogador <span class="math inline">\(i\)</span> sobre o jogador <span class="math inline">\(j\)</span>, <span class="math inline">\(i \neq j\)</span>, confessar gera um payoff melhor do que silenciar. Como escolher o que é melhor para si é nossa definição de racionalidade, um agente racional deve escolher confessar.
+Em outras palavras, nossa previsão do jogo dependeu apenas da suposição de que os agentes são racionais.</p>
+<p>Considere agora uma variante do DP, como abaixo.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Silencia</th>
+<th align="left">Confessa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Silencia</td>
+<td align="left">(3,2)</td>
+<td align="left">(0,3)</td>
+</tr>
+<tr class="even">
+<td align="left">Confessa</td>
+<td align="left">(2,0)</td>
+<td align="left">(1,1)</td>
+</tr>
+</tbody>
+</table>
+<p>Se o jogador 1 acredita que 2 irá escolher “silenciar”, então ele deve silenciar. E se acreditar que o outro jogador irá escolher Confessar, deve escolher confessar. Portanto, ambas as estratégias sãos racionais, a depender da crença do jogador 1 sobre o que o jogador 2 irá fazer. A suposição de racionalidade não restringe a previsão do que o jogador 1 deve fazer. Para que a gente possa restringir a previsão, precisamos fazer alguma suposição adicional. Por exemplo, que 1 acredita que 2 é racional. Se 2 for racional, o que 2 deve fazer? Um agente racional escolhe o que é melhor para si. Do ponto de vista de 2, isso significa confessar, pois essa é a melhor resposta para qualquer comportamento de 1. Portanto, supor racionalidade de 2 implica acreditar que 2 escolherá confessar. Mas se 2 irá confessar, a única ação racional para 1 é confessar.</p>
+<p>Em resumo até agora: Na variante do DP apresentada, apenas supor racionalidade de 1 não restringe suas ações, mas restringe a de 2. Adicionar a suposição de que 2 sabe ou acredita que 1 é racional é suficiente para restringir a ação de 1 e gerar uma única previsão para o jogo.</p>
+<p>Agora, considerem uma nova variante do DP:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">S</th>
+<th align="left">C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">S</td>
+<td align="left">(4,2)</td>
+<td align="left">(0,3)</td>
+</tr>
+<tr class="even">
+<td align="left">X</td>
+<td align="left">(1,1)</td>
+<td align="left">(1,0)</td>
+</tr>
+<tr class="odd">
+<td align="left">C</td>
+<td align="left">(3,0)</td>
+<td align="left">(2,2)</td>
+</tr>
+</tbody>
+</table>
+<p>Eu adicionei uma nova ação para o jogador 1, que chamei de “X”. O ponto é que, embora a história perca seu sentido com uma nova ação “X”, para o restante das ações ainda guardar alguma similaridade com o original. Se preferirem, podem imaginar que é um outro jogo, não relacionado com o DP.</p>
+<p>Para o jogador 1, escolher “S” é racional, se ele acreditar que o outro jogador irá escolher “S”. Igualmente, “C” também é racional se o outro jogador escolher “C”. Porém, “X” não é racional. Para 2, S e C também são racionais, dado que ela acredite que 1 escolher S ou C e X, respectivamente. Portanto, se o jogador 1 assumir que 2 é racional, isso não ajuda 2 a decidire entre S ou C, já que ambas são consistentes com sua racionalidade e a do outro jogador.</p>
+<p>Diferentemente do jogo anterior, a suposição de ambos sã oracionais e que 1 sabe que 2 é racional não geou uma previsão única para o jogo.</p>
+<p>O que acontece se adicionarmos um passo na cadeia de raciocínio e 1 supor que não apenas 2 é racional, mas que 2 acredita que 1 é racional. Então, dois acredita que 1 jamais jogará “X”, e portanto não achará mais jogar “S” uma boa estratégia e jogará apenas “C”. Mas, se 1 sabe disso, então deverá escolher “C” como sua resposta. Logo, ambos estão escolhendo C, C.</p>
+<p>Em resumo, C,C é o equilíbrio do jogo desde que assumamos que: 1. é racional, 2 é racional, 1 sabe que 2 é racional, 2 sabe que 1 é racional e 1 sabe que 2 sabe que 1 é racional.</p>
+<p>Nos três jogos (DP, primeira variante e segunda variante), mostramos como, crescendo a suposição de racionalidade dos jogadores uns dos outros, restaram ações consistentes com essa suposições era C,C. É possível mostrar que isso é verdadeiro supondo maiores níveis de racionalidade (mais passos). Mais ainda, posso estender os passos indefinidamente. E nós dizemos que estratégias que possuem essa propriedade são racionalizáveis.</p>
+</div>
+<div id="melhor-resposta" class="section level2 hasAnchor" number="6.7">
+<h2><span class="header-section-number">6.7</span> Melhor resposta<a href="solucao-de-um-jogo.html#melhor-resposta" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Nós estamos trabalhando com a ideia de melhor resposta, um conceito central para a teoria dos jogos, de modo que vale a pena defini-lo formalmente.</p>
+<p>Definição 4.1: Melhor resposta: A estratégia <span class="math inline">\(s_i \in Si\)</span> é a melhor resposta do jogador <span class="math inline">\(i\)</span> às estratégias de seus oponentes <span class="math inline">\(s_{-i} \in S_{-i}\)</span> se</p>
+<p><span class="math inline">\(v_i(s_i, s_{-i}) &gt;= v_i(s^\prime_i, s_{-i})\)</span> para todo <span class="math inline">\(s^\prime_i \in S_i\)</span></p>
+<p>Em palavras: a utilidade (ou payoff) do jogador <span class="math inline">\(i\)</span> resultante da sua estratégia e das estratégias dos oponentes é pelo menos tão boa quanto qualquer outra estratégia que <span class="math inline">\(i\)</span> possa vir a adotar.</p>
+<p>Considere o jogo da bandeira, do reality show Survivor. Se é sua vez de jogar existem, digamos 20 bandeira, não importa o que você faça, irá perder o jogo se o outro time for racional. Portanto, sua melhor estratégia pode ser tanto 1, 2 ou 3 bandeiras. Esse exemplo mostra que a melhor estratégia pode 1: ser múltiplas ações; 2. serem igualmente ruins e não fazer diferença nenhuma e resultar todas no mesmo payoff.</p>
+</div>
+<div id="equilíbrio-de-nash" class="section level2 hasAnchor" number="6.8">
+<h2><span class="header-section-number">6.8</span> Equilíbrio de Nash<a href="solucao-de-um-jogo.html#equilíbrio-de-nash" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Um perfil de estratégias é um equilíbrio de Nash se cada jogador está escolhendo a melhor resposta para o que acredita que os demais jogadores farão. Ou seja, todo mundo está simultaneamente escolhendo a melhor resposta uns para os outros.</p>
+
+</div>
+</div>
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="jogos-na-forma-normal.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/mgaldino/Teoria-dos-Jogos/edit/main/06-solucao-de-jogo.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/mgaldino/Teoria-dos-Jogos/blob/main/06-solucao-de-jogo.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
