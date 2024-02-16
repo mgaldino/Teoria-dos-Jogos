@@ -5,4 +5,5 @@ edit: https://github.com/mgaldino/Teoria-dos-Jogos/edit/main/%s
 view: https://github.com/mgaldino/Teoria-dos-Jogos/blob/main/%s
 language:
   ui:
-    chapter_name: "Chapter "
+    chapter_name: "Capítulo" # Você já modificou esta parte
+    exercise: "Exercício"

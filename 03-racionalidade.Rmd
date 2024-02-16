@@ -1,14 +1,43 @@
-# Racionalidade
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Seleciona todos os elementos <strong> que contêm o texto "Exercise" dentro de <div class="exercise">
+  document.querySelectorAll('div.exercise strong').forEach(function(el) {
+    el.textContent = el.textContent.replace('Exercise', 'Exercício');
+  });
+});
+</script>
 
-Vamos falar de Racionalidade
+# Racionalidade e Relações de Preferência
+
+
+## Tomada de decisão
+
+Em uma eleição, cada eleitor tem um problema de decisão: em quem deve votar, dentre as várias alternativas (incluindo Nulo, branco e não ir votar). Similarmente, quando você vai almoçar, deve escolher qual comida irá comer. Ou pela manhã, quando for se arrumar para sair de casa, qual roupa vestir. Todos esses problemas se assemelham em um aspecto: uma pessoa (ou, como iremos chamar em Teoria dos Jogos, uma jogadora) deve escolher entre várias alternativas e cada escolha gerará um resultado, que pode ser melhor ou pior para a jogadora (e eventualmente outras jogadoras).
+
+A tomada de decisão consiste de três elementos fundamentais:
+1. Ações : as alternativas que uma jogadora pode escolher
+2. Resultados: as consequências de cada ação
+3. Preferências: quais resultados as jogadoras preferem mais ou menos. E vamos designar essas preferências pela relação (binária) de preferência $\succcurlyeq$, que significa, "pelo menos tão bom quanto", ou seja, se escrevo $x \succcurlyeq y$, então $x$ é pelo menos tõ bom quanto $y$ (e potencialmente melhor que $y$).
 
 ## Relações
 
-O conceito de relação (binária) na matemática está associada à presença de um tipo de vínculo específico entre elementos de um conjunto. Suponha o conjunto $A = {1,2, 3}$. A Relação $\geq$, entendida por "maior ou igual que" expressa uma relação de comparação de magnitude entre os elementos do conjunto. Assim, podemos dizer que $3 > 2$, ou que $2 = 2$ e assim por diante. Em geral, podemos dizer que para quaisquer pares $x e y \in A$ podemos estabelecer a relação $x \geq y$.
+O conceito de relação (binária) na matemática está associado à presença de um tipo de vínculo específico entre elementos de um conjunto. Suponha o conjunto $A = \{1, 2, 3\}$. A Relação $\geq$, entendida por "maior ou igual que" expressa uma relação de comparação de magnitude entre os elementos do conjunto. Assim, podemos dizer que $3 \geq 2$, e que $2 \geq 2$, exemplificando como a relação "maior ou igual que" se aplica. Em geral, podemos dizer que para quaisquer pares $x, y \in A$ podemos estabelecer a relação $x \geq y$.
 
 A partir desse exemplo, temos uma intuição para construir outros tipos de relações. Em particular, a relação de preferência.
 
 Relações de preferência $\succcurlyeq$ são tais que,se $x \succcurlyeq y$, isso quer dizer que $x$ é pelo menos tão bom quanto $y$. Às vezes aparece como fracamente preferido, no jargão econômico. Se $x \succ y$, então $x$ é preferível a $y$, ou $x$ é melhor que $y$. Por fim, quando temos $x \sim y$, então o jogador ou jogadora é indiferente entre $x$ e $y$, ou $x$ é tão bom quanto $y$.
+
+## Mais sobre relações binárias
+
+O conceito de relação de preferência pode ser difícil de entender a primeira vista, de forma que mais exemplos de relações binárias (como é a relação de preferência), podem ser úteis. Então, eis alguns exemplos de outros tipos de relação.
+
+### Relação de "inclusão"
+
+Nós estamos familiarizados com a ideia de que, e teoria dos conjuntos, existe a ideia de inclusão, quando dizemos que "o conjunto A está incluso no conjunto B". Isso também é uma relação binária, chamada de relação de inclusão, que compara dois conjuntos e determina se um é um subconjunto do outro. Por outro lado, uma relação binária de preferência compara duas opções e determina se uma opção é preferida estritamente, fracamente preferida, ou se há indiferença entre as opções.
+
+### Relação de "antecessor/sucessor"
+
+Similarmente, podemos dizer que existe uma relação binária chamada "antecessor/sucessor", que compara dois números e determina sua relação de sequência, como por exemplo, quando dizemos que "3 é o antecessor de 4".
 
 ## Racionalidade
 
@@ -60,6 +89,7 @@ Não função de utilidade definida acima, a utilidade é ordinal. Uma das conse
 Exercícios em sala:
 Digamos que eu tenha uma função de utilidade $u(x)$ qualquer. 
 Diga se as seguintes transformações são montônicas (isto é, preservam a ordem).
+
 1. $2*u(x)$  
 2. $u(x) + 10$  
 3. $log(u(x))$.  Suponha que $u(x) > 0$ para todo $x$.  
@@ -70,3 +100,47 @@ Diga se as seguintes transformações são montônicas (isto é, preservam a ord
 ------
 
 Formalmente, uma transformação da função utilidade por outra função $f$ é monotônica se $f(u)$ for uma função estritamente crescente de $u$. Lembrando que uma função $f(x)$ é estritamente crescente se ela cresce à medida que x cresce. Ou seja, $u_1 > u_2$ $\implies$ $f(u_1) > f(u_2)$.
+
+## Exercícios
+
+```{exercise}
+Considere a relação binária "ser melhor que ou igual a" em um jogo de futebol. Essa relação satisfaz o axioma da transitividade? Justifique sua resposta.
+E se "ser melhor que ou igual" no futebol for definido apenas pelo número de pontos obtidos pelas equipes em um campeonato. Essa relação satisfaz o axioma da transitividade? 
+```
+
+```{exercise}
+Considere a relação binária "ser mais caro do que" em um mercado de produtos. Essa relação satisfaz o axioma da completude? Justifique sua resposta.
+```
+
+
+```{exercise} 
+Na questão anterior, se você respondeu negativamente, como você modificaria a relação para que ela satisfizesse o axioma da completude.
+```
+
+```{exercise} 
+Considere a relação binária "ser paralelo a" em um plano euclidiano. Essa relação satisfaz o axioma da transitividade? Dica: pense em retas paralelas.
+```
+
+```{exercise} 
+No poema Quadrilha, de Carlos Drumond de Andrade, podemos imaginar que temos uma relação binária "amar". Desconsiderando por um momento J. Pinto Fernandez, você diria que com as informações disponíveis no poema podemos rankear todos os demais personagens na relação "amar"? E se incluírmos J. Pinto Fernandez, sua resposta muda? Justifique sua resposta.
+```
+
+```{exercise} 
+Crie uma relação binária diferente das apresentadas em sala de aula e nos exercícios acima, que satisfaça o axiomada da completude e transitividade.
+```
+
+```{exercise} 
+Considere a relação binária "$>=$". Para mostrar que essa relação implica a relação "$>$", basta mostrar o seguinte. Sejam $x$ e $y$ dois números pertencentes ao conjunto X. Então, dizemos que $x > y$ se e somente se $x \geq y$ e não $y \geq x$. Às vezes é difícil entender o que queremos dizer por não $y \geq x$. Mas é só uma forma de negar uma relação. Então, por exemplo, se $x=3$ e $y=2$. Só é verdade que $3>2$ se também é verdade que $3 \geq 2$ e também é verdade que $2$ não é maior ou igual a $3$. De maneira similar, mostre que é possível derivar a relação "$\sim$" da relação "$\succcurlyeq$"
+```
+
+```{exercise}
+Da relação de preferência $\succcurlyeq$, mostre que é possível derivar a relação de indiferença $\sim$.
+```
+
+```{exercise}
+Considere o seguinte exemplo: o agente A prefere estritamente café com 7 gramas de açúcar a café sem açúcar, mas é indiferente entre café com 7 gramas de açúcar e café com 6,9 gramas de açúcar, entre café com 6,9 gramas de açúcar e café com 6,8 gramas de açúcar, e assim por diante, até ser indiferente entre café com 0,1 gramas de açúcar e café sem açúcar. O agente A é racional no sentido da Teoria dos Jogos? Justifique sua resposta.
+```
+
+```{exercise}
+Suponha que uma pessoa A prefira a cor vermelha à cor verde e prefira a cor verde à cor azul. No entanto, quando confrontada com um tom específico de verde-azulado, A pode ser indiferente entre esse tom e a cor verde. Isso pode levar a uma violação da transitividade, pois A prefere vermelho a verde e verde a azul, mas é indiferente entre verde-azulado e verde. Forneça um outro exemplo, similar a esse, utilizando outro sentido que não a visão.
+```
