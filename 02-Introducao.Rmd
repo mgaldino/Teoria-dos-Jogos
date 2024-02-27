@@ -1,6 +1,6 @@
 # Introducao
 
-Uma das principais preocupações durante as eleições gerais de 2022 no Brasil era a disseminação de desinformação, conhecida popularmente como "fake news". A utilização de redes sociais e aplicativos de mensagens para promover desinformação por eleitores e candidatos representava um importante ponto de potencial controle sobre a desinformação. Foi comum observar o Tribunal Superior Eleitoral determinando que plataformas removessem conteúdos contendo "fake news" eleitorais^[https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/combate-a-desinformacao-tse-derruba-mais-de-uma-centena-de-postagens-com-narrativas-enganosas]. No entanto, essa situação se assemelhava a um jogo de "gato e rato", uma vez que nada impedia que os divulgadores de fake news criassem novas postagens, perpetuando a disseminação de desinformação. Esse tipo de cenário político, no qual os atores precisam tomar decisões estratégicas, ou seja, planejar suas ações tentando antecipar as respostas dos outros, é exatamente o que a teoria dos jogos busca modelar e analisar.
+Uma das principais preocupações durante as eleições gerais de 2022 no Brasil era a disseminação de desinformação, conhecida popularmente como "fake news". A utilização de redes sociais e aplicativos de mensagens para promover desinformação por eleitores e candidatos representava um importante ponto de potencial controle sobre a desinformação. Foi comum observar o Tribunal Superior Eleitoral determinando que plataformas removessem conteúdos contendo "fake news" eleitorais^[https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/combate-a-desinformacao-tse-derruba-mais-de-uma-centena-de-postagens-com-narrativas-enganosas]. No entanto, essa situação se assemelhava a um jogo de "gato e rato", uma vez que nada impedia que os divulgadores de "fake news" criassem novas postagens, perpetuando a disseminação de desinformação. Esse tipo de cenário político, no qual os atores precisam tomar decisões estratégicas, ou seja, planejar suas ações tentando antecipar as respostas dos outros, é exatamente o que a teoria dos jogos busca modelar e analisar.
 
 A política é repleta de situações em que um indivíduo deve agir supondo que os demais participantes do jogo político reagirão às suas ações e até mesmo tentarão antecipar seus movimentos, fazendo suposições e conjecturas sobre os outros. Isso representa uma das maiores dificuldades para os cientistas políticos na previsão dos efeitos de reformas eleitorais, por exemplo. Apesar de ser um tema frequentemente debatido e solicitado pela sociedade, muitas propostas são elaboradas como se o mundo não fosse estratégico, ou seja, como se os agentes políticos não fossem modificar seu comportamento devido às novas regras adotadas. Considere, por exemplo, a proibição de doações privadas de empresas para campanhas eleitorais, implementada no Brasil após decisão da Suprema Corte Federal em 2016. Muitos esperavam que isso reduzisse a influência do dinheiro nas eleições. No entanto, com o tempo, políticos aprovaram um fundo eleitoral com recursos públicos, aumentaram esse fundo sucessivamente e ainda aprovaram o que ficou conhecido como “Orçamento Secreto” para também aumentar as chances nas eleições, entre outros objetivos menos legítimos. Comparando o total de valores envolvidos após a decisão do STF com os valores anteriores, mesmo considerando o caixa dois, o montante provavelmente supera o que se gastava em eleições anteriores a 2016. É evidente que medidas como o “Orçamento Secreto” poderiam ser adotadas mesmo se o financiamento por empresas continuasse permitido, mas a mera possibilidade de que todas essas medidas sejam uma reação dos políticos à decisão do STF mostra quão difícil é antecipar as consequências de mudanças nas regras do jogo e que considerações estratégicas são fundamentais para entender a política.
 
@@ -18,7 +18,9 @@ Para dar concretude, imaginem que a Polícia Federal prendeu dois executivos sus
 
 O que você faria?
 
+Para analisar o DP, é comum construimos uma matriz de *payoffs*. Ela é uma tabela, que contém nas linhas e colunas as ações disponíveis para cada jogadora, e nas células temos os *payoffs", que são as consequências ou resultados das combinações de ações de cada jogadora.
 
+A matriz abaixo apresenta uma possibilidade para o Dilema do Prisioneiro:
 ```{r results = "asis", echo=FALSE}
 library(knitr)
 # Define Variables
@@ -39,10 +41,6 @@ kable(payoff.mat)
 
 ```
 
-Todo problema de tomada de decisão consiste de três componentes básicos:
-1. Ações : todas as alternativas que um jogador pode escolher
-2. Resultados: As consequências que resultam de cada ação
-3. Preferências: descreve como os jogadores ranqueiam os possíveis resultados, do mais desejado para o menos.
 
 ## Dilema da Ação Coletiva
 
