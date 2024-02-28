@@ -1,3 +1,4 @@
+exr:unnamed-chunk-2
 exr:unnamed-chunk-3
 exr:unnamed-chunk-4
 exr:unnamed-chunk-5
@@ -7,12 +8,10 @@ exr:unnamed-chunk-8
 exr:unnamed-chunk-9
 exr:unnamed-chunk-10
 exr:unnamed-chunk-11
-exr:unnamed-chunk-12
 prefácio
 introdução
 dilema-do-prisioneiro
 dilema-da-ação-coletiva
-plano-cruzado
 happy-hour
 dilema-da-segurança
 cuidar-da-casa
@@ -53,12 +52,11 @@ estratégia-dominante
 equilíbrio-de-estratégia-dominante.
 eliminação-iterativa-de-estratégias-estritamente-dominadas-iesds-em-inglês-eieed-em-pt
 racionalização-rationalizability-ou-racionalizabilidade-de-estratégias
-melhor-resposta
 equilíbrio-de-nash
-equilíbrio-de-nash-1
 p-beauty-contest
-melhor-resposta-1
-equilíbrio-de-nash-2
+melhor-resposta
+equilíbrio-de-nash-1
 aplicação---chile
-aplicações-de-equilíbrio-de-nash
+aplicação---competição-eleitoram-sem-incerteza
 determinar-os-eleitores-pivot-do-exemplo.
+tikz-picture

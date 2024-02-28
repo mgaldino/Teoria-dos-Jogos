@@ -28,7 +28,7 @@ $v_i(s_i, s_{-i}) >= v_i(s^\prime_i, s_{-i})$ para todo $s^\prime_i \in S_i$
 Em palavras: a utilidade (ou payoff) do jogador $i$ resultante da sua estratégia e das estratégias dos oponentes é pelo menos tão boa quanto qualquer outra estratégia que $i$ possa vir a adotar.
 
 
-Considere o jogo da bandeira, do reality show Survivor. Se é sua vez de jogar existem, digamos 20 bandeira, não importa o que você faça, irá perder o jogo se o outro time for racional. Portanto, sua melhor estratégia pode ser tanto 1, 2 ou 3 bandeiras. Esse exemplo mostra que a melhor estratégia pode 1: incluir múltiplas ações; 2. serem igualmente ruins e não fazer diferença nenhuma e resultar todas no mesmo payoff.
+Considere o jogo da bandeira, do reality show Survivor. Se é sua vez de jogar e existem, por exemplo, 20 bandeiras, não importa o que você faça, irá perder o jogo se o outro time for racional. Portanto, sua melhor estratégia pode ser tanto 1, 2 ou 3 bandeiras. Esse exemplo mostra que a melhor estratégia pode 1: incluir múltiplas ações; 2. serem igualmente ruins e não fazer diferença nenhuma e resultar todas no mesmo payoff.
 
 ## Equilíbrio de Nash
 
@@ -126,22 +126,89 @@ Do ponto de vista da Ciência Política, é importante enfatizar alguns pontos d
 3. Na presença de segundo turno, existe necessidade de haver coordenação antecipada? Não para evitar que A seja eleito. B ou C irá para o segundo turno contra A.
 
 
-## Aplicações de Equilíbrio de Nash
+## Aplicação - Competição eleitoram sem incerteza
 
-Quando as pessoas pensam em eleições, muitos acreditam que políticos anunciam as plataformas que acreditam, e eleitores escolhem a que preferem. Contudo, na ciência política é comum assumir que, mesmo que políticos se preocupem com suas plataformas serem implementadas, sabem que para isso primeiro precisam ganhar eleições. Portanto, seja porque estão preocupados apenas com o poder ou porque precisam estar preocupados com o poder para implementar plataformas, o fato é que uma supoição comum é assumir que políticos maximizam suas chances de serem eleitos. Essa é a base do modelo discutido por Hotelling (1929). Após contribuições de Duncan Black (Black,
-1948) e Anthony Downs (Downs, 1957), a ideia entrou definitvamente na Ciência Política e ficaria conhecida como Teorema do Eleitor Mediano. 
+Quando as pessoas pensam em eleições, muitos acreditam que políticos anunciam as plataformas que acreditam, e eleitores escolhem a que preferem. Contudo, na ciência política é comum assumir que, mesmo que políticos se preocupem que suas plataformas sejam implementadas, sabem que para isso primeiro precisam ganhar eleições. Portanto, seja porque estão preocupados apenas com o poder ou porque precisam estar preocupados com o poder para implementar plataformas, o fato é que uma supoição comum é assumir que políticos maximizam suas chances de serem eleitos. Essa é a base do modelo discutido por Hotelling (1929). Após contribuições de Duncan Black (Black,
+1948) e Anthony Downs (Downs, 1957), a ideia entrou definitvamente na Ciência Política e ficou conhecida como Teorema do Eleitor Mediano. 
 
-O modelo do Hotelling tem inspiração em um modelo de competição espacial entre firmas. Ele desenvolve um jogo em dois estágios, em que duas firmas, competindo em uma rua, devem escolher sua localização geográfica no primeiro estágio, e em seguida os consumidores escolhem onde vão comprar os produtos, levando em consideração não apenas o preço dos produtos, mas o custo do transporte. E ele acha um equilíbrio de Nash (sem usar esse termo, obviamente) em que as empresas tendem a se concentrar no meio da rua. E ele notou que essa ideia poderia ser aplicada par competição política entre partidos.  Nós apresenramos aqui uma versão simplificada da ideia do Hotelling e do Teorema do Eleitor Mediano.
+O modelo do Hotelling tem inspiração em um modelo de competição espacial entre firmas. Ele desenvolve um jogo em dois estágios, em que duas firmas, competindo em uma rua, devem escolher sua localização geográfica no primeiro estágio, e em seguida os consumidores escolhem onde vão comprar os produtos, levando em consideração não apenas o preço dos produtos, mas o custo do transporte. E ele acha um equilíbrio de Nash (sem usar esse termo, obviamente) em que as empresas tendem a se concentrar no meio da rua. E ele notou que essa ideia poderia ser aplicada par competição política entre partidos.  Nós apresentaremos aqui uma versão simplificada da ideia do Hotelling e do Teorema do Eleitor Mediano. Iremos voltar a esse modelo algumas vezes ao longo do curso, para adicionar complexidade a ele.
 
-Suponha dois políticos, que se importam apenas em ganhar a eleição. Existem 101 eleitores, com preferências uniformimente distribuídas em uma úncia dimensão do espectro político-ideológico. Em particular, suponha que oeleitor mais a esquerda está na posição -50, em seguida -49 e assim por diante, cada um com um número inteiro, até a extrema-direita, +50.
+O cenário que está sendo modelado é, claramente, o da competição política dos EUA. Suponha, portanto, dois partidos, que se importam apenas em ganhar a eleição. Existem 101 eleitores, com preferências uniformimente distribuídas em uma única dimensão do espectro político-ideológico (esquerda-direita). Em particular, suponha que o eleitor mais a esquerda está na posição -50, em seguida -49 e assim por diante, cada um com um número inteiro, até a extrema-direita, +50.
 
-Cada candidato $i$ escolhe uma plataforma $a_i$ no espectro político-ideológico $[-50, -49, ..., +49, +50]$. Cada eleitor escolhe a plataforma mais próxima da sua posição ideal. Por exemplo, de candidato 1 anuncia -20 como plataforma e o candidato 2 anuncia 31, o eleitor mais perto de -20 do que de 31 vota por 1, enquanto quem estiver mais perto de 31 vota por 2.
+Cada partido $i$ escolhe uma plataforma $x_i$ no espectro político-ideológico $[-50, -49, ..., +49, +50]$. Cada eleitor escolhe a plataforma mais próxima da sua posição ideal. Por exemplo, se o partido $A$ anuncia -9 como plataforma e o partido $B$ anuncia 12, o eleitor mais perto de -9 do que de 12 vota por $A$, enquanto quem estiver mais perto de 12 vota por $B$.
 
-## determinar os eleitores pivot do exemplo.
+```{r hotelling-model, echo=FALSE, message=FALSE, warning=FALSE}
+library(ggplot2)
+
+# Define a posição dos partidos A e B
+partidoA <- -9
+partidoB <- 12
+
+# Cria um dataframe para os partidos
+partidos <- data.frame(nome = c("A", "B"), posicao = c(partidoA, partidoB))
+
+# Cria um dataframe para os limites de votos
+votos <- data.frame(
+  grupo = c("Votos A", "Votos B"),
+  inicio = c(-50, 3),
+  fim = c(2, 50)
+)
+
+# Cria o gráfico
+ggplot() +
+  geom_segment(data = votos, aes(x = inicio, xend = fim, y = 0, yend = 0), color = "black", size = 1) +
+  geom_point(data = partidos, aes(x = posicao, y = 0), color = "red", size = 3) +
+  geom_text(data = partidos, aes(x = posicao, y = 0.5, label = nome), color = "red") +
+  xlim(-50, 50) +
+  ylim(-1, 1) +
+  theme_minimal() +
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+```
+
+
+
+Sim, muitos livros acadêmicos, especialmente em campos como a matemática e a teoria dos jogos, usam LaTeX para criar diagramas e figuras devido à sua precisão e qualidade tipográfica. No LaTeX, é possível criar gráficos diretamente usando pacotes como TikZ e pgfplots, que oferecem controle detalhado sobre a aparência dos gráficos, permitindo a criação de ilustrações complexas e precisas.
+
+Para incorporar figuras LaTeX no R Markdown, você tem algumas opções:
+
+
+
+### determinar os eleitores pivot do exemplo.
 
 É eleito quem obtiver mais voto. Como há um número ímpar de eleitores, a menos que alguém seja indiferente, não há empate. Se alguém for indiferente, o eleitor não vai votar e há um empate.
-A melhor resposta do jogador $i$ é:
-Se $j$ escolher uma plataforma $a_j > 0$, então $a_i = a_j$ ou $a_i = -a_j$ e dá um empate. Se $i$ escolher $a_i > a_j$ ou $a_i < -a_j$, perde com certeza. E escolhendo entre $a_i = a_j -1$ e $a_i = -a_j + 1$ irá ganhar com certeza. $a_i \in [-a_j + 1, a_j -1]$. Por um argumento similar se $a_j < 0$, temos que a estratégia vencedora é no intervalo $a_i \in [a_j + 1, -a_j -1]$. Por fim, a melhor resposta para $a_j = 0$ é $a_i = 0$.
-Como é tudo simétrico, as melhores respostas de cada jogador são similares.
 
-Existe um único equilíbrio de Nash, em que ambos candidatos jogam (0,0), que é o centro do espectro político. Essa é a base para o teorema do eleitor mediano, presente já no trabalho do Hotelling.
+Para escrever a função de melhor resposta de cada jogador, considere o seguinte. Vamos começar olhando para o partido $A$. Se $B$ anunciar uma plataforma $x_B > 0$, então escolher a mesma posição $x_A = x_B$ ou a exata oposta $x_A = -X_b$ haverá um empate. Se escolher $x_A > x_B$ ou $x_A < -x_B$, perde. O único caso em que ganha é se escolher $x_A = \left[ -x_B + 1, x_B - 1 \right]$. De modo análogo, se $x_B < 0$, $x_A = -X_b$ levará ao empagte, $x_A > -x_B$ ou $x_A < x_B$, perderá, e $\left[ x_B + 1, -x_B - 1 \right]$ leva à vitória. Como ganhar é melhor que perder e empatar, temos a melhor resposta no cenário em que $x_B > 0$ e que $x_B < 0$. Se $x_B = 0$, a melhor resposta é também jogar zero, isto é, $x_A = x_B = 0$, já que qualquer outra posição levará à derrota de $A$. Podemos então construir a correspondência de melhor resposta:para $A$
+
+![Figura 7.1 - O modelo de voto do Hotteling](figura_hotteling.png)
+
+\[
+x_A = 
+\begin{cases} 
+\left[ -x_B + 1, x_B - 1 \right] & \text{se } x_B > 0, \\
+0 & \text{se } x_B = 0, \\
+\left[ x_B + 1, -x_B - 1 \right] & \text{se } x_B < 0. \\
+\end{cases}
+\]
+Como é tudo simétrico, as melhores respostas de cada jogador são similares. Ou seja:
+
+\[
+x_j = 
+\begin{cases} 
+x_i \text{ ou } -x_i & \text{se } x_i > 0 \text{ e resulta em um empate}, \\
+x_i - 1 \text{ ou } -x_i + 1 & \text{se } x_i > 0 \text{ e ganha com certeza}, \\
+\left[ -x_i + 1, x_i - 1 \right] & \text{se } x_i > 0, \\
+\left[ x_i + 1, -x_i - 1 \right] & \text{se } x_i < 0, \\
+0 & \text{se } x_i = 0.
+\end{cases}
+\]
+
+Existe um único equilíbrio de Nash, em que ambos candidatos jogam (0,0), que é o centro do espectro político. É fácil verificar que é um equilíbrio de Nash, já que ambos estõ jogando uma melhor resposta à estratégia do outro partido, como pode ser verificado pela funçã ode melhor resposta.
+
+Essa é a base para o teorema do eleitor mediano, presente já no trabalho do Hotelling.
+
+Para verificar que $(0,0)$ é um equilíbrio de Nash, basta mostrar que ambos os partidos estão jogando sua melhor resposta ao que o outro partido está fazendo. Comecemos pelo partido A. Dado que B está jogando $0$, se A se desviar de $0$, escolhendo $a_ \neq 0$, temos duas possibilidades. No primeiro caso, $a_i > 0$, e o parido

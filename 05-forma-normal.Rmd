@@ -54,7 +54,7 @@ Uma combinação particular de estratégias puras escolhida pelos dois jogadores
 
 ## Jogos na forma normal ou estratégica
 
-Um jogo na forma estratégica ou normal inlcuem três componentes:
+Um jogo na forma estratégica ou normal incluem três componentes:
 1. Um conjunto finito de jogadores $N = \{1, 2, ..., n\}$
 
 2. Uma coleção de conjuntos de estratégias puras, $\{S_1, S_2, ...., S_n\}$
@@ -63,12 +63,12 @@ Um jogo na forma estratégica ou normal inlcuem três componentes:
 
 Vamos destrinchar o item 3, que parece complexo e assustador, mas é bem simples. Vou usar exemplos para explicar cada uma das partes de 3.
 
-Suponha que eu tenho um conjunto $A$ dado pelas cidades do estado de São Paulo, e um conjunto $B$ dado pelas cidades do estado do Rio de Janeiro. Seja $f$ a função que recebe duas cidades (uma de SP, outra do RJ) e retorna a distância em linha reta entre elas, calculada pelo google, em km. Eu posso descrever essa função do seguinte modo: $f: A * B \to R$.
+Suponha que eu tenho um conjunto $A$ dado pelas cidades do estado de São Paulo, e um conjunto $B$ dado pelas cidades do estado do Rio de Janeiro. Seja $f$ a função que recebe duas cidades (uma de SP, outra do RJ) e retorna a distância em linha reta entre elas, calculada pelo google, em km. Eu posso descrever essa função do seguinte modo: $f: A \cdot B \to R$.
 Como minha função sempre retorna uma distância em km, a distância é um número real. Então, ela recebe dois elementos, um de A e um de B, e retorna um número real.
 
-Falta explicar a parte em que escrevemos $A * B$. O produto de dois conjuntos $X$ e $Y$ é chamado de produto Cartesiano e é denotado por $X * Y$ e seu resultado é um novo conjunto, formado pelos pares ordenados $(x,y): x \in X , y \in Y$. Por exemplo, suponha que $X = \{1,2\}$ e $Y = \{3,4\}$. 
+Falta explicar a parte em que escrevemos $A \cdot B$. O produto de dois conjuntos $X$ e $Y$ é chamado de produto Cartesiano e é denotado por $X \cdot Y$ e seu resultado é um novo conjunto, formado pelos pares ordenados $(x,y): x \in X , y \in Y$. Por exemplo, suponha que $X = \{1,2\}$ e $Y = \{3,4\}$. 
 
-Então, o produto Cartesiano de $X$ por $Y$ é um conjunto de 4 elementos: $X * Y = \{ (1,3), (1,4), (2,3), (2,4) \}$. Notem que temos apenas 4 elementos nesse conjunto, e cada elemento é um par ordenado de números, isto é, $(3,1)$ não faz parte do novo conjunto, por exemplo.
+Então, o produto Cartesiano de $X$ por $Y$ é um conjunto de 4 elementos: $X \cdot Y = \{ (1,3), (1,4), (2,3), (2,4) \}$. Notem que temos apenas 4 elementos nesse conjunto, e cada elemento é um par ordenado de números, isto é, $(3,1)$ não faz parte do novo conjunto, por exemplo.
 
 O exemplo histórico de onde vem o termo é o plano cartesiano. Se eu considerar uma reta $X$ e outra reta $Y$ no plano cartesiano, então o produto dos dois conjuntos forma pares de coordenadas no plano, de forma que cada ponto do plano é um elemento do produto cartesiano de $X$ e $Y$.
 
@@ -84,7 +84,7 @@ Vamos aplicar isso para o DP?
 2. $S_1 = \{Confessa, não-confessa\}$ e $S_2 = \{Confessa, não_-confessa\}$. Ou, mais genericamente, $S_i = \{Confessa, não_-confessa\}$ para $i \in \{1,2\}$
 
 3. $v_1: \{(Confessa, Confessa), (Confessa, não_-confessa), (não_-confessa, confessa), (não-confessa, confessa)\} \to R$.
-Mais especificamente, Seja $v_i (s_1, s_2)$ o payoff para o jogador $i$ se o jogador $i$ joga $s_1$ e o jogador $2$ joga $s_2$. Então:
+Mais especificamente, Seja $v_i(s_1, s_2)$ o payoff para o jogador $i$ se o jogador $i$ joga $s_1$ e o jogador $2$ joga $s_2$. Então:
 
 \begin{equation}
 v_1(s_1, s_2) = 
@@ -145,12 +145,12 @@ v_3(s_1, s_2) =
 
 ## Modelo de competição eleitoral e o Teorema do Eleitor Mediano
 
-Suponha que temos uma eleição com apenas dois candidatos ou dois partidos políticos. Eles devem anunciar uma plataforma no espectro esquerda direita, definido pelo intervalo $[0,1]$. Os eleitores possuem cada uma plataforma ideal, representada por um ponto no intervalo esquerda-direita. Então, eleitores decidem seu voto da seguinte maneira: votam no candidato mais próximo do seu ponto ideal em termos absolutos. Suponha que a plataforma ideal dos eleitores é distribuída uniformimente no intervalo $[0,1]$. Por fim, suponha que o número de eleitores, $n$, é ímpar, para evitar empates. E se os dois candidatos anunciarem a mesma plataforma, o eleitor decide votar no incumbente. O jogador 1 é o incumbente. Qual deve ser a plataforma anunciada pelos partidos se buscam maximizar o percentual de votos válidos totais, $v$?
+Suponha que temos uma eleição com apenas dois candidatos ou dois partidos políticos. Eles devem anunciar uma plataforma no espectro esquerda-direita, definido pelo intervalo $[0,1]$. Cada eleitora possui uma plataforma ideal, representada por um ponto no intervalo esquerda-direita. Então, eleitores decidem seu voto da seguinte maneira: votam na candidata (ou partido) mais próximo do seu ponto ideal em termos absolutos. Suponha que a plataforma ideal dos eleitores é distribuída uniformimente no intervalo $[0,1]$. Por fim, suponha que o número de eleitores, $n$, é ímpar, para evitar empates. E se as duas candidatas anunciarem a mesma plataforma, a eleitora decide votar na incumbente. A jogadora 1 é a incumbente. Qual deve ser a plataforma anunciada pelos partidos se buscam maximizar o percentual de votos válidos totais, $v$?
 
 Primeiro, vamos descrever o jogo:
-Jogadores: $N = \{1,2\}$, que são os partidos.
-Conjunto de estratégias: $S_i \in [0,1]$, para $i = \{1,2\}$
-Payoffs: Seja $v_i$ a fração de voto que cada candidato $i$ recebe. Então, seu payoff é dado por: 
+Jogadores: $N = \{A,B\}$, que são os partidos.
+Conjunto de estratégias: $S_i \in [0,1]$, para $i = \{A,B\}$
+Payoffs: Seja $v_i$ a fração de voto que cada partido $i$ recebe. Como cada partido prefere resultados que implicam maior chance de vencer do que de não vencer, seu payoff é dado por: 
 $u_1 = 1, se |s_1 - v_1| >= |s_2 - v_2|$, 0 caso contrário.
 Similarmente para o jogador 2.
 

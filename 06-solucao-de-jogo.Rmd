@@ -274,20 +274,3 @@ O que acontece se adicionarmos um passo na cadeia de raciocínio e 1 supor que n
 Em resumo, C,C é o equilíbrio do jogo desde que assumamos que: 1. é racional, 2 é racional, 1 sabe que 2 é racional, 2 sabe que 1 é racional e 1 sabe que 2 sabe que 1 é racional.
 
 Nos três jogos (DP, primeira variante e segunda variante), mostramos como, crescendo a suposição de racionalidade dos jogadores uns dos outros, restaram ações consistentes com essa suposições era C,C. É possível mostrar que isso é verdadeiro supondo maiores níveis de racionalidade (mais passos). Mais ainda, posso estender os passos indefinidamente. E nós dizemos que estratégias que possuem essa propriedade são racionalizáveis.
-
-## Melhor resposta
-
-Nós estamos trabalhando com a ideia de melhor resposta, um conceito central para a teoria dos jogos, de modo que vale a pena defini-lo formalmente.
-
-Definição 4.1: Melhor resposta: A estratégia $s_i \in Si$ é a melhor resposta do jogador $i$ às estratégias de seus oponentes $s_{-i} \in S_{-i}$ se
-
-$v_i(s_i, s_{-i}) >= v_i(s^\prime_i, s_{-i})$ para todo $s^\prime_i \in S_i$
-
-Em palavras: a utilidade (ou payoff) do jogador $i$ resultante da sua estratégia e das estratégias dos oponentes é pelo menos tão boa quanto qualquer outra estratégia que $i$ possa vir a adotar.
-
-
-Considere o jogo da bandeira, do reality show Survivor. Se é sua vez de jogar existem, digamos 20 bandeira, não importa o que você faça, irá perder o jogo se o outro time for racional. Portanto, sua melhor estratégia pode ser tanto 1, 2 ou 3 bandeiras. Esse exemplo mostra que a melhor estratégia pode 1: ser múltiplas ações; 2. serem igualmente ruins e não fazer diferença nenhuma e resultar todas no mesmo payoff.
-
-## Equilíbrio de Nash
-
-Um perfil de estratégias é um equilíbrio de Nash se cada jogador está escolhendo a melhor resposta para o que acredita que os demais jogadores farão. Ou seja, todo mundo está simultaneamente escolhendo a melhor resposta uns para os outros.

@@ -48,31 +48,7 @@ O Dilema do Prisioneiro é muito utilizado como base para pensar problemas de a�
 
 A partir do conhecimento da lógica do Dilema do Prisioneiro, podemos aplicá-la para outras situações de ação coletiva.
 
-## Plano cruzado
 
-Na década de 80, o Brasil enfrentou um grave problema de hiperinflação, levando o país a adotar o Plano Cruzado durante a presidência de Sarney para combater a inflação. O plano incluía várias medidas, sendo o congelamento de preços como a principal delas, o que impedia que os preços umentassem sem autorização governamental. Apesar do sucesso inicial em reduzir a inflação, o plano eventualmente fracassou, e os preços voltaram a subir. Uma parte do diagnóstico do Plano Cruzado é que existia uma inércia inflacionária, baseada meramente na expectativa de que haverá inflação. Ou seja, se um agente espera que haja inflação, ele reajusta os preços. Se todos fizerem isso, a inflação acontece e se repete mês a mês. Essa situação pode ser modelada como um Dilema do Prisioneiro.
-
-Para simplificar, suponhamos que temos apenas duas empresas que podem decidir reajustar os preços ou não. Se ambas não reajustam, não há inflação. Se só uma reajustar, ela perde mercado para a outra empresa. Se ambas reajustarem, há inflação.
-
-
-```{r results = "asis"}
-# Define Variables
-M=2
-R=3
-P=1
-S=0
-
-# Assign Pairs
-pair <- function(x,y) sprintf("(%d,%d)", x,y)
-all_pairs <- c(pair(M,M), pair(S,R), pair(R,S), pair(P,P))
-payoff.mat <- matrix(all_pairs, nrow=2)
-dimnames(payoff.mat) <- c(rep(list(c("Não-reajusta","reajusta")), 2))
-results = "asis"
-
-# Plot 
-kable(payoff.mat)
-
-```
 
 ## Happy hour
 
