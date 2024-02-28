@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Introdução à Teoria dos Jogos para Ciências Sociais</title>
-  <meta name="description" content="Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <title>Capítulo2 Introdução | Introdução à Teoria dos Jogos para Ciências Sociais</title>
+  <meta name="description" content="Capítulo2 Introdução | Introdução à Teoria dos Jogos para Ciências Sociais" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <meta property="og:title" content="Capítulo2 Introdução | Introdução à Teoria dos Jogos para Ciências Sociais" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <meta name="twitter:title" content="Capítulo2 Introdução | Introdução à Teoria dos Jogos para Ciências Sociais" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="introdução.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="racionalidade-e-relações-de-preferência.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -229,24 +229,138 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Introdução à Teoria dos Jogos para Ciências Sociais</h1>
-<p class="author"><em>Manoel Galdino</em></p>
-<p class="date"><em>2024-02-28</em></p>
+<div id="introdução" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Capítulo2</span> Introdução<a href="introdução.html#introdução" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Uma das principais preocupações durante as eleições gerais de 2022 no Brasil era a disseminação de desinformação, conhecida popularmente como “fake news”. A utilização de redes sociais e aplicativos de mensagens para promover desinformação por eleitores e candidatos representava um importante ponto de potencial controle sobre a desinformação. Foi comum observar o Tribunal Superior Eleitoral determinando que plataformas removessem conteúdos contendo “fake news” eleitorais<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. No entanto, essa situação se assemelhava a um jogo de “gato e rato”, uma vez que nada impedia que os divulgadores de “fake news” criassem novas postagens, perpetuando a disseminação de desinformação. Esse tipo de cenário político, no qual os atores precisam tomar decisões estratégicas, ou seja, planejar suas ações tentando antecipar as respostas dos outros, é exatamente o que a teoria dos jogos busca modelar e analisar.</p>
+<p>A política é repleta de situações em que um indivíduo deve agir supondo que os demais participantes do jogo político reagirão às suas ações e até mesmo tentarão antecipar seus movimentos, fazendo suposições e conjecturas sobre os outros. Isso representa uma das maiores dificuldades para os cientistas políticos na previsão dos efeitos de reformas eleitorais, por exemplo. Apesar de ser um tema frequentemente debatido e solicitado pela sociedade, muitas propostas são elaboradas como se o mundo não fosse estratégico, ou seja, como se os agentes políticos não fossem modificar seu comportamento devido às novas regras adotadas. Considere, por exemplo, a proibição de doações privadas de empresas para campanhas eleitorais, implementada no Brasil após decisão da Suprema Corte Federal em 2016. Muitos esperavam que isso reduzisse a influência do dinheiro nas eleições. No entanto, com o tempo, políticos aprovaram um fundo eleitoral com recursos públicos, aumentaram esse fundo sucessivamente e ainda aprovaram o que ficou conhecido como “Orçamento Secreto” para também aumentar as chances nas eleições, entre outros objetivos menos legítimos. Comparando o total de valores envolvidos após a decisão do STF com os valores anteriores, mesmo considerando o caixa dois, o montante provavelmente supera o que se gastava em eleições anteriores a 2016. É evidente que medidas como o “Orçamento Secreto” poderiam ser adotadas mesmo se o financiamento por empresas continuasse permitido, mas a mera possibilidade de que todas essas medidas sejam uma reação dos políticos à decisão do STF mostra quão difícil é antecipar as consequências de mudanças nas regras do jogo e que considerações estratégicas são fundamentais para entender a política.</p>
+<p>Portanto, a teoria dos jogos é um ramo da matemática aplicada que visa modelar situações estratégicas como essa. Um exemplo simples, mas muito esclarecedor, de como a teoria dos jogos pode elucidar essas questões é o Dilema do Prisioneiro, que apresentaremos a seguir.</p>
+<div id="dilema-do-prisioneiro" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Dilema do Prisioneiro<a href="introdução.html#dilema-do-prisioneiro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Esse é talvez o mais famoso da história da Teoria do Jogos, chamado Dilema do Prisioneiro, e que foi proposto em 1951 por Merrill Flood em 1951, e primeiramente formalizado por Albert W. Tucker.</p>
+<p>A história é mais ou menos assim. A polícia prendeu dois suspeitos de cometer um crime. Tem evidência de um crime de pena menor, mas gostaria de condená-los por crimes com penas maiores. Se um ou ambos confessarem o crime maior, podem conseguir obter o que precisam.</p>
+<p>Para dar concretude, imaginem que a Polícia Federal prendeu dois executivos suspeitos de corrupção e lavagem de dinheiro, a dez anos de prisão. Possuem provas suficientes para condená-los por um crime menor, como tráfico de influência (dois anos de prisão), mas gostariam de condená-los pelo crime de pena maior. A PF colocou os dois presos em celas separadas e decidiu fazer a seguinte oferta para eles:</p>
+<p>“Nós temos evidência suficiente para condená-los, você e seu parceiro, pelo crime de tráfico de influência, que dá 2 anos de prisão para cada. Contudo, se você assinar um acordo de colaboração premiada com a gente e confessar o crime de corrupção e lavagem de dinheiro, você sairá livre e seu parceiro será condenado a dez anos de prisão. Um outro policial está na cela do seu parceiro, neste exato momento, fazendo a mesma oferta a ele. Se ele aceitar confessar o crime, e você não, então ele sairá livre e você ficará preso dez anos. Por fim, se ambos confessarem o crime, a pena de dez anos será reduzida à metade e vocês ficarão cinco anos presos. Essa proposta está por escrito, incluindo o fato de que seu parceiro está recebendo proposta igual”.</p>
+<p>O que você faria?</p>
+<p>Para analisar o DP, é comum construimos uma matriz de <em>payoffs</em>. Ela é uma tabela, que contém nas linhas e colunas as ações disponíveis para cada jogadora, e nas células temos os *payoffs”, que são as consequências ou resultados das combinações de ações de cada jogadora.</p>
+<p>A matriz abaixo apresenta uma possibilidade para o Dilema do Prisioneiro:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Coopera</th>
+<th align="left">Não coopera</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Coopera</td>
+<td align="left">(1,1)</td>
+<td align="left">(20,0)</td>
+</tr>
+<tr class="even">
+<td align="left">Não coopera</td>
+<td align="left">(0,20)</td>
+<td align="left">(10,10)</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="prefácio" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Capítulo1</span> Prefácio<a href="index.html#prefácio" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Esse livro é o resultado das notas de aulas do curso de graduação da USP Teoria dos Jogos para Cientistas Sociais.</p>
-<p>O livro é largamente inspirado no de Steven Tadelis, Game Theory, an introduction, além de muitos materiais na internet para poder citá-los individualmente.</p>
+<div id="dilema-da-ação-coletiva" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Dilema da Ação Coletiva<a href="introdução.html#dilema-da-ação-coletiva" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>O Dilema do Prisioneiro é muito utilizado como base para pensar problemas de ação coletiva. A cooperação produz resultados socialmente melhores, porém a estratégia dominante individualmente é não cooperar.</p>
+<p>A partir do conhecimento da lógica do Dilema do Prisioneiro, podemos aplicá-la para outras situações de ação coletiva.</p>
+</div>
+<div id="plano-cruzado" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Plano cruzado<a href="introdução.html#plano-cruzado" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Na década de 80, o Brasil enfrentou um grave problema de hiperinflação, levando o país a adotar o Plano Cruzado durante a presidência de Sarney para combater a inflação. O plano incluía várias medidas, sendo o congelamento de preços como a principal delas, o que impedia que os preços umentassem sem autorização governamental. Apesar do sucesso inicial em reduzir a inflação, o plano eventualmente fracassou, e os preços voltaram a subir. Uma parte do diagnóstico do Plano Cruzado é que existia uma inércia inflacionária, baseada meramente na expectativa de que haverá inflação. Ou seja, se um agente espera que haja inflação, ele reajusta os preços. Se todos fizerem isso, a inflação acontece e se repete mês a mês. Essa situação pode ser modelada como um Dilema do Prisioneiro.</p>
+<p>Para simplificar, suponhamos que temos apenas duas empresas que podem decidir reajustar os preços ou não. Se ambas não reajustam, não há inflação. Se só uma reajustar, ela perde mercado para a outra empresa. Se ambas reajustarem, há inflação.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introdução.html#cb1-1" tabindex="-1"></a><span class="co"># Define Variables</span></span>
+<span id="cb1-2"><a href="introdução.html#cb1-2" tabindex="-1"></a>M<span class="ot">=</span><span class="dv">2</span></span>
+<span id="cb1-3"><a href="introdução.html#cb1-3" tabindex="-1"></a>R<span class="ot">=</span><span class="dv">3</span></span>
+<span id="cb1-4"><a href="introdução.html#cb1-4" tabindex="-1"></a>P<span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb1-5"><a href="introdução.html#cb1-5" tabindex="-1"></a>S<span class="ot">=</span><span class="dv">0</span></span>
+<span id="cb1-6"><a href="introdução.html#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="introdução.html#cb1-7" tabindex="-1"></a><span class="co"># Assign Pairs</span></span>
+<span id="cb1-8"><a href="introdução.html#cb1-8" tabindex="-1"></a>pair <span class="ot">&lt;-</span> <span class="cf">function</span>(x,y) <span class="fu">sprintf</span>(<span class="st">&quot;(%d,%d)&quot;</span>, x,y)</span>
+<span id="cb1-9"><a href="introdução.html#cb1-9" tabindex="-1"></a>all_pairs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">pair</span>(M,M), <span class="fu">pair</span>(S,R), <span class="fu">pair</span>(R,S), <span class="fu">pair</span>(P,P))</span>
+<span id="cb1-10"><a href="introdução.html#cb1-10" tabindex="-1"></a>payoff.mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(all_pairs, <span class="at">nrow=</span><span class="dv">2</span>)</span>
+<span id="cb1-11"><a href="introdução.html#cb1-11" tabindex="-1"></a><span class="fu">dimnames</span>(payoff.mat) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;Não-reajusta&quot;</span>,<span class="st">&quot;reajusta&quot;</span>)), <span class="dv">2</span>))</span>
+<span id="cb1-12"><a href="introdução.html#cb1-12" tabindex="-1"></a>results <span class="ot">=</span> <span class="st">&quot;asis&quot;</span></span>
+<span id="cb1-13"><a href="introdução.html#cb1-13" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="introdução.html#cb1-14" tabindex="-1"></a><span class="co"># Plot </span></span>
+<span id="cb1-15"><a href="introdução.html#cb1-15" tabindex="-1"></a><span class="fu">kable</span>(payoff.mat)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Não-reajusta</th>
+<th align="left">reajusta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Não-reajusta</td>
+<td align="left">(2,2)</td>
+<td align="left">(3,0)</td>
+</tr>
+<tr class="even">
+<td align="left">reajusta</td>
+<td align="left">(0,3)</td>
+<td align="left">(1,1)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="happy-hour" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Happy hour<a href="introdução.html#happy-hour" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ocorrências prosaicas do dia a dia frequentemente refletem um cenário análogo ao Dilema do Prisioneiro.</p>
+<p>É comum que colegas de trabalho ou de faculdade decidam sair para o “happy hour” após o expediente ou término de aulas. E também é comum que ao final a conta seja dividida igualmente entre os presentes. E inevitavelmente alguém irá reclamar de que bebeu ou comeu pouco e está pagando mais do que deveria. Isso pode ser pensado como um exemplo do Dilema do Prisioneiro.</p>
+</div>
+<div id="dilema-da-segurança" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Dilema da Segurança<a href="introdução.html#dilema-da-segurança" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Nas Relações Internacionais, o chamado Dilema da Segurança entre duas potência pode ser resumido da seguinte forma: ambos os países se beneficiam mais se ambos se desarmarem do que se ambos se armarem, mas cada um tem uma vantagem individual se for o único a se armar. Portanto, em equilíbrio, temos uma corrida armamentista. Mais uma vez, há similaridade com o Dilema do Prisioneiro aqui, já que a cooperação seria mutuamente benéfica, mas os países acabam em uma situação racionalmente indidivudal mas que é pior para todos.</p>
+</div>
+<div id="cuidar-da-casa" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Cuidar da casa<a href="introdução.html#cuidar-da-casa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A limpeza de uma casa é algo que benefícia a todos os membros da casa. No entanto, limpar a casa é custoso e limpar apenas a sujeira que você causou tem pouco impacto sobre a limpeza geral da casa, especialmente quando a casa é grande. Assim, mais uma vez temos uma esturtura similar ao Dilema do Prisioneiro, em que a cooperação seria benéfica, mas o equilíbrio é a não-cooperação, já que embora todos prefiram uma casa limpa a uma suja, o equilíbrio é ninguém limpar a casa.</p>
+<div class="blackbox">
+<h2>
+Implicações da Teoria dos Jogos para questões mais complexas
+</h2>
+<p>A dinâmica de limpeza em um lar reflete não apenas a organização doméstica, mas também revela estruturas sociais mais profundas, como o patriarcado e o racismo. Historicamente, no Brasil, o cuidado com a casa e a geração do bem comum dentro do lar foram frequentemente atribuídos às mulheres, uma manifestação direta do patriarcado. Este arranjo social impõe o ônus da manutenção do lar majoritariamente sobre elas, enquanto os homens são poupados desse trabalho.</p>
+<p>Além disso, em contextos de classe média e alta, o racismo estrutural tem permitido que mulheres brancas transferissem a responsabilidade do trabalho doméstico para mulheres negras. Inicialmente, essa transferência ocorria por meio da escravidão e, posteriormente, através da contratação de empregadas domésticas. Essas empregadas, até muito recentemente, desempenhavam suas funções com poucos ou nenhum direito trabalhista, o que reflete não apenas uma desvalorização do trabalho doméstico, mas também a perpetuação de desigualdades raciais e de gênero.</p>
+<p>A aprovação da PEC das Domésticas marca um ponto de inflexão nesse cenário. Ao garantir direitos trabalhistas às empregadas domésticas, a PEC aumenta os custos associados à contratação desse tipo de serviço. Esse aumento de custo desafia o equilíbrio anterior, baseado na exploração e na desigualdade. Se por um lado a PEC contribui para uma redistribuição dos custos do bem comum doméstico, favorecendo a equidade racial ao impor responsabilidades financeiras mais justas às empregadoras, por outro, não resolve completamente as questões de gênero. A menos que o equilíbrio patriarcal também seja abordado, a responsabilidade pelo trabalho doméstico continuará a recair desproporcionalmente sobre as mulheres, seja dentro do contexto familiar ou no mercado de trabalho doméstico.</p>
+<p>Portanto, a mudança real exige uma abordagem que não apenas redistribua o custo do trabalho doméstico de maneira mais equitativa entre as raças, mas que também desafie e transforme as normas de gênero que atribuem esse trabalho principalmente às mulheres.</p>
+</div>
+</div>
+<div id="referências" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Referências<a href="introdução.html#referências" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Kollock, P. (1998). Social dilemmas: The anatomy of cooperation. Annual review of sociology, 183-214.</p>
+<p>Roxborough, I. (1992). Inflação e pacto social no Brasil e no México. Lua Nova: Revista de Cultura e Política, 197-224.</p>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Seleciona todos os elementos <strong> que contêm o texto "Exercise" dentro de <div class="exercise">
+  document.querySelectorAll('div.exercise strong').forEach(function(el) {
+    el.textContent = el.textContent.replace('Exercise', 'Exercício');
+  });
+});
+</script>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p><a href="https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/combate-a-desinformacao-tse-derruba-mais-de-uma-centena-de-postagens-com-narrativas-enganosas" class="uri">https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/combate-a-desinformacao-tse-derruba-mais-de-uma-centena-de-postagens-com-narrativas-enganosas</a><a href="introdução.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="introdução.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="racionalidade-e-relações-de-preferência.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -277,7 +391,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/mgaldino/Teoria-dos-Jogos/edit/main/index.Rmd",
+"link": "https://github.com/mgaldino/Teoria-dos-Jogos/edit/main/02-Introducao.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -285,7 +399,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/mgaldino/Teoria-dos-Jogos/blob/main/index.Rmd",
+"link": "https://github.com/mgaldino/Teoria-dos-Jogos/blob/main/02-Introducao.Rmd",
 "text": null
 },
 "download": null,

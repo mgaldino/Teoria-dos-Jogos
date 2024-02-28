@@ -1,4 +1,4 @@
-# Introducao
+# Introdução
 
 Uma das principais preocupações durante as eleições gerais de 2022 no Brasil era a disseminação de desinformação, conhecida popularmente como "fake news". A utilização de redes sociais e aplicativos de mensagens para promover desinformação por eleitores e candidatos representava um importante ponto de potencial controle sobre a desinformação. Foi comum observar o Tribunal Superior Eleitoral determinando que plataformas removessem conteúdos contendo "fake news" eleitorais^[https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/combate-a-desinformacao-tse-derruba-mais-de-uma-centena-de-postagens-com-narrativas-enganosas]. No entanto, essa situação se assemelhava a um jogo de "gato e rato", uma vez que nada impedia que os divulgadores de "fake news" criassem novas postagens, perpetuando a disseminação de desinformação. Esse tipo de cenário político, no qual os atores precisam tomar decisões estratégicas, ou seja, planejar suas ações tentando antecipar as respostas dos outros, é exatamente o que a teoria dos jogos busca modelar e analisar.
 
@@ -50,23 +50,23 @@ A partir do conhecimento da lógica do Dilema do Prisioneiro, podemos aplicá-la
 
 ## Plano cruzado
 
-Na década de 80, o Brasil enfrentou um grave problema de hiperinflação, levando o país a adotar o Plano Cruzado durante a presidência de Sarney para combater a inflação. O plano incluía várias medidas, sendo o congelamento de preços a principal delas, o que impedia que os preços fossem aumentados sem autorização governamental. Apesar do sucesso inicial em reduzir a inflação, o plano eventualmente fracassou, e os preços voltaram a subir. Uma parte do diagnóstico do Plano Cruzado é que existia um conflito distributivo entre trabalhadores e empresários, contribuindo para a espiral inflacionária. Essa situação pode ser modelada como um Dilema do Prisioneiro.
+Na década de 80, o Brasil enfrentou um grave problema de hiperinflação, levando o país a adotar o Plano Cruzado durante a presidência de Sarney para combater a inflação. O plano incluía várias medidas, sendo o congelamento de preços como a principal delas, o que impedia que os preços umentassem sem autorização governamental. Apesar do sucesso inicial em reduzir a inflação, o plano eventualmente fracassou, e os preços voltaram a subir. Uma parte do diagnóstico do Plano Cruzado é que existia uma inércia inflacionária, baseada meramente na expectativa de que haverá inflação. Ou seja, se um agente espera que haja inflação, ele reajusta os preços. Se todos fizerem isso, a inflação acontece e se repete mês a mês. Essa situação pode ser modelada como um Dilema do Prisioneiro.
 
-Para simplificar, suponhamos que temos apenas dois jogadores: empresários e sindicatos. O resultado da cooperação seria o congelamento tanto de preços quanto de salários, eliminando a inflação. Tal cenário seria vantajoso para ambos os jogadores, pois preservaria o poder de compra dos salários e aumentaria os lucros devido à maior demanda. No entanto, com os salários congelados e os preços subindo, os empresários obteriam superlucros, enquanto os trabalhadores sofreriam uma redução no salário real. Por outro lado, aumentos de salários com preços congelados resultariam em um aumento do salário real para os trabalhadores, mas em uma redução dos lucros para os empresários.
+Para simplificar, suponhamos que temos apenas duas empresas que podem decidir reajustar os preços ou não. Se ambas não reajustam, não há inflação. Se só uma reajustar, ela perde mercado para a outra empresa. Se ambas reajustarem, há inflação.
 
 
 ```{r results = "asis"}
 # Define Variables
-M=1
-R=20
-P=10
+M=2
+R=3
+P=1
 S=0
 
 # Assign Pairs
 pair <- function(x,y) sprintf("(%d,%d)", x,y)
 all_pairs <- c(pair(M,M), pair(S,R), pair(R,S), pair(P,P))
 payoff.mat <- matrix(all_pairs, nrow=2)
-dimnames(payoff.mat) <- c(rep(list(c("Coopera","Não coopera")), 2))
+dimnames(payoff.mat) <- c(rep(list(c("Não-reajusta","reajusta")), 2))
 results = "asis"
 
 # Plot 
