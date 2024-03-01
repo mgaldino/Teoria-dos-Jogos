@@ -8,6 +8,9 @@ exr:unnamed-chunk-8
 exr:unnamed-chunk-9
 exr:unnamed-chunk-10
 exr:unnamed-chunk-11
+exr:unnamed-chunk-12
+exr:unnamed-chunk-13
+exr:unnamed-chunk-14
 prefácio
 introdução
 dilema-do-prisioneiro
@@ -59,4 +62,3 @@ equilíbrio-de-nash-1
 aplicação---chile
 aplicação---competição-eleitoram-sem-incerteza
 determinar-os-eleitores-pivot-do-exemplo.
-tikz-picture

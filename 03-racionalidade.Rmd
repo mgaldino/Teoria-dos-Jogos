@@ -104,6 +104,18 @@ Formalmente, uma transformação da função utilidade por outra função $f$ é
 ## Exercícios
 
 ```{exercise}
+Digamos que Serena prefira sushi a pizza e pizza a hambúrguer. Escreva a relação de preferências de Serena descrita acima, usando o símbolo de relação de preferências $\succ$.
+```
+
+```{exercise}
+Digamos que Serena prefira hambúrguer a sushi. Escreva a relação de preferências de Serena e diga qual axioma ela violou.
+```
+
+```{exercise}
+Explique, com suas próprias palavras, o que é o axioma da completude.
+```
+
+```{exercise}
 Considere a relação binária "ser melhor que ou igual a" em um jogo de futebol. Essa relação satisfaz o axioma da transitividade? Justifique sua resposta.
 E se "ser melhor que ou igual" no futebol for definido apenas pelo número de pontos obtidos pelas equipes em um campeonato. Essa relação satisfaz o axioma da transitividade? 
 ```
