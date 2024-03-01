@@ -11,6 +11,10 @@ exr:unnamed-chunk-11
 exr:unnamed-chunk-12
 exr:unnamed-chunk-13
 exr:unnamed-chunk-14
+exr:unnamed-chunk-15
+exr:unnamed-chunk-16
+exr:unnamed-chunk-17
+exr:unnamed-chunk-18
 prefácio
 introdução
 dilema-do-prisioneiro
@@ -32,10 +36,13 @@ exercícios
 incerteza-risco-e-utilidade-esperada
 risco
 incerteza
+preferências-sobre-loterias
+utilidade-esperada
 risco-versos-incerteza
 aversão-a-risco
 teoria-e-prática
-preferências-sobre-loterias
+axiomas
+exercícios-1
 referências-1
 jogos-na-forma-normal
 conhecimento-comum.
