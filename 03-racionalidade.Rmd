@@ -25,7 +25,7 @@ O conceito de relação (binária) na matemática está associado à presença d
 
 A partir desse exemplo, temos uma intuição para construir outros tipos de relações. Em particular, a relação de preferência.
 
-Relações de preferência $\succcurlyeq$ são tais que,se $x \succcurlyeq y$, isso quer dizer que $x$ é pelo menos tão bom quanto $y$. Às vezes aparece como fracamente preferido, no jargão econômico. Se $x \succ y$, então $x$ é preferível a $y$, ou $x$ é melhor que $y$. Por fim, quando temos $x \sim y$, então o jogador ou jogadora é indiferente entre $x$ e $y$, ou $x$ é tão bom quanto $y$.
+Relações de preferência $\succcurlyeq$ são tais que, se $x \succcurlyeq y$, isso quer dizer que $x$ é pelo menos tão bom quanto $y$. Às vezes aparece como fracamente preferido, no jargão econômico. Se $x \succ y$, então $x$ é preferível a $y$, ou $x$ é melhor que $y$. Por fim, quando temos $x \sim y$, então o jogador ou jogadora é indiferente entre $x$ e $y$, ou $x$ é tão bom quanto $y$.
 
 ## Mais sobre relações binárias
 
@@ -58,7 +58,7 @@ De todo modo, parece razoável exigir que pessoas racionais tenham preferências
 Então, uma relação de preferência que é completa e transitiva, isto é, satisfaz os dois axiomas postulados por nós, é uma relação de preferência racional.
 
 ------
-Questão em sala de aula: Será que a escolha de sofia é um exemplo de violação do axioma da completude?
+Questão em sala de aula: Será que a escolha de Sofia é um exemplo de violação do axioma da completude?
 
 ------
 
@@ -66,7 +66,7 @@ Para mais críticas ao axioma da completude, ver por exemplo (no contexto da teo
 
 ## Funções de Payoff
 
-Uma das vantagens de se assumir relação de preferência racional é que é possível adotar uma esquema matemático mais operacional do seguinte modo. Suponha que você vai vender suco de limão e tem três possíveis ações: suco de baixa-qualidade $b$, que custa 10 e você vende a 15; suco de média-qualidade $m$, que custa 15 e você vende a 25, e suco de alta-qualidade, $a$, que custa 25 e você vende a 32. Exercício em sala. Escrever o conjunto de ações $ A = {b, m ,a}$, o conjunto de payoffs ou resultados, considerando o lucro, e não a receita apenas: $X = {5, 10, 7}$. Escrever a relação de preferência:  $10 \succ 7 \succ 5$.
+Uma das vantagens de se assumir relação de preferência racional é que é possível adotar uma esquema matemático mais operacional do seguinte modo. Suponha que você vai vender suco de limão e tem três possíveis ações: suco de baixa-qualidade $b$, que custa 10 e você vende a 15; suco de média-qualidade $m$, que custa 15 e você vende a 25, e suco de alta-qualidade, $a$, que custa 25 e você vende a 32. Exercício em sala. Escrever o conjunto de ações $ A = {b, m ,a}$, o conjunto de *payoffs* ou resultados, considerando o lucro, e não a receita apenas: $X = {5, 10, 7}$. Escrever a relação de preferência:  $10 \succ 7 \succ 5$.
 
 
 Assim, a melhor escolha é $m$, que dá o maior lucro.
@@ -75,11 +75,11 @@ Uma outra forma de escolher a melhor ação seria definir uma função de lucro 
 
 Essa mesma lógica do lucro pode ser aplicada para qualquer decisão, mesmo que não envolva retornos monetários, contanto que a relação de preferência seja racional.
 
-Definição 1. Uma função de payoff (ou função de utilidade) $u: X -> R$ representa a relação de preferência  $\succcurlyeq$ para todo par $x, y \in X$, $u(x) >= u(y)$ se e somente se $x \succcurlyeq y$.
+Definição 1. Uma função de *payoff* (ou função de utilidade) $u: X -> R$ representa a relação de preferência  $\succcurlyeq$ para todo par $x, y \in X$, $u(x) >= u(y)$ se e somente se $x \succcurlyeq y$.
 
 O que estamos dizendo é que a função de utilidade $u$ recebe resultados do conjunto $X$, e retorna um número real para cada resultado. E essa função representa nossa relação de preferência racional se, sempre que a utilidade de $x$ for maior que a utilidade de $y$, para qualquer $x$ e $y$, isso implicar que $x \succcurlyeq y$ e vice-versa.
 
-Veja que o número real a ser atribuído não tem sigifnicado algum e pode ser qualquer valor, desde que a relação de ordem seja preservada. A função de utilidade é uma construção ordinal, porque os payoffs são ordinais. Se um resultado gerar utilidade 10 e outro utilidade 5, não podemos dizer de verdade que o primeiro é duas vezes preferido ao segundo.
+Veja que o número real a ser atribuído não tem sigifnicado algum e pode ser qualquer valor, desde que a relação de ordem seja preservada. A função de utilidade é uma construção ordinal, porque os *payoffs* são ordinais. Se um resultado gerar utilidade 10 e outro utilidade 5, não podemos dizer de verdade que o primeiro é duas vezes preferido ao segundo.
 
 ## Utilidade Ordinal
 Não função de utilidade definida acima, a utilidade é ordinal. Uma das consequências é que podemos fazer quaisquer transformações na função utilidade que preservem a ordem de preferência. Esse tipo de transformação é chamado de transformação monotônica.
@@ -87,8 +87,8 @@ Não função de utilidade definida acima, a utilidade é ordinal. Uma das conse
 ------
 
 Exercícios em sala:
-Digamos que eu tenha uma função de utilidade $u(x)$ qualquer. 
-Diga se as seguintes transformações são montônicas (isto é, preservam a ordem).
+Digamos que eu tenha uma função de utilidade $u(x)$ qualquer.
+Diga se as seguintes transformações são monotônicas (isto é, preservam a ordem).
 
 1. $2*u(x)$  
 2. $u(x) + 10$  
@@ -117,7 +117,7 @@ Explique, com suas próprias palavras, o que é o axioma da completude.
 
 ```{exercise}
 Considere a relação binária "ser melhor que ou igual a" em um jogo de futebol. Essa relação satisfaz o axioma da transitividade? Justifique sua resposta.
-E se "ser melhor que ou igual" no futebol for definido apenas pelo número de pontos obtidos pelas equipes em um campeonato. Essa relação satisfaz o axioma da transitividade? 
+E se "ser melhor que ou igual" no futebol for definido apenas pelo número de pontos obtidos pelas equipes em um campeonato. Essa relação satisfaz o axioma da transitividade?
 ```
 
 ```{exercise}
@@ -125,23 +125,23 @@ Considere a relação binária "ser mais caro do que" em um mercado de produtos.
 ```
 
 
-```{exercise} 
+```{exercise}
 Na questão anterior, se você respondeu negativamente, como você modificaria a relação para que ela satisfizesse o axioma da completude.
 ```
 
-```{exercise} 
+```{exercise}
 Considere a relação binária "ser paralelo a" em um plano euclidiano. Essa relação satisfaz o axioma da transitividade? Dica: pense em retas paralelas.
 ```
 
-```{exercise} 
+```{exercise}
 No poema Quadrilha, de Carlos Drumond de Andrade, podemos imaginar que temos uma relação binária "amar". Desconsiderando por um momento J. Pinto Fernandez, você diria que com as informações disponíveis no poema podemos rankear todos os demais personagens na relação "amar"? E se incluírmos J. Pinto Fernandez, sua resposta muda? Justifique sua resposta.
 ```
 
-```{exercise} 
+```{exercise}
 Crie uma relação binária diferente das apresentadas em sala de aula e nos exercícios acima, que satisfaça o axiomada da completude e transitividade.
 ```
 
-```{exercise} 
+```{exercise}
 Considere a relação binária "$>=$". Para mostrar que essa relação implica a relação "$>$", basta mostrar o seguinte. Sejam $x$ e $y$ dois números pertencentes ao conjunto X. Então, dizemos que $x > y$ se e somente se $x \geq y$ e não $y \geq x$. Às vezes é difícil entender o que queremos dizer por não $y \geq x$. Mas é só uma forma de negar uma relação. Então, por exemplo, se $x=3$ e $y=2$. Só é verdade que $3>2$ se também é verdade que $3 \geq 2$ e também é verdade que $2$ não é maior ou igual a $3$. De maneira similar, mostre que é possível derivar a relação "$\sim$" da relação "$\succcurlyeq$"
 ```
 
