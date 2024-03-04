@@ -1,0 +1,152 @@
+# Jogados Dinâmicos
+
+## Racionalidade Sequencial
+
+Considere novamente o jogo Bach e Stravinsky. Suponha que a jogadora 1 joga primeiro e e a jogadora 2 pode observar a esoclha de 1. Imagine que ela vai para um lugar, liga para a amiga e diz: estou aqui no lugar tal (espetáculo do Bach ou do Stravinsky).
+
+Veja que em termos de equilíbrios de Nash, continuamos com os mesmos dois equilíbrios de antes. Porém, não faz sentido achar que o equilíbrio (S,S) será jogado, pois a jogadora 1 sabe que, se for para Bach, 2 também irá. Jogos na forma normal não capturam muito bem a noção de jogos sequenciais e racionalidade sequencial.
+
+A forma estratégica do jogo, de fato, não traz informações nem sobre a ordem dos movimentos, nem as ações disponíveis para cada jogadora na sua vez de jogar (apenas estratégias. A distinção ficará mais clara depois.)
+
+## Jogo na forma extensiva
+
+Por isso, iremos alterar a representação de nosso jogo, para a forma extensiva.
+
+```{r results = "asis", echo=FALSE, warnings=FALSE}
+library(rgamer)
+
+g1 <- extensive_form(
+  players = list("Serena",
+                 rep("Nina", 2),
+                 rep(NA, 4)),
+  actions = list(c("Bach", "Stravinski"),
+                  c("bach", "stravinski"), c("bach", "stravinski")),
+  payoffs = list(Serena = c(2, 0, 0, 1),
+                 Nina  = c(1, 0, 0, 2)),
+   show_node_id = TRUE)
+```
+
+A árvore do jogo é lida de cima para baixo. No topo está quem joga primeiro. O retângulo com o nome da jogadora é chamado de nó. No primeiro nó, Serena tem duas ações possívels, Bach e Stravinski. Uma vez que ela escolha sua ação, é a vez da Nina, que também tem duas opções ("bach" e "stravinsky", em caixa baixa, para distinguir as ações das duas jogadoras). Se Serena escolheu Bach, Nina está no galho da esquerda. Se Serena escolheu Stravinsky, Nina está no galo da direita. E uma vez que Nina faça sua escolha, o jogo acaba e os payoffs finais são mostrados. O primeiro payoff é da jogadora 1, e o segundo da jogadora 2.
+
+Assim, acrescentaremos:
+
+1. ordem dos movimentos
+2. Ações das jogadores quando for a vez deles de se moverem.
+3. O conhecimento que as jogadoras possuem quando é sua vez de se moverem.
+
+Há um novo elemento que também iremos introduzir, que são distribuições de probabilidade sobre eventos exógenos.
+
+
+Também é possivel representar nosso jogo original em que as jogadoras escolhem simultaneamente ou, mais propriamente, sem saber o que a outra jogadora fez. Porém, precisaremos modificar um pouquinho nossa árvore do jogo. Antes de fazer isso, vamos defini-la.
+
+Definição de árvore do jogo
+
+Uma **árvore do jogo** é formada por um conjunto de nós $x \in X$ com uma relação de precedência $x > x'$, que significa "x precede a x'". Ou seja, $x$ vem antes de $x'$. Cada nó só tem um predecessor. A relação de precedência é transitiva ($x > x', x' > x'' => x > x''$), assimetrica (x > x' => não (x' > x)), isto é, $x$ precede $x'$, mas $x'$ não precede  $x$, e incompleta (nem todos os pares podem ser ordenados). Há um nó especial, chamado raiz da árvore, denotada por n1, que precede quaisquer outros nós $x \in X$. Nós que não precedem outros ós são chamados de nós terminais, denotados pelo conjunto $Z \subset X$. Nós terminais denotam o fim do jogo, com os payoffs associados. Cada nós $x$ que não é terminal é atribuído a um jogador $i(x)$ com o conjunto de ações $A_i(x)$, ou para natureza.
+
+
+## Jogo da confiança
+
+```{r results = "asis", echo=FALSE, warnings=FALSE}
+library(rgamer)
+
+g1 <- extensive_form(
+  players = list("p1", c(NA, "p2"),
+                 rep(NA, 2)),
+  actions = list(c("Nope", "Trust"),
+                  c("Cooperar", "Desertar")),
+  payoffs = list(p1 = c(0, 1, -1),
+                 p2  = c(0, 1, 2)),
+   show_node_id = TRUE)
+```
+
+O jogador p1 joga primeiro. Logo, i(n1) = p1. 
+
+## Informações
+
+Quais informações cada jogador tem quando é sua vezde jogar? Uma jogadora pode ter informação bem fina sobre onde está no jogo, ou bem grosseira. Vamos então introduzir a seguinte definição:
+
+
+Definição conjunto de informações:
+
+Cada jogador $i$ tem uma coleção de conjuntos de informação $h_i$ the particione (divide) os nós do jogo no qual uma jogadora $i$ move com as seguintes propriedades:
+
+1. Se $h_i$ é uma conjunto unitário (singleton) que inclui apenas $x$, então a jogadora $i$ que se move em $x$ sabe que está em $x$.
+2. Se  $x \neq x'$ e se ambos $x \in h_i$ e $x' \in h_i$ então a jogadora $i$ que se move em $x$ não sabe se está em em $x$ ou $x'$.
+3. Se $x \neq x'$ e se ambos $x$ e $x' \in h_i$, então $A_i(x) = A_i(x')$.
+
+Vamos entender esta definição formal. Considere novamente o jogo do Bach e Stravinsky na forma extensiva. No gráfico temos n1, n2.. como nós, enquanto na definição usamos x1 etc. Vou falar em x em vez de n apenas para continuar com a discussão. Considere quando a jogadora 2 se move em x2. A questão é: ela sabe que está em x2? Ou não sabe se está em x2 ou x3? Se a gente escreve $h_2 = {x_2}$, então isso significa que o conjunto de informações em $x_1$ é um conjunti unitário. Portanto, a jogadora a jogadora possui informação que diz "estou em x_2", que é capturado pela propriedade 1 da definição. Nesse caso, segue-se que a jogadora 2 també mtem outro conjunto de informação $h_2 = {x_3}.
+
+Se, por outro lado, a jogadora 2 não sabe se está em $x_2$ ou $x_3$, como no jogo do Bach e Stravinsky simultâneo, então deve ser verdade que sua informação é de que está em $x_1$ ou $x_2$, mas não sabe em qual dos dois. Nesse caso, escrevemos $h_2 = {x_1, x_2}$. Esta é a propriedade 2.
+
+Finalmente, a propriedade 3 é essencial para manter a lógica da informação, em particular quando as ações disponíveis em cada nós forem diferentes para uma jogadora. Considere o jogo da confiança. Se ela não sabe se está no nó x2 (onde o jogo terminou e não tem o que fazer) ou x3, então ela não pode saber quais as ações disponíveis para ela.
+
+## Subjogo
+
+Subjogo de um jogo extensivo com informação perfeita
+
+Um subjogo é qualquer parte de um jogo na forma extensiva que satisfaz as seguintes condições:
+
+1. Sempre se inicia em um único nó de decisão
+2. Não está em um nó terminal
+3. Contém todos os nós que se seguem após ele
+
+Em um jogo de informação imperfeita, acrescentamos:
+
+4. Se contiver qualquer nós de um conjunto de informação, ele conterá todos os nós do conjunto de informação.
+
+
+Nós chamamos de subjogo próprio todos os subjogos que não são a árvore do jogo na sua totalidade.
+
+## Exercícios
+
+Ache todos os subjogos do jogo abaixo.
+
+```{r results = "asis", echo=FALSE, warnings=FALSE}
+library(rgamer)
+
+g1 <- extensive_form(
+  players = list("Serena",
+                 rep("Nina", 2),
+                 rep(NA, 4)),
+  actions = list(c("C", "D"),
+                  c("E", "F"), c("G", "H")),
+  payoffs = list(Serena = c(1, 3, 2, 0),
+                 Nina  = c(0, 2, 3, 1)),
+   show_node_id = TRUE)
+```
+
+
+Modelo o jogo como uma árvore (forma extensiva) e ache todos os subjogos do jogo abaixo. (exercício 156.2c do Osborne).
+
+Os políticos Rosa e Ernesto precisam tomar uma posição sobre um assunto. As opções são Berlim (B) ou Havana (H). Eles escolhem sequencialmente. Uma terceira pessoa, Karl, determina quem escolhe primeiro. Tanto Rosa quanto Ernesto se importam apenas com as ações que escolhem, não com quem escolhe primeiro. Rosa prefere o resultado em que ambos escolhem B ao resultado em que ambos escolhem H, e prefere esse resultado a qualquer um dos casos em que ela e Ernesto escolhem ações diferentes; ela é indiferente entre esses dois últimos resultados. As preferências de Ernesto diferem das de Rosa no sentido de que os papéis de B e H são invertidos. As preferências de Karl são as mesmas que as de Ernesto. Modele essa situação como um jogo extensivo com informação perfeita. (Especifique os componentes do jogo e represente o jogo em um diagrama.)
+
+
+```{r results = "asis", echo=FALSE, warnings=FALSE}
+library(rgamer)
+
+g1 <- extensive_form(
+  players = list("Karl",
+                 c("Rosa", "Ernesto"),
+                rep(c("Ernesto", "Rosa"), each=2),
+                 rep(NA, 8)),
+  actions = list(c("R", "E"),
+                 c("B", "H"), c("B", "H"),
+                  c("B", "H"), c("B", "H"), c("B", "H"), c("B", "H")),
+  payoffs = list(Karl = c(1, 0, 0, 2, 1, 0, 0, 2),
+                 Rosa = c(2, 0, 0, 1, 2, 0, 0, 1),
+                 Ernesto  = c(1, 0, 0, 2, 1, 0, 0, 2)),
+   show_node_id = TRUE)
+```
+
+Existem 6 subjogos próprios e 7 subjogos no total, contando o jogo inteiro como um subjogo.
+
+Equilíbrio de Nash Perfeito em Subjogos
+
+Definição informal: Um equilíbrio perfeito em subjogos é um perfil estratégico $s^*$ com a propriedade de que, em nenhum subjogo, qualquer jogador $i$ pode se sair melhor escolhendo uma estratégia diferente de $s^*_i$, dado que todos os outros jogadores $j$ aderem a $s^*_j$.
+
+Nessa definição (informal), requeremos que a estratrégia de cada jogadora seja ótima para toda história após ser a vez dela jogar, e não apenas no início do jogo, como no equlíbrio de Nash.
+
+
+Todo jogo extensivo finito com informação perfeita possui (pelo menos) um equilíbrio perfeito de subjogo. 
+
+Um jogo finito significa que em nenhum momento um jogador possui infinitas opções de ações. Para dar um exemplo trivial (do Osborne):  um único jogador escolhe um número menor que 1 e recebe um pagamento igual ao número que ela escolhe. Não há um número maior que todos os outros números menores que um, então o jogador único não possui uma ação ótima, e assim o jogo não possui um equilíbrio perfeito de subjogo.
