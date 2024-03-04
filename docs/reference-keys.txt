@@ -15,6 +15,8 @@ exr:unnamed-chunk-15
 exr:unnamed-chunk-16
 exr:unnamed-chunk-17
 exr:unnamed-chunk-18
+exr:unnamed-chunk-19
+exr:unnamed-chunk-20
 prefácio
 introdução
 dilema-do-prisioneiro
@@ -41,7 +43,6 @@ utilidade-esperada
 risco-versos-incerteza
 aversão-a-risco
 teoria-e-prática
-axiomas
 exercícios-1
 referências-1
 jogos-na-forma-normal
@@ -49,9 +50,11 @@ conhecimento-comum.
 estratégias
 jogos-na-forma-normal-ou-estratégica
 votos-em-comissão
-modelo-de-competição-eleitoral-e-o-teorema-do-eleitor-mediano
 soluções-de-equilíbrio
 histórico-machista---guerra-dos-sexos
+jogos-tradicionais
+jogo-da-coordenação
+chicken---jogo-anti-coordenação
 solucao-de-um-jogo
 avaliando-conceitos-de-solução
 existência
@@ -69,3 +72,7 @@ equilíbrio-de-nash-1
 aplicação---chile
 aplicação---competição-eleitoram-sem-incerteza
 determinar-os-eleitores-pivot-do-exemplo.
+aplicação---modelo-sobre-guerra
+equilíbrio-de-nash-em-estratégias-mistas
+pedra-papel-tesoura
+referências-2

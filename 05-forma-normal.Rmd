@@ -7,7 +7,7 @@ Um jogo de informação completa é caracterizado pelas seguintes quatro informa
 2. todos os possíves resultados,
 3. Como a combinação de cada ação de todos os jogadores afetam qual resultado irá acontecer e,
 materialize, and
-4. As preferências de cada e todos jogador sobre os resultados.
+4. As preferências de cada e todos jogadores sobre os resultados.
 
 Vejam que o DP satisfaz esse requerimento.
 
@@ -15,12 +15,12 @@ Vejam que o DP satisfaz esse requerimento.
 
 Definição 2. Um evento $E$ é conhecimento comum se todo mundo sabe $E$, todo mundo sabe que todos sabem $E$, todo mundo sabe que todo mundo sabe que todos sabem $E$ e assim por diante, até infinito.
 
-Um exemplo simples em que podemos assumir que um evento é conhecimento comum. Suponha que duas pessoas saiam da sala e, andando na rua, começa a chover e eles correm para não se molhar. É razoável assumir que é conhecimento comum que está chovendo para essas duas pessoas. Nós iremos discutir em sala de aula como na prática funciona essa suposição e como experimentos têm levado a relaxamento dessa suposição e outros tipos de modelo.
+Um exemplo simples em que podemos assumir que um evento é conhecimento comum. Suponha que duas pessoas saiam da sala e, andando na rua, começa a chover e eles correm para não se molhar. É razoável assumir que é conhecimento comum que está chovendo para essas duas pessoas.
 
 
 ## Estratégias
 
-O "reality show" no limite é uma adaptação do equivalente americano chamado "Survivor". Nesse jogo, dois times (azul e vermelho) competem para ganhar os desafios. Como recompensa, só um membro do outro time é eliminado, além de ganharem outros benefícios (dormir em uma cama, mais comida etc.). Em uma das disputas, um jogo foi apresentado no programa que é útil para os nossos propósitos.
+O *reality show* "No limite" é uma adaptação do equivalente americano chamado "Survivor". Nesse jogo, dois times (azul e vermelho) competem para ganhar os desafios. Como recompensa, só um membro do outro time é eliminado, além de ganharem outros benefícios (dormir em uma cama, mais comida etc.). Em uma das disputas, um jogo foi apresentado no programa que é útil para os nossos propósitos.
 
 link: https://www.youtube.com/watch?v=aonCsvi0LKc
 
@@ -141,21 +141,6 @@ v_3(s_1, s_2) =
 \end{cases}
 \end{equation}
 
-
-
-## Modelo de competição eleitoral e o Teorema do Eleitor Mediano
-
-Suponha que temos uma eleição com apenas dois candidatos ou dois partidos políticos. Eles devem anunciar uma plataforma no espectro esquerda-direita, definido pelo intervalo $[0,1]$. Cada eleitora possui uma plataforma ideal, representada por um ponto no intervalo esquerda-direita. Então, eleitores decidem seu voto da seguinte maneira: votam na candidata (ou partido) mais próximo do seu ponto ideal em termos absolutos. Suponha que a plataforma ideal dos eleitores é distribuída uniformimente no intervalo $[0,1]$. Por fim, suponha que o número de eleitores, $n$, é ímpar, para evitar empates. E se as duas candidatas anunciarem a mesma plataforma, a eleitora decide votar na incumbente. A jogadora 1 é a incumbente. Qual deve ser a plataforma anunciada pelos partidos se buscam maximizar o percentual de votos válidos totais, $v$?
-
-Primeiro, vamos descrever o jogo:
-Jogadores: $N = \{A,B\}$, que são os partidos.
-Conjunto de estratégias: $S_i \in [0,1]$, para $i = \{A,B\}$
-Payoffs: Seja $v_i$ a fração de voto que cada partido $i$ recebe. Como cada partido prefere resultados que implicam maior chance de vencer do que de não vencer, seu payoff é dado por: 
-$u_1 = 1, se |s_1 - v_1| >= |s_2 - v_2|$, 0 caso contrário.
-Similarmente para o jogador 2.
-
-O equilíbrio do jogo é formado pelas estratégias $(1/2, 1/2)$.
-
 ## Soluções de equilíbrio
 
 
@@ -187,3 +172,73 @@ kable(payoff.mat)
 Diferentemente do DP, a melhor resposta depende do que o outro jogador irá fazer. Assim, para fazer uma previsão, precisamos fazer suposições comportamentaise sobre as crenças a respeito do outro jogador para definir um ou mais equilíbrios para o jogo.
 
 Nosso conceito de solução para o jogo será o equilíbrio do jogo. Uma das características dos equilíbrios que iremos abordar durante o curso é que ele seja do tipo que se auto-reforça, isto é, agentes que estão jogando estratégias de equilíbrio não possuem incentivos para mudar suas estratégias, ao contrário, o fato de outros estarem jogando as estratégias de equilíbrio devem reforçar o incentivo para qume um jogador permaneça no equilíbrio.
+
+## Jogos tradicionais
+
+Stag Hunt
+
+Na teoria dos jogos, o jogo caça ao cervo (stag hunt, em inglês), às vezes é referido como jogo da garantia, dilema da confiança ou jogo do interesse comum e descreve um conflito entre segurança e cooperação social. O jogo surge do trabalho do Rousseau no segunod discurso (sobre a desigualdade)
+
+```{r results = "asis", echo=FALSE}
+library(knitr)
+# Define Variables
+R=3
+T=2
+P=1
+S=0
+
+# Assign Pairs
+pair <- function(x,y) sprintf("(%d,%d)", x,y)
+all_pairs <- c(pair(R,R), pair(S,T), pair(T,S), pair(P,P))
+payoff.mat <- matrix(all_pairs, nrow=2, byrow=TRUE)
+dimnames(payoff.mat) <- c(rep(list(c("Cervo","Lebre")), 2))
+results = "asis"
+
+# Plot 
+kable(payoff.mat)
+
+```
+
+# Jogo da Coordenação
+
+
+```{r results = "asis", echo=FALSE}
+library(knitr)
+# Define Variables
+# Define Variables
+M=2
+R=1
+P=0
+S=0
+
+# Assign Pairs
+pair <- function(x,y) sprintf("(%d,%d)", x,y)
+all_pairs <- c(pair(R,R), pair(S,T), pair(T,S), pair(P,P))
+payoff.mat <- matrix(all_pairs, nrow=2, byrow=TRUE)
+dimnames(payoff.mat) <- c(rep(list(c("Bach","Stravinski")), 2))
+results = "asis"
+
+# Plot 
+kable(payoff.mat)
+
+```
+
+# chicken - jogo anti-coordenação
+
+```{r results = "asis", echo=FALSE}
+library(knitr)
+# Define Variables
+M <- -1
+R <- 0
+P <- -10
+S <- 3
+
+# Assign Pairs
+pair <- function(x,y) sprintf("(%d,%d)", x,y)
+all_pairs <- c(pair(R,R), pair(S,M), pair(M,S), pair(P,P))
+payoff.mat <- matrix(all_pairs, nrow=2)
+dimnames(payoff.mat) <- c(rep(list(c("Desvia","não desvia")), 2))
+
+# Plot 
+kable(payoff.mat)
+```

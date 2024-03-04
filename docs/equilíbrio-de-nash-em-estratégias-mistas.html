@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo2 Introdução | Introdução à Teoria dos Jogos para Ciências Sociais</title>
-  <meta name="description" content="Capítulo2 Introdução | Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <title>Capítulo10 Equilíbrio de Nash em Estratégias Mistas | Introdução à Teoria dos Jogos para Ciências Sociais</title>
+  <meta name="description" content="Capítulo10 Equilíbrio de Nash em Estratégias Mistas | Introdução à Teoria dos Jogos para Ciências Sociais" />
   <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo2 Introdução | Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <meta property="og:title" content="Capítulo10 Equilíbrio de Nash em Estratégias Mistas | Introdução à Teoria dos Jogos para Ciências Sociais" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo2 Introdução | Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <meta name="twitter:title" content="Capítulo10 Equilíbrio de Nash em Estratégias Mistas | Introdução à Teoria dos Jogos para Ciências Sociais" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="racionalidade-e-relações-de-preferência.html"/>
+<link rel="prev" href="equilíbrio-de-nash.html"/>
+<link rel="next" href="pedra-papel-tesoura.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -238,97 +238,225 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introdução" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Capítulo2</span> Introdução<a href="introdução.html#introdução" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Uma das principais preocupações durante as eleições gerais de 2022 no Brasil era a disseminação de desinformação, conhecida popularmente como “fake news”. A utilização de redes sociais e aplicativos de mensagens para promover desinformação por eleitores e candidatos representava um importante ponto de potencial controle sobre a desinformação. Foi comum observar o Tribunal Superior Eleitoral determinando que plataformas removessem conteúdos contendo “fake news” eleitorais<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. No entanto, essa situação se assemelhava a um jogo de “gato e rato”, uma vez que nada impedia que os divulgadores de “fake news” criassem novas postagens, perpetuando a disseminação de desinformação. Esse tipo de cenário político, no qual os atores precisam tomar decisões estratégicas, ou seja, planejar suas ações tentando antecipar as respostas dos outros, é exatamente o que a teoria dos jogos busca modelar e analisar.</p>
-<p>A política é repleta de situações em que um indivíduo deve agir supondo que os demais participantes do jogo político reagirão às suas ações e até mesmo tentarão antecipar seus movimentos, fazendo suposições e conjecturas sobre os outros. Isso representa uma das maiores dificuldades para os cientistas políticos na previsão dos efeitos de reformas eleitorais, por exemplo. Apesar de ser um tema frequentemente debatido e solicitado pela sociedade, muitas propostas são elaboradas como se o mundo não fosse estratégico, ou seja, como se os agentes políticos não fossem modificar seu comportamento devido às novas regras adotadas. Considere, por exemplo, a proibição de doações privadas de empresas para campanhas eleitorais, implementada no Brasil após decisão da Suprema Corte Federal em 2016. Muitos esperavam que isso reduzisse a influência do dinheiro nas eleições. No entanto, com o tempo, políticos aprovaram um fundo eleitoral com recursos públicos, aumentaram esse fundo sucessivamente e ainda aprovaram o que ficou conhecido como “Orçamento Secreto” para também aumentar as chances nas eleições, entre outros objetivos menos legítimos. Comparando o total de valores envolvidos após a decisão do STF com os valores anteriores, mesmo considerando o caixa dois, o montante provavelmente supera o que se gastava em eleições anteriores a 2016. É evidente que medidas como o “Orçamento Secreto” poderiam ser adotadas mesmo se o financiamento por empresas continuasse permitido, mas a mera possibilidade de que todas essas medidas sejam uma reação dos políticos à decisão do STF mostra quão difícil é antecipar as consequências de mudanças nas regras do jogo e que considerações estratégicas são fundamentais para entender a política.</p>
-<p>Portanto, a teoria dos jogos é um ramo da matemática aplicada que visa modelar situações estratégicas como essa. Um exemplo simples, mas muito esclarecedor, de como a teoria dos jogos pode elucidar essas questões é o Dilema do Prisioneiro, que apresentaremos a seguir.</p>
-<div id="dilema-do-prisioneiro" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Dilema do Prisioneiro<a href="introdução.html#dilema-do-prisioneiro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Esse é talvez o mais famoso da história da Teoria do Jogos, chamado Dilema do Prisioneiro, e que foi proposto em 1951 por Merrill Flood em 1951, e primeiramente formalizado por Albert W. Tucker.</p>
-<p>A história é mais ou menos assim. A polícia prendeu dois suspeitos de cometer um crime. Tem evidência de um crime de pena menor, mas gostaria de condená-los por crimes com penas maiores. Se um ou ambos confessarem o crime maior, podem conseguir obter o que precisam.</p>
-<p>Para dar concretude, imaginem que a Polícia Federal prendeu dois executivos suspeitos de corrupção e lavagem de dinheiro, a dez anos de prisão. Possuem provas suficientes para condená-los por um crime menor, como tráfico de influência (dois anos de prisão), mas gostariam de condená-los pelo crime de pena maior. A PF colocou os dois presos em celas separadas e decidiu fazer a seguinte oferta para eles:</p>
-<p>“Nós temos evidência suficiente para condená-los, você e seu parceiro, pelo crime de tráfico de influência, que dá 2 anos de prisão para cada. Contudo, se você assinar um acordo de colaboração premiada com a gente e confessar o crime de corrupção e lavagem de dinheiro, você sairá livre e seu parceiro será condenado a dez anos de prisão. Um outro policial está na cela do seu parceiro, neste exato momento, fazendo a mesma oferta a ele. Se ele aceitar confessar o crime, e você não, então ele sairá livre e você ficará preso dez anos. Por fim, se ambos confessarem o crime, a pena de dez anos será reduzida à metade e vocês ficarão cinco anos presos. Essa proposta está por escrito, incluindo o fato de que seu parceiro está recebendo proposta igual”.</p>
-<p>O que você faria?</p>
-<p>Para analisar o DP, é comum construimos uma matriz de <em>payoffs</em>. Ela é uma tabela, que contém nas linhas e colunas as ações disponíveis para cada jogadora, e nas células temos os *payoffs”, que são as consequências ou resultados das combinações de ações de cada jogadora.</p>
-<p>A matriz abaixo apresenta uma possibilidade para o Dilema do Prisioneiro:</p>
+<div id="equilíbrio-de-nash-em-estratégias-mistas" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Capítulo10</span> Equilíbrio de Nash em Estratégias Mistas<a href="equilíbrio-de-nash-em-estratégias-mistas.html#equilíbrio-de-nash-em-estratégias-mistas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Considere o jogo “cara” ou “coroa” a seguir. Nesse jogo, dois jogadores escolhem entre cara (heads) ou coroa (tails) ao mesmo tempo. Se as escolhas forem iguais, o Jogador 1 ganha um ponto. Caso contrário, o Jogador 2 ganha um ponto. O objetivo dos jogadores é maximizar sua pontuação.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb2-2"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-2" tabindex="-1"></a><span class="co"># Definindo a matriz de payoff</span></span>
+<span id="cb2-3"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-3" tabindex="-1"></a>payoff.mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>), </span>
+<span id="cb2-4"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-4" tabindex="-1"></a>                     <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, </span>
+<span id="cb2-5"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-5" tabindex="-1"></a>                     <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;Cara&quot;</span>, <span class="st">&quot;Coroa&quot;</span>), </span>
+<span id="cb2-6"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-6" tabindex="-1"></a>                                     <span class="fu">c</span>(<span class="st">&quot;Cara&quot;</span>, <span class="st">&quot;Coroa&quot;</span>)))</span>
+<span id="cb2-7"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-7" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-8" tabindex="-1"></a><span class="co"># Renderizando a tabela de payoff</span></span>
+<span id="cb2-9"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-9" tabindex="-1"></a><span class="fu">kable</span>(payoff.mat)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
 <th align="left"></th>
-<th align="left">Coopera</th>
-<th align="left">Não coopera</th>
+<th align="right">Cara</th>
+<th align="right">Coroa</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Coopera</td>
-<td align="left">(1,1)</td>
-<td align="left">(20,0)</td>
+<td align="left">Cara</td>
+<td align="right">1</td>
+<td align="right">-1</td>
 </tr>
 <tr class="even">
-<td align="left">Não coopera</td>
-<td align="left">(0,20)</td>
-<td align="left">(10,10)</td>
+<td align="left">Coroa</td>
+<td align="right">-1</td>
+<td align="right">1</td>
 </tr>
 </tbody>
 </table>
-</div>
-<div id="dilema-da-ação-coletiva" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Dilema da Ação Coletiva<a href="introdução.html#dilema-da-ação-coletiva" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>O Dilema do Prisioneiro é muito utilizado como base para pensar problemas de ação coletiva. A cooperação produz resultados socialmente melhores, porém a estratégia dominante individualmente é não cooperar.</p>
-<p>A partir do conhecimento da lógica do Dilema do Prisioneiro, podemos aplicá-la para outras situações de ação coletiva.</p>
-</div>
-<div id="happy-hour" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Happy hour<a href="introdução.html#happy-hour" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Ocorrências prosaicas do dia a dia frequentemente refletem um cenário análogo ao Dilema do Prisioneiro.</p>
-<p>É comum que colegas de trabalho ou de faculdade decidam sair para o “happy hour” após o expediente ou término de aulas. E também é comum que ao final a conta seja dividida igualmente entre os presentes. E inevitavelmente alguém irá reclamar de que bebeu ou comeu pouco e está pagando mais do que deveria. Isso pode ser pensado como um exemplo do Dilema do Prisioneiro.</p>
-</div>
-<div id="dilema-da-segurança" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Dilema da Segurança<a href="introdução.html#dilema-da-segurança" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Nas Relações Internacionais, o chamado Dilema da Segurança entre duas potência pode ser resumido da seguinte forma: ambos os países se beneficiam mais se ambos se desarmarem do que se ambos se armarem, mas cada um tem uma vantagem individual se for o único a se armar. Portanto, em equilíbrio, temos uma corrida armamentista. Mais uma vez, há similaridade com o Dilema do Prisioneiro aqui, já que a cooperação seria mutuamente benéfica, mas os países acabam em uma situação racionalmente indidivudal mas que é pior para todos.</p>
-</div>
-<div id="cuidar-da-casa" class="section level2 hasAnchor" number="2.5">
-<h2><span class="header-section-number">2.5</span> Cuidar da casa<a href="introdução.html#cuidar-da-casa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A limpeza de uma casa é algo que benefícia a todos os membros da casa. No entanto, limpar a casa é custoso e limpar apenas a sujeira que você causou tem pouco impacto sobre a limpeza geral da casa, especialmente quando a casa é grande. Assim, mais uma vez temos uma esturtura similar ao Dilema do Prisioneiro, em que a cooperação seria benéfica, mas o equilíbrio é a não-cooperação, já que embora todos prefiram uma casa limpa a uma suja, o equilíbrio é ninguém limpar a casa.</p>
-<div class="blackbox">
-<h2>
-Implicações da Teoria dos Jogos para questões mais complexas
-</h2>
-<p>A dinâmica de limpeza em um lar reflete não apenas a organização doméstica, mas também revela estruturas sociais mais profundas, como o patriarcado e o racismo. Historicamente, no Brasil, o cuidado com a casa e a geração do bem comum dentro do lar foram frequentemente atribuídos às mulheres, uma manifestação direta do patriarcado. Este arranjo social impõe o ônus da manutenção do lar majoritariamente sobre elas, enquanto os homens são poupados desse trabalho.</p>
-<p>Além disso, em contextos de classe média e alta, o racismo estrutural tem permitido que mulheres brancas transferissem a responsabilidade do trabalho doméstico para mulheres negras. Inicialmente, essa transferência ocorria por meio da escravidão e, posteriormente, através da contratação de empregadas domésticas. Essas empregadas, até muito recentemente, desempenhavam suas funções com poucos ou nenhum direito trabalhista, o que reflete não apenas uma desvalorização do trabalho doméstico, mas também a perpetuação de desigualdades raciais e de gênero.</p>
-<p>A aprovação da PEC das Domésticas marca um ponto de inflexão nesse cenário. Ao garantir direitos trabalhistas às empregadas domésticas, a PEC aumenta os custos associados à contratação desse tipo de serviço. Esse aumento de custo desafia o equilíbrio anterior, baseado na exploração e na desigualdade. Se por um lado a PEC contribui para uma redistribuição dos custos do bem comum doméstico, favorecendo a equidade racial ao impor responsabilidades financeiras mais justas às empregadoras, por outro, não resolve completamente as questões de gênero. A menos que o equilíbrio patriarcal também seja abordado, a responsabilidade pelo trabalho doméstico continuará a recair desproporcionalmente sobre as mulheres, seja dentro do contexto familiar ou no mercado de trabalho doméstico.</p>
-<p>Portanto, a mudança real exige uma abordagem que não apenas redistribua o custo do trabalho doméstico de maneira mais equitativa entre as raças, mas que também desafie e transforme as normas de gênero que atribuem esse trabalho principalmente às mulheres.</p>
-</div>
-</div>
-<div id="referências" class="section level2 hasAnchor" number="2.6">
-<h2><span class="header-section-number">2.6</span> Referências<a href="introdução.html#referências" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Kollock, P. (1998). Social dilemmas: The anatomy of cooperation. Annual review of sociology, 183-214.</p>
-<p>Roxborough, I. (1992). Inflação e pacto social no Brasil e no México. Lua Nova: Revista de Cultura e Política, 197-224.</p>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Seleciona todos os elementos <strong> que contêm o texto "Exercise" dentro de <div class="exercise">
-  document.querySelectorAll('div.exercise strong').forEach(function(el) {
-    el.textContent = el.textContent.replace('Exercise', 'Exercício');
-  });
-});
-</script>
-</div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p><a href="https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/combate-a-desinformacao-tse-derruba-mais-de-uma-centena-de-postagens-com-narrativas-enganosas" class="uri">https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/combate-a-desinformacao-tse-derruba-mais-de-uma-centena-de-postagens-com-narrativas-enganosas</a><a href="introdução.html#fnref1" class="footnote-back">↩︎</a></p></li>
-</ol>
+<p>Esse jogo é similar ao de par ou ímpar, que estamos acostumados</p>
+<p>Exercício 7.1: jogue par ou ímpar com outra pessoa por 5 rodadas.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb3-2"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-2" tabindex="-1"></a><span class="co"># Definindo a matriz de payoff</span></span>
+<span id="cb3-3"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-3" tabindex="-1"></a>payoff.mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>), </span>
+<span id="cb3-4"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-4" tabindex="-1"></a>                     <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, </span>
+<span id="cb3-5"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-5" tabindex="-1"></a>                     <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;Par&quot;</span>, <span class="st">&quot;Ímpar&quot;</span>), </span>
+<span id="cb3-6"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-6" tabindex="-1"></a>                                     <span class="fu">c</span>(<span class="st">&quot;Par&quot;</span>, <span class="st">&quot;Ímpar&quot;</span>)))</span>
+<span id="cb3-7"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-7" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-8" tabindex="-1"></a><span class="co"># Renderizando a tabela de payoff</span></span>
+<span id="cb3-9"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-9" tabindex="-1"></a><span class="fu">kable</span>(payoff.mat)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Par</th>
+<th align="right">Ímpar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Par</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="even">
+<td align="left">Ímpar</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>Após o jogo, podemos perceber que os jogadores possuem interesses opostos e vocês esperam que o outro não consiga antecipar o que você irá fazer. Nesse caso, ele será indiferente entre jogar qualquer uma de suas estratégias, pois esperar que, na média, ambas gerem o mesmo payoff médio.</p>
+<p>Uma estratégia mista é justamente um antidoto contra as tentativas dos outros jogadores advinharem o que você irá fazer. Considere o jogo de tênis. No saque, se seu adversiário antecipar o que você irá fazer, ele terá uma vantagem. Então, você precisa jogar de um jeito que ele não consiga angtecipar ou advinhar suas estratégias.</p>
+<p>Considere o seguinte jogo.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">C</th>
+<th align="left">D</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">A</td>
+<td align="left">(4,25)</td>
+<td align="left">(12,5)</td>
+</tr>
+<tr class="even">
+<td align="left">B</td>
+<td align="left">(16,10)</td>
+<td align="left">(8,15)</td>
+</tr>
+</tbody>
+</table>
+<p>É fácil ver que não há equilíbrio de Nash em estratégias puras. Vocês viram que no jogo do par ou ímpar, o ideal é jogar cada estratégia com 50% de chance. Vamos tentar colocar alguma probabilidade nesse jogo? Que tal 50% para cada estratégia também?</p>
+<p>Vamos calcular o payoff (utilidade) esperado das novas estratégias, para poder preenhcer a nova matriz de payoff aumentada.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">C</th>
+<th align="left">D</th>
+<th align="left">50% C, 50% D</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">A</td>
+<td align="left">(4,25)</td>
+<td align="left">(12,5)</td>
+<td align="left">(8,15)</td>
+</tr>
+<tr class="even">
+<td align="left">B</td>
+<td align="left">(16,10)</td>
+<td align="left">(8,15)</td>
+<td align="left">(12.00,12.50)</td>
+</tr>
+<tr class="odd">
+<td align="left">50% C, 50% D</td>
+<td align="left">(10.00,17.50)</td>
+<td align="left">(10,10)</td>
+<td align="left">(10.00,13.75)</td>
+</tr>
+</tbody>
+</table>
+<p>Vamos calcular o Equilíbrio de Nash, se existe?</p>
+<p>Novamente, não existe equilíbrio de Nash. Lembremos que estamos querendo deixar os jogadores indeferentes entre suas estratégias. Então, devemos procurar probabilidades que os deixem indiferentes. Isso significa que eles não poderão antecipar a estratégia do outro jogador se for um equilíbrio de Nash (é a melhor resposta simultaneamente).</p>
+<p>Como achar essas probabilidades? O payoff esperado de jogar A e B, para o jogador 1 deve ser o mesmo, pois ele é indiferente dado o que o jogador 2 está fazendo. E a estratégia mista de 1 deve deixar 2 indiferente entre jogar C e D.
+Formalmente:
+Se 2 está misturando suas estratpegias para deixar 1 indiferente, então a utilidade esperada de 1 jogar A, dado que 2 está jogando C com probabilidade <span class="math inline">\(p_2c\)</span> e D com probabilidade $ 1 - p_2c$, deve ser a mesma de 1 jogar B, dado que 2 está jogando C com probabilidade <span class="math inline">\(p_2c\)</span> e D com o complemento.</p>
+<p>Para o jogador 1, <span class="math inline">\(E[U(A)] = E[U(B)]\)</span> e para o jogador 2, <span class="math inline">\(E[U(C)] = E[U(D)]\)</span>.
+Como calcular a utilidade esperada de jogar “A”? Suponha que o jogador 1 escolhe a com probabilidade <span class="math inline">\(p_1\)</span>, e B com probabilidade <span class="math inline">\(1-p_2\)</span>. Então:</p>
+<p><span class="math inline">\(E[U(A)] = p_2c*U(A| 2 joga C) + (1-p_2c)*U(A| dado 2 joga D ) = p_2c*4 + (1-p_2c)*12\)</span></p>
+<p><span class="math inline">\(E[U(A)] = p_2c*4 + 12 -p_2c*12 = 12 - 8*p_2c\)</span></p>
+<p><span class="math inline">\(E[U(B)] = p_2c*U(B| 2 joga C) + (1-p_2c)*U(B| dado 2 joga D ) = p_2c*16 + (1-p_2c)*8\)</span></p>
+<p><span class="math inline">\(E[U(B)] = p_2c*16 + 8 -8*p_2c = 8 + 8*p_2c\)</span></p>
+<p>Se 1 está indiferente, então:
+<span class="math inline">\(E[U(A)] = E[U(B)]\)</span></p>
+<p><span class="math inline">\(12 - 8*p_2c = 8 + 8*p_2c\)</span></p>
+<p><span class="math inline">\(12 - 8 = 8*p_2c + 8*p_2c\)</span></p>
+<p><span class="math inline">\(4 = 16*p_2c\)</span></p>
+<p><span class="math inline">\(p_2c = 4/16\)</span></p>
+<p><span class="math inline">\(p_2c = 1/4\)</span></p>
+<p><span class="math inline">\(p_2d = 3/4\)</span></p>
+<p>E agora fazemos a mesma coisa para o jogador 2.
+<span class="math inline">\(E[U(C)] = E[U(D)]\)</span></p>
+<p><span class="math inline">\(p_1a*U(C| 1 joga A) + (1-p_1a)*U(C| dado 1 joga B ) = p_1a*U(D| 1 joga A) + (1-p_1a)*U(B| dado 1 joga B )\)</span></p>
+<p><span class="math inline">\(p_1a*25 + (1-p_1a)*10 = p_1a*5 + (1-p_1a)*15\)</span></p>
+<p><span class="math inline">\(p_1a*25 + 10 -p_1a*10 = p_1a*5 + 15 - p_1a*15\)</span></p>
+<p><span class="math inline">\(p_1a*15 + 10 = 15 - p_1a*10\)</span></p>
+<p><span class="math inline">\(p_1a*25 = 5\)</span></p>
+<p><span class="math inline">\(p_1a = 5/25\)</span></p>
+<p><span class="math inline">\(p_1b = 4/5\)</span></p>
+<p>Nossa matriz agora fica:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">C</th>
+<th align="left">D</th>
+<th align="left">1/4 C, 3/4 D</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">A</td>
+<td align="left">(4,25)</td>
+<td align="left">(12,5)</td>
+<td align="left">(10,10)</td>
+</tr>
+<tr class="even">
+<td align="left">B</td>
+<td align="left">(16,10)</td>
+<td align="left">(8,15)</td>
+<td align="left">(10.00,13.75)</td>
+</tr>
+<tr class="odd">
+<td align="left">1/5 C, 4/5 D</td>
+<td align="left">(13.60,13.00)</td>
+<td align="left">(8.80,13.00)</td>
+<td align="left">(10,13)</td>
+</tr>
+</tbody>
+</table>
+<p>Podemos ver, em primeiro lugar, que na nova matriz de payoff, 1 é indiferente entre jogar A, B ou sua estratégia mista de equilíbrio se 2 de fato está misturando suas estratégias C e D com as probabilidade de equilíbrio. Notem que ele sempre ganha 10.</p>
+<p>Do mesmo jeito, 2 sempre ganha 13 se 1 está em sua estratégia mista.
+Por fim, vemos que ambas são estratégias de equilíbrio de Nash. E, nesse caso, a única estratégia mista (ou pura) de equilíbrio.</p>
+<p>Vamos agora fazer o mesmo exercício para o jogo do par ou ímpar e para pedra, papel tesoura.</p>
+<p>Aplicação em ciência política.
+Suponha duas candidatas, 1 e 2, que devem decidir onde alocar seus dias finais de campanha, seja no estado A ou estado B, nos EUA. As pesquisas indicam que esses são os estados que podem decidir a batalha. Suponha que as probabilidades de cada candidata ganhar a eleição são dadas como segue:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">A</th>
+<th align="left">B</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">A</td>
+<td align="left">(0.5,0.5)</td>
+<td align="left">(0.9,0.1)</td>
+</tr>
+<tr class="even">
+<td align="left">B</td>
+<td align="left">(0.9,0.1)</td>
+<td align="left">(0.6,0.6)</td>
+</tr>
+</tbody>
+</table>
+<p>Vamos calcular o ENEM (Eq. Nash em Estratégias Mistas)?</p>
+<p>Ambas vão para A com prob 3/7 (aprox. 0.43) e B com prob 4/7 (aprox. 0.57).</p>
+<p>Agora, suponha que, antes de implementar essas estratégias, novas pesquisas saem e a probabilidade muda. Se 1 for para B sozinha, sua prob é .7 e não .9. Isso é conhecimento comum. Portanto, isso poderia nos levar a crer que ela deveria gastar mais tempo em A, ou aumentar a probabilidade de ir para A. Mas os novos equilíbrios indicam que 1 agora vai para A com pob 1/5 e visitar b com 4/5. Isso porque 2 vai mudar sua estratégia e aumentar a prob de visitar A (de 3/7 para 3/5). E se ambos vão para A, a prob de 1 ganhar é menor do que se ela for para B sozinha.</p>
+<p>Esse tipo de coisa acontece com frequência em esportes. Um jogador veterano atacante se machuca e alguém das divisões de base entra no lugar. E aí, ele comeca a receber mais passes e tem mais oportunidades de gol e, por isso, marca mais gols do que o veterano. Ocorre que, como ele tem menos chance de criar jogadas e fazer gols, é melhor deixar ele mais livre e marcar outros jogadores. Isso aumenta a chance de gol do novato, mas diminui a de todos os outros jogadores. Então, embora ele esteja marcando mais gols que o veterano, o time no geral estará com desempenho pior.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="racionalidade-e-relações-de-preferência.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="equilíbrio-de-nash.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pedra-papel-tesoura.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -359,7 +487,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/mgaldino/Teoria-dos-Jogos/edit/main/02-Introducao.Rmd",
+"link": "https://github.com/mgaldino/Teoria-dos-Jogos/edit/main/08-ENEM.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -367,7 +495,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/mgaldino/Teoria-dos-Jogos/blob/main/02-Introducao.Rmd",
+"link": "https://github.com/mgaldino/Teoria-dos-Jogos/blob/main/08-ENEM.Rmd",
 "text": null
 },
 "download": null,

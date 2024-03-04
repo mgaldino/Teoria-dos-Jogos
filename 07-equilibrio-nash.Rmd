@@ -212,3 +212,71 @@ Existe um único equilíbrio de Nash, em que ambos candidatos jogam (0,0), que �
 Essa é a base para o teorema do eleitor mediano, presente já no trabalho do Hotelling.
 
 Para verificar que $(0,0)$ é um equilíbrio de Nash, basta mostrar que ambos os partidos estão jogando sua melhor resposta ao que o outro partido está fazendo. Comecemos pelo partido A. Dado que B está jogando $0$, se A se desviar de $0$, escolhendo $a_ \neq 0$, temos duas possibilidades. No primeiro caso, $a_i > 0$, e o parido
+
+### Aplicação - Modelo sobre guerra
+
+Nós agora estamos preparados para entender como a literatura tem utilizado teoria dos jogos para modelar e discutir fenômenos relevantes. Aqui iremos retomar aplicações que discutem a ocorrência de guerras.
+
+Fearon introduziu a questão de como a escolha racional coloca problemas para explicações tradicionais (realistas, por exemplo) para a guerra.
+
+Guerras, como a da Rússia e Ucrância, são custosas. Qualquer que sejao resultado final da guerra, em tese uma negociação que resultasse no mesmo resultsado final, sem a guerra, seria preferia por ambos os estados (pareto superior) e portanto a guerra deveria ser evitada sempre. Como explicar que guerras ocorram?
+
+Fearon aponta três explicações mais gerais:
+1. Pessoas (e líderes políticos em particular) podem ser irracionais ou sofrer de vieses, que os levam a subestimar o custo da guerra ou a entender como suas ações podem provocar uma guerra.
+
+2. Líderes se beneficiam da guerra, mas não pagam seus custos (soldados é que lutam as guerras) e, portanto, o cálculo racional de custos não seriarelevante.
+
+3. Agentes racionais por alguma razão acabam guerreando.
+
+A primeira e segundas explicações, embora plausíveis, corrm risco muito grande de serem bobas. Dizer que Putin é malvado e tem mania de grandeza e por isso fez a guerra independente de qualquer cálculo racional pode servir a uma visão ideológica, mas é muito fácil. Se a pessoa faz guerra porque é burra ou má, não temos muita ciências sociais para fazer. É mais uma questão da psicologia ou psiquiatria.
+
+Portanto, mais relevante para nós são explicações racionalistas. Vejam que explicações de corte neorealistas, que enfatizam variáveis no sistema internacional são justamente do tipo que estamos interessados. Atores racionais farão guerra se o sistema internacional produzir situações que levam à guerra.
+
+Fearon irá então dizer o seguinte: Não é suficiente dizer que, sob anarquia, nada impede um estado de usar a força, ou que estados devem contar apenas com a auto-ajuda em um sistema anárquico, o que gera suspeita mútua e por fim, conflito (por espiral de suspeita ou dilema da segurança).
+
+E o ponto dele é o que falei no começo. Guerra é custosa. Isso significa que, em princípio, estados poderiam chegar a um acordo que seria pareto superior e evitasse a guerra. É um pouco como o gatoro que sofre bullyng na escola, mas os valentões nunca precisam de fato bater no garoto, porque este antecipa a derrota e já entrega o lanche que os valentões pedem. Um conflito destruiria parte do valor do lanche (no mínimo ficaria mais frio etc.) e o resultado final seria o mesmo, situação pareto inferior.
+
+Anarquia não implica na guerra porque estados poderiam chegar a um acordo preferível á guerra, mesmo sob anarquia. Digamos, A toma 10% do território de B. Se esse é o resultado da guerra, melhor chegar a ele sem guerra.
+
+Similarmente, o dilema da segurança (um estado se tornar mais seguro torna outro relativamente menos seguro) não impede de um acordo ser feito que previna a guerra. Fearondirá que é preciso argumentos mais elaborados. Considere por exemplo a explicação típica de espiral. Um estado A se arma, tornando outro, B, relativamente mais inseguro. No limite, B decide fazer uma guerra preventiva. Se A sabe que é isso que irá acontecer e antecipa, então .... Se A falha em antecipar e não queria a guerra, então o problema é mais de cálculo errado do que de anarquia. E aí é preciso mostrar que uma negociação não poderia resolver o problema do erro de cálculo.
+
+Se uma potência declinante pensa em fazer uma guerra preventiva contra uma potência ascendente, então poderia fazer uma barganha envolvendo concessões no presente e no futuro, para evitar a guerra, que seria preferível por ambos os estados. Mais ainda, a potência delclinante, sabendo que barganhas no futuro são preferíveis à guerra, não teriam razão para ter medo de serem atacados no futuro.
+
+Outro tipo de explicação é sobre utilidade esperada da guerra diferente entre estados. Bruce Bueno de Mesquista argumentou, de maneira influente, que a guerra aconteceria quando ambos os estados esperam uma utilidade esperada do conflito (isto é, benefícios esperados maiores que os custos esperados) maior do que a da paz. Porém, por que não exisitiria um acordo a ser negociado que geraria maiores benefícios, ao evitar a guerra?
+
+Fearon irá então modelar o jogo entre dois estados, para formalizar essas intuições e argumentos. Dois estados, A e B, que têm preferências sobre um objeto (como um território), representado por $X = [0,1]$. 
+
+Estado A prefere soluções o mais próximas de 1 possível, enquanto B é o oposto (mais perto de zero). Podemos pensar que é a divisão de um território entre as partes, e pode ir de 0% a 100%, representando o percentual do território controlado por A. Se o resultado da disputa for $x \in X$, então estados têm utilidade $u_a(x)$ e $u_b(1-x)$. Funções de utilidade são de VNM, com aversão a risco ou neutralidade ao risco. E vamos definir que $u_i(1) = 1$ e $u_i(0) = 0$, $i \in {A,B}$.
+
+Dizer que o conjunto $X$ contém acordos negociados preferíveis á guerra implica que podemos dizer como os estados avaliam conflito armado a opções negociadas.
+
+Se ocorre uma guerra, $A$ vence com probabilidade $p$ e perde com probabilidade $1-p$. Quem vencer escolher o máximo do território.
+A utilidade esperada de A é:
+$p*u_a(1) + (1-p)*u_a(0) - c_a= p - c_a$, em que $c_a$ é o valor perdido (em utilidade) da guerra para A. Digamos, destruição econômica mais perdas de vidas humanas e perdas de equipamento militares.
+
+Similarmente para B:
+$(1-p)*u_b(1) + p*u_b(0) - c_b= 1- p - c_b$,
+
+Suponha que a função utilidade é $u(x) = x$, que representa uma função de utilidade de neutralidade ao risco. Então, se existir algum $x^*$, tal que, $u_a(x^*) > p - c_a$ e $u_b(x^*) > 1 - p - c_b$, então $x^*$ é preferido por ambos os estados. Se existir mais de um ponto, ou mesmo um intervalo, então esse intervalo é preferível a guerra. Resolvendo o sistema de equações de desigualdade, temos que 
+$x^* > p - c_a$ e $1 -x^* > 1 - p - c_b$
+Suponha que $x^* = p - c_a - 0.1$. A primeira equação é satisfeita trivialmente, e a segunda também é satisfeita, como é fácil ver, pois $1 -( p - c_a - 0.1) = 1 -p + c_a + 0.1  > 1 - p - c_b$ , pois 1 cancela, p cancela, ficando
+$c_a + 0.1  > -c_b$. Como $c_a$ é positivo e $c_b$ é positivo, o lado esquerdo da equação é maior que o lado direito.
+
+Do mesmo modo, o ponto $p + c_b - .01$ também satisfaz as duas equações. Portanto, no intervalo 
+$[p - c_a - 0.1, p + c_b - .01]$, ambos os estados estão melhores do que com a guerra. De maneira geral, no intervalo aberto, posso tirar o $.01$ e ficar com: $(p - c_a, p + c_b)$.
+
+Para dar concretude. Se A ucrância e B Rússia. Digamos que $p$, a probabilidade da Ucrância prevalecer fosse 10% antes da guerra começar, $c_a = 2%$ e $c_b = .05%$. Então,  $(.05 - .02, .05 + .005) = (3%, .5,5%)$. Ou seja, a Ucrânia poderia ficar com 3% do seu território + epsiolon para evitar a guerra, e a Rússia aceitaria no máximo  que a Ucrância ficasse com 5,5% do território. A intuição é que a utilidade esperada da Guerra pra Ucrância é uma utilidade equivalente a 3% do território (5% do território menos 2% de destruição da guerra). Ela não poderia dar mais de 5,5% do território, pois preferiria a guerra.
+
+Quais suposições substantivas foram feitas:
+1. existe uma probabilidade $p$, objetiva, que cada estado irá ganhar a guerra. Ainda que ambos os estados tenham estimativas diferentes e conflitivas e haja incerteza sobre seu valor, existe uma probabilidade real, que eles não sabem. E essa probabilidade dá ensejo ao intervalo de negociação e eles sabem disso (se são racionais). Portanto, a princípio uma solução negociada ainda poderia ser tentada.
+
+2. Assumimos que estados são neutros ao risco ou avessos ao risco. Parece plausível, já que um acordo certo seria preferível a uma aposta de tudo ou nada com o mesmo valor esperado. Por fim, assumimos que há uma continuidade de acordos possíveis. Ou seja, o objeto é perfeitamente divisível. Há casos em que isso não é divisível, como por exemplo quando é quem é o líder que ficará no governo. Só pode ser uma pessoa. Nesse caso, indivisibilidade poderia trnar o intervalo de negociação vazio. Porém, pagamentos laterais e issue-linkage podem tornar o objeto divisível. então teria de ser mostrado porque isso não foi possível.
+
+Fearon irá sugerir que o que pode explicar a guerra nesse paradigma é, portanto, blefe resultado de incentivos a superestimar suas capacidades militares e conseguir um acordo melhor na negociação, levando à guerra. Mas aqui é necessário mostrar porque estados não conseguem transmitir informações críveis sobre suas capacidades.
+
+Commitment problems (dificuldade de se comprometer). Potência em ascenção não pode fazer um compromisso crível de ser um hegemon benigno no futuro.^
+
+Referências
+
+War as a commitment problem. Robert Power (2006).
+Fearon (1996): Rationalists explanations for war

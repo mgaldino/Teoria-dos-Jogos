@@ -122,7 +122,7 @@ Tipicamente em modelos na ciência política, assume-se neutralidade ao risco ou
 
 ## Teoria e Prática
 
-Muitos testes foram feitos para verificar se o comportameto das pessoas em situações experimentais condizem com o previsto pela TUE. Em particular, Tversky and Kanheman realizaram uma série de experimentos. Vamos apresentar um deles aqui.
+Muitos testes foram feitos para verificar se o comportameto das pessoas em situações experimentais condizem com o previsto pela TUE. Em particular, Tversky and Kanheman realizaram uma série de experimentos. Vamos apresentar uma versão de um deles aqui.
 
 "Suponha que o Brasil está se preparando para um surto de uma doença que surgiu em outro país e a expectativa é que a doença matará 600 pessoas se nada for feito. Dois programas alternativos para combater as doenças foram pensados. Assuma que as exatas consequências científicas dos programas são como seguem:
 
@@ -130,14 +130,19 @@ Muitos testes foram feitos para verificar se o comportameto das pessoas em situa
 Programa A: 200 pessoas serão salvas.
 Programa B: Há uma probabilidade de $1/3$ que 600 pessoas serão salvas, e uma probabilidade de $2/3$ que nenhuma pessoa será salva.
 
+A utilidade esperada em função do número de pessoas salvas do programa A é: $u(200)$, enquanto a de B é $\frac{1}{3}u(600)). 
 
-72% escolherão A e 28% B
+72% escolheram A e 28% B
+
 2. 
 Programa C: 400 pessoas morrerão.
 Programa D: Há uma probabilidade de $1/3$ que ninguém morrerá, e uma probabilidade de $2/3$ que 600 pessoas morrerão.
 
+Nesse caso, a utilidade esperada de C é  $u(200)$ e a de D é $\frac{1}{3}u(600)). 
+
 Já nesse cenário, 78% preferem D e 22% preferem C.
 
+Vejam que as utilidades esperadas são as mesmas, o que muda é apenas o *framing* das questões, em torno de pessoas salvas ou mortas.
 
 ## Exercícios
 
@@ -146,7 +151,7 @@ Considere o seguinte jogo em um cassino. Você joga um dado de seis faces. Se sa
 ```
 
 ```{exercise}
-Considere o seguinte jogo. Em uma baralho comum de 52 cartas, com quatro naipes (copas, ouro, espada e paus), você escolhe ua carta ao acaso e ganha 10 reais se for de copas. Se tirar um Valete, Dama ou Rei que não seja de copas, você ganha 8. Qualquer outra carta, perde 4. Calcule o valor esperado do jogo.
+Considere o seguinte jogo. Em uma baralho comum de 52 cartas, com quatro naipes (copas, ouro, espada e paus), você escolhe uma carta ao acaso e ganha 10 reais se for de copas. Se tirar um Valete, Dama ou Rei que não seja de copas, você ganha 8. Qualquer outra carta, perde 4. Calcule o valor esperado do jogo.
 ```
 
 ```{exercise}
@@ -157,8 +162,27 @@ Suponha que um indivíduo enfrenta uma loteria L que oferece uma chance de $50\%
 L? E qual o valor esperado da loteria? Nesse caso, o valor esperado e a utilidade esperado são iguais? Como você interpreta isso?
 
 ```
+```{exercise}
+Uma jogadora, Alice, tem a escolha entre um emprego seguro que paga uma renda certa de $50.000 por ano ou um empreendimento que pode render \$100.000 anual com probabilidade de $50\%$ ou \$10.000 com probabilidade de $50\%$.
 
+a) Calcule o valor esperado de ambas as opções.
 
+b) calcule a utiidade esperandas de ambas as opções se a função de utilidade for $u(x) = x$, $u(x) = \sqrt{x}$ e $u(x) = log(x)$, em que $x$ é a renda da jogadora.
+
+c) Qual opção Alice deve escolher, com base na utilidade esperada para cada função de utilidade.
+```
+
+```{exercise}
+Dois países, A e B, estão em uma disputa sobre a poss de um território que pode levar à guerra. O país A estima que tem $60\%$ de chance de ganhar a guerra, que resultaria em controle total do território e uma utilidade de 200, já perder a guerra geraria uma utilidade de -100. Para o país B, a chance de ganhar a guerra é $40\%$, com os mesmos valores de utilidade para ganhar ou perder a guerra.
+
+a) Calcule a utilidade esperada de uma guerra para ambos os países.
+
+b) Divida a utilidade da vitória e derrota por 100. Verifique que a utilidade esperada é igual à utilidade esperada de antes, dividida por 100.
+
+c) Suponha que a função de utilidade do território em disputa em uma solução diplomática é $u(x) = 300x$, em que $x$ é o percentual (entre 0 e 1) de controle por um país do território em disputa. Se houver guerra, a função de utilidade do controle do território passa a ser $u(x) = 300x - 100$. Lemebrando que, se um país vence a guerra, o controle é $100\%$ para o vencedor e $0\%$ para o perdedor. Suponha que se uma solução diplomática for acordada, ela é implementada com certeza. Se B oferecer metade do território em disputa para A, ambos os países prefeririam essa solução à guerra?
+  
+d) Qual o tamanho mínimo do território que B deveria oferecer a A para que este fosse indiferente entre fazer ou não a guerra?
+```
 ## Referências
 
 Knight, F. H., 1921. Risk, uncertainty and profit. University of Chicago Press.
