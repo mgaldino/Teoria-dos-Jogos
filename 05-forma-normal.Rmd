@@ -199,7 +199,7 @@ kable(payoff.mat)
 
 ```
 
-# Jogo da Coordenação
+### Jogo da Coordenação
 
 
 ```{r results = "asis", echo=FALSE}
@@ -223,7 +223,7 @@ kable(payoff.mat)
 
 ```
 
-# chicken - jogo anti-coordenação
+### chicken - jogo anti-coordenação
 
 ```{r results = "asis", echo=FALSE}
 library(knitr)
