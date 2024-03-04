@@ -146,10 +146,6 @@ Considere a relação binária "$>=$". Para mostrar que essa relação implica a
 ```
 
 ```{exercise}
-Da relação de preferência $\succcurlyeq$, mostre que é possível derivar a relação de indiferença $\sim$.
-```
-
-```{exercise}
 Considere o seguinte exemplo: o agente A prefere estritamente café com 7 gramas de açúcar a café sem açúcar, mas é indiferente entre café com 7 gramas de açúcar e café com 6,9 gramas de açúcar, entre café com 6,9 gramas de açúcar e café com 6,8 gramas de açúcar, e assim por diante, até ser indiferente entre café com 0,1 gramas de açúcar e café sem açúcar. O agente A é racional no sentido da Teoria dos Jogos? Justifique sua resposta.
 ```
 

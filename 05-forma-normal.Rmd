@@ -141,104 +141,26 @@ v_3(s_1, s_2) =
 \end{cases}
 \end{equation}
 
-## Soluções de equilíbrio
+## Exercícios
 
+Escreva as informações que especificam um jogo na forma normal (Número de jogadores, estratégias e funções de utilidade) e a matriz de payoff dos seguintes jogos.
 
-Bach e Stravinski
+```{exercise}
+Considere um *happy hour* em que temos dois jogadores (um jogador, e todo o restante do grupo), e podem economizar ou não economizar. 
 
+a) Atribua números fictícios de payoff para esse jogo, de forma a ilustra o dilema da ação acoletiva.
 
-```{r results = "asis", echo=FALSE}
-library(knitr)
-# Define Variables
-M=1
-R=2
-P=0
-
-library(knitr)
-# Assign Pairs
-pair <- function(x,y) sprintf("(%d,%d)", x,y)
-all_pairs <- c(pair(R,M), pair(P,P), pair(P,P), pair(M,R))
-payoff.mat <- matrix(all_pairs, nrow=2)
-dimnames(payoff.mat) <- c(rep(list(c("Bach","Stravinski")), 2))
-results = "asis"
-
-# Plot 
-kable(payoff.mat)
-
+b) Escreva as informações que especificam o jogo na forma normal (Número de jogadores, estratégias e funções de utilidade) e a matriz de payoff.
 ```
 
-## Histórico machista - guerra dos sexos
+```{exercise}
+Considere o jogo do par ou ímpar. 
 
-Diferentemente do DP, a melhor resposta depende do que o outro jogador irá fazer. Assim, para fazer uma previsão, precisamos fazer suposições comportamentaise sobre as crenças a respeito do outro jogador para definir um ou mais equilíbrios para o jogo.
+a) Atribua números fictícios de payoff para esse jogo, de forma a captar as preferências de jogadores nesse jogo.
 
-Nosso conceito de solução para o jogo será o equilíbrio do jogo. Uma das características dos equilíbrios que iremos abordar durante o curso é que ele seja do tipo que se auto-reforça, isto é, agentes que estão jogando estratégias de equilíbrio não possuem incentivos para mudar suas estratégias, ao contrário, o fato de outros estarem jogando as estratégias de equilíbrio devem reforçar o incentivo para qume um jogador permaneça no equilíbrio.
-
-## Jogos tradicionais
-
-Stag Hunt
-
-Na teoria dos jogos, o jogo caça ao cervo (stag hunt, em inglês), às vezes é referido como jogo da garantia, dilema da confiança ou jogo do interesse comum e descreve um conflito entre segurança e cooperação social. O jogo surge do trabalho do Rousseau no segunod discurso (sobre a desigualdade)
-
-```{r results = "asis", echo=FALSE}
-library(knitr)
-# Define Variables
-R=3
-T=2
-P=1
-S=0
-
-# Assign Pairs
-pair <- function(x,y) sprintf("(%d,%d)", x,y)
-all_pairs <- c(pair(R,R), pair(S,T), pair(T,S), pair(P,P))
-payoff.mat <- matrix(all_pairs, nrow=2, byrow=TRUE)
-dimnames(payoff.mat) <- c(rep(list(c("Cervo","Lebre")), 2))
-results = "asis"
-
-# Plot 
-kable(payoff.mat)
-
+b) Escreva as informações que especificam o jogo na forma normal (Número de jogadores, estratégias e funções de utilidade) e a matriz de payoff.
 ```
 
-### Jogo da Coordenação
-
-
-```{r results = "asis", echo=FALSE}
-library(knitr)
-# Define Variables
-# Define Variables
-M=2
-R=1
-P=0
-S=0
-
-# Assign Pairs
-pair <- function(x,y) sprintf("(%d,%d)", x,y)
-all_pairs <- c(pair(R,R), pair(S,T), pair(T,S), pair(P,P))
-payoff.mat <- matrix(all_pairs, nrow=2, byrow=TRUE)
-dimnames(payoff.mat) <- c(rep(list(c("Bach","Stravinski")), 2))
-results = "asis"
-
-# Plot 
-kable(payoff.mat)
-
-```
-
-### chicken - jogo anti-coordenação
-
-```{r results = "asis", echo=FALSE}
-library(knitr)
-# Define Variables
-M <- -1
-R <- 0
-P <- -10
-S <- 3
-
-# Assign Pairs
-pair <- function(x,y) sprintf("(%d,%d)", x,y)
-all_pairs <- c(pair(R,R), pair(S,M), pair(M,S), pair(P,P))
-payoff.mat <- matrix(all_pairs, nrow=2)
-dimnames(payoff.mat) <- c(rep(list(c("Desvia","não desvia")), 2))
-
-# Plot 
-kable(payoff.mat)
+```{exercise}
+Digamos que nina escreva um e-mail para Martín, perguntando se podem se encontrar às 14h da segunda-feira da semana seguinte, em frente ao restaurante central da Universidade onde estudam. Martín responde ao e-mail dizendo que está pode sim. É conhecimento comum que ambos irão ao restaurante central na data e hora combinados? Explique.
 ```
