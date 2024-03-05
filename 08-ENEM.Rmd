@@ -19,7 +19,7 @@ kable(payoff.mat)
 
 Esse jogo é similar ao de par ou ímpar, que estamos acostumados
 
-Exercício 8.1: jogue par ou ímpar com outra pessoa por 5 rodadas. 
+Exercício 7.1: jogue par ou ímpar com outra pessoa por 5 rodadas. 
 
 
 
@@ -35,9 +35,9 @@ payoff.mat <- matrix(c(1, -1, -1, 1),
 kable(payoff.mat)
 ```
 
-Após o jogo, podemos perceber que os jogadores possuem interesses opostos e vocês esperam que o outro não consiga antecipar o que você irá fazer. Nesse caso, ele será indiferente entre jogar qualquer uma de suas estratégias, pois espera que, na média, ambas gerem o mesmo payoff médio.
+Após o jogo, podemos perceber que os jogadores possuem interesses opostos e vocês esperam que o outro não consiga antecipar o que você irá fazer. Nesse caso, ele será indiferente entre jogar qualquer uma de suas estratégias, pois esperar que, na média, ambas gerem o mesmo payoff médio.
 
-Uma estratégia mista é justamente um antidoto contra as tentativas dos outros jogadores advinharem o que você irá fazer. Tomemos o jogo de tênis como exemplo. No saque, se seu adversiário antecipar o que você irá fazer, ele terá uma vantagem. Então, você precisa jogar de um jeito que ele não consiga angtecipar ou advinhar suas estratégias.
+Uma estratégia mista é justamente um antidoto contra as tentativas dos outros jogadores advinharem o que você irá fazer. Considere o jogo de tênis. No saque, se seu adversiário antecipar o que você irá fazer, ele terá uma vantagem. Então, você precisa jogar de um jeito que ele não consiga angtecipar ou advinhar suas estratégias.
 
 Considere o seguinte jogo.
 
@@ -59,7 +59,7 @@ kable(payoff.mat)
 
 É fácil ver que não há equilíbrio de Nash em estratégias puras. Vocês viram que no jogo do par ou ímpar, o ideal é jogar cada estratégia com 50% de chance. Vamos tentar colocar alguma probabilidade nesse jogo? Que tal 50% para cada estratégia também?
 
-Vamos calcular o payoff (utilidade) esperado das novas estratégias, para poder preencher a nova matriz de payoff aumentada.
+Vamos calcular o payoff (utilidade) esperado das novas estratégias, para poder preenhcer a nova matriz de payoff aumentada.
 
 ```{r, results='asis', echo=FALSE}
 library(knitr)
@@ -158,7 +158,6 @@ Por fim, vemos que ambas são estratégias de equilíbrio de Nash. E, nesse caso
 Vamos agora fazer o mesmo exercício para o jogo do par ou ímpar e para pedra, papel tesoura.
 
 Aplicação em ciência política.
-
 Suponha duas candidatas, 1 e 2, que devem decidir onde alocar seus dias finais de campanha, seja no estado A ou estado B, nos EUA. As pesquisas indicam que esses são os estados que podem decidir a batalha. Suponha que as probabilidades de cada candidata ganhar a eleição são dadas como segue:
 
 
@@ -188,7 +187,7 @@ Esse tipo de coisa acontece com frequência em esportes. Um jogador veterano ata
 
 
 
-## Pedra-papel-tesoura
+# Pedra-papel-tesoura
 
 Considere o jogo pedra-papel-tesoura. Assuma que vencer gera um payoff de 1, empate 0 e perder de -1. A matriz de payoff pode ser representada do seguinte modo:
 
@@ -216,57 +215,39 @@ E de maneira análoga para o jogador 2. É fácil ver que não existe equilíbri
 
 Definição do Ronaldo Fiani (p. 192):
 
-> Quando, em vez de escolher entre suas estratégias uma dada estratégia para jogá-la com certeza, um jogador decide alternar entre suas estratégias aleatoriamente, atribuindo uma probabilidade a cada estratégia a ser escolhida, diz-se que o jogador utiliza estratégias mistas. Caso contrário, diz-se que emprega estratégias puras.
+Quando, em vez de escolher entre suas estratégias uma dada estratégia para jogá-la com certeza, um jogador decide alternar entre suas estratégias aleatoriamente, atribuindo uma probabilidade a cada estratégia a ser escolhida, diz-se que o jogador utiliza estratégias mistas. Caso contrário, diz-se que emprega estratégias puras.
 
 Nós vamos definir estratégias mistas da seguinte forma:
 Se o conjunto de estrartégias disponíveis para um jogador é $S = (s_1, s_2, ..., s_m)$, então uma estratégia mista para aquele jogador é uma loteria sobre $S$, $p = (p_1, p_2, ..., p_m)$. Diz-se que o jogador escolheu a estratégia $p$ se ele usa esta loteria para determinar qual estratégia pura irá implementar no jogo.
 
 Em outras plavras, uma estratégia mista é uma distribuição de probabilidade que determina como uma estratégia pura será jogada por meio da realização dessa distribuição.
 
-Definição 8.1.
+Definição 6.1.
 Se um conjunto de estatégias disponíveis para um jogador é $S = {s_1, s_2, ..., s_n}$, então uma **estratégia mista** para aquele jogador é uma loteria sobre $S$, $p = (p_1, p_2, ..., p_n)$. Diz-se que o jogador escolhe essa estratégia $p$ se ele usa essa loteria para determinar que estratégia pura irá implmentar quando de fato jogar o jogo.
 
-A **Utilidade esperada** (ou payoff esperado) do jogador $i$ quando ele escolhe a estratégia pura $s_i \in S_i$ e seu oponente joga a estratégia mista $p_{-i} \in \Delta S_i$ é:
+## Exercícios
 
-$u_i(s_i, p_{-i}) = {\sum\limits_{si \in S_i} u_i(s_i,p_{-i}) *p_i(s_i)}$
+```{exercise}
+ Qual o equilíbrio de Nash em Estratégias Mistas (ENEM) do Dilema do Prisioneiro?
+```
 
-## Achando o ENEM
+```{exercise}
+ Qual o equilíbrio de Nash em Estratégias Mistas (ENEM)do jogo do Chicken??
+```
 
-Considere o jogo do par ou ímpar. Seja $p$ a probabilidade com que a jogadora 1 joga "Par" e $(1-p)$ a probabilidade com o que elajoga "ímpar". De maneira análoga, definimos $q$ e $q -1$ para a jogadora 2.  
+```{exercise}
+Considere o seguinte jogo representado na forma estratégica:
 
-a utilidade esperada da jogadora de cada uma de suas estratégias puras é:
 
-$ue_i(par, q) = q*1 + (1-q)*(-1) = q - 1 + q = 2q - 1$
-
-$ue_i(ímpar, q) = q*(-1) + (1-q)*(1) = -q + 1 - q = 1 - 2q$
-
-Sabemos que o ENEM deixa a jogadora 1 indiferente entre par ou ímpar. Notem que se 
-$ue_i(par, q) > ue_i(ímpar, q)$, a melhor resposta é jogar "par", e se a desigualdade for menor, a melhor resposta é jogar "ímpar". 
-
-$ue_i(par, q) = ue_i(ímpar, q)$
-
-$2q - 1 = 1 - 2q$
-
-$4q = 2$
-
-$q = 1/2$
-
-Em termos de melhor resposta (de correspondência), $p = 0$ se $q < 1/2$, $p = 1/2$ se $q = 1/2$ e $p = 1$ se $q > 1/2$.
-
-Similarmente para a jogadora 2 (exercício para o leitor), mostrando que $(p=1/2, q=1/2)$ é a melhor resposta de ambos os jogadores e constitui um Equilíbrio de Nash (em estratégias mistas).
-
-## Exercício
-
-Considere o seguinte jogo.
-
-```{r results = "asis", echo=FALSE}
+```{r  alto-baixo, results = "asis", echo=FALSE}
 library(knitr)
+# Define Variables
 
 # Assign Pairs
 pair <- function(x,y) sprintf("(%d,%d)", x,y)
-all_pairs <- c(pair(10,-5), pair(20,-20), pair(5,-10), pair(0,0))
-payoff.mat <- matrix(all_pairs, nrow=2)
-dimnames(payoff.mat) <- c(list(c("Não Critica","critica"), c("Baixa juros", "Mantém juros")))
+all_pairs <- c(pair(3,3), pair(3,3), pair(3,3), pair(3,3))
+payoff.mat <- matrix(all_pairs, nrow=2, ncol=2)
+dimnames(payoff.mat) <- c(list(c("Alto","Baixo"), c("Esquerda", "Centro")))
 results = "asis"
 
 # Plot 
@@ -274,64 +255,66 @@ kable(payoff.mat)
 
 ```
 
+a) Existe algum equilíbrio de Nash em Estratégias Puras (ENEP)? Se sim, qual (ou quais)?
+b) Quantos equilíbrios de Nash em estratégias mistas existem?
 
-## Realismo de Estratégias Mistas
+```
+```{exercise}
+Considere o seguinte jogo representado na forma estratégica:
 
-É um pouco estranho imaginar que as pessoas irão aleatorizar suas estratrégias como preconizado pelo Equilíbrio de Nash em Estratégias Mistas. No entanto, temos evidênciia de que isso acontece em algumas situações.
 
-Gauriot et. al (2023) estudaram se atletas de tênis sacam o que a teoria prediz. De maneira simplificada, jogadores podem sacas à esquerda ou à direita. Aqui temos um exemplo, com payoffs fictícios, mas refletindo a ideia de que sacar à direita é diferente de sacar à esquerda. Os payoffs representam as probabilidades de ganhar o ponto.
+```{r a-b-c, results = "asis", echo=FALSE}
+library(knitr)
+# Define Variables
 
+# Assign Pairs
+pair <- function(x,y) sprintf("(%d,%d)", x,y)
+all_pairs <- c(pair(4,4), pair(5,0), pair(0,-1), pair(0,5), pair(1,1), pair(0,0), pair(-1,0), pair(0,0), pair(1,1))
+payoff.mat <- matrix(all_pairs, nrow=3, ncol=3)
+dimnames(payoff.mat) <- c(list(c("A", "B", "C"), c("A", "B", "C")))
+results = "asis"
+
+# Plot 
+kable(payoff.mat)
+
+```
+
+a) Existe algum equilíbrio de Nash em Estratégias Puras (ENEP)? Se sim, qual (ou quais)?
+b) Existe ENEM em que os jogadores aleatorizam entre A e B? Explique.
+c) Existe ENEM em que os jogadores aleatorizam entre B e c? Explique.
+
+```
+
+```{exercise}
+Uma funcionária (jogadora 1) que trabalha para uma chefe (jogadora 2) pode tanto trabalhar (T) quanto enrolar (E), enquanto sua chefe pode tanto monitorar a funcionária (M) quanto ignorá-la (I). Como em muitos relacionamentos entre funcionária e chefe, se a funcionária estiver trabalhando, a chefe prefere não monitorá-la, mas se a chefe não estiver monitorando, a funcionária prefere enrolar. A matriz de payoff abaixo representa uma situação como essa.
 
 ```{r results = "asis", echo=FALSE}
 library(knitr)
+# Define Variables
 
-# Definindo os payoffs
-# Ajustando os payoffs para refletir maior probabilidade de vitória ao antecipar o saque
-pair <- function(x,y) sprintf("%.2f, %.2f", x,y)
-all_pairs <- c(pair(0.58,0.42), pair(0.79,0.21), pair(0.73,0.27), pair(0.49,0.51))
-payoff.mat <- matrix(all_pairs, nrow=2, byrow=TRUE)
-dimnames(payoff.mat) <- list(c("Saca à Esquerda","Saca à Direita"), c("Recebe à Esquerda", "Recebe à Direita"))
+# Assign Pairs
+pair <- function(x,y) sprintf("(%d,%d)", x,y)
+all_pairs <- c(pair(1,1), pair(0,2), pair(1,2), pair(2,1))
+payoff.mat <- matrix(all_pairs, nrow=2, ncol=2)
+dimnames(payoff.mat) <- c(list(c("T","E"), c("M", "I")))
+results = "asis"
 
+# Plot 
+kable(payoff.mat)
 
-# Exibindo a tabela
-kable(payoff.mat, caption = "Matriz de Payoff para o Jogo de Tênis")
 ```
 
-Para achar os ENEM, precisamos calcular as utilidades esperadas de saque e recebimento (esquerda ou direita) para vcada jogador.
+a) escreva a fução de melhor resposta de cada jogadora (isto é, para a jogadora 1, qual probabilidade $p$ ela deve escolher para cada possível escolha de probabilidade $q$ da jogadora 2).
+b) qual o equilíbrio de Nash do jogo?
 
-Para A, temos:
-
-\begin{align}
-UE(esquerda) = 0.58q+0.79(1−q)=0.79−0.21q \\
- 
-UE(direita) = 0.73q+0.49(1−q)=0.49+0.24q \\
-
-0.79−0.21q = 0.49+0.24q \\
-0.45q = 0.3 \\
-q = 30/45 = 1/3
-\end{align}
-
-
-Por raciocínio análogo (verifique), vericaremos que o jogador A deve sacar à esquerda 8/15 vezes e À direita 7/15 vezes. Vejam que, mesmo sua probabilidade de ganahr ser menor na direita quando o outro jogador corretamente antecipa isso, ele deve jogar em equilíbrio quase a mesma percentagem de vezes À direita e À esquerda. Por outro lado, o recebedor deve receber na direita apensas 1/3 das vezes.
-
-Utilizando um modelo como esse, Gauriot et. al (2023) concluíram que jogadores profissionais tendem a sacar como a teoria prediz, efetivamente aleatorizando seu saque na proporção das habilidades dos jogadores, de forma a ter uma probabilidade de vecner o ponto em equilíbrio igual para cada lado da quadra.
-
-As figuras abaixo são respdouzidas tai como aparecem no artigo referenciado. O primeiro gráfico apresenta os saques dos jogadores, em que cada ponto é um saque na quadra. O mais relevante para nós aqui é a comparação entre o segundo e terceiro gráficos, que compara a expectativa teórica com os dados reais de jogadores profissionais e juvenis de Tênis. A linha azul é a espectativa téorica de ENEM, e a linha vermelha os dados reais. Como vemos, tenistas profissionais jogam quase que exatamente ENEM, enquanto jgoadores juvenis, não. Experimento em laboratório mostra também que pessoas comuns têm dificuldade de jogar ENEM.
-
-```{r, bounce-ball, echo=FALSE}
-knitr::include_graphics("figure_3_tennis.jpg")
 ```
 
-```{r men-prob, echo=FALSE}
-knitr::include_graphics("mens winning prob.jpg")
+```{exercise}
+ Qual o equilíbrio de Nash em Estratégias Mistas (ENEM) do Dilema do Prisioneiro?
 ```
 
-```{r junior-prob, echo=FALSE}
-knitr::include_graphics("junior players.jpg")
-```
-
-A minha intrerpretação desse e de outros trabalhos similares é que, quando há muito em jogo, jogadores têm oportunidade de aprender e há seleção dos melhores, estratégias tendem a convergir para o equilíbrio de Nash (se for único).
 
 ## Referências
+
 
 Gauriot, R., Page, L., & Wooders, J. (2023). Expertise, gender, and equilibrium play. Quantitative Economics, 14(3), 981-1020.

@@ -278,5 +278,5 @@ Commitment problems (dificuldade de se comprometer). Potência em ascenção nã
 
 Referências
 
-War as a commitment problem. Robert Power (2006).
-Fearon (1996): Rationalists explanations for war
+Powell, R. (2006). War as a commitment problem. International organization, 60(1), 169-203.
+Fearon, J. D. (1995). Rationalist explanations for war. International organization, 49(3), 379-414.

@@ -19,7 +19,11 @@ exr:unnamed-chunk-19
 exr:unnamed-chunk-20
 exr:unnamed-chunk-21
 exr:unnamed-chunk-22
-tab:unnamed-chunk-47
+exr:unnamed-chunk-46
+exr:unnamed-chunk-47
+exr:unnamed-chunk-48
+exr:unnamed-chunk-50
+exr:unnamed-chunk-52
 prefácio
 introdução
 dilema-do-prisioneiro
@@ -80,9 +84,7 @@ determinar-os-eleitores-pivot-do-exemplo.
 aplicação---modelo-sobre-guerra
 equilíbrio-de-nash-em-estratégias-mistas
 pedra-papel-tesoura
-achando-o-enem
-exercício
-realismo-de-estratégias-mistas
+exercícios-3
 referências-2
 jogados-dinâmicos
 racionalidade-sequencial
@@ -90,4 +92,4 @@ jogo-na-forma-extensiva
 jogo-da-confiança
 informações
 subjogo
-exercícios-3
+exercícios-4
