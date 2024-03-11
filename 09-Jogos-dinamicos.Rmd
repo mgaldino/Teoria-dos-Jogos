@@ -1,16 +1,22 @@
 # Jogados Dinâmicos
 
-## Racionalidade Sequencial
+## Introdução
 
 Considere novamente o jogo Bach e Stravinsky. Suponha que a jogadora 1 joga primeiro e e a jogadora 2 pode observar a esoclha de 1. Imagine que ela vai para um lugar, liga para a amiga e diz: estou aqui no lugar tal (espetáculo do Bach ou do Stravinsky).
 
 Veja que em termos de equilíbrios de Nash, continuamos com os mesmos dois equilíbrios de antes. Porém, não faz sentido achar que o equilíbrio (S,S) será jogado, pois a jogadora 1 sabe que, se for para Bach, 2 também irá. Jogos na forma normal não capturam muito bem a noção de jogos sequenciais e racionalidade sequencial.
 
-A forma estratégica do jogo, de fato, não traz informações nem sobre a ordem dos movimentos, nem as ações disponíveis para cada jogadora na sua vez de jogar (apenas estratégias. A distinção ficará mais clara depois.)
+A forma estratégica do jogo, de fato, não traz informações nem sobre a ordem dos movimentos, nem as ações disponíveis para cada jogadora na sua vez de jogar.
+
+Por isso, iremos alterar a representação de nosso jogo, para a forma extensiva, que tornará explícito **a ordem** em que as jogadoras jogam, e o que cada jogadora **sabe** quando é sua vez de jogar. Nesse cenário, estratégias referem-se a planos contingentes de ações (como no jogo da bandeira), em vez de ações não-contigentes.
+
+Iremos introduzir a noção de indução reversa ou indução para trás como uma forma de solucionar jogos. Noção que for formalizada por Selten (1965) como equilíbrio de subjogo-perfeito e contempla situações em que jogadoras se movem simultaneamente em múltiplos períodos e a indução reversa não pode ser aplicada.
+
+Comecemos então pela introdução do que significa descrever um jogo na forma extensiva.
 
 ## Jogo na forma extensiva
 
-Por isso, iremos alterar a representação de nosso jogo, para a forma extensiva.
+Um jogo na forma extensiva pode ser visto como uma generalização multi-estágio de árvores de decisão.
 
 ```{r results = "asis", echo=FALSE, warnings=FALSE}
 library(rgamer)
@@ -28,16 +34,46 @@ g1 <- extensive_form(
 
 A árvore do jogo é lida de cima para baixo. No topo está quem joga primeiro. O retângulo com o nome da jogadora é chamado de nó. No primeiro nó, Serena tem duas ações possívels, Bach e Stravinski. Uma vez que ela escolha sua ação, é a vez da Nina, que também tem duas opções ("bach" e "stravinsky", em caixa baixa, para distinguir as ações das duas jogadoras). Se Serena escolheu Bach, Nina está no galho da esquerda. Se Serena escolheu Stravinsky, Nina está no galo da direita. E uma vez que Nina faça sua escolha, o jogo acaba e os payoffs finais são mostrados. O primeiro payoff é da jogadora 1, e o segundo da jogadora 2.
 
-Assim, acrescentaremos:
+Assim, com a forma extensiva, temos como antes:
 
-1. ordem dos movimentos
-2. Ações das jogadores quando for a vez deles de se moverem.
-3. O conhecimento que as jogadoras possuem quando é sua vez de se moverem.
+1. Número de jogadoras, $N$.
+2. Payoffs ou funções de utilidade em função dos resultados, $\{u_i(\cdot)\}_{i \in N}$
 
-Há um novo elemento que também iremos introduzir, que são distribuições de probabilidade sobre eventos exógenos.
+E acrescentamos:
+
+3. Ordem dos movimentos
+4. Ações das jogadoras quando for a vez delas de se moverem.
+5. O conhecimento que as jogadoras possuem quando é sua vez de se moverem.
+
+O ponto 5 é importante para distinguir entre Nina joga depois da Serena de um lado, e Nina joga depois da Serena sabendo o que Serena jogou antes dela.
+
+Por fim, em alguns casos é possível acrescentar eventos aleatórios. Por exemplo, o jogo acima poderia ser modificado para incluir a chance de chover. Suponha que o espetáculo de Bach é a céu aberto, e o de Stravinski, não. Então, se choveu os payoffs das jogadoras é diferente de se não choveu. Vamos supor que elas preferem ficar juntas sob chuva que separadas. Como representar essa possibilidade? A forma como fazemos isso é criar uma jogadora fictícia, que é a natureza, que joga aleatoriamente sem considerações estratégicas. Essa probabilidade é exógena, no sentido de que é fixa e determinada antes do jogo começar, de modo que não depende das escolhas das jogadoras.
+
+Eis como ficaria o jogo nesse caso:
+
+```{r results = "asis", echo=FALSE, warnings=FALSE}
+library(rgamer)
+
+# Supondo que a função extensive_form e a estrutura do pacote permitam esse tipo de modelagem
+library(rgamer)
+
+g1 <- extensive_form(
+  players = list("Nature", rep("Serena", 2), rep("Nina", 4), rep(NA, 8)),
+  actions = list(c("Chove", "Sem chuva"), 
+                 c("Bach", "Stravinski"), c("Bach", "Stravinski"),
+                 c("bach ", " strav."), c("bach ", " strav."), c("bach ", " strav."), c("bach ", " strav.")),
+  payoffs = list(Nature = rep(NA, 8),  # Natureza não tem pagamentos, NA para os lugares de pagamento
+                 Serena = c(1, -1, -1, 1, 2, 0, 0, 1),  # Pagamentos para Serena
+                 Nina = c(0, -1, 0, 2, 1, 0, 0, 2)),  # Pagamentos para Nina
+  show_node_id = TRUE)
 
 
-Também é possivel representar nosso jogo original em que as jogadoras escolhem simultaneamente ou, mais propriamente, sem saber o que a outra jogadora fez. Porém, precisaremos modificar um pouquinho nossa árvore do jogo. Antes de fazer isso, vamos defini-la.
+```
+
+
+Também é possivel representar nosso jogo original em que as jogadoras escolhem simultaneamente ou, mais propriamente, sem saber o que a outra jogadora fez. Porém, precisaremos modificar um pouquinho nossa árvore do jogo. 
+
+Antes de fazer isso, vamos defini-la.
 
 Definição de árvore do jogo
 
@@ -63,14 +99,13 @@ O jogador p1 joga primeiro. Logo, i(n1) = p1.
 
 ## Informações
 
-Quais informações cada jogador tem quando é sua vezde jogar? Uma jogadora pode ter informação bem fina sobre onde está no jogo, ou bem grosseira. Vamos então introduzir a seguinte definição:
-
+Quais informações cada jogador tem quando é sua vez de jogar? Uma jogadora pode ter informação bem fina sobre onde está no jogo, ou bem grosseira. Vamos então introduzir a seguinte definição:
 
 Definição conjunto de informações:
 
-Cada jogador $i$ tem uma coleção de conjuntos de informação $h_i$ the particione (divide) os nós do jogo no qual uma jogadora $i$ move com as seguintes propriedades:
+Cada jogador $i$ tem uma coleção de conjuntos de informação $h_i$ the particiona (divide) os nós do jogo no qual uma jogadora $i$ move com as seguintes propriedades:
 
-1. Se $h_i$ é uma conjunto unitário (singleton) que inclui apenas $x$, então a jogadora $i$ que se move em $x$ sabe que está em $x$.
+1. Se $h_i$ é uma conjunto unitário (*singleton*) que inclui apenas $x$, então a jogadora $i$ que se move em $x$ sabe que está em $x$.
 2. Se  $x \neq x'$ e se ambos $x \in h_i$ e $x' \in h_i$ então a jogadora $i$ que se move em $x$ não sabe se está em em $x$ ou $x'$.
 3. Se $x \neq x'$ e se ambos $x$ e $x' \in h_i$, então $A_i(x) = A_i(x')$.
 

@@ -76,6 +76,32 @@ A aprovação da PEC das Domésticas marca um ponto de inflexão nesse cenário.
 Portanto, a mudança real exige uma abordagem que não apenas redistribua o custo do trabalho doméstico de maneira mais equitativa entre as raças, mas que também desafie e transforme as normas de gênero que atribuem esse trabalho principalmente às mulheres.
 </div>
 
+## Resumo de notação matemática
+
+$\doteq$ relação de igualdade que é verdade por definição. Ex. $\bar{x} \doteq \frac{\sum_{i=1}^n(x_i)}{n}$.
+
+$\approx$ aproximadamente igual.
+
+$\varpropto$ proporcional a.
+
+$P(X=x)$ Probabilidade que a variável aleatória $X$ assuma o valor $x$.
+
+$\mathbb{E}[X]$ esperança de $X$, isto é, $\mathbb{E}[X] \doteq \sum_x(x)p(X)$
+
+$\arg\max_{x}(f(x))$ o valor de $x$ que maximiza $f(x)$.
+
+$\mathbb{R}$ o conjunto dos números reais.
+
+$(a,b]$ o intervalo dos reais entre $a$ e $b$, incluindo $b$ mas excluindo $a$.
+
+$\gamma$ a menos que especificado em contrário, parâmetro de taxa de desconto intertemporal.
+
+$-i$ indicado para se referir a todos as outras jogadoras que não a jogadora $i$.
+
+$s_i$ estratégia da jogadora $i$.
+
+$s_{-i}$ estratégia de todas as outras jogadoras que não a jogadora $i$.
+
 ## Referências
 
 Kollock, P. (1998). Social dilemmas: The anatomy of cooperation. Annual review of sociology, 183-214.

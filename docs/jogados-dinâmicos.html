@@ -23,7 +23,7 @@
 <meta name="author" content="Manoel Galdino" />
 
 
-<meta name="date" content="2024-03-05" />
+<meta name="date" content="2024-03-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -148,7 +148,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="introdução.html"><a href="introdução.html#happy-hour"><i class="fa fa-check"></i><b>2.3</b> Happy hour</a></li>
 <li class="chapter" data-level="2.4" data-path="introdução.html"><a href="introdução.html#dilema-da-segurança"><i class="fa fa-check"></i><b>2.4</b> Dilema da Segurança</a></li>
 <li class="chapter" data-level="2.5" data-path="introdução.html"><a href="introdução.html#cuidar-da-casa"><i class="fa fa-check"></i><b>2.5</b> Cuidar da casa</a></li>
-<li class="chapter" data-level="2.6" data-path="introdução.html"><a href="introdução.html#referências"><i class="fa fa-check"></i><b>2.6</b> Referências</a></li>
+<li class="chapter" data-level="2.6" data-path="introdução.html"><a href="introdução.html#resumo-de-notação-matemática"><i class="fa fa-check"></i><b>2.6</b> Resumo de notação matemática</a></li>
+<li class="chapter" data-level="2.7" data-path="introdução.html"><a href="introdução.html#referências"><i class="fa fa-check"></i><b>2.7</b> Referências</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="racionalidade-e-relações-de-preferência.html"><a href="racionalidade-e-relações-de-preferência.html"><i class="fa fa-check"></i><b>3</b> Racionalidade e Relações de Preferência</a>
 <ul>
@@ -225,7 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10" data-path="jogados-dinâmicos.html"><a href="jogados-dinâmicos.html"><i class="fa fa-check"></i><b>10</b> Jogados Dinâmicos</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="jogados-dinâmicos.html"><a href="jogados-dinâmicos.html#racionalidade-sequencial"><i class="fa fa-check"></i><b>10.1</b> Racionalidade Sequencial</a></li>
+<li class="chapter" data-level="10.1" data-path="jogados-dinâmicos.html"><a href="jogados-dinâmicos.html#introdução-1"><i class="fa fa-check"></i><b>10.1</b> Introdução</a></li>
 <li class="chapter" data-level="10.2" data-path="jogados-dinâmicos.html"><a href="jogados-dinâmicos.html#jogo-na-forma-extensiva"><i class="fa fa-check"></i><b>10.2</b> Jogo na forma extensiva</a></li>
 <li class="chapter" data-level="10.3" data-path="jogados-dinâmicos.html"><a href="jogados-dinâmicos.html#jogo-da-confiança"><i class="fa fa-check"></i><b>10.3</b> Jogo da confiança</a></li>
 <li class="chapter" data-level="10.4" data-path="jogados-dinâmicos.html"><a href="jogados-dinâmicos.html#informações"><i class="fa fa-check"></i><b>10.4</b> Informações</a></li>
@@ -253,40 +254,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="jogados-dinâmicos" class="section level1 hasAnchor" number="10">
 <h1><span class="header-section-number">Capítulo10</span> Jogados Dinâmicos<a href="jogados-dinâmicos.html#jogados-dinâmicos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="racionalidade-sequencial" class="section level2 hasAnchor" number="10.1">
-<h2><span class="header-section-number">10.1</span> Racionalidade Sequencial<a href="jogados-dinâmicos.html#racionalidade-sequencial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="introdução-1" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Introdução<a href="jogados-dinâmicos.html#introdução-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Considere novamente o jogo Bach e Stravinsky. Suponha que a jogadora 1 joga primeiro e e a jogadora 2 pode observar a esoclha de 1. Imagine que ela vai para um lugar, liga para a amiga e diz: estou aqui no lugar tal (espetáculo do Bach ou do Stravinsky).</p>
 <p>Veja que em termos de equilíbrios de Nash, continuamos com os mesmos dois equilíbrios de antes. Porém, não faz sentido achar que o equilíbrio (S,S) será jogado, pois a jogadora 1 sabe que, se for para Bach, 2 também irá. Jogos na forma normal não capturam muito bem a noção de jogos sequenciais e racionalidade sequencial.</p>
-<p>A forma estratégica do jogo, de fato, não traz informações nem sobre a ordem dos movimentos, nem as ações disponíveis para cada jogadora na sua vez de jogar (apenas estratégias. A distinção ficará mais clara depois.)</p>
+<p>A forma estratégica do jogo, de fato, não traz informações nem sobre a ordem dos movimentos, nem as ações disponíveis para cada jogadora na sua vez de jogar.</p>
+<p>Por isso, iremos alterar a representação de nosso jogo, para a forma extensiva, que tornará explícito <strong>a ordem</strong> em que as jogadoras jogam, e o que cada jogadora <strong>sabe</strong> quando é sua vez de jogar. Nesse cenário, estratégias referem-se a planos contingentes de ações (como no jogo da bandeira), em vez de ações não-contigentes.</p>
+<p>Iremos introduzir a noção de indução reversa ou indução para trás como uma forma de solucionar jogos. Noção que for formalizada por Selten (1965) como equilíbrio de subjogo-perfeito e contempla situações em que jogadoras se movem simultaneamente em múltiplos períodos e a indução reversa não pode ser aplicada.</p>
+<p>Comecemos então pela introdução do que significa descrever um jogo na forma extensiva.</p>
 </div>
 <div id="jogo-na-forma-extensiva" class="section level2 hasAnchor" number="10.2">
 <h2><span class="header-section-number">10.2</span> Jogo na forma extensiva<a href="jogados-dinâmicos.html#jogo-na-forma-extensiva" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Por isso, iremos alterar a representação de nosso jogo, para a forma extensiva.</p>
+<p>Um jogo na forma extensiva pode ser visto como uma generalização multi-estágio de árvores de decisão.</p>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
 <p>A árvore do jogo é lida de cima para baixo. No topo está quem joga primeiro. O retângulo com o nome da jogadora é chamado de nó. No primeiro nó, Serena tem duas ações possívels, Bach e Stravinski. Uma vez que ela escolha sua ação, é a vez da Nina, que também tem duas opções (“bach” e “stravinsky”, em caixa baixa, para distinguir as ações das duas jogadoras). Se Serena escolheu Bach, Nina está no galho da esquerda. Se Serena escolheu Stravinsky, Nina está no galo da direita. E uma vez que Nina faça sua escolha, o jogo acaba e os payoffs finais são mostrados. O primeiro payoff é da jogadora 1, e o segundo da jogadora 2.</p>
-<p>Assim, acrescentaremos:</p>
+<p>Assim, com a forma extensiva, temos como antes:</p>
 <ol style="list-style-type: decimal">
-<li>ordem dos movimentos</li>
-<li>Ações das jogadores quando for a vez deles de se moverem.</li>
+<li>Número de jogadoras, <span class="math inline">\(N\)</span>.</li>
+<li>Payoffs ou funções de utilidade em função dos resultados, <span class="math inline">\(\{u_i(\cdot)\}_{i \in N}\)</span></li>
+</ol>
+<p>E acrescentamos:</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Ordem dos movimentos</li>
+<li>Ações das jogadoras quando for a vez delas de se moverem.</li>
 <li>O conhecimento que as jogadoras possuem quando é sua vez de se moverem.</li>
 </ol>
-<p>Há um novo elemento que também iremos introduzir, que são distribuições de probabilidade sobre eventos exógenos.</p>
-<p>Também é possivel representar nosso jogo original em que as jogadoras escolhem simultaneamente ou, mais propriamente, sem saber o que a outra jogadora fez. Porém, precisaremos modificar um pouquinho nossa árvore do jogo. Antes de fazer isso, vamos defini-la.</p>
+<p>O ponto 5 é importante para distinguir entre Nina joga depois da Serena de um lado, e Nina joga depois da Serena sabendo o que Serena jogou antes dela.</p>
+<p>Por fim, em alguns casos é possível acrescentar eventos aleatórios. Por exemplo, o jogo acima poderia ser modificado para incluir a chance de chover. Suponha que o espetáculo de Bach é a céu aberto, e o de Stravinski, não. Então, se choveu os payoffs das jogadoras é diferente de se não choveu. Vamos supor que elas preferem ficar juntas sob chuva que separadas. Como representar essa possibilidade? A forma como fazemos isso é criar uma jogadora fictícia, que é a natureza, que joga aleatoriamente sem considerações estratégicas. Essa probabilidade é exógena, no sentido de que é fixa e determinada antes do jogo começar, de modo que não depende das escolhas das jogadoras.</p>
+<p>Eis como ficaria o jogo nesse caso:</p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<p>Também é possivel representar nosso jogo original em que as jogadoras escolhem simultaneamente ou, mais propriamente, sem saber o que a outra jogadora fez. Porém, precisaremos modificar um pouquinho nossa árvore do jogo.</p>
+<p>Antes de fazer isso, vamos defini-la.</p>
 <p>Definição de árvore do jogo</p>
 <p>Uma <strong>árvore do jogo</strong> é formada por um conjunto de nós <span class="math inline">\(x \in X\)</span> com uma relação de precedência <span class="math inline">\(x &gt; x&#39;\)</span>, que significa “x precede a x’”. Ou seja, <span class="math inline">\(x\)</span> vem antes de <span class="math inline">\(x&#39;\)</span>. Cada nó só tem um predecessor. A relação de precedência é transitiva (<span class="math inline">\(x &gt; x&#39;, x&#39; &gt; x&#39;&#39; =&gt; x &gt; x&#39;&#39;\)</span>), assimetrica (x &gt; x’ =&gt; não (x’ &gt; x)), isto é, <span class="math inline">\(x\)</span> precede <span class="math inline">\(x&#39;\)</span>, mas <span class="math inline">\(x&#39;\)</span> não precede <span class="math inline">\(x\)</span>, e incompleta (nem todos os pares podem ser ordenados). Há um nó especial, chamado raiz da árvore, denotada por n1, que precede quaisquer outros nós <span class="math inline">\(x \in X\)</span>. Nós que não precedem outros ós são chamados de nós terminais, denotados pelo conjunto <span class="math inline">\(Z \subset X\)</span>. Nós terminais denotam o fim do jogo, com os payoffs associados. Cada nós <span class="math inline">\(x\)</span> que não é terminal é atribuído a um jogador <span class="math inline">\(i(x)\)</span> com o conjunto de ações <span class="math inline">\(A_i(x)\)</span>, ou para natureza.</p>
 </div>
 <div id="jogo-da-confiança" class="section level2 hasAnchor" number="10.3">
 <h2><span class="header-section-number">10.3</span> Jogo da confiança<a href="jogados-dinâmicos.html#jogo-da-confiança" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
 <p>O jogador p1 joga primeiro. Logo, i(n1) = p1.</p>
 </div>
 <div id="informações" class="section level2 hasAnchor" number="10.4">
 <h2><span class="header-section-number">10.4</span> Informações<a href="jogados-dinâmicos.html#informações" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Quais informações cada jogador tem quando é sua vezde jogar? Uma jogadora pode ter informação bem fina sobre onde está no jogo, ou bem grosseira. Vamos então introduzir a seguinte definição:</p>
+<p>Quais informações cada jogador tem quando é sua vez de jogar? Uma jogadora pode ter informação bem fina sobre onde está no jogo, ou bem grosseira. Vamos então introduzir a seguinte definição:</p>
 <p>Definição conjunto de informações:</p>
-<p>Cada jogador <span class="math inline">\(i\)</span> tem uma coleção de conjuntos de informação <span class="math inline">\(h_i\)</span> the particione (divide) os nós do jogo no qual uma jogadora <span class="math inline">\(i\)</span> move com as seguintes propriedades:</p>
+<p>Cada jogador <span class="math inline">\(i\)</span> tem uma coleção de conjuntos de informação <span class="math inline">\(h_i\)</span> the particiona (divide) os nós do jogo no qual uma jogadora <span class="math inline">\(i\)</span> move com as seguintes propriedades:</p>
 <ol style="list-style-type: decimal">
-<li>Se <span class="math inline">\(h_i\)</span> é uma conjunto unitário (singleton) que inclui apenas <span class="math inline">\(x\)</span>, então a jogadora <span class="math inline">\(i\)</span> que se move em <span class="math inline">\(x\)</span> sabe que está em <span class="math inline">\(x\)</span>.</li>
+<li>Se <span class="math inline">\(h_i\)</span> é uma conjunto unitário (<em>singleton</em>) que inclui apenas <span class="math inline">\(x\)</span>, então a jogadora <span class="math inline">\(i\)</span> que se move em <span class="math inline">\(x\)</span> sabe que está em <span class="math inline">\(x\)</span>.</li>
 <li>Se <span class="math inline">\(x \neq x&#39;\)</span> e se ambos <span class="math inline">\(x \in h_i\)</span> e <span class="math inline">\(x&#39; \in h_i\)</span> então a jogadora <span class="math inline">\(i\)</span> que se move em <span class="math inline">\(x\)</span> não sabe se está em em <span class="math inline">\(x\)</span> ou <span class="math inline">\(x&#39;\)</span>.</li>
 <li>Se <span class="math inline">\(x \neq x&#39;\)</span> e se ambos <span class="math inline">\(x\)</span> e <span class="math inline">\(x&#39; \in h_i\)</span>, então <span class="math inline">\(A_i(x) = A_i(x&#39;)\)</span>.</li>
 </ol>
@@ -312,10 +325,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="exercícios-4" class="section level2 hasAnchor" number="10.6">
 <h2><span class="header-section-number">10.6</span> Exercícios<a href="jogados-dinâmicos.html#exercícios-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ache todos os subjogos do jogo abaixo.</p>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
 <p>Modelo o jogo como uma árvore (forma extensiva) e ache todos os subjogos do jogo abaixo. (exercício 156.2c do Osborne).</p>
 <p>Os políticos Rosa e Ernesto precisam tomar uma posição sobre um assunto. As opções são Berlim (B) ou Havana (H). Eles escolhem sequencialmente. Uma terceira pessoa, Karl, determina quem escolhe primeiro. Tanto Rosa quanto Ernesto se importam apenas com as ações que escolhem, não com quem escolhe primeiro. Rosa prefere o resultado em que ambos escolhem B ao resultado em que ambos escolhem H, e prefere esse resultado a qualquer um dos casos em que ela e Ernesto escolhem ações diferentes; ela é indiferente entre esses dois últimos resultados. As preferências de Ernesto diferem das de Rosa no sentido de que os papéis de B e H são invertidos. As preferências de Karl são as mesmas que as de Ernesto. Modele essa situação como um jogo extensivo com informação perfeita. (Especifique os componentes do jogo e represente o jogo em um diagrama.)</p>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
 <p>Existem 6 subjogos próprios e 7 subjogos no total, contando o jogo inteiro como um subjogo.</p>
 <p>Equilíbrio de Nash Perfeito em Subjogos</p>
 <p>Definição informal: Um equilíbrio perfeito em subjogos é um perfil estratégico <span class="math inline">\(s^*\)</span> com a propriedade de que, em nenhum subjogo, qualquer jogador <span class="math inline">\(i\)</span> pode se sair melhor escolhendo uma estratégia diferente de <span class="math inline">\(s^*_i\)</span>, dado que todos os outros jogadores <span class="math inline">\(j\)</span> aderem a <span class="math inline">\(s^*_j\)</span>.</p>

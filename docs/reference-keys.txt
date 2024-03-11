@@ -31,6 +31,7 @@ dilema-da-ação-coletiva
 happy-hour
 dilema-da-segurança
 cuidar-da-casa
+resumo-de-notação-matemática
 referências
 racionalidade-e-relações-de-preferência
 tomada-de-decisão
@@ -87,7 +88,7 @@ pedra-papel-tesoura
 exercícios-3
 referências-2
 jogados-dinâmicos
-racionalidade-sequencial
+introdução-1
 jogo-na-forma-extensiva
 jogo-da-confiança
 informações

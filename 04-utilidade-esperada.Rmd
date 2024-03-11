@@ -130,7 +130,7 @@ Muitos testes foram feitos para verificar se o comportameto das pessoas em situa
 Programa A: 200 pessoas serão salvas.
 Programa B: Há uma probabilidade de $1/3$ que 600 pessoas serão salvas, e uma probabilidade de $2/3$ que nenhuma pessoa será salva.
 
-A utilidade esperada em função do número de pessoas salvas do programa A é: $u(200)$, enquanto a de B é $\frac{1}{3}u(600)). 
+A utilidade esperada em função do número de pessoas salvas do programa A é: $u(200)$, enquanto a de B é $\frac{1}{3}u(600))$. 
 
 72% escolheram A e 28% B
 
@@ -138,7 +138,7 @@ A utilidade esperada em função do número de pessoas salvas do programa A é: 
 Programa C: 400 pessoas morrerão.
 Programa D: Há uma probabilidade de $1/3$ que ninguém morrerá, e uma probabilidade de $2/3$ que 600 pessoas morrerão.
 
-Nesse caso, a utilidade esperada de C é  $u(200)$ e a de D é $\frac{1}{3}u(600)). 
+Nesse caso, a utilidade esperada de C é  $u(200)$ e a de D é $\frac{1}{3}u(600))$. 
 
 Já nesse cenário, 78% preferem D e 22% preferem C.
 
