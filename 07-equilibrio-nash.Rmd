@@ -184,7 +184,7 @@ Para incorporar figuras LaTeX no R Markdown, você tem algumas opções:
 
 Para escrever a função de melhor resposta de cada jogador, considere o seguinte. Vamos começar olhando para o partido $A$. Se $B$ anunciar uma plataforma $x_B > 0$, então escolher a mesma posição $x_A = x_B$ ou a exata oposta $x_A = -X_b$ haverá um empate. Se escolher $x_A > x_B$ ou $x_A < -x_B$, perde. O único caso em que ganha é se escolher $x_A = \left[ -x_B + 1, x_B - 1 \right]$. De modo análogo, se $x_B < 0$, $x_A = -X_b$ levará ao empagte, $x_A > -x_B$ ou $x_A < x_B$, perderá, e $\left[ x_B + 1, -x_B - 1 \right]$ leva à vitória. Como ganhar é melhor que perder e empatar, temos a melhor resposta no cenário em que $x_B > 0$ e que $x_B < 0$. Se $x_B = 0$, a melhor resposta é também jogar zero, isto é, $x_A = x_B = 0$, já que qualquer outra posição levará à derrota de $A$. Podemos então construir a correspondência de melhor resposta:para $A$
 
-![Figura 7.1 - O modelo de voto do Hotteling](figura_hotteling.png)
+![Figura 7.1 - O modelo de voto do Hotteling](figura_hotteling_v2.png)
 
 \[
 x_A = 
