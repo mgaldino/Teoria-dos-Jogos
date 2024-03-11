@@ -70,6 +70,11 @@ g1 <- extensive_form(
 
 ```
 
+Por fim, mantemos uma suposição feita em nossos jogos anteriores, agora estendida aos itens 1-6, que é:
+
+7. É conhecimento comum toda a estrutura do jogo representada pelos itens 1-6 para todas as jogadoras.
+
+
 
 Também é possivel representar nosso jogo original em que as jogadoras escolhem simultaneamente ou, mais propriamente, sem saber o que a outra jogadora fez. Porém, precisaremos modificar um pouquinho nossa árvore do jogo. 
 
