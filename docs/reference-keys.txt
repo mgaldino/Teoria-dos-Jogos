@@ -24,6 +24,7 @@ exr:unnamed-chunk-47
 exr:unnamed-chunk-48
 exr:unnamed-chunk-50
 exr:unnamed-chunk-52
+fig:bach-strav-natureza
 prefácio
 introdução
 dilema-do-prisioneiro

@@ -23,7 +23,7 @@
 <meta name="author" content="Manoel Galdino" />
 
 
-<meta name="date" content="2024-03-11" />
+<meta name="date" content="2024-03-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -282,7 +282,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>O ponto 5 é importante para distinguir entre Nina joga depois da Serena de um lado, e Nina joga depois da Serena sabendo o que Serena jogou antes dela.</p>
 <p>Por fim, em alguns casos é possível acrescentar eventos aleatórios. Por exemplo, o jogo acima poderia ser modificado para incluir a chance de chover. Suponha que o espetáculo de Bach é a céu aberto, e o de Stravinski, não. Então, se choveu os payoffs das jogadoras é diferente de se não choveu. Vamos supor que elas preferem ficar juntas sob chuva que separadas. Como representar essa possibilidade? A forma como fazemos isso é criar uma jogadora fictícia, que é a natureza, que joga aleatoriamente sem considerações estratégicas. Essa probabilidade é exógena, no sentido de que é fixa e determinada antes do jogo começar, de modo que não depende das escolhas das jogadoras.</p>
 <p>Eis como ficaria o jogo nesse caso:</p>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<div class="figure"><span style="display:block;" id="fig:bach-strav-natureza"></span>
+<img src="imagens/jogo-bofsex-nature.png" alt="Figura 2: Representação do Jogo da coordenação, com a natureza movendo primerio" width="100%" />
+<p class="caption">
+Figure 10.1: Figura 2: Representação do Jogo da coordenação, com a natureza movendo primerio
+</p>
+</div>
 <p>Por fim, mantemos uma suposição feita em nossos jogos anteriores, agora estendida aos itens 1-6, que é:</p>
 <ol start="7" style="list-style-type: decimal">
 <li>É conhecimento comum toda a estrutura do jogo representada pelos itens 1-6 para todas as jogadoras.</li>
@@ -294,7 +299,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="jogo-da-confiança" class="section level2 hasAnchor" number="10.3">
 <h2><span class="header-section-number">10.3</span> Jogo da confiança<a href="jogados-dinâmicos.html#jogo-da-confiança" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
 <p>O jogador p1 joga primeiro. Logo, i(n1) = p1.</p>
 </div>
 <div id="informações" class="section level2 hasAnchor" number="10.4">
@@ -329,10 +334,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="exercícios-4" class="section level2 hasAnchor" number="10.6">
 <h2><span class="header-section-number">10.6</span> Exercícios<a href="jogados-dinâmicos.html#exercícios-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ache todos os subjogos do jogo abaixo.</p>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
 <p>Modelo o jogo como uma árvore (forma extensiva) e ache todos os subjogos do jogo abaixo. (exercício 156.2c do Osborne).</p>
 <p>Os políticos Rosa e Ernesto precisam tomar uma posição sobre um assunto. As opções são Berlim (B) ou Havana (H). Eles escolhem sequencialmente. Uma terceira pessoa, Karl, determina quem escolhe primeiro. Tanto Rosa quanto Ernesto se importam apenas com as ações que escolhem, não com quem escolhe primeiro. Rosa prefere o resultado em que ambos escolhem B ao resultado em que ambos escolhem H, e prefere esse resultado a qualquer um dos casos em que ela e Ernesto escolhem ações diferentes; ela é indiferente entre esses dois últimos resultados. As preferências de Ernesto diferem das de Rosa no sentido de que os papéis de B e H são invertidos. As preferências de Karl são as mesmas que as de Ernesto. Modele essa situação como um jogo extensivo com informação perfeita. (Especifique os componentes do jogo e represente o jogo em um diagrama.)</p>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
 <p>Existem 6 subjogos próprios e 7 subjogos no total, contando o jogo inteiro como um subjogo.</p>
 <p>Equilíbrio de Nash Perfeito em Subjogos</p>
 <p>Definição informal: Um equilíbrio perfeito em subjogos é um perfil estratégico <span class="math inline">\(s^*\)</span> com a propriedade de que, em nenhum subjogo, qualquer jogador <span class="math inline">\(i\)</span> pode se sair melhor escolhendo uma estratégia diferente de <span class="math inline">\(s^*_i\)</span>, dado que todos os outros jogadores <span class="math inline">\(j\)</span> aderem a <span class="math inline">\(s^*_j\)</span>.</p>

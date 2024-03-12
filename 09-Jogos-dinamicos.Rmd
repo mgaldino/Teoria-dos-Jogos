@@ -51,23 +51,9 @@ Por fim, em alguns casos é possível acrescentar eventos aleatórios. Por exemp
 
 Eis como ficaria o jogo nesse caso:
 
-```{r results = "asis", echo=FALSE, warnings=FALSE}
-library(rgamer)
+```{r bach-strav-natureza, echo=FALSE, warnings=FALSE, fig.cap="Figura 2: Representação do Jogo da coordenação, com a natureza movendo primerio", out.width="100%"}
 
-# Supondo que a função extensive_form e a estrutura do pacote permitam esse tipo de modelagem
-library(rgamer)
-
-g1 <- extensive_form(
-  players = list("Nature", rep("Serena", 2), rep("Nina", 4), rep(NA, 8)),
-  actions = list(c("Chove", "Sem chuva"), 
-                 c("Bach", "Stravinski"), c("Bach", "Stravinski"),
-                 c("bach ", " strav."), c("bach ", " strav."), c("bach ", " strav."), c("bach ", " strav.")),
-  payoffs = list(Nature = rep(NA, 8),  # Natureza não tem pagamentos, NA para os lugares de pagamento
-                 Serena = c(1, -1, -1, 1, 2, 0, 0, 1),  # Pagamentos para Serena
-                 Nina = c(0, -1, 0, 2, 1, 0, 0, 2)),  # Pagamentos para Nina
-  show_node_id = TRUE)
-
-
+knitr::include_graphics("imagens\\jogo-bofsex-nature.png")
 ```
 
 Por fim, mantemos uma suposição feita em nossos jogos anteriores, agora estendida aos itens 1-6, que é:
