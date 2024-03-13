@@ -18,21 +18,12 @@ Comecemos então pela introdução do que significa descrever um jogo na forma e
 
 Um jogo na forma extensiva pode ser visto como uma generalização multi-estágio de árvores de decisão.
 
-```{r results = "asis", echo=FALSE, warnings=FALSE}
-library(rgamer)
+```{r bach-strav, echo=FALSE, warnings=FALSE, fig.cap="Representação do Jogo da coordenação", out.width="100%"}
 
-g1 <- extensive_form(
-  players = list("Serena",
-                 rep("Nina", 2),
-                 rep(NA, 4)),
-  actions = list(c("Bach", "Stravinski"),
-                  c("bach", "stravinski"), c("bach", "stravinski")),
-  payoffs = list(Serena = c(2, 0, 0, 1),
-                 Nina  = c(1, 0, 0, 2)),
-   show_node_id = TRUE)
+knitr::include_graphics("imagens\\jogo-extensivo.png")
 ```
 
-A árvore do jogo é lida de cima para baixo. No topo está quem joga primeiro. O retângulo com o nome da jogadora é chamado de nó. No primeiro nó, Serena tem duas ações possívels, Bach e Stravinski. Uma vez que ela escolha sua ação, é a vez da Nina, que também tem duas opções ("bach" e "stravinsky", em caixa baixa, para distinguir as ações das duas jogadoras). Se Serena escolheu Bach, Nina está no galho da esquerda. Se Serena escolheu Stravinsky, Nina está no galo da direita. E uma vez que Nina faça sua escolha, o jogo acaba e os payoffs finais são mostrados. O primeiro payoff é da jogadora 1, e o segundo da jogadora 2.
+A árvore do jogo é lida de cima para baixo. No topo está quem joga primeiro. O retângulo com o nome da jogadora é chamado de nó. No primeiro nó, Serena tem duas ações possíveis, "Bach" e "Stravinski". Uma vez que ela escolha sua ação, é a vez da Nina, que também tem duas opções ("bach" e "stravinsky", em caixa baixa, para distinguir as ações das duas jogadoras). Se Serena escolheu Bach, Nina está no galho da esquerda. Se Serena escolheu Stravinsky, Nina está no galo da direita. E uma vez que Nina faça sua escolha, o jogo acaba e os payoffs finais são mostrados. O primeiro payoff é da jogadora 1, e o segundo da jogadora 2.
 
 Assim, com a forma extensiva, temos como antes:
 
@@ -51,42 +42,39 @@ Por fim, em alguns casos é possível acrescentar eventos aleatórios. Por exemp
 
 Eis como ficaria o jogo nesse caso:
 
-```{r bach-strav-natureza, echo=FALSE, warnings=FALSE, fig.cap="Figura 2: Representação do Jogo da coordenação, com a natureza movendo primerio", out.width="100%"}
+```{r bach-strav-natureza, echo=FALSE, warnings=FALSE, fig.cap="Representação do Jogo da coordenação, com a natureza movendo primerio", out.width="100%"}
 
 knitr::include_graphics("imagens\\jogo-bofsex-nature.png")
 ```
+
+Na \@ref(fig:bach-strav-natureza), temos algumas mudanças. O primeiro nó está representado por um círculo vazado, para indicar que é a natureza quem está jogando (e não terá um payoff). Os demais nós são representados por círculos prreenchidos, sólidos. Portanto, a natureza joga e "escolhe" se fará sol ou chuva. Na prática as leis da natureza irão operar, e podemos calcular probabilidades (no caso, 50% de chance de chover), mas a jogadorta Serena só sabeá se haverá sol ou chuva na hora do espetáculo, após ter feito sua jogada. Isso significa que Serena não sabe em qual nós está, se no da esquerda, com chuva, ou no da direita, com sol. Para indicar essa ausência de informação, é comum circularmos com uma linha tracejada os nós nos quais uma jogadora não tem informação sobre qual nó ela está. Uma vez que Serena Joga, é a vez de Nina jogar. Note que não circulamos nós de Nina com linha tracejada, de modo que isso significa que Nina sabe em qual nó está, ou seja, sabe não apenas o que Serena jogou, mas o que a natureza jogou. Como é difícil imaginar tal situação, o melhor seria indicar também que Nina não sabe o que a Natureza jogou, mas sabe o que a Serena jogou. A árovre do jogo ficartão então.
+
+```{r bach-strav-natureza1, echo=FALSE, warnings=FALSE, fig.cap="Representação do Jogo da coordenação, com a natureza movendo primerio, conjunto de informações corretos.", out.width="100%"}
+
+knitr::include_graphics("imagens\\jogo-bofsex-nature1.png")
+```
+
+Nessa árove, vale destacar dois aspectos que são diferentes da árvore anterior. Em primeiro lugar, nós descrevemos a informação completa sobre em qual nó Nina está por meio de linha tracejada curva. Poderíamos ter usado o círculo tracejado, que daria na mesma. São duas formas distintas de representar a mesma coisa e estamos incluindo aqui para fins de completude. Em segundo lugar, note os nós que estão conectados pela linha. Quando é a vez de Nina jogar, ela não sabe o que a natureza jogou, mas sabe o que Serena jogou. Isso significa que se Serena jogou "Bach", Nina não sabe se está no ramo "Bach" com chuva ou no ramo "Bach" som sol. Similarmente, se Serena jogou "Stravinski", Nina não sabe em qual dos dois galhos de "Stravinski" ela está. É preciso, portanto, ter cuidado quando conectar nós, pois se fizemos errado, o jogo fica completamente outro.
+
 
 Por fim, mantemos uma suposição feita em nossos jogos anteriores, agora estendida aos itens 1-6, que é:
 
 7. É conhecimento comum toda a estrutura do jogo representada pelos itens 1-6 para todas as jogadoras.
 
+### Definição de árovre de um jogo
 
-
-Também é possivel representar nosso jogo original em que as jogadoras escolhem simultaneamente ou, mais propriamente, sem saber o que a outra jogadora fez. Porém, precisaremos modificar um pouquinho nossa árvore do jogo. 
-
-Antes de fazer isso, vamos defini-la.
-
-Definição de árvore do jogo
-
-Uma **árvore do jogo** é formada por um conjunto de nós $x \in X$ com uma relação de precedência $x > x'$, que significa "x precede a x'". Ou seja, $x$ vem antes de $x'$. Cada nó só tem um predecessor. A relação de precedência é transitiva ($x > x', x' > x'' => x > x''$), assimetrica (x > x' => não (x' > x)), isto é, $x$ precede $x'$, mas $x'$ não precede  $x$, e incompleta (nem todos os pares podem ser ordenados). Há um nó especial, chamado raiz da árvore, denotada por n1, que precede quaisquer outros nós $x \in X$. Nós que não precedem outros ós são chamados de nós terminais, denotados pelo conjunto $Z \subset X$. Nós terminais denotam o fim do jogo, com os payoffs associados. Cada nós $x$ que não é terminal é atribuído a um jogador $i(x)$ com o conjunto de ações $A_i(x)$, ou para natureza.
+Uma **árvore do jogo** é formada por um conjunto de nós $x \in X$ com uma relação de precedência $x > x'$, que significa "$x$ precede a $x'$". Ou seja, $x$ vem antes de $x'$. Cada nó só tem um predecessor. A relação de precedência é transitiva ($x > x', x' > x'' \implies x > x''$), assimetrica $(x > x' \implies \neg (x' > x))$, isto é, $x$ precede $x'$, mas $x'$ não precede  $x$, e incompleta (nem todos os pares podem ser ordenados). Há um nó especial, chamado raiz da árvore, denotada por $n_1$, que precede quaisquer outros nós $x \in X$. Nós que não precedem outros nós são chamados de nós terminais, denotados pelo conjunto $Z \subset X$. Nós terminais denotam o fim do jogo, com os payoffs associados. Cada nó $x$ que não é terminal é atribuído a um jogador $i(x)$ com o conjunto de ações $A_i(x)$, ou para natureza.
 
 
 ## Jogo da confiança
 
-```{r results = "asis", echo=FALSE, warnings=FALSE}
-library(rgamer)
+```{r confianca, echo=FALSE, warnings=FALSE, fig.cap="Representação do Jogo da Confiança", out.width="100%"}
 
-g1 <- extensive_form(
-  players = list("p1", c(NA, "p2"),
-                 rep(NA, 2)),
-  actions = list(c("Nope", "Trust"),
-                  c("Cooperar", "Desertar")),
-  payoffs = list(p1 = c(0, 1, -1),
-                 p2  = c(0, 1, 2)),
-   show_node_id = TRUE)
+knitr::include_graphics("imagens\\jogo-confianca.png")
+
 ```
 
-O jogador p1 joga primeiro. Logo, i(n1) = p1. 
+O jogador p1 joga primeiro. Logo, $i(n_1) = p_1$. 
 
 ## Informações
 

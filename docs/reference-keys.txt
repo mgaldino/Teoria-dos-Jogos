@@ -24,7 +24,10 @@ exr:unnamed-chunk-47
 exr:unnamed-chunk-48
 exr:unnamed-chunk-50
 exr:unnamed-chunk-52
+fig:bach-strav
 fig:bach-strav-natureza
+fig:bach-strav-natureza1
+fig:confianca
 prefácio
 introdução
 dilema-do-prisioneiro
@@ -91,6 +94,7 @@ referências-2
 jogados-dinâmicos
 introdução-1
 jogo-na-forma-extensiva
+definição-de-árovre-de-um-jogo
 jogo-da-confiança
 informações
 subjogo

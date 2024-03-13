@@ -23,7 +23,7 @@
 <meta name="author" content="Manoel Galdino" />
 
 
-<meta name="date" content="2024-03-12" />
+<meta name="date" content="2024-03-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -227,7 +227,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10" data-path="jogados-dinâmicos.html"><a href="jogados-dinâmicos.html"><i class="fa fa-check"></i><b>10</b> Jogados Dinâmicos</a>
 <ul>
 <li class="chapter" data-level="10.1" data-path="jogados-dinâmicos.html"><a href="jogados-dinâmicos.html#introdução-1"><i class="fa fa-check"></i><b>10.1</b> Introdução</a></li>
-<li class="chapter" data-level="10.2" data-path="jogados-dinâmicos.html"><a href="jogados-dinâmicos.html#jogo-na-forma-extensiva"><i class="fa fa-check"></i><b>10.2</b> Jogo na forma extensiva</a></li>
+<li class="chapter" data-level="10.2" data-path="jogados-dinâmicos.html"><a href="jogados-dinâmicos.html#jogo-na-forma-extensiva"><i class="fa fa-check"></i><b>10.2</b> Jogo na forma extensiva</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="jogados-dinâmicos.html"><a href="jogados-dinâmicos.html#definição-de-árovre-de-um-jogo"><i class="fa fa-check"></i><b>10.2.1</b> Definição de árovre de um jogo</a></li>
+</ul></li>
 <li class="chapter" data-level="10.3" data-path="jogados-dinâmicos.html"><a href="jogados-dinâmicos.html#jogo-da-confiança"><i class="fa fa-check"></i><b>10.3</b> Jogo da confiança</a></li>
 <li class="chapter" data-level="10.4" data-path="jogados-dinâmicos.html"><a href="jogados-dinâmicos.html#informações"><i class="fa fa-check"></i><b>10.4</b> Informações</a></li>
 <li class="chapter" data-level="10.5" data-path="jogados-dinâmicos.html"><a href="jogados-dinâmicos.html#subjogo"><i class="fa fa-check"></i><b>10.5</b> Subjogo</a></li>
@@ -266,8 +269,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="jogo-na-forma-extensiva" class="section level2 hasAnchor" number="10.2">
 <h2><span class="header-section-number">10.2</span> Jogo na forma extensiva<a href="jogados-dinâmicos.html#jogo-na-forma-extensiva" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Um jogo na forma extensiva pode ser visto como uma generalização multi-estágio de árvores de decisão.</p>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
-<p>A árvore do jogo é lida de cima para baixo. No topo está quem joga primeiro. O retângulo com o nome da jogadora é chamado de nó. No primeiro nó, Serena tem duas ações possívels, Bach e Stravinski. Uma vez que ela escolha sua ação, é a vez da Nina, que também tem duas opções (“bach” e “stravinsky”, em caixa baixa, para distinguir as ações das duas jogadoras). Se Serena escolheu Bach, Nina está no galho da esquerda. Se Serena escolheu Stravinsky, Nina está no galo da direita. E uma vez que Nina faça sua escolha, o jogo acaba e os payoffs finais são mostrados. O primeiro payoff é da jogadora 1, e o segundo da jogadora 2.</p>
+<div class="figure"><span style="display:block;" id="fig:bach-strav"></span>
+<img src="imagens/jogo-extensivo.png" alt="Representação do Jogo da coordenação" width="100%" />
+<p class="caption">
+Figure 10.1: Representação do Jogo da coordenação
+</p>
+</div>
+<p>A árvore do jogo é lida de cima para baixo. No topo está quem joga primeiro. O retângulo com o nome da jogadora é chamado de nó. No primeiro nó, Serena tem duas ações possíveis, “Bach” e “Stravinski”. Uma vez que ela escolha sua ação, é a vez da Nina, que também tem duas opções (“bach” e “stravinsky”, em caixa baixa, para distinguir as ações das duas jogadoras). Se Serena escolheu Bach, Nina está no galho da esquerda. Se Serena escolheu Stravinsky, Nina está no galo da direita. E uma vez que Nina faça sua escolha, o jogo acaba e os payoffs finais são mostrados. O primeiro payoff é da jogadora 1, e o segundo da jogadora 2.</p>
 <p>Assim, com a forma extensiva, temos como antes:</p>
 <ol style="list-style-type: decimal">
 <li>Número de jogadoras, <span class="math inline">\(N\)</span>.</li>
@@ -283,24 +291,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Por fim, em alguns casos é possível acrescentar eventos aleatórios. Por exemplo, o jogo acima poderia ser modificado para incluir a chance de chover. Suponha que o espetáculo de Bach é a céu aberto, e o de Stravinski, não. Então, se choveu os payoffs das jogadoras é diferente de se não choveu. Vamos supor que elas preferem ficar juntas sob chuva que separadas. Como representar essa possibilidade? A forma como fazemos isso é criar uma jogadora fictícia, que é a natureza, que joga aleatoriamente sem considerações estratégicas. Essa probabilidade é exógena, no sentido de que é fixa e determinada antes do jogo começar, de modo que não depende das escolhas das jogadoras.</p>
 <p>Eis como ficaria o jogo nesse caso:</p>
 <div class="figure"><span style="display:block;" id="fig:bach-strav-natureza"></span>
-<img src="imagens/jogo-bofsex-nature.png" alt="Figura 2: Representação do Jogo da coordenação, com a natureza movendo primerio" width="100%" />
+<img src="imagens/jogo-bofsex-nature.png" alt="Representação do Jogo da coordenação, com a natureza movendo primerio" width="100%" />
 <p class="caption">
-Figure 10.1: Figura 2: Representação do Jogo da coordenação, com a natureza movendo primerio
+Figure 10.2: Representação do Jogo da coordenação, com a natureza movendo primerio
 </p>
 </div>
+<p>Na <a href="jogados-dinâmicos.html#fig:bach-strav-natureza">10.2</a>, temos algumas mudanças. O primeiro nó está representado por um círculo vazado, para indicar que é a natureza quem está jogando (e não terá um payoff). Os demais nós são representados por círculos prreenchidos, sólidos. Portanto, a natureza joga e “escolhe” se fará sol ou chuva. Na prática as leis da natureza irão operar, e podemos calcular probabilidades (no caso, 50% de chance de chover), mas a jogadorta Serena só sabeá se haverá sol ou chuva na hora do espetáculo, após ter feito sua jogada. Isso significa que Serena não sabe em qual nós está, se no da esquerda, com chuva, ou no da direita, com sol. Para indicar essa ausência de informação, é comum circularmos com uma linha tracejada os nós nos quais uma jogadora não tem informação sobre qual nó ela está. Uma vez que Serena Joga, é a vez de Nina jogar. Note que não circulamos nós de Nina com linha tracejada, de modo que isso significa que Nina sabe em qual nó está, ou seja, sabe não apenas o que Serena jogou, mas o que a natureza jogou. Como é difícil imaginar tal situação, o melhor seria indicar também que Nina não sabe o que a Natureza jogou, mas sabe o que a Serena jogou. A árovre do jogo ficartão então.</p>
+<div class="figure"><span style="display:block;" id="fig:bach-strav-natureza1"></span>
+<img src="imagens/jogo-bofsex-nature1.png" alt="Representação do Jogo da coordenação, com a natureza movendo primerio, conjunto de informações corretos." width="100%" />
+<p class="caption">
+Figure 10.3: Representação do Jogo da coordenação, com a natureza movendo primerio, conjunto de informações corretos.
+</p>
+</div>
+<p>Nessa árove, vale destacar dois aspectos que são diferentes da árvore anterior. Em primeiro lugar, nós descrevemos a informação completa sobre em qual nó Nina está por meio de linha tracejada curva. Poderíamos ter usado o círculo tracejado, que daria na mesma. São duas formas distintas de representar a mesma coisa e estamos incluindo aqui para fins de completude. Em segundo lugar, note os nós que estão conectados pela linha. Quando é a vez de Nina jogar, ela não sabe o que a natureza jogou, mas sabe o que Serena jogou. Isso significa que se Serena jogou “Bach”, Nina não sabe se está no ramo “Bach” com chuva ou no ramo “Bach” som sol. Similarmente, se Serena jogou “Stravinski”, Nina não sabe em qual dos dois galhos de “Stravinski” ela está. É preciso, portanto, ter cuidado quando conectar nós, pois se fizemos errado, o jogo fica completamente outro.</p>
 <p>Por fim, mantemos uma suposição feita em nossos jogos anteriores, agora estendida aos itens 1-6, que é:</p>
 <ol start="7" style="list-style-type: decimal">
 <li>É conhecimento comum toda a estrutura do jogo representada pelos itens 1-6 para todas as jogadoras.</li>
 </ol>
-<p>Também é possivel representar nosso jogo original em que as jogadoras escolhem simultaneamente ou, mais propriamente, sem saber o que a outra jogadora fez. Porém, precisaremos modificar um pouquinho nossa árvore do jogo.</p>
-<p>Antes de fazer isso, vamos defini-la.</p>
-<p>Definição de árvore do jogo</p>
-<p>Uma <strong>árvore do jogo</strong> é formada por um conjunto de nós <span class="math inline">\(x \in X\)</span> com uma relação de precedência <span class="math inline">\(x &gt; x&#39;\)</span>, que significa “x precede a x’”. Ou seja, <span class="math inline">\(x\)</span> vem antes de <span class="math inline">\(x&#39;\)</span>. Cada nó só tem um predecessor. A relação de precedência é transitiva (<span class="math inline">\(x &gt; x&#39;, x&#39; &gt; x&#39;&#39; =&gt; x &gt; x&#39;&#39;\)</span>), assimetrica (x &gt; x’ =&gt; não (x’ &gt; x)), isto é, <span class="math inline">\(x\)</span> precede <span class="math inline">\(x&#39;\)</span>, mas <span class="math inline">\(x&#39;\)</span> não precede <span class="math inline">\(x\)</span>, e incompleta (nem todos os pares podem ser ordenados). Há um nó especial, chamado raiz da árvore, denotada por n1, que precede quaisquer outros nós <span class="math inline">\(x \in X\)</span>. Nós que não precedem outros ós são chamados de nós terminais, denotados pelo conjunto <span class="math inline">\(Z \subset X\)</span>. Nós terminais denotam o fim do jogo, com os payoffs associados. Cada nós <span class="math inline">\(x\)</span> que não é terminal é atribuído a um jogador <span class="math inline">\(i(x)\)</span> com o conjunto de ações <span class="math inline">\(A_i(x)\)</span>, ou para natureza.</p>
+<div id="definição-de-árovre-de-um-jogo" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Definição de árovre de um jogo<a href="jogados-dinâmicos.html#definição-de-árovre-de-um-jogo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Uma <strong>árvore do jogo</strong> é formada por um conjunto de nós <span class="math inline">\(x \in X\)</span> com uma relação de precedência <span class="math inline">\(x &gt; x&#39;\)</span>, que significa “<span class="math inline">\(x\)</span> precede a <span class="math inline">\(x&#39;\)</span>”. Ou seja, <span class="math inline">\(x\)</span> vem antes de <span class="math inline">\(x&#39;\)</span>. Cada nó só tem um predecessor. A relação de precedência é transitiva (<span class="math inline">\(x &gt; x&#39;, x&#39; &gt; x&#39;&#39; \implies x &gt; x&#39;&#39;\)</span>), assimetrica <span class="math inline">\((x &gt; x&#39; \implies \neg (x&#39; &gt; x))\)</span>, isto é, <span class="math inline">\(x\)</span> precede <span class="math inline">\(x&#39;\)</span>, mas <span class="math inline">\(x&#39;\)</span> não precede <span class="math inline">\(x\)</span>, e incompleta (nem todos os pares podem ser ordenados). Há um nó especial, chamado raiz da árvore, denotada por <span class="math inline">\(n_1\)</span>, que precede quaisquer outros nós <span class="math inline">\(x \in X\)</span>. Nós que não precedem outros nós são chamados de nós terminais, denotados pelo conjunto <span class="math inline">\(Z \subset X\)</span>. Nós terminais denotam o fim do jogo, com os payoffs associados. Cada nó <span class="math inline">\(x\)</span> que não é terminal é atribuído a um jogador <span class="math inline">\(i(x)\)</span> com o conjunto de ações <span class="math inline">\(A_i(x)\)</span>, ou para natureza.</p>
+</div>
 </div>
 <div id="jogo-da-confiança" class="section level2 hasAnchor" number="10.3">
 <h2><span class="header-section-number">10.3</span> Jogo da confiança<a href="jogados-dinâmicos.html#jogo-da-confiança" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
-<p>O jogador p1 joga primeiro. Logo, i(n1) = p1.</p>
+<div class="figure"><span style="display:block;" id="fig:confianca"></span>
+<img src="imagens/jogo-confianca.png" alt="Representação do Jogo da Confiança" width="100%" />
+<p class="caption">
+Figure 10.4: Representação do Jogo da Confiança
+</p>
+</div>
+<p>O jogador p1 joga primeiro. Logo, <span class="math inline">\(i(n_1) = p_1\)</span>.</p>
 </div>
 <div id="informações" class="section level2 hasAnchor" number="10.4">
 <h2><span class="header-section-number">10.4</span> Informações<a href="jogados-dinâmicos.html#informações" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -334,10 +355,10 @@ Figure 10.1: Figura 2: Representação do Jogo da coordenação, com a natureza 
 <div id="exercícios-4" class="section level2 hasAnchor" number="10.6">
 <h2><span class="header-section-number">10.6</span> Exercícios<a href="jogados-dinâmicos.html#exercícios-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ache todos os subjogos do jogo abaixo.</p>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
 <p>Modelo o jogo como uma árvore (forma extensiva) e ache todos os subjogos do jogo abaixo. (exercício 156.2c do Osborne).</p>
 <p>Os políticos Rosa e Ernesto precisam tomar uma posição sobre um assunto. As opções são Berlim (B) ou Havana (H). Eles escolhem sequencialmente. Uma terceira pessoa, Karl, determina quem escolhe primeiro. Tanto Rosa quanto Ernesto se importam apenas com as ações que escolhem, não com quem escolhe primeiro. Rosa prefere o resultado em que ambos escolhem B ao resultado em que ambos escolhem H, e prefere esse resultado a qualquer um dos casos em que ela e Ernesto escolhem ações diferentes; ela é indiferente entre esses dois últimos resultados. As preferências de Ernesto diferem das de Rosa no sentido de que os papéis de B e H são invertidos. As preferências de Karl são as mesmas que as de Ernesto. Modele essa situação como um jogo extensivo com informação perfeita. (Especifique os componentes do jogo e represente o jogo em um diagrama.)</p>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
 <p>Existem 6 subjogos próprios e 7 subjogos no total, contando o jogo inteiro como um subjogo.</p>
 <p>Equilíbrio de Nash Perfeito em Subjogos</p>
 <p>Definição informal: Um equilíbrio perfeito em subjogos é um perfil estratégico <span class="math inline">\(s^*\)</span> com a propriedade de que, em nenhum subjogo, qualquer jogador <span class="math inline">\(i\)</span> pode se sair melhor escolhendo uma estratégia diferente de <span class="math inline">\(s^*_i\)</span>, dado que todos os outros jogadores <span class="math inline">\(j\)</span> aderem a <span class="math inline">\(s^*_j\)</span>.</p>
