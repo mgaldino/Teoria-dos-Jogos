@@ -38,25 +38,6 @@ E acrescentamos:
 
 O ponto 5 é importante para distinguir entre Nina joga depois da Serena de um lado, e Nina joga depois da Serena sabendo o que Serena jogou antes dela.
 
-Por fim, em alguns casos é possível acrescentar eventos aleatórios. Por exemplo, o jogo acima poderia ser modificado para incluir a chance de chover. Suponha que o espetáculo de Bach é a céu aberto, e o de Stravinski, não. Então, se choveu os payoffs das jogadoras é diferente de se não choveu. Vamos supor que elas preferem ficar juntas sob chuva que separadas. Como representar essa possibilidade? A forma como fazemos isso é criar uma jogadora fictícia, que é a natureza, que joga aleatoriamente sem considerações estratégicas. Essa probabilidade é exógena, no sentido de que é fixa e determinada antes do jogo começar, de modo que não depende das escolhas das jogadoras.
-
-Eis como ficaria o jogo nesse caso:
-
-```{r bach-strav-natureza, echo=FALSE, warnings=FALSE, fig.cap="Representação do Jogo da coordenação, com a natureza movendo primerio", out.width="100%"}
-
-knitr::include_graphics("imagens\\jogo-bofsex-nature.png")
-```
-
-Na \@ref(fig:bach-strav-natureza), temos algumas mudanças. O primeiro nó está representado por um círculo vazado, para indicar que é a natureza quem está jogando (e não terá um payoff). Os demais nós são representados por círculos prreenchidos, sólidos. Portanto, a natureza joga e "escolhe" se fará sol ou chuva. Na prática as leis da natureza irão operar, e podemos calcular probabilidades (no caso, 50% de chance de chover), mas a jogadorta Serena só sabeá se haverá sol ou chuva na hora do espetáculo, após ter feito sua jogada. Isso significa que Serena não sabe em qual nós está, se no da esquerda, com chuva, ou no da direita, com sol. Para indicar essa ausência de informação, é comum circularmos com uma linha tracejada os nós nos quais uma jogadora não tem informação sobre qual nó ela está. Uma vez que Serena Joga, é a vez de Nina jogar. Note que não circulamos nós de Nina com linha tracejada, de modo que isso significa que Nina sabe em qual nó está, ou seja, sabe não apenas o que Serena jogou, mas o que a natureza jogou. Como é difícil imaginar tal situação, o melhor seria indicar também que Nina não sabe o que a Natureza jogou, mas sabe o que a Serena jogou. A árovre do jogo ficartão então.
-
-```{r bach-strav-natureza1, echo=FALSE, warnings=FALSE, fig.cap="Representação do Jogo da coordenação, com a natureza movendo primerio, conjunto de informações corretos.", out.width="100%"}
-
-knitr::include_graphics("imagens\\jogo-bofsex-nature1.png")
-```
-
-Nessa árove, vale destacar dois aspectos que são diferentes da árvore anterior. Em primeiro lugar, nós descrevemos a informação completa sobre em qual nó Nina está por meio de linha tracejada curva. Poderíamos ter usado o círculo tracejado, que daria na mesma. São duas formas distintas de representar a mesma coisa e estamos incluindo aqui para fins de completude. Em segundo lugar, note os nós que estão conectados pela linha. Quando é a vez de Nina jogar, ela não sabe o que a natureza jogou, mas sabe o que Serena jogou. Isso significa que se Serena jogou "Bach", Nina não sabe se está no ramo "Bach" com chuva ou no ramo "Bach" som sol. Similarmente, se Serena jogou "Stravinski", Nina não sabe em qual dos dois galhos de "Stravinski" ela está. É preciso, portanto, ter cuidado quando conectar nós, pois se fizemos errado, o jogo fica completamente outro.
-
-
 Por fim, mantemos uma suposição feita em nossos jogos anteriores, agora estendida aos itens 1-6, que é:
 
 7. É conhecimento comum toda a estrutura do jogo representada pelos itens 1-6 para todas as jogadoras.
@@ -64,6 +45,9 @@ Por fim, mantemos uma suposição feita em nossos jogos anteriores, agora estend
 ### Definição de árovre de um jogo
 
 Uma **árvore do jogo** é formada por um conjunto de nós $x \in X$ com uma relação de precedência $x > x'$, que significa "$x$ precede a $x'$". Ou seja, $x$ vem antes de $x'$. Cada nó só tem um predecessor. A relação de precedência é transitiva ($x > x', x' > x'' \implies x > x''$), assimetrica $(x > x' \implies \neg (x' > x))$, isto é, $x$ precede $x'$, mas $x'$ não precede  $x$, e incompleta (nem todos os pares podem ser ordenados). Há um nó especial, chamado raiz da árvore, denotada por $n_1$, que precede quaisquer outros nós $x \in X$. Nós que não precedem outros nós são chamados de nós terminais, denotados pelo conjunto $Z \subset X$. Nós terminais denotam o fim do jogo, com os payoffs associados. Cada nó $x$ que não é terminal é atribuído a um jogador $i(x)$ com o conjunto de ações $A_i(x)$, ou para natureza.
+
+É uma definição longa, masque captura a estrutura "física" do jogo, ao mesmo tempo em que ignora as ações (escolhas) das jogadoras e o que sabem quando jogam.
+
 
 
 ## Jogo da confiança
@@ -94,73 +78,48 @@ Se, por outro lado, a jogadora 2 não sabe se está em $x_2$ ou $x_3$, como no j
 
 Finalmente, a propriedade 3 é essencial para manter a lógica da informação, em particular quando as ações disponíveis em cada nós forem diferentes para uma jogadora. Considere o jogo da confiança. Se ela não sabe se está no nó x2 (onde o jogo terminou e não tem o que fazer) ou x3, então ela não pode saber quais as ações disponíveis para ela.
 
-## Subjogo
 
-Subjogo de um jogo extensivo com informação perfeita
+Por fim, em alguns casos é possível acrescentar eventos aleatórios. Por exemplo, o jogo acima poderia ser modificado para incluir a chance de chover. Suponha que o espetáculo de Bach é a céu aberto, e o de Stravinski, não. Então, se choveu os payoffs das jogadoras é diferente de se não choveu. Vamos supor que elas preferem ficar juntas sob chuva que separadas. Como representar essa possibilidade? A forma como fazemos isso é criar uma jogadora fictícia, que é a natureza, que joga aleatoriamente sem considerações estratégicas. Essa probabilidade é exógena, no sentido de que é fixa e determinada antes do jogo começar, de modo que não depende das escolhas das jogadoras.
 
-Um subjogo é qualquer parte de um jogo na forma extensiva que satisfaz as seguintes condições:
+Eis como ficaria o jogo nesse caso:
 
-1. Sempre se inicia em um único nó de decisão
-2. Não está em um nó terminal
-3. Contém todos os nós que se seguem após ele
+```{r bach-strav-natureza, echo=FALSE, warnings=FALSE, fig.cap="Representação do Jogo da coordenação, com a natureza movendo primerio", out.width="100%"}
 
-Em um jogo de informação imperfeita, acrescentamos:
-
-4. Se contiver qualquer nós de um conjunto de informação, ele conterá todos os nós do conjunto de informação.
-
-
-Nós chamamos de subjogo próprio todos os subjogos que não são a árvore do jogo na sua totalidade.
-
-## Exercícios
-
-Ache todos os subjogos do jogo abaixo.
-
-```{r results = "asis", echo=FALSE, warnings=FALSE}
-library(rgamer)
-
-g1 <- extensive_form(
-  players = list("Serena",
-                 rep("Nina", 2),
-                 rep(NA, 4)),
-  actions = list(c("C", "D"),
-                  c("E", "F"), c("G", "H")),
-  payoffs = list(Serena = c(1, 3, 2, 0),
-                 Nina  = c(0, 2, 3, 1)),
-   show_node_id = TRUE)
+knitr::include_graphics("imagens\\jogo-bofsex-nature.png")
 ```
 
+Na \@ref(fig:bach-strav-natureza), temos algumas mudanças. O primeiro nó está representado por um círculo vazado, para indicar que é a natureza quem está jogando (e não terá um payoff). Os demais nós são representados por círculos prreenchidos, sólidos. Portanto, a natureza joga e "escolhe" se fará sol ou chuva. Na prática as leis da natureza irão operar, e podemos calcular probabilidades (no caso, 50% de chance de chover), mas a jogadorta Serena só sabeá se haverá sol ou chuva na hora do espetáculo, após ter feito sua jogada. Isso significa que Serena não sabe em qual nós está, se no da esquerda, com chuva, ou no da direita, com sol. Para indicar essa ausência de informação, é comum circularmos com uma linha tracejada os nós nos quais uma jogadora não tem informação sobre qual nó ela está. Uma vez que Serena Joga, é a vez de Nina jogar. Note que não circulamos nós de Nina com linha tracejada, de modo que isso significa que Nina sabe em qual nó está, ou seja, sabe não apenas o que Serena jogou, mas o que a natureza jogou. Como é difícil imaginar tal situação, o melhor seria indicar também que Nina não sabe o que a Natureza jogou, mas sabe o que a Serena jogou. A árovre do jogo ficartão então.
 
-Modelo o jogo como uma árvore (forma extensiva) e ache todos os subjogos do jogo abaixo. (exercício 156.2c do Osborne).
+```{r bach-strav-natureza1, echo=FALSE, warnings=FALSE, fig.cap="Representação do Jogo da coordenação, com a natureza movendo primerio, conjunto de informações corretos.", out.width="100%"}
 
-Os políticos Rosa e Ernesto precisam tomar uma posição sobre um assunto. As opções são Berlim (B) ou Havana (H). Eles escolhem sequencialmente. Uma terceira pessoa, Karl, determina quem escolhe primeiro. Tanto Rosa quanto Ernesto se importam apenas com as ações que escolhem, não com quem escolhe primeiro. Rosa prefere o resultado em que ambos escolhem B ao resultado em que ambos escolhem H, e prefere esse resultado a qualquer um dos casos em que ela e Ernesto escolhem ações diferentes; ela é indiferente entre esses dois últimos resultados. As preferências de Ernesto diferem das de Rosa no sentido de que os papéis de B e H são invertidos. As preferências de Karl são as mesmas que as de Ernesto. Modele essa situação como um jogo extensivo com informação perfeita. (Especifique os componentes do jogo e represente o jogo em um diagrama.)
-
-
-```{r results = "asis", echo=FALSE, warnings=FALSE}
-library(rgamer)
-
-g1 <- extensive_form(
-  players = list("Karl",
-                 c("Rosa", "Ernesto"),
-                rep(c("Ernesto", "Rosa"), each=2),
-                 rep(NA, 8)),
-  actions = list(c("R", "E"),
-                 c("B", "H"), c("B", "H"),
-                  c("B", "H"), c("B", "H"), c("B", "H"), c("B", "H")),
-  payoffs = list(Karl = c(1, 0, 0, 2, 1, 0, 0, 2),
-                 Rosa = c(2, 0, 0, 1, 2, 0, 0, 1),
-                 Ernesto  = c(1, 0, 0, 2, 1, 0, 0, 2)),
-   show_node_id = TRUE)
+knitr::include_graphics("imagens\\jogo-bofsex-nature1.png")
 ```
 
-Existem 6 subjogos próprios e 7 subjogos no total, contando o jogo inteiro como um subjogo.
+Nessa árove, vale destacar dois aspectos que são diferentes da árvore anterior. Em primeiro lugar, nós descrevemos a informação completa sobre em qual nó Nina está por meio de linha tracejada curva. Poderíamos ter usado o círculo tracejado, que daria na mesma. São duas formas distintas de representar a mesma coisa e estamos incluindo aqui para fins de completude. Em segundo lugar, note os nós que estão conectados pela linha. Quando é a vez de Nina jogar, ela não sabe o que a natureza jogou, mas sabe o que Serena jogou. Isso significa que se Serena jogou "Bach", Nina não sabe se está no ramo "Bach" com chuva ou no ramo "Bach" som sol. Similarmente, se Serena jogou "Stravinski", Nina não sabe em qual dos dois galhos de "Stravinski" ela está. É preciso, portanto, ter cuidado quando conectar nós, pois se fizemos errado, o jogo fica completamente outro.
 
-Equilíbrio de Nash Perfeito em Subjogos
+## Jogos de informação perfeita e imperfeita
 
-Definição informal: Um equilíbrio perfeito em subjogos é um perfil estratégico $s^*$ com a propriedade de que, em nenhum subjogo, qualquer jogador $i$ pode se sair melhor escolhendo uma estratégia diferente de $s^*_i$, dado que todos os outros jogadores $j$ aderem a $s^*_j$.
+Os jogos na forma normal eram chamados de jogos de informação completa, pois todas as jogadores conheciam as ações disponíveis e as funções de payoff de todas as jogadoras, e isso era conhecimento comum.
 
-Nessa definição (informal), requeremos que a estratrégia de cada jogadora seja ótima para toda história após ser a vez dela jogar, e não apenas no início do jogo, como no equlíbrio de Nash.
+Agora, nós temos uma situação em que uma jogadora pode ter conhecimento perfeito ou imperfeito do nó em que está, a depender do particionamento do conjunto de informações. Portanto, vale a pena distinguir entre dois tipos de jogos de informação completa.
+
+Definição: Um jogo de informação completa no qual cada conjunto de informação é um conjunto unitário e não há jogadas da natureza é chamado um **jogo de informação perfeita**. Um jogo no qual pelo menos um conjunto de informação contém vários nós ou um jogo com movimentop da natureza é chamado um **jogo de informação imperfeita**.
+
+## Estratégias
+
+Nós já havíamos definido uma estratégia como um plano de ação contigente. Contudo, em jogos na forma normal, essa definição era pouco útil, pois estratégias (puras) coincidiam com as ações disponíveis para as jogadoras. Na forma externsiva, a nossa definição de estratégia se revelará mais útil.
+
+### Estratégias mistas
+
+## Estratégias comportamentais
+
+Definição: perfect recall (memória perfeita)
+
+## Representação estratégica de jogos na forma extensiva
 
 
-Todo jogo extensivo finito com informação perfeita possui (pelo menos) um equilíbrio perfeito de subjogo. 
+## Equilíbrio de Nash e Caminhos de jogada
 
-Um jogo finito significa que em nenhum momento um jogador possui infinitas opções de ações. Para dar um exemplo trivial (do Osborne):  um único jogador escolhe um número menor que 1 e recebe um pagamento igual ao número que ela escolhe. Não há um número maior que todos os outros números menores que um, então o jogador único não possui uma ação ótima, e assim o jogo não possui um equilíbrio perfeito de subjogo.
+
+Definição: ... um conjunto de informação está **no caminho de equilíbrio** se ...
+
