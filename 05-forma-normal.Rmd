@@ -148,7 +148,7 @@ Escreva as informações que especificam um jogo na forma normal (Número de jog
 ```{exercise}
 Considere um *happy hour* em que temos dois jogadores (um jogador, e todo o restante do grupo), e podem economizar ou não economizar. 
 
-a) Atribua números fictícios de payoff para esse jogo, de forma a ilustra o dilema da ação acoletiva.
+a) Atribua números fictícios de payoff para esse jogo, de forma a ilustrar o dilema da ação acoletiva.
 
 b) Escreva as informações que especificam o jogo na forma normal (Número de jogadores, estratégias e funções de utilidade) e a matriz de payoff.
 ```
@@ -162,5 +162,5 @@ b) Escreva as informações que especificam o jogo na forma normal (Número de j
 ```
 
 ```{exercise}
-Digamos que nina escreva um e-mail para Martín, perguntando se podem se encontrar às 14h da segunda-feira da semana seguinte, em frente ao restaurante central da Universidade onde estudam. Martín responde ao e-mail dizendo que está pode sim. É conhecimento comum que ambos irão ao restaurante central na data e hora combinados? Explique.
+Digamos que Nina escreva um e-mail para Martín, perguntando se podem se encontrar às 14h da segunda-feira da semana seguinte, em frente ao restaurante central da Universidade onde estudam. Martín responde ao e-mail dizendo que pode sim. É conhecimento comum que ambos irão ao restaurante central na data e hora combinados? Explique.
 ```

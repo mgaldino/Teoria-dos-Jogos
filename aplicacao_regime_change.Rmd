@@ -1,0 +1,73 @@
+---
+title: "Political Regime Model"
+author: "Manoel Galdino"
+date: "2024-03-09"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Game Theory Model of Regime Change
+
+
+## Introdução
+
+This extended model explores the aftermath of a successful transition to democracy, focusing on the potential for elite citizens to instigate a counter-revolution aiming to reinstate an authoritarian regime. It examines the strategic calculations involved in maintaining democracy or reverting to authoritarianism, factoring in the associated costs of such challenges.
+
+## The Game
+
+TThe society is composed of $N$ citizens, partitioned into three income-based classes: poor ($N_{\text{poor}}$), middle-income ($N_{\text{middle}}$), and rich ($N_{\text{rich}}$), satisfying the total population equation $N = N_{\text{poor}} + N_{\text{middle}} + N_{\text{rich}}$. Citizens' incomes within each class are uniform, denoted as $y_i$, with income ordered as $y_{\text{poor}} < y_{\text{middle}} < y_{\text{rich}}$. The total income is normalized to 1.
+
+In an authoritarian regime, the rich enjoy reduced taxation ($\tau_a$), whereas a democratic regime would impose higher taxes ($\tau_d$) to facilitate wealth redistribution. The model assumes $\tau_d > \tau_a$, indicating a tax increase with the transition to democracy. Participation in challenging the regime incurs a cost $\mu$, and the challenge's success requires the collective action of at least $k$ citizens, where $k > \frac{N}{2}$.
+
+
+## Strategies
+
+Each citizen must decide whether to challenge ($C$) or not challenge ($NC$) the regime. The success of transitioning to democracy hinges on the collective action meeting or exceeding the threshold $k$.
+
+## Payoffs
+The utility of each citizen hinges on their action, the collective actions, and the resultant political regime:
+
+\begin{align*}
+    \text{Payoff under Democracy: } U_i^{D,C} &= y_i(1 - \tau_d) + \frac{\tau_d}{N} - \mu \text{, for challengers} \\
+    \text{Payoff under Democracy: } U_i^{D,NC} &= y_i(1 - \tau_d) + \frac{\tau_d}{N} \text{, for non-challengers} \\
+    \text{Payoff under Authoritarianism: } U_i^{A,NC} &= y_i(1 - \tau_a) \text{, for non-challengers}\\
+    \text{Payoff under Authoritarianism: } U_i^{A,C} &= y_i(1 - \tau_a) - \mu \text{, for challengers}
+\end{align*}
+
+
+## Best Response Functions
+The best response for each citizen depends on the strategies of others and the expected outcomes:
+\begin{align*}
+    BR_{\text{poor}}(s_{-i}) &= 
+    \begin{cases} 
+    C & \text{if } \mu < y_i^{\text{poor}}(\tau_d - \tau_a) + \frac{\tau_d}{N}, \\
+    NC & \text{otherwise},
+    \end{cases} \\
+    BR_{\text{middle}}(s_{-i}) &= 
+    \begin{cases} 
+    C & \text{if } \mu < y_i^{\text{middle}}(\tau_d - \tau_a) + \frac{\tau_d}{N}, \\
+    NC & \text{otherwise},
+    \end{cases} \\
+    BR_{\text{rich}}(s_{-i}) &= 
+    \begin{cases} 
+    C & \text{if } \mu < y_i^{\text{rich}}(\tau_d - \tau_a) + \frac{\tau_d}{N}, \text{ and expecting } \sum_{j \neq i} h_j \geq k - 1,\\
+    NC & \text{otherwise}.
+    \end{cases}
+\end{align*}
+
+## Players and Phases
+Citizens: Classified into poor, middle-income, and rich (elite) classes.
+Phases:
+Transition to Democracy: Modeled as previously, with citizens deciding whether to challenge the authoritarian regime.
+Post-Transition Dynamics: Elite citizens weigh the decision to challenge the democratic regime to restore authoritarian rule.
+
+\subsection{Conditions for Nash Equilibrium}
+Given the threshold $k$ for a successful transition, a Nash Equilibrium requires that no individual citizen has an incentive to unilaterally change their strategy, considering the collective outcome of their actions.
+
+## Analysis
+
+It is easy to see that challenging is a dominated strategy for all rich citizens in this game, since.
+
