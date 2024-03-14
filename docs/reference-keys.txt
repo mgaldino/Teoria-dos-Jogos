@@ -90,7 +90,7 @@ pedra-papel-tesoura
 exercícios-3
 carregando-pacotes-exigidos-ggplot2
 warning-package-ggplot2-was-built-under-r-version-4.3.2
-credibilidade-e-racionalidade-sequencial
+jogos-multi-estágio
 introdução-1
 racionalidade-sequencial-e-indução-reversa
 subjogo

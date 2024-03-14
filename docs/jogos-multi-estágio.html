@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Political Regime Model</title>
-  <meta name="description" content="Political Regime Model" />
+  <title>Capítulo10 Jogos Multi-estágio | Political Regime Model</title>
+  <meta name="description" content="Capítulo10 Jogos Multi-estágio | Political Regime Model" />
   <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Political Regime Model" />
+  <meta property="og:title" content="Capítulo10 Jogos Multi-estágio | Political Regime Model" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Political Regime Model" />
+  <meta name="twitter:title" content="Capítulo10 Jogos Multi-estágio | Political Regime Model" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="pedra-papel-tesoura.html"/>
 
-<link rel="next" href="introdução.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -263,24 +263,125 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Political Regime Model</h1>
-<p class="author"><em>Manoel Galdino</em></p>
-<p class="date"><em>2024-03-09</em></p>
+<div id="jogos-multi-estágio" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Capítulo10</span> Jogos Multi-estágio<a href="jogos-multi-estágio.html#jogos-multi-estágio" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introdução-1" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Introdução<a href="jogos-multi-estágio.html#introdução-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="prefácio" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Capítulo1</span> Prefácio<a href="index.html#prefácio" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Esse livro é o resultado das notas de aulas do curso de graduação da USP Teoria dos Jogos para Cientistas Sociais.</p>
-<p>O livro é largamente inspirado no de Steven Tadelis, Game Theory, an introduction, além de muitos materiais na internet para poder citá-los individualmente.</p>
+<div id="racionalidade-sequencial-e-indução-reversa" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Racionalidade sequencial e indução reversa<a href="jogos-multi-estágio.html#racionalidade-sequencial-e-indução-reversa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Contudo, quando o jogo é de informação imperfeita, não podemos aplicar a indução reversa. Caso em que é mais vantajoso usar uma formalização desenvolvida por Selten (?, ano?). Antes, vamos introduzir a noção de subjogo.</p>
+</div>
+<div id="subjogo" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Subjogo<a href="jogos-multi-estágio.html#subjogo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Subjogo de um jogo extensivo com informação perfeita</p>
+<p>Um subjogo é qualquer parte de um jogo na forma extensiva que satisfaz as seguintes condições:</p>
+<ol style="list-style-type: decimal">
+<li>Sempre se inicia em um único nó de decisão</li>
+<li>Não está em um nó terminal</li>
+<li>Contém todos os nós que se seguem após ele</li>
+</ol>
+<p>Em um jogo de informação imperfeita, acrescentamos:</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Se contiver qualquer nós de um conjunto de informação, ele conterá todos os nós do conjunto de informação.</li>
+</ol>
+<p>Nós chamamos de subjogo próprio todos os subjogos que não são a árvore do jogo na sua totalidade.</p>
+</div>
+<div id="equilíbrio-de-nash-perfeito-de-subjogo" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Equilíbrio de Nash Perfeito de Subjogo<a href="jogos-multi-estágio.html#equilíbrio-de-nash-perfeito-de-subjogo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="jogo-centípoda" class="section level3 hasAnchor" number="10.4.1">
+<h3><span class="header-section-number">10.4.1</span> Jogo centípoda<a href="jogos-multi-estágio.html#jogo-centípoda" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="exercícios-4" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> Exercícios<a href="jogos-multi-estágio.html#exercícios-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ache todos os subjogos do jogo abaixo.</p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
+<p>Modelo o jogo como uma árvore (forma extensiva) e ache todos os subjogos do jogo abaixo. (exercício 156.2c do Osborne).</p>
+<p>Os políticos Rosa e Ernesto precisam tomar uma posição sobre um assunto. As opções são Berlim (B) ou Havana (H). Eles escolhem sequencialmente. Uma terceira pessoa, Karl, determina quem escolhe primeiro. Tanto Rosa quanto Ernesto se importam apenas com as ações que escolhem, não com quem escolhe primeiro. Rosa prefere o resultado em que ambos escolhem B ao resultado em que ambos escolhem H, e prefere esse resultado a qualquer um dos casos em que ela e Ernesto escolhem ações diferentes; ela é indiferente entre esses dois últimos resultados. As preferências de Ernesto diferem das de Rosa no sentido de que os papéis de B e H são invertidos. As preferências de Karl são as mesmas que as de Ernesto. Modele essa situação como um jogo extensivo com informação perfeita. (Especifique os componentes do jogo e represente o jogo em um diagrama.)</p>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+<p>Existem 6 subjogos próprios e 7 subjogos no total, contando o jogo inteiro como um subjogo.</p>
+<p>Equilíbrio de Nash Perfeito em Subjogos</p>
+<p>Definição informal: Um equilíbrio perfeito em subjogos é um perfil estratégico <span class="math inline">\(s^*\)</span> com a propriedade de que, em nenhum subjogo, qualquer jogador <span class="math inline">\(i\)</span> pode se sair melhor escolhendo uma estratégia diferente de <span class="math inline">\(s^*_i\)</span>, dado que todos os outros jogadores <span class="math inline">\(j\)</span> aderem a <span class="math inline">\(s^*_j\)</span>.</p>
+<p>Nessa definição (informal), requeremos que a estratrégia de cada jogadora seja ótima para toda história após ser a vez dela jogar, e não apenas no início do jogo, como no equlíbrio de Nash.</p>
+<p>Todo jogo extensivo finito com informação perfeita possui (pelo menos) um equilíbrio perfeito de subjogo.</p>
+<p>Um jogo finito significa que em nenhum momento um jogador possui infinitas opções de ações. Para dar um exemplo trivial (do Osborne): um único jogador escolhe um número menor que 1 e recebe um pagamento igual ao número que ela escolhe. Não há um número maior que todos os outros números menores que um, então o jogador único não possui uma ação ótima, e assim o jogo não possui um equilíbrio perfeito de subjogo.</p>
 
 </div>
+<div id="game-theory-model-of-regime-change" class="section level2 hasAnchor" number="10.6">
+<h2><span class="header-section-number">10.6</span> Game Theory Model of Regime Change<a href="jogos-multi-estágio.html#game-theory-model-of-regime-change" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="introdução-2" class="section level2 hasAnchor" number="10.7">
+<h2><span class="header-section-number">10.7</span> Introdução<a href="jogos-multi-estágio.html#introdução-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This extended model explores the aftermath of a successful transition to democracy, focusing on the potential for elite citizens to instigate a counter-revolution aiming to reinstate an authoritarian regime. It examines the strategic calculations involved in maintaining democracy or reverting to authoritarianism, factoring in the associated costs of such challenges.</p>
+</div>
+<div id="the-game" class="section level2 hasAnchor" number="10.8">
+<h2><span class="header-section-number">10.8</span> The Game<a href="jogos-multi-estágio.html#the-game" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>TThe society is composed of <span class="math inline">\(N\)</span> citizens, partitioned into three income-based classes: poor (<span class="math inline">\(N_{\text{poor}}\)</span>), middle-income (<span class="math inline">\(N_{\text{middle}}\)</span>), and rich (<span class="math inline">\(N_{\text{rich}}\)</span>), satisfying the total population equation <span class="math inline">\(N = N_{\text{poor}} + N_{\text{middle}} + N_{\text{rich}}\)</span>. Citizens’ incomes within each class are uniform, denoted as <span class="math inline">\(y_i\)</span>, with income ordered as <span class="math inline">\(y_{\text{poor}} &lt; y_{\text{middle}} &lt; y_{\text{rich}}\)</span>. The total income is normalized to 1.</p>
+<p>In an authoritarian regime, the rich enjoy reduced taxation (<span class="math inline">\(\tau_a\)</span>), whereas a democratic regime would impose higher taxes (<span class="math inline">\(\tau_d\)</span>) to facilitate wealth redistribution. The model assumes <span class="math inline">\(\tau_d &gt; \tau_a\)</span>, indicating a tax increase with the transition to democracy. Participation in challenging the regime incurs a cost <span class="math inline">\(\mu\)</span>, and the challenge’s success requires the collective action of at least <span class="math inline">\(k\)</span> citizens, where <span class="math inline">\(k &gt; \frac{N}{2}\)</span>.</p>
+</div>
+<div id="strategies" class="section level2 hasAnchor" number="10.9">
+<h2><span class="header-section-number">10.9</span> Strategies<a href="jogos-multi-estágio.html#strategies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Each citizen must decide whether to challenge (<span class="math inline">\(C\)</span>) or not challenge (<span class="math inline">\(NC\)</span>) the regime. The success of transitioning to democracy hinges on the collective action meeting or exceeding the threshold <span class="math inline">\(k\)</span>.</p>
+</div>
+<div id="payoffs" class="section level2 hasAnchor" number="10.10">
+<h2><span class="header-section-number">10.10</span> Payoffs<a href="jogos-multi-estágio.html#payoffs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The utility of each citizen hinges on their action, the collective actions, and the resultant political regime:</p>
+<p><span class="math display">\[\begin{align*}
+    \text{Payoff under Democracy: } U_i^{D,C} &amp;= y_i(1 - \tau_d) + \frac{\tau_d}{N} - \mu \text{, for challengers} \\
+    \text{Payoff under Democracy: } U_i^{D,NC} &amp;= y_i(1 - \tau_d) + \frac{\tau_d}{N} \text{, for non-challengers} \\
+    \text{Payoff under Authoritarianism: } U_i^{A,NC} &amp;= y_i(1 - \tau_a) \text{, for non-challengers}\\
+    \text{Payoff under Authoritarianism: } U_i^{A,C} &amp;= y_i(1 - \tau_a) - \mu \text{, for challengers}
+\end{align*}\]</span></p>
+</div>
+<div id="best-response-functions" class="section level2 hasAnchor" number="10.11">
+<h2><span class="header-section-number">10.11</span> Best Response Functions<a href="jogos-multi-estágio.html#best-response-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The best response for each citizen depends on the strategies of others and the expected outcomes:
+<span class="math display">\[\begin{align*}
+    BR_{\text{poor}}(s_{-i}) &amp;=
+    \begin{cases}
+    C &amp; \text{if } \mu &lt; y_i^{\text{poor}}(\tau_d - \tau_a) + \frac{\tau_d}{N}, \\
+    NC &amp; \text{otherwise},
+    \end{cases} \\
+    BR_{\text{middle}}(s_{-i}) &amp;=
+    \begin{cases}
+    C &amp; \text{if } \mu &lt; y_i^{\text{middle}}(\tau_d - \tau_a) + \frac{\tau_d}{N}, \\
+    NC &amp; \text{otherwise},
+    \end{cases} \\
+    BR_{\text{rich}}(s_{-i}) &amp;=
+    \begin{cases}
+    C &amp; \text{if } \mu &lt; y_i^{\text{rich}}(\tau_d - \tau_a) + \frac{\tau_d}{N}, \text{ and expecting } \sum_{j \neq i} h_j \geq k - 1,\\
+    NC &amp; \text{otherwise}.
+    \end{cases}
+\end{align*}\]</span></p>
+</div>
+<div id="players-and-phases" class="section level2 hasAnchor" number="10.12">
+<h2><span class="header-section-number">10.12</span> Players and Phases<a href="jogos-multi-estágio.html#players-and-phases" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Citizens: Classified into poor, middle-income, and rich (elite) classes.
+Phases:
+Transition to Democracy: Modeled as previously, with citizens deciding whether to challenge the authoritarian regime.
+Post-Transition Dynamics: Elite citizens weigh the decision to challenge the democratic regime to restore authoritarian rule.</p>
+<p>Given the threshold <span class="math inline">\(k\)</span> for a successful transition, a Nash Equilibrium requires that no individual citizen has an incentive to unilaterally change their strategy, considering the collective outcome of their actions.</p>
+</div>
+<div id="analysis" class="section level2 hasAnchor" number="10.13">
+<h2><span class="header-section-number">10.13</span> Analysis<a href="jogos-multi-estágio.html#analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>It is easy to see that challenging is a dominated strategy for all rich citizens in this game, since.</p>
+
+</div>
+</div>
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
+<a href="pedra-papel-tesoura.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="introdução.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -311,7 +412,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/mgaldino/Teoria-dos-Jogos/edit/main/index.Rmd",
+"link": "https://github.com/mgaldino/Teoria-dos-Jogos/edit/main/11-Jogos-dinamicos-multiestagio.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -319,7 +420,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/mgaldino/Teoria-dos-Jogos/blob/main/index.Rmd",
+"link": "https://github.com/mgaldino/Teoria-dos-Jogos/blob/main/11-Jogos-dinamicos-multiestagio.Rmd",
 "text": null
 },
 "download": null,
