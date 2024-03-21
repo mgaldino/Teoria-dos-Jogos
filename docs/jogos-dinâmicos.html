@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo5 Jogos na Forma Normal | Introdução à Teoria dos Jogos para Ciências Sociais</title>
-  <meta name="description" content="Capítulo5 Jogos na Forma Normal | Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <title>Capítulo9 Jogos Dinâmicos | Introdução à Teoria dos Jogos para Ciências Sociais</title>
+  <meta name="description" content="Capítulo9 Jogos Dinâmicos | Introdução à Teoria dos Jogos para Ciências Sociais" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo5 Jogos na Forma Normal | Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <meta property="og:title" content="Capítulo9 Jogos Dinâmicos | Introdução à Teoria dos Jogos para Ciências Sociais" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo5 Jogos na Forma Normal | Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <meta name="twitter:title" content="Capítulo9 Jogos Dinâmicos | Introdução à Teoria dos Jogos para Ciências Sociais" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="incerteza-risco-e-utilidade-esperada.html"/>
-<link rel="next" href="solucao-de-um-jogo.html"/>
+<link rel="prev" href="equilíbrio-de-nash-em-estratégias-mistas.html"/>
+<link rel="next" href="credibilidade-e-racionalidade-sequencial.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -274,126 +274,112 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="jogos-na-forma-normal" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Capítulo5</span> Jogos na Forma Normal<a href="jogos-na-forma-normal.html#jogos-na-forma-normal" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Jogos estáticos de Informação Completa (como o DP) envolvem considerações estratégicas sobre o que os outros jogadores irão fazer.</p>
-<p>Um jogo de informação completa é caracterizado pelas seguintes quatro informações serem de <strong>conhecimento comum</strong>:
-1. todas as possíveis ações de todas as jogadores,</p>
-<ol start="2" style="list-style-type: decimal">
-<li><p>todos os possíves resultados,</p></li>
-<li><p>Como a combinação de cada ação de todos os jogadores afetam qual resultado irá acontecer e se materializar, e</p></li>
-<li><p>As preferências de todas jogadoras sobre os resultados.</p></li>
-</ol>
-<p>Vejam que o DP satisfaz esse requerimento.</p>
-<div id="conhecimento-comum." class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Conhecimento Comum.<a href="jogos-na-forma-normal.html#conhecimento-comum." class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Definição 2. Um evento <span class="math inline">\(E\)</span> é conhecimento comum se todo mundo sabe <span class="math inline">\(E\)</span>, todo mundo sabe que todos sabem <span class="math inline">\(E\)</span>, todo mundo sabe que todo mundo sabe que todos sabem <span class="math inline">\(E\)</span> e assim por diante, até infinito.</p>
-<p>Um exemplo simples em que podemos assumir que um evento é conhecimento comum. Suponha que duas pessoas saiam da sala e, andando na rua, começa a chover e eles correm para não se molhar. É razoável assumir que é conhecimento comum que está chovendo para essas duas pessoas.</p>
+<div id="jogos-dinâmicos" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Capítulo9</span> Jogos Dinâmicos<a href="jogos-dinâmicos.html#jogos-dinâmicos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introdução-1" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Introdução<a href="jogos-dinâmicos.html#introdução-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Considere novamente o jogo Bach e Stravinsky. Suponha que a jogadora 1 joga primeiro e e a jogadora 2 pode observar a esoclha de 1. Imagine que ela vai para um lugar, liga para a amiga e diz: estou aqui no lugar tal (espetáculo do Bach ou do Stravinsky).</p>
+<p>Veja que em termos de equilíbrios de Nash, continuamos com os mesmos dois equilíbrios de antes. Porém, não faz sentido achar que o equilíbrio (S,S) será jogado, pois a jogadora 1 sabe que, se for para Bach, 2 também irá. Jogos na forma normal não capturam muito bem a noção de jogos sequenciais e racionalidade sequencial.</p>
+<p>A forma estratégica do jogo, de fato, não traz informações nem sobre a ordem dos movimentos, nem as ações disponíveis para cada jogadora na sua vez de jogar.</p>
+<p>Por isso, iremos alterar a representação de nosso jogo, para a forma extensiva, que tornará explícito <strong>a ordem</strong> em que as jogadoras jogam, e o que cada jogadora <strong>sabe</strong> quando é sua vez de jogar. Nesse cenário, estratégias referem-se a planos contingentes de ações (como no jogo da bandeira), em vez de ações não-contigentes.</p>
+<p>Iremos introduzir a noção de indução reversa ou indução para trás como uma forma de solucionar jogos. Noção que for formalizada por Selten (1965) como equilíbrio de subjogo-perfeito e contempla situações em que jogadoras se movem simultaneamente em múltiplos períodos e a indução reversa não pode ser aplicada.</p>
+<p>Comecemos então pela introdução do que significa descrever um jogo na forma extensiva.</p>
 </div>
-<div id="estratégias" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> Estratégias<a href="jogos-na-forma-normal.html#estratégias" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>O <em>reality show</em> “No limite” é uma adaptação do equivalente americano chamado “Survivor”. Nesse jogo, dois times (azul e vermelho) competem para ganhar os desafios. Como recompensa, só um membro do outro time é eliminado, além de ganharem outros benefícios (dormir em uma cama, mais comida etc.). Em uma das disputas, um jogo foi apresentado no programa que é útil para os nossos propósitos.</p>
-<p>link: <a href="https://www.youtube.com/watch?v=aonCsvi0LKc" class="uri">https://www.youtube.com/watch?v=aonCsvi0LKc</a></p>
-<p>Conforme pode ser visto no vídeo, havia 21 bandeiras fincadas na areia. O time vermelho começa jogando e pode escolher 1, 2, ou 3 bandeiras (um time não pode escolher pegar 4 ou mais bandeiras, ou nenhuma bandeira). Em seguida, é a vez do time azul, que têm as mesmas opções. Quem pegar a última bandeira ganha o jogo.</p>
-<p>A solução do jogo é por indução para trás. Imagine que é sua vez de jogar e tem uma bandeira. Pegue a bandeira e ganhe o jogo. Se tiver duas, pegue as duas. Se tiver três, pegue as três. Se tiver quatro, não há o que você possa fazer para evitar que o time adversário esteja na situação anterior de ter uma, duas ou três e ganhe o jogo. Portanto, quem chegar na sua vez com quatro bandeiras, perde o jogo. O que acontece se você chegar com cinco? Você pega uma, deixa o outro time com quatro, e você ganha o jogo. Similarmente se na sua vez houver 6 ou 7 bandeiras, você pega duas ou três bandeiras respectivamente e deixa o outro time com quatro. Por outro lado, se na sua vez tiverem 8 bandeiras, não importa quantas bandeiras pegue, deixará o time adversário com 5, 6 ou 7 e eles deixarão você com quatro. Por raciocínio similar, você deve evitar ficar com 12, 16 e 20 bandeiras e, se possível, deve deixar sempre o outro time com 20, 16, 12, 8 e 4 bandeiras para escolher.</p>
-<p>Portanto, quem começa o jogo, se jogar corretamente, vence a partida. Nós iremos analisar com calma esse jogo na aula de jogos na forma extensiva, em que desenharemos a árvore do jogo. Por agora, o que quero destacar é o seguinte. Se, em vez do jogo ser sequencial, como vimos no vídeo, o jogo fosse jogado por meio de uma instrução, em que você deve especificar como deve ser jogado, a instrução vencedora seria assim:</p>
-<p>Se o time vermelho começa jogando, então poderia adotar o seguinte plano de ação.</p>
-<p>Pegue uma bandeira e o outro time ficará com 20. Se eles pegarem uma, pegue três em seguida. Se pegarem duas, pegue duas em seguida. Se pegarem três, pegue uma em seguida. Adote essa regra em cada rodada após o primeiro movimento.</p>
-<p>Uma outra forma de dizer o plano de ação é que deve começar por uma bandeira, e em seguida a jogada <span class="math inline">\(y\)</span> é dada por <span class="math inline">\(4 - x\)</span> bandeiras, em que <span class="math inline">\(x\)</span> é quanto o outro time pegou na rodada anterior.</p>
-<p>O time azul não tem saída, mas, caso o outro time erre (como aconteceu no jogo), sua instrução poderia ser:
-Se houver 20, 16, 12, 8 ou 4 bandeiras, escolha qualquer número. Porém, se o número de bandeiras for diferente desses números, escolha tantas bandeiras quanto forem necessárias para sobrarem 20, 16, 12, 8 ou 4.</p>
-<p>Uma vez que o jogo é analisado e uma plano de ação é definido, tantgo faz quem pega as bandeiras. Até um robô com as instruções poderia fazer um serviço. Tal plano de ação, que define o que fazer em cada contigência, é o que chamamos de estratégia em teoria dos jogos.</p>
-<p>Pensemos em outro exemplo, como o jogo infantil pedra, tesoura e papel. Imagine que você quer jogar esse jogo, mas irá jogar por intermédio de um amigo, e você deve passar instruções sobre como jogar. Então, uma estratégia, pode ser: “jogue pedra”, e outra poderia ser “jogue papel”. A noção de estratégia é distinta de uma ação ou movimento em um jogo, embora isso não fique tão claro em jogos na forma normal ou estratégica. A razão é que, em muitos casos (como no Dilema do Prisioneiro, ou no jogo de pedra-papel-tesoura), as estratégias disponíveis para os jogadores coincidem com as ações.</p>
-<p>Quando introduzirmos a forma extensiva do jogo, a diferença entre estratégia e ação ficará mais clara. Por enquanto, é importante sabermos que os dois conceitos são distintos, ainda que possam coincidir na prática em jogos simultâneos de dois jogadores.</p>
-<p>Vamos então introduzir formalmente algumas definições relativas à noção de estratégia.</p>
-<p>Definição 2.1: Uma estratégia pura para um jogador <span class="math inline">\(i\)</span> é um plano determinístico de ação. O conjunto de todas as estratégias puras para o jogador <span class="math inline">\(i\)</span> é chamado de <span class="math inline">\(S_i\)</span>. Um perfil de estratégias puras <span class="math inline">\(s = \{s_1, s_2, ..., s_n\}, s_i \in S_i\)</span> para todo <span class="math inline">\(i = 1, 2, ..., n\)</span> descreve uma combinação particular de estratégias puras escolhidas por todos os jogadores <span class="math inline">\(n\)</span> no jogo.</p>
-<p>Vamos entender a definição primeiro por meio de um exemplo. No caso do Dilema do Prisioneiro, temos dois jogadores, ou seja, o conjunto de jogadores é dado por <span class="math inline">\(N = \{1,2\}\)</span> e <span class="math inline">\(n = 2\)</span>. O conjunto de todas as estratégias pura do jogador 1 é formada por duas estratégias, confessar e não-conessar. Podemos, portanto, escrever <span class="math inline">\(S_1 = \{(\text{Confessar}, \text{não-confessar})\}\)</span>. Similarmente para o jogador 2, de modo que <span class="math inline">\(S_i = \{(\text{Confessar, não-confessar})\}\)</span>, para <span class="math inline">\(i \in {1,2}\)</span>.</p>
-<p>Uma combinação particular de estratégias puras escolhida pelos dois jogadores pode ser o equilíbrio do jogo, ou seja, <span class="math inline">\(s = \{(\text{confessar, confessar})\}\)</span>, em que <span class="math inline">\(s_1 = s_2\)</span>, que é a estratégia confessar.</p>
+<div id="jogo-na-forma-extensiva" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Jogo na forma extensiva<a href="jogos-dinâmicos.html#jogo-na-forma-extensiva" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Um jogo na forma extensiva pode ser visto como uma generalização multi-estágio de árvores de decisão.</p>
+<div class="figure"><span style="display:block;" id="fig:bach-strav"></span>
+<img src="imagens/jogo-extensivo.png" alt="Representação do Jogo da coordenação" width="100%" />
+<p class="caption">
+Figure 9.1: Representação do Jogo da coordenação
+</p>
 </div>
-<div id="jogos-na-forma-normal-ou-estratégica" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> Jogos na forma normal ou estratégica<a href="jogos-na-forma-normal.html#jogos-na-forma-normal-ou-estratégica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Um jogo na forma estratégica ou normal incluem três componentes:
-1. Um conjunto finito de jogadores <span class="math inline">\(N = \{1, 2, ..., n\}\)</span></p>
-<ol start="2" style="list-style-type: decimal">
-<li><p>Uma coleção de conjuntos de estratégias puras, <span class="math inline">\(\{S_1, S_2, ...., S_n\}\)</span></p></li>
-<li><p>Um conjunto de funções de payoff, <span class="math inline">\(\{v_1, v_2, .., v_n\}\)</span>, cada uma atribuindo um valor de payoff para cada combinação de estratégias, ou seja, um conjunto de funções <span class="math inline">\(v_i: S_1 * S_2 * ... * S_n \to R\)</span> para cada <span class="math inline">\(i \in N\)</span></p></li>
-</ol>
-<p>Vamos destrinchar o item 3, que parece complexo e assustador, mas é bem simples. Vou usar exemplos para explicar cada uma das partes de 3.</p>
-<p>Suponha que eu tenho um conjunto <span class="math inline">\(A\)</span> dado pelas cidades do estado de São Paulo, e um conjunto <span class="math inline">\(B\)</span> dado pelas cidades do estado do Rio de Janeiro. Seja <span class="math inline">\(f\)</span> a função que recebe duas cidades (uma de SP, outra do RJ) e retorna a distância em linha reta entre elas, calculada pelo google, em km. Eu posso descrever essa função do seguinte modo: <span class="math inline">\(f: A \cdot B \to R\)</span>.</p>
-<p>Como minha função sempre retorna uma distância em km, a distância é um número real. Então, ela recebe dois elementos, um de A e um de B, e retorna um número real.</p>
-<p>Falta explicar a parte em que escrevemos <span class="math inline">\(A \cdot B\)</span>. O produto de dois conjuntos <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> é chamado de produto Cartesiano e é denotado por <span class="math inline">\(X \cdot Y\)</span> e seu resultado é um novo conjunto, formado pelos pares ordenados <span class="math inline">\((x,y): x \in X , y \in Y\)</span>. Por exemplo, suponha que <span class="math inline">\(X = \{1,2\}\)</span> e <span class="math inline">\(Y = \{3,4\}\)</span>.</p>
-<p>Então, o produto Cartesiano de <span class="math inline">\(X\)</span> por <span class="math inline">\(Y\)</span> é um conjunto de 4 elementos: <span class="math inline">\(X \cdot Y = \{ (1,3), (1,4), (2,3), (2,4) \}\)</span>. Notem que temos apenas 4 elementos nesse conjunto, e cada elemento é um par ordenado de números, isto é, <span class="math inline">\((3,1)\)</span> não faz parte do novo conjunto, por exemplo.</p>
-<p>O exemplo histórico de onde vem o termo é o plano cartesiano. Se eu considerar uma reta <span class="math inline">\(X\)</span> e outra reta <span class="math inline">\(Y\)</span> no plano cartesiano, então o produto dos dois conjuntos forma pares de coordenadas no plano, de forma que cada ponto do plano é um elemento do produto cartesiano de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>.</p>
-<p>Voltando ao nosso exemplo das funções que retornam a distância entre cidades, o produto cartesiano dos dois conjuntos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> é formado pelo par ordenado de cidades de SP e RJ. Assim, a minha função pode receber cada par de cidade e retornar uma distância em km, que é um número dos Reais.</p>
-<p>Retornando finalmente ao nosso exemplo das funções de payoff. Eu tenho o produto cartesiano dos conjuntos de estratégias de cada jogador. De modo que cada elemento desse conjunto é um par ordenado de cada estratégia, ou seja, todas as combinações de estratégias existentes estão nesse conjunto e cada combinação é um elemento do conjunto. E para cada jogador, eu tenho o payoff (que é um número real) resultante de cada combinação de estratégia.</p>
-<p>Vamos aplicar isso para o DP?</p>
+<p>A árvore do jogo é lida de cima para baixo. No topo está quem joga primeiro. O retângulo com o nome da jogadora é chamado de nó. No primeiro nó, Serena tem duas ações possíveis, “Bach” e “Stravinski”. Uma vez que ela escolha sua ação, é a vez da Nina, que também tem duas opções (“bach” e “stravinsky”, em caixa baixa, para distinguir as ações das duas jogadoras). Se Serena escolheu Bach, Nina está no galho da esquerda. Se Serena escolheu Stravinsky, Nina está no galo da direita. E uma vez que Nina faça sua escolha, o jogo acaba e os payoffs finais são mostrados. O primeiro payoff é da jogadora 1, e o segundo da jogadora 2.</p>
+<p>Assim, com a forma extensiva, temos como antes:</p>
 <ol style="list-style-type: decimal">
-<li><p>Um conjunto finito de jogadores <span class="math inline">\(N = \{1, 2\}\)</span></p></li>
-<li><p><span class="math inline">\(S_1 = \{\text{Confessa, não-confessa}\}\)</span> e <span class="math inline">\(S_2 = \{\text{Confessa, não_-confessa}\}\)</span>. Ou, mais genericamente, <span class="math inline">\(S_i = \{\text{Confessa, não-confessa}\}\)</span> para <span class="math inline">\(i \in \{1,2\}\)</span></p></li>
-<li><p><span class="math inline">\(v_1: \{\text{(Confessa, Confessa), (Confessa, não-confessa), (não-confessa, confessa), (não-confessa, confessa)}\} \to R\)</span>.
-Mais especificamente, Seja <span class="math inline">\(v_i(s_1, s_2)\)</span> o payoff para o jogador <span class="math inline">\(i\)</span> se o jogador <span class="math inline">\(i\)</span> joga <span class="math inline">\(s_1\)</span> e o jogador <span class="math inline">\(2\)</span> joga <span class="math inline">\(s_2\)</span>. Então:</p></li>
+<li>Número de jogadoras, <span class="math inline">\(N\)</span>.</li>
+<li>Payoffs ou funções de utilidade em função dos resultados, <span class="math inline">\(\{u_i(\cdot)\}_{i \in N}\)</span></li>
 </ol>
-<p><span class="math display">\[\begin{equation}
-v_1(s_1, s_2) =
-\begin{cases}
-    5 &amp; \text{if }~~ Confessa,Confessa \\
-    0 &amp; \text{if }~~ Confessa,Não-confessa \\
-    10 &amp; \text{if }~~ Não-confessa,Confessa \\
-    2&amp; \text{otherwise.}
-\end{cases}
-\end{equation}\]</span></p>
-<p>E similarmente para o jogador 2, já que os payoffs são simétricos.</p>
+<p>E acrescentamos:</p>
 <ol start="3" style="list-style-type: decimal">
-<li>Um conjunto de funções de payoff, <span class="math inline">\({v_1, v_2, .., v_n}\)</span>, cada atribuindo um valor de payoff para cada combinação de estratégias, ou seja, um conjunto de funções <span class="math inline">\(v_i: S_1 * S_2 * ... * S_n \to R\)</span> para cada <span class="math inline">\(i \in N\)</span></li>
+<li>Ordem dos movimentos</li>
+<li>Ações das jogadoras quando for a vez delas de se moverem.</li>
+<li>O conhecimento que as jogadoras possuem quando é sua vez de se moverem.</li>
 </ol>
-</div>
-<div id="votos-em-comissão" class="section level2 hasAnchor" number="5.4">
-<h2><span class="header-section-number">5.4</span> Votos em comissão<a href="jogos-na-forma-normal.html#votos-em-comissão" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Consideremos o seguinte exemplo. Suponha que uma comissão, formada por três pessoas, tem de votar se implementam uma nova política ou mantém o status quo (qualquer que seja ele). Por exemplo, uma comissão de professores deve decidir se continuam com uma política de aquisição de livros para a biblioteca uma vez por ano (status quo) ou duas vezes por ano (nova política). Ou um Conselho de uma empresa deve decidir se aumentam o salário do CEO (nova política) ou não (status quo), ou um júri se condenam alguém (nova política) ou deixam a pessoa livre (status quo). Por fim, pode ser uma comissão de legisladores que devem decidir se aprovam um projeto de lei ou uma nomeação para algum cargo público.</p>
-<p>Cada membro pode votat “sim” (S) ou “não” (N). Para simplificar, consideremos que o status quo dá um payoff de 0 (zero) para cada jogador. Jogadores 1 e 2 preferem a nova política, portanto seus payoffs para ela pode ser 1. Já o jogador 3 prefere o stats quo, então consideremos o payoff dela -1 para o jogador 3. Por fim, suponha que se houver uma maioria favorável à nova política, ela é adotada. Caso contrário, permanence o status quo.</p>
-<p>Como descrever esse jogo formalmente?
-Jogadores: <span class="math inline">\(N = \{1,2,3\}\)</span>
-Conjuntos de estratégias: <span class="math inline">\(S_i = \{S, N, A\}\)</span>, para <span class="math inline">\(i \in \{1,2,3\}\)</span>
-Payoffs: Seja <span class="math inline">\(P\)</span> o conjunto de perfis de estratégias para o qual uma nova política é escolhida e seja <span class="math inline">\(Q\)</span> o conjunto de perfis de estratégias para o qual o status quo prevalece. Formalmente,</p>
-<p><span class="math inline">\(P = \begin{bmatrix} (S,S,N) &amp; (S,N,S)\\ (S,S,S) &amp; (N, S, S) \end{bmatrix}\)</span></p>
-<p>e</p>
-<p><span class="math inline">\(Q = \begin{bmatrix} (N,N,N) &amp; (N,N,S)\\ (N,S,N) &amp; (S, N, N) \end{bmatrix}\)</span></p>
-<p>Então os payoffs podem ser escritos como (aqui, para <span class="math inline">\(i \in \{1,2\}\)</span>):</p>
-<p><span class="math display">\[\begin{equation}
-v_i(s_1, s_2) =
-\begin{cases}
-    1 &amp; \text{if }~~ (s_1, s_2) \in P \\
-    0 &amp; \text{if }~~ (s_1, s_2) \in Q \\
-\end{cases}
-\end{equation}\]</span></p>
-<p><span class="math display">\[\begin{equation}
-v_3(s_1, s_2) =
-\begin{cases}
-    0 &amp; \text{if }~~ (s_1, s_2) \in P \\
-    1 &amp; \text{if }~~ (s_1, s_2) \in Q \\
-\end{cases}
-\end{equation}\]</span></p>
-</div>
-<div id="exercícios-2" class="section level2 hasAnchor" number="5.5">
-<h2><span class="header-section-number">5.5</span> Exercícios<a href="jogos-na-forma-normal.html#exercícios-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Escreva as informações que especificam um jogo na forma normal (Número de jogadores, estratégias e funções de utilidade) e a matriz de payoff dos seguintes jogos.</p>
-<div class="exercise">
-<p><span id="exr:unnamed-chunk-20" class="exercise"><strong>Exercise 5.1  </strong></span>Considere um <em>happy hour</em> em que temos dois jogadores (um jogador, e todo o restante do grupo), e podem economizar ou não economizar.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Atribua números fictícios de payoff para esse jogo, de forma a ilustrar o dilema da ação acoletiva.</p></li>
-<li><p>Escreva as informações que especificam o jogo na forma normal (Número de jogadores, estratégias e funções de utilidade) e a matriz de payoff.</p></li>
+<p>O ponto 5 é importante para distinguir entre Nina joga depois da Serena de um lado, e Nina joga depois da Serena sabendo o que Serena jogou antes dela.</p>
+<p>Por fim, mantemos uma suposição feita em nossos jogos anteriores, agora estendida aos itens 1-6, que é:</p>
+<ol start="7" style="list-style-type: decimal">
+<li>É conhecimento comum toda a estrutura do jogo representada pelos itens 1-6 para todas as jogadoras.</li>
 </ol>
+<div id="definição-de-árovre-de-um-jogo" class="section level3 hasAnchor" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> Definição de árovre de um jogo<a href="jogos-dinâmicos.html#definição-de-árovre-de-um-jogo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Uma <strong>árvore do jogo</strong> é formada por um conjunto de nós <span class="math inline">\(x \in X\)</span> com uma relação de precedência <span class="math inline">\(x &gt; x&#39;\)</span>, que significa “<span class="math inline">\(x\)</span> precede a <span class="math inline">\(x&#39;\)</span>”. Ou seja, <span class="math inline">\(x\)</span> vem antes de <span class="math inline">\(x&#39;\)</span>. Cada nó só tem um predecessor. A relação de precedência é transitiva (<span class="math inline">\(x &gt; x&#39;, x&#39; &gt; x&#39;&#39; \implies x &gt; x&#39;&#39;\)</span>), assimetrica <span class="math inline">\((x &gt; x&#39; \implies \neg (x&#39; &gt; x))\)</span>, isto é, <span class="math inline">\(x\)</span> precede <span class="math inline">\(x&#39;\)</span>, mas <span class="math inline">\(x&#39;\)</span> não precede <span class="math inline">\(x\)</span>, e incompleta (nem todos os pares podem ser ordenados). Há um nó especial, chamado raiz da árvore, denotada por <span class="math inline">\(n_1\)</span>, que precede quaisquer outros nós <span class="math inline">\(x \in X\)</span>. Nós que não precedem outros nós são chamados de nós terminais, denotados pelo conjunto <span class="math inline">\(Z \subset X\)</span>. Nós terminais denotam o fim do jogo, com os payoffs associados. Cada nó <span class="math inline">\(x\)</span> que não é terminal é atribuído a um jogador <span class="math inline">\(i(x)\)</span> com o conjunto de ações <span class="math inline">\(A_i(x)\)</span>, ou para natureza.</p>
+<p>É uma definição longa, masque captura a estrutura “física” do jogo, ao mesmo tempo em que ignora as ações (escolhas) das jogadoras e o que sabem quando jogam.</p>
 </div>
-<div class="exercise">
-<p><span id="exr:unnamed-chunk-21" class="exercise"><strong>Exercise 5.2  </strong></span>Considere o jogo do par ou ímpar.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Atribua números fictícios de payoff para esse jogo, de forma a captar as preferências de jogadores nesse jogo.</p></li>
-<li><p>Escreva as informações que especificam o jogo na forma normal (Número de jogadores, estratégias e funções de utilidade) e a matriz de payoff.</p></li>
+</div>
+<div id="jogo-da-confiança" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Jogo da confiança<a href="jogos-dinâmicos.html#jogo-da-confiança" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="figure"><span style="display:block;" id="fig:confianca"></span>
+<img src="imagens/jogo-confianca.png" alt="Representação do Jogo da Confiança" width="100%" />
+<p class="caption">
+Figure 9.2: Representação do Jogo da Confiança
+</p>
+</div>
+<p>O jogador p1 joga primeiro. Logo, <span class="math inline">\(i(n_1) = p_1\)</span>.</p>
+</div>
+<div id="informações" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Informações<a href="jogos-dinâmicos.html#informações" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Quais informações cada jogador tem quando é sua vez de jogar? Uma jogadora pode ter informação bem fina sobre onde está no jogo, ou bem grosseira. Vamos então introduzir a seguinte definição:</p>
+<p>Definição conjunto de informações:</p>
+<p>Cada jogador <span class="math inline">\(i\)</span> tem uma coleção de conjuntos de informação <span class="math inline">\(h_i\)</span> the particiona (divide) os nós do jogo no qual uma jogadora <span class="math inline">\(i\)</span> move com as seguintes propriedades:</p>
+<ol style="list-style-type: decimal">
+<li>Se <span class="math inline">\(h_i\)</span> é uma conjunto unitário (<em>singleton</em>) que inclui apenas <span class="math inline">\(x\)</span>, então a jogadora <span class="math inline">\(i\)</span> que se move em <span class="math inline">\(x\)</span> sabe que está em <span class="math inline">\(x\)</span>.</li>
+<li>Se <span class="math inline">\(x \neq x&#39;\)</span> e se ambos <span class="math inline">\(x \in h_i\)</span> e <span class="math inline">\(x&#39; \in h_i\)</span> então a jogadora <span class="math inline">\(i\)</span> que se move em <span class="math inline">\(x\)</span> não sabe se está em em <span class="math inline">\(x\)</span> ou <span class="math inline">\(x&#39;\)</span>.</li>
+<li>Se <span class="math inline">\(x \neq x&#39;\)</span> e se ambos <span class="math inline">\(x\)</span> e <span class="math inline">\(x&#39; \in h_i\)</span>, então <span class="math inline">\(A_i(x) = A_i(x&#39;)\)</span>.</li>
 </ol>
+<p>Vamos entender esta definição formal. Considere novamente o jogo do Bach e Stravinsky na forma extensiva. No gráfico temos n1, n2.. como nós, enquanto na definição usamos x1 etc. Vou falar em x em vez de n apenas para continuar com a discussão. Considere quando a jogadora 2 se move em x2. A questão é: ela sabe que está em x2? Ou não sabe se está em x2 ou x3? Se a gente escreve <span class="math inline">\(h_2 = {x_2}\)</span>, então isso significa que o conjunto de informações em <span class="math inline">\(x_1\)</span> é um conjunti unitário. Portanto, a jogadora a jogadora possui informação que diz “estou em x_2”, que é capturado pela propriedade 1 da definição. Nesse caso, segue-se que a jogadora 2 també mtem outro conjunto de informação $h_2 = {x_3}.</p>
+<p>Se, por outro lado, a jogadora 2 não sabe se está em <span class="math inline">\(x_2\)</span> ou <span class="math inline">\(x_3\)</span>, como no jogo do Bach e Stravinsky simultâneo, então deve ser verdade que sua informação é de que está em <span class="math inline">\(x_1\)</span> ou <span class="math inline">\(x_2\)</span>, mas não sabe em qual dos dois. Nesse caso, escrevemos <span class="math inline">\(h_2 = {x_1, x_2}\)</span>. Esta é a propriedade 2.</p>
+<p>Finalmente, a propriedade 3 é essencial para manter a lógica da informação, em particular quando as ações disponíveis em cada nós forem diferentes para uma jogadora. Considere o jogo da confiança. Se ela não sabe se está no nó x2 (onde o jogo terminou e não tem o que fazer) ou x3, então ela não pode saber quais as ações disponíveis para ela.</p>
+<p>Por fim, em alguns casos é possível acrescentar eventos aleatórios. Por exemplo, o jogo acima poderia ser modificado para incluir a chance de chover. Suponha que o espetáculo de Bach é a céu aberto, e o de Stravinski, não. Então, se choveu os payoffs das jogadoras é diferente de se não choveu. Vamos supor que elas preferem ficar juntas sob chuva que separadas. Como representar essa possibilidade? A forma como fazemos isso é criar uma jogadora fictícia, que é a natureza, que joga aleatoriamente sem considerações estratégicas. Essa probabilidade é exógena, no sentido de que é fixa e determinada antes do jogo começar, de modo que não depende das escolhas das jogadoras.</p>
+<p>Eis como ficaria o jogo nesse caso:</p>
+<div class="figure"><span style="display:block;" id="fig:bach-strav-natureza"></span>
+<img src="imagens/jogo-bofsex-nature.png" alt="Representação do Jogo da coordenação, com a natureza movendo primerio" width="100%" />
+<p class="caption">
+Figure 9.3: Representação do Jogo da coordenação, com a natureza movendo primerio
+</p>
 </div>
-<div class="exercise">
-<p><span id="exr:unnamed-chunk-22" class="exercise"><strong>Exercise 5.3  </strong></span>Digamos que Nina escreva um e-mail para Martín, perguntando se podem se encontrar às 14h da segunda-feira da semana seguinte, em frente ao restaurante central da Universidade onde estudam. Martín responde ao e-mail dizendo que pode sim. É conhecimento comum que ambos irão ao restaurante central na data e hora combinados? Explique.</p>
+<p>Na <a href="jogos-dinâmicos.html#fig:bach-strav-natureza">9.3</a>, temos algumas mudanças. O primeiro nó está representado por um círculo vazado, para indicar que é a natureza quem está jogando (e não terá um payoff). Os demais nós são representados por círculos prreenchidos, sólidos. Portanto, a natureza joga e “escolhe” se fará sol ou chuva. Na prática as leis da natureza irão operar, e podemos calcular probabilidades (no caso, 50% de chance de chover), mas a jogadorta Serena só sabeá se haverá sol ou chuva na hora do espetáculo, após ter feito sua jogada. Isso significa que Serena não sabe em qual nós está, se no da esquerda, com chuva, ou no da direita, com sol. Para indicar essa ausência de informação, é comum circularmos com uma linha tracejada os nós nos quais uma jogadora não tem informação sobre qual nó ela está. Uma vez que Serena Joga, é a vez de Nina jogar. Note que não circulamos nós de Nina com linha tracejada, de modo que isso significa que Nina sabe em qual nó está, ou seja, sabe não apenas o que Serena jogou, mas o que a natureza jogou. Como é difícil imaginar tal situação, o melhor seria indicar também que Nina não sabe o que a Natureza jogou, mas sabe o que a Serena jogou. A árovre do jogo ficartão então.</p>
+<div class="figure"><span style="display:block;" id="fig:bach-strav-natureza1"></span>
+<img src="imagens/jogo-bofsex-nature1.png" alt="Representação do Jogo da coordenação, com a natureza movendo primerio, conjunto de informações corretos." width="100%" />
+<p class="caption">
+Figure 9.4: Representação do Jogo da coordenação, com a natureza movendo primerio, conjunto de informações corretos.
+</p>
 </div>
+<p>Nessa árove, vale destacar dois aspectos que são diferentes da árvore anterior. Em primeiro lugar, nós descrevemos a informação completa sobre em qual nó Nina está por meio de linha tracejada curva. Poderíamos ter usado o círculo tracejado, que daria na mesma. São duas formas distintas de representar a mesma coisa e estamos incluindo aqui para fins de completude. Em segundo lugar, note os nós que estão conectados pela linha. Quando é a vez de Nina jogar, ela não sabe o que a natureza jogou, mas sabe o que Serena jogou. Isso significa que se Serena jogou “Bach”, Nina não sabe se está no ramo “Bach” com chuva ou no ramo “Bach” som sol. Similarmente, se Serena jogou “Stravinski”, Nina não sabe em qual dos dois galhos de “Stravinski” ela está. É preciso, portanto, ter cuidado quando conectar nós, pois se fizemos errado, o jogo fica completamente outro.</p>
+</div>
+<div id="jogos-de-informação-perfeita-e-imperfeita" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">9.5</span> Jogos de informação perfeita e imperfeita<a href="jogos-dinâmicos.html#jogos-de-informação-perfeita-e-imperfeita" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Os jogos na forma normal eram chamados de jogos de informação completa, pois todas as jogadores conheciam as ações disponíveis e as funções de payoff de todas as jogadoras, e isso era conhecimento comum.</p>
+<p>Agora, nós temos uma situação em que uma jogadora pode ter conhecimento perfeito ou imperfeito do nó em que está, a depender do particionamento do conjunto de informações. Portanto, vale a pena distinguir entre dois tipos de jogos de informação completa.</p>
+<p>Definição: Um jogo de informação completa no qual cada conjunto de informação é um conjunto unitário e não há jogadas da natureza é chamado um <strong>jogo de informação perfeita</strong>. Um jogo no qual pelo menos um conjunto de informação contém vários nós ou um jogo com movimentop da natureza é chamado um <strong>jogo de informação imperfeita</strong>.</p>
+</div>
+<div id="estratégias-1" class="section level2 hasAnchor" number="9.6">
+<h2><span class="header-section-number">9.6</span> Estratégias<a href="jogos-dinâmicos.html#estratégias-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Nós já havíamos definido uma estratégia como um plano de ação contigente. Contudo, em jogos na forma normal, essa definição era pouco útil, pois estratégias (puras) coincidiam com as ações disponíveis para as jogadoras. Na forma externsiva, a nossa definição de estratégia se revelará mais útil.</p>
+<div id="estratégias-mistas" class="section level3 hasAnchor" number="9.6.1">
+<h3><span class="header-section-number">9.6.1</span> Estratégias mistas<a href="jogos-dinâmicos.html#estratégias-mistas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="estratégias-comportamentais" class="section level2 hasAnchor" number="9.7">
+<h2><span class="header-section-number">9.7</span> Estratégias comportamentais<a href="jogos-dinâmicos.html#estratégias-comportamentais" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Definição: perfect recall (memória perfeita)</p>
+</div>
+<div id="representação-estratégica-de-jogos-na-forma-extensiva" class="section level2 hasAnchor" number="9.8">
+<h2><span class="header-section-number">9.8</span> Representação estratégica de jogos na forma extensiva<a href="jogos-dinâmicos.html#representação-estratégica-de-jogos-na-forma-extensiva" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="equilíbrio-de-nash-e-caminhos-de-jogada" class="section level2 hasAnchor" number="9.9">
+<h2><span class="header-section-number">9.9</span> Equilíbrio de Nash e Caminhos de jogada<a href="jogos-dinâmicos.html#equilíbrio-de-nash-e-caminhos-de-jogada" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Definição: … um conjunto de informação está <strong>no caminho de equilíbrio</strong> se …</p>
 
 </div>
 </div>
@@ -402,8 +388,8 @@ v_3(s_1, s_2) =
           </div>
         </div>
       </div>
-<a href="incerteza-risco-e-utilidade-esperada.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="solucao-de-um-jogo.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="equilíbrio-de-nash-em-estratégias-mistas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="credibilidade-e-racionalidade-sequencial.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -434,7 +420,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/mgaldino/Teoria-dos-Jogos/edit/main/05-forma-normal.Rmd",
+"link": "https://github.com/mgaldino/Teoria-dos-Jogos/edit/main/09-Jogos-dinamicos.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -442,7 +428,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/mgaldino/Teoria-dos-Jogos/blob/main/05-forma-normal.Rmd",
+"link": "https://github.com/mgaldino/Teoria-dos-Jogos/blob/main/09-Jogos-dinamicos.Rmd",
 "text": null
 },
 "download": null,

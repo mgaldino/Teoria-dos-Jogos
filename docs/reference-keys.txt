@@ -94,7 +94,7 @@ equilíbrio-de-nash-em-estratégias-mistas
 pedra-papel-tesoura
 exercícios-3
 referências-2
-jogados-dinâmicos
+jogos-dinâmicos
 introdução-1
 jogo-na-forma-extensiva
 definição-de-árovre-de-um-jogo
@@ -114,8 +114,4 @@ equilíbrio-de-nash-perfeito-de-subjogo
 exercícios-4
 jogos-multi-estágio
 introdução-3
-racionalidade-sequencial-e-indução-reversa-1
-subjogo-1
-equilíbrio-de-nash-perfeito-de-subjogo-1
-jogo-centípoda
-exercícios-5
+loren-ipson
