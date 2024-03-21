@@ -97,11 +97,3 @@ subjogo
 equilíbrio-de-nash-perfeito-de-subjogo
 jogo-centípoda
 exercícios-4
-game-theory-model-of-regime-change
-introdução-2
-the-game
-strategies
-payoffs
-best-response-functions
-players-and-phases
-analysis
