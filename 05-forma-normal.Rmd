@@ -85,17 +85,17 @@ Vamos aplicar isso para o DP?
 
 1. Um conjunto finito de jogadores $N = \{1, 2\}$
 
-2. $S_1 = \{\text{Confessa, não-confessa}\}$ e $S_2 = \{\text{Confessa, não_-confessa}\}$. Ou, mais genericamente, $S_i = \{\text{Confessa, não_-confessa}\}$ para $i \in \{1,2\}$
+2. $S_1 = \{\text{Confessa, não-confessa}\}$ e $S_2 = \{\text{Confessa, não_-confessa}\}$. Ou, mais genericamente, $S_i = \{\text{Confessa, não-confessa}\}$ para $i \in \{1,2\}$
 
-3. $v_1: \{\text{(Confessa, Confessa), (Confessa, não_-confessa), (não_-confessa, confessa), (não-confessa, confessa)}\} \to R$.
+3. $v_1: \{\text{(Confessa, Confessa), (Confessa, não-confessa), (não-confessa, confessa), (não-confessa, confessa)}\} \to R$.
 Mais especificamente, Seja $v_i(s_1, s_2)$ o payoff para o jogador $i$ se o jogador $i$ joga $s_1$ e o jogador $2$ joga $s_2$. Então:
 
 \begin{equation}
 v_1(s_1, s_2) = 
 \begin{cases}
     5 & \text{if }~~ Confessa,Confessa \\
-    0 & \text{if }~~ Confessa,Não_-confessa \\
-    10 & \text{if }~~ Não_-confessa,Confessa \\
+    0 & \text{if }~~ Confessa,Não-confessa \\
+    10 & \text{if }~~ Não-confessa,Confessa \\
     2& \text{otherwise.}
 \end{cases}
 \end{equation}

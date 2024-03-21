@@ -335,16 +335,16 @@ Se houver 20, 16, 12, 8 ou 4 bandeiras, escolha qualquer número. Porém, se o n
 <p>Vamos aplicar isso para o DP?</p>
 <ol style="list-style-type: decimal">
 <li><p>Um conjunto finito de jogadores <span class="math inline">\(N = \{1, 2\}\)</span></p></li>
-<li><p><span class="math inline">\(S_1 = \{\text{Confessa, não-confessa}\}\)</span> e <span class="math inline">\(S_2 = \{\text{Confessa, não_-confessa}\}\)</span>. Ou, mais genericamente, <span class="math inline">\(S_i = \{\text{Confessa, não_-confessa}\}\)</span> para <span class="math inline">\(i \in \{1,2\}\)</span></p></li>
-<li><p><span class="math inline">\(v_1: \{\text{(Confessa, Confessa), (Confessa, não_-confessa), (não_-confessa, confessa), (não-confessa, confessa)}\} \to R\)</span>.
+<li><p><span class="math inline">\(S_1 = \{\text{Confessa, não-confessa}\}\)</span> e <span class="math inline">\(S_2 = \{\text{Confessa, não_-confessa}\}\)</span>. Ou, mais genericamente, <span class="math inline">\(S_i = \{\text{Confessa, não-confessa}\}\)</span> para <span class="math inline">\(i \in \{1,2\}\)</span></p></li>
+<li><p><span class="math inline">\(v_1: \{\text{(Confessa, Confessa), (Confessa, não-confessa), (não-confessa, confessa), (não-confessa, confessa)}\} \to R\)</span>.
 Mais especificamente, Seja <span class="math inline">\(v_i(s_1, s_2)\)</span> o payoff para o jogador <span class="math inline">\(i\)</span> se o jogador <span class="math inline">\(i\)</span> joga <span class="math inline">\(s_1\)</span> e o jogador <span class="math inline">\(2\)</span> joga <span class="math inline">\(s_2\)</span>. Então:</p></li>
 </ol>
 <p><span class="math display">\[\begin{equation}
 v_1(s_1, s_2) =
 \begin{cases}
     5 &amp; \text{if }~~ Confessa,Confessa \\
-    0 &amp; \text{if }~~ Confessa,Não_-confessa \\
-    10 &amp; \text{if }~~ Não_-confessa,Confessa \\
+    0 &amp; \text{if }~~ Confessa,Não-confessa \\
+    10 &amp; \text{if }~~ Não-confessa,Confessa \\
     2&amp; \text{otherwise.}
 \end{cases}
 \end{equation}\]</span></p>
