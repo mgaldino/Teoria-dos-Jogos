@@ -16,10 +16,9 @@ kable(payoff.mat)
 ```
 
 
-
 Esse jogo é similar ao de par ou ímpar, que estamos acostumados
 
-Exercício 7.1: jogue par ou ímpar com outra pessoa por 5 rodadas. 
+Exercício 8.1: jogue par ou ímpar com outra pessoa por 5 rodadas. 
 
 
 
@@ -158,9 +157,8 @@ Por fim, vemos que ambas são estratégias de equilíbrio de Nash. E, nesse caso
 Vamos agora fazer o mesmo exercício para o jogo do par ou ímpar e para pedra, papel tesoura.
 
 Aplicação em ciência política.
+
 Suponha duas candidatas, 1 e 2, que devem decidir onde alocar seus dias finais de campanha, seja no estado A ou estado B, nos EUA. As pesquisas indicam que esses são os estados que podem decidir a batalha. Suponha que as probabilidades de cada candidata ganhar a eleição são dadas como segue:
-
-
 
 ```{r, results='asis', echo=FALSE}
 library(knitr)
@@ -185,9 +183,7 @@ Agora, suponha que, antes de implementar essas estratégias, novas pesquisas sae
 
 Esse tipo de coisa acontece com frequência em esportes. Um jogador veterano atacante se machuca e alguém das divisões de base entra no lugar. E aí, ele comeca a receber mais passes e tem mais oportunidades de gol e, por isso, marca mais gols do que o veterano. Ocorre que, como ele tem menos chance de criar jogadas e fazer gols, é melhor deixar ele mais livre e marcar outros jogadores. Isso aumenta a chance de gol do novato, mas diminui a de todos os outros jogadores. Então, embora ele esteja marcando mais gols que o veterano, o time no geral estará com desempenho pior.
 
-
-
-# Pedra-papel-tesoura
+## Pedra-papel-tesoura
 
 Considere o jogo pedra-papel-tesoura. Assuma que vencer gera um payoff de 1, empate 0 e perder de -1. A matriz de payoff pode ser representada do seguinte modo:
 
@@ -222,7 +218,7 @@ Se o conjunto de estrartégias disponíveis para um jogador é $S = (s_1, s_2, .
 
 Em outras plavras, uma estratégia mista é uma distribuição de probabilidade que determina como uma estratégia pura será jogada por meio da realização dessa distribuição.
 
-Definição 6.1.
+Definição 8.1.
 Se um conjunto de estatégias disponíveis para um jogador é $S = {s_1, s_2, ..., s_n}$, então uma **estratégia mista** para aquele jogador é uma loteria sobre $S$, $p = (p_1, p_2, ..., p_n)$. Diz-se que o jogador escolhe essa estratégia $p$ se ele usa essa loteria para determinar que estratégia pura irá implmentar quando de fato jogar o jogo.
 
 ## Exercícios
