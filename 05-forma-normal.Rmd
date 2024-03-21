@@ -2,12 +2,14 @@
 
 Jogos estáticos de Informação Completa (como o DP) envolvem considerações estratégicas sobre o que os outros jogadores irão fazer.
 
-Um jogo de informação completa é caracterizado pelas seguintes quatro informações serem de $conhecimento comum$:
-1. todas as possíveis ações de todos os jogadores,
+Um jogo de informação completa é caracterizado pelas seguintes quatro informações serem de **conhecimento comum**:
+1. todas as possíveis ações de todas as jogadores,
+
 2. todos os possíves resultados,
-3. Como a combinação de cada ação de todos os jogadores afetam qual resultado irá acontecer e,
-materialize, and
-4. As preferências de cada e todos jogadores sobre os resultados.
+
+3. Como a combinação de cada ação de todos os jogadores afetam qual resultado irá acontecer e se materializar, e
+
+4. As preferências de todas jogadoras sobre os resultados.
 
 Vejam que o DP satisfaz esse requerimento.
 
@@ -31,6 +33,7 @@ A solução do jogo é por indução para trás. Imagine que é sua vez de jogar
 Portanto, quem começa o jogo, se jogar corretamente, vence a partida. Nós iremos analisar com calma esse jogo na aula de jogos na forma extensiva, em que desenharemos a árvore do jogo. Por agora, o que quero destacar é o seguinte. Se, em vez do jogo ser sequencial, como vimos no vídeo, o jogo fosse jogado por meio de uma instrução, em que você deve especificar como deve ser jogado, a instrução vencedora seria assim:
 
 Se o time vermelho começa jogando, então poderia adotar o seguinte plano de ação. 
+
 Pegue uma bandeira e o outro time ficará com 20. Se eles pegarem uma, pegue três em seguida. Se pegarem duas, pegue duas em seguida. Se pegarem três, pegue uma em seguida. Adote essa regra em cada rodada após o primeiro movimento.
 
 Uma outra forma de dizer o plano de ação é que deve começar por uma bandeira, e em seguida a jogada $y$ é dada por $4 - x$ bandeiras, em que $x$ é quanto o outro time pegou na rodada anterior.
@@ -48,9 +51,9 @@ Vamos então introduzir formalmente algumas definições relativas à noção de
 
 Definição 2.1: Uma estratégia pura para um jogador $i$ é um plano determinístico de ação. O conjunto de todas as estratégias puras para o jogador $i$ é chamado de $S_i$. Um perfil de estratégias puras $s = \{s_1, s_2, ..., s_n\}, s_i \in S_i$ para todo $i = 1, 2, ..., n$ descreve uma combinação particular de estratégias puras escolhidas por todos os jogadores $n$ no jogo.
 
-Vamos entender a definição primeiro por meio de um exemplo. No caso do Dilema do Prisioneiro, temos dois jogadores, ou seja, o conjunto de jogadores é dado por $N = \{1,2\}$ e $n = 2$. O conjunto de todas as estratégias pura do jogador 1 é formada por duas estratégias, confessar e não-conessar. Podemos, portanto, escrever $S_1 = \{(Confessar, não-confessar)\}$. Similarmente para o jogador 2, de modo que $S_i = \{(Confessar, não-confessar)\}$, para $i \in {1,2}$.
+Vamos entender a definição primeiro por meio de um exemplo. No caso do Dilema do Prisioneiro, temos dois jogadores, ou seja, o conjunto de jogadores é dado por $N = \{1,2\}$ e $n = 2$. O conjunto de todas as estratégias pura do jogador 1 é formada por duas estratégias, confessar e não-conessar. Podemos, portanto, escrever $S_1 = \{(\text{Confessar}, \text{não-confessar})\}$. Similarmente para o jogador 2, de modo que $S_i = \{(\text{Confessar, não-confessar})\}$, para $i \in {1,2}$.
 
-Uma combinação particular de estratégias puras escolhida pelos dois jogadores pode ser o equilíbrio do jogo, ou seja, $s = \{(confessar, confessar)\}$,  em que $s_1 = s_2$, que é a estratégia confessar.
+Uma combinação particular de estratégias puras escolhida pelos dois jogadores pode ser o equilíbrio do jogo, ou seja, $s = \{(\text{confessar, confessar})\}$,  em que $s_1 = s_2$, que é a estratégia confessar.
 
 ## Jogos na forma normal ou estratégica
 
@@ -64,6 +67,7 @@ Um jogo na forma estratégica ou normal incluem três componentes:
 Vamos destrinchar o item 3, que parece complexo e assustador, mas é bem simples. Vou usar exemplos para explicar cada uma das partes de 3.
 
 Suponha que eu tenho um conjunto $A$ dado pelas cidades do estado de São Paulo, e um conjunto $B$ dado pelas cidades do estado do Rio de Janeiro. Seja $f$ a função que recebe duas cidades (uma de SP, outra do RJ) e retorna a distância em linha reta entre elas, calculada pelo google, em km. Eu posso descrever essa função do seguinte modo: $f: A \cdot B \to R$.
+
 Como minha função sempre retorna uma distância em km, a distância é um número real. Então, ela recebe dois elementos, um de A e um de B, e retorna um número real.
 
 Falta explicar a parte em que escrevemos $A \cdot B$. O produto de dois conjuntos $X$ e $Y$ é chamado de produto Cartesiano e é denotado por $X \cdot Y$ e seu resultado é um novo conjunto, formado pelos pares ordenados $(x,y): x \in X , y \in Y$. Por exemplo, suponha que $X = \{1,2\}$ e $Y = \{3,4\}$. 
@@ -81,9 +85,9 @@ Vamos aplicar isso para o DP?
 
 1. Um conjunto finito de jogadores $N = \{1, 2\}$
 
-2. $S_1 = \{Confessa, não-confessa\}$ e $S_2 = \{Confessa, não_-confessa\}$. Ou, mais genericamente, $S_i = \{Confessa, não_-confessa\}$ para $i \in \{1,2\}$
+2. $S_1 = \{\text{Confessa, não-confessa}\}$ e $S_2 = \{\text{Confessa, não_-confessa}\}$. Ou, mais genericamente, $S_i = \{\text{Confessa, não_-confessa}\}$ para $i \in \{1,2\}$
 
-3. $v_1: \{(Confessa, Confessa), (Confessa, não_-confessa), (não_-confessa, confessa), (não-confessa, confessa)\} \to R$.
+3. $v_1: \{\text{(Confessa, Confessa), (Confessa, não_-confessa), (não_-confessa, confessa), (não-confessa, confessa)}\} \to R$.
 Mais especificamente, Seja $v_i(s_1, s_2)$ o payoff para o jogador $i$ se o jogador $i$ joga $s_1$ e o jogador $2$ joga $s_2$. Então:
 
 \begin{equation}
