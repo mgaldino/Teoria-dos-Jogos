@@ -116,7 +116,7 @@ u_2(s_1, s_2) =
 
 Consideremos o seguinte exemplo. Suponha que uma comissão, formada por três pessoas, tem de votar se implementam uma nova política ou mantém o status quo (qualquer que seja ele). Por exemplo, uma comissão de professores deve decidir se continuam com uma política de aquisição de livros para a biblioteca uma vez por ano (status quo) ou duas vezes por ano (nova política). Ou um Conselho de uma empresa deve decidir se aumentam o salário do CEO (nova política) ou não (status quo), ou um júri se condenam alguém (nova política) ou deixam a pessoa livre (status quo). Por fim, pode ser uma comissão de legisladores que devem decidir se aprovam um projeto de lei ou uma nomeação para algum cargo público.
 
-Cada membro pode votat "sim" (S) ou "não" (N). Para simplificar, consideremos que o status quo dá um payoff de 0 (zero) para cada jogadora. Jogadoras 1 e 2 preferem a nova política, portanto seus payoffs para ela pode ser 1. Já a jogadora 3 prefere o stats quo, então consideremos o payoff dela -1 para a jogadora 3. Por fim, suponha que se houver uma maioria favorável à nova política, ela é adotada. Caso contrário, permanence o status quo.
+Cada membro pode votat "sim" (S) ou "não" (N). Para simplificar, consideremos que o status quo dá um payoff de 0 (zero) para cada jogadora. Jogadoras 1 e 2 preferem a nova política, portanto seus payoffs podem ser 1. Já a jogadora 3 prefere o stats quo, então consideremos o payoff dela -1 para a jogadora 3. Por fim, suponha que se houver uma maioria favorável à nova política, ela é adotada. Caso contrário, permanence o status quo.
 
 Como descrever esse jogo formalmente?
 Jogadores: $N = \{1,2,3\}$
@@ -136,19 +136,19 @@ $Q = \begin{bmatrix} (N,N,N) & (N,N,S)\\
 Então os payoffs podem ser escritos como (aqui, para $i \in \{1,2\}$):
 
 \begin{equation}
-v_i(s_1, s_2) =
+v_i(s_1, s_2, s_3) =
 \begin{cases}
-    1 & \text{if }~~ (s_1, s_2) \in P \\
-    0 & \text{if }~~ (s_1, s_2) \in Q \\
+    1 & \text{if }~~ (s_1, s_2, s_3) \in P \\
+    0 & \text{if }~~ (s_1, s_2, s_3) \in Q \\
 \end{cases}
 \end{equation}
 
 
 \begin{equation}
-v_3(s_1, s_2) =
+v_3(s_1, s_2, s_3) =
 \begin{cases}
-    0 & \text{if }~~ (s_1, s_2) \in P \\
-    1 & \text{if }~~ (s_1, s_2) \in Q \\
+    -1 & \text{if }~~ (s_1, s_2, s_3) \in P \\
+    0 & \text{if }~~ (s_1, s_2, s_3) \in Q \\
 \end{cases}
 \end{equation}
 
