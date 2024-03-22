@@ -109,6 +109,26 @@ Definição: Um jogo de informação completa no qual cada conjunto de informaç
 
 Nós já havíamos definido uma estratégia como um plano de ação contigente. Contudo, em jogos na forma normal, essa definição era pouco útil, pois estratégias (puras) coincidiam com as ações disponíveis para as jogadoras. Na forma externsiva, a nossa definição de estratégia se revelará mais útil.
 
+### Estratégias puras
+
+Consideremos novamente o jogo sequencial Bach-Stravinski na sua forma mais simples, representado pelo gráfico 9.1. Serena é a primeira a jogar e seu conjunto de informação possui apenas um nó e para ela uma estratégia pura é tão simples quanto jogar B ou S. Para Nina, a situação é um pouco mais complexa, posto que ela possui dois conjuntos de informação, um para cada estrarégia de Serena. Portanto, não basta dizer que as duas ações B e S são as estratégias de Ninas.
+
+**Estratégias Puras em Jogos na forma Extensiva**: Uma **estratégia pura** para a jogadora $i$ é um plano completo de ação que descreve qual ação a jogadora $i$ escolherá em cada um de seus conjuntos de informação.
+
+No jogo Bach-Stravinski 9.2, vemos que a estratégia de Serena é apenas $\{\text{Bach},\text{Stravinski}\}$, e a de nina, $\{\text{B},\text{S}\}$, pois ambas as jogadoras possuem apenas um conjunto de informação. Em outras palavras, o jogo na forma extensiva é idêntico ao jogo na forma estratégica. Já no jogo sequencial, como vimos, Nina tem dois con juntos de informação disintos no qual ela pode escolher entre duas ações (B,S), a depender de qual foi o movimento de Serena. Portanto, um plano completo de ação para Nina deve ter instruções do que fazer para cada escolha de Serena.
+
+A escolha do conjunto de ações $\{\text{B},\text{S}\}$ deve ser contigente ao que Serena escolheu, do tipo: "Se Serena escolher Bach, escolha B", ou "Se Serena escolher Bach, Nina escolherá S, já se Serena escolher Stravinski, Nina escolherá S" e assim por diante. Para resumir, descreveremos o conjunto de estratégias da seguinte forma:
+
+$$
+S_{\text{Nina}} = \{BB, BS, SB, SS\}
+$$
+Assim, a estratégia $BB$ quer dizer, jogue B se Serena escolher Bach, e jogue B se Serena escolher Stravinski. Por outro lado, $BS$ quer dizer, jogue B se Serena escolher Bach, e jogue S se Serena escolher Stravinski, e assim por diante. Para Serena, o conjunto de estratégias continua $S_{\text{Serena}} = \{Bach, Stravinski\}$.
+
+Agora podemos definir formalmente o que é uma estratégia pura, se adotarmos algumas notações específicas. Seja $H_i$ a coleção de todos os conjuntos de informação no qual a jogadora $i$ joga, e seja $h_i \in H_i$ um dos conjuntos de informação de $i$. Seja $A_i(h_i)$ as ações que a jogadora $i$ pode tomar em $h_i$, e seja $A_i$ o conjunto de todas as ações da jogadora $i$, $A_i = \cup_{h_i \in H_i}A_i(h_i)$, isto é, a união de todos os elementos em todos os conjuntos $A_i(h_i)$.
+
+Definição 9.3: Uma estratégia pura para uma jogadora $i$ é um mapeamento $s_i:H_i \rightarrow A_i$ que atribui uma ação $s_i(h_i) \in A_i(h_i)$ para todo conjunto de informação $h_i \in H_i$. Denotamos por $S_i$ o conjunto de todos os mapeamentos de estratégias puras $s_i \in S_i$.
+
+
 ### Estratégias mistas
 
 ## Estratégias comportamentais
