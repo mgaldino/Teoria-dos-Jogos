@@ -72,7 +72,15 @@ Cada jogador $i$ tem uma coleção de conjuntos de informação $h_i$ the partic
 2. Se  $x \neq x'$ e se ambos $x \in h_i$ e $x' \in h_i$ então a jogadora $i$ que se move em $x$ não sabe se está em em $x$ ou $x'$.
 3. Se $x \neq x'$ e se ambos $x$ e $x' \in h_i$, então $A_i(x) = A_i(x')$.
 
-Vamos entender esta definição formal. Considere novamente o jogo do Bach e Stravinsky na forma extensiva. No gráfico temos n1, n2.. como nós, enquanto na definição usamos x1 etc. Vou falar em x em vez de n apenas para continuar com a discussão. Considere quando a jogadora 2 se move em x2. A questão é: ela sabe que está em x2? Ou não sabe se está em x2 ou x3? Se a gente escreve $h_2 = {x_2}$, então isso significa que o conjunto de informações em $x_1$ é um conjunti unitário. Portanto, a jogadora a jogadora possui informação que diz "estou em x_2", que é capturado pela propriedade 1 da definição. Nesse caso, segue-se que a jogadora 2 també mtem outro conjunto de informação $h_2 = {x_3}.
+Vamos entender esta definição formal. Considere novamente o jogo do Bach e Stravinsky na forma extensiva.
+
+```{r bach-strav-simultaneo, echo=FALSE, warnings=FALSE, fig.cap="Representação do Jogo da coordenação simultâneo", out.width="100%"}
+
+knitr::include_graphics("imagens\\jogo-extensivo2.png")
+```
+
+
+No gráfico temos x1, x2... como nós. Considere quando a jogadora 2 se move em x2. A questão é: ela sabe que está em x2? Ou não sabe se está em x2 ou x3? Se a gente escreve $h_2 = {x_2}$, então isso significa que o conjunto de informações em $x_1$ é um conjunti unitário. Portanto, a jogadora a jogadora possui informação que diz "estou em x_2", que é capturado pela propriedade 1 da definição. Nesse caso, segue-se que a jogadora 2 també mtem outro conjunto de informação $h_2 = {x_3}.
 
 Se, por outro lado, a jogadora 2 não sabe se está em $x_2$ ou $x_3$, como no jogo do Bach e Stravinsky simultâneo, então deve ser verdade que sua informação é de que está em $x_1$ ou $x_2$, mas não sabe em qual dos dois. Nesse caso, escrevemos $h_2 = {x_1, x_2}$. Esta é a propriedade 2.
 
@@ -95,7 +103,7 @@ Na \@ref(fig:bach-strav-natureza), temos algumas mudanças. O primeiro nó está
 knitr::include_graphics("imagens\\jogo-bofsex-nature1.png")
 ```
 
-Nessa árove, vale destacar dois aspectos que são diferentes da árvore anterior. Em primeiro lugar, nós descrevemos a informação completa sobre em qual nó Nina está por meio de linha tracejada curva. Poderíamos ter usado o círculo tracejado, que daria na mesma. São duas formas distintas de representar a mesma coisa e estamos incluindo aqui para fins de completude. Em segundo lugar, note os nós que estão conectados pela linha. Quando é a vez de Nina jogar, ela não sabe o que a natureza jogou, mas sabe o que Serena jogou. Isso significa que se Serena jogou "Bach", Nina não sabe se está no ramo "Bach" com chuva ou no ramo "Bach" som sol. Similarmente, se Serena jogou "Stravinski", Nina não sabe em qual dos dois galhos de "Stravinski" ela está. É preciso, portanto, ter cuidado quando conectar nós, pois se fizemos errado, o jogo fica completamente outro.
+Nessa árvore, vale destacar dois aspectos que são diferentes da árvore anterior. Em primeiro lugar, nós descrevemos a informação completa sobre em qual nó Nina está por meio de linha tracejada curva. Poderíamos ter usado o círculo tracejado, que daria na mesma. São duas formas distintas de representar a mesma coisa e estamos incluindo aqui para fins de completude. Em segundo lugar, note os nós que estão conectados pela linha. Quando é a vez de Nina jogar, ela não sabe o que a natureza jogou, mas sabe o que Serena jogou. Isso significa que se Serena jogou "Bach", Nina não sabe se está no ramo "Bach" com chuva ou no ramo "Bach" som sol. Similarmente, se Serena jogou "Stravinski", Nina não sabe em qual dos dois galhos de "Stravinski" ela está. É preciso, portanto, ter cuidado quando conectar nós, pois se fizemos errado, o jogo fica completamente outro.
 
 ## Jogos de informação perfeita e imperfeita
 

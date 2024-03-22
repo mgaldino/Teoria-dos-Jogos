@@ -26,6 +26,7 @@ exr:unnamed-chunk-50
 exr:unnamed-chunk-52
 fig:bach-strav
 fig:confianca
+fig:bach-strav-simultaneo
 fig:bach-strav-natureza
 fig:bach-strav-natureza1
 prefácio
