@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo5 Jogos na Forma Normal | Introdução à Teoria dos Jogos para Ciências Sociais</title>
   <meta name="description" content="Capítulo5 Jogos na Forma Normal | Introdução à Teoria dos Jogos para Ciências Sociais" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo5 Jogos na Forma Normal | Introdução à Teoria dos Jogos para Ciências Sociais" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Manoel Galdino" />
 
 
-<meta name="date" content="2024-03-21" />
+<meta name="date" content="2024-03-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -236,7 +236,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.5" data-path="jogos-dinâmicos.html"><a href="jogos-dinâmicos.html#jogos-de-informação-perfeita-e-imperfeita"><i class="fa fa-check"></i><b>9.5</b> Jogos de informação perfeita e imperfeita</a></li>
 <li class="chapter" data-level="9.6" data-path="jogos-dinâmicos.html"><a href="jogos-dinâmicos.html#estratégias-1"><i class="fa fa-check"></i><b>9.6</b> Estratégias</a>
 <ul>
-<li class="chapter" data-level="9.6.1" data-path="jogos-dinâmicos.html"><a href="jogos-dinâmicos.html#estratégias-mistas"><i class="fa fa-check"></i><b>9.6.1</b> Estratégias mistas</a></li>
+<li class="chapter" data-level="9.6.1" data-path="jogos-dinâmicos.html"><a href="jogos-dinâmicos.html#estratégias-puras"><i class="fa fa-check"></i><b>9.6.1</b> Estratégias puras</a></li>
+<li class="chapter" data-level="9.6.2" data-path="jogos-dinâmicos.html"><a href="jogos-dinâmicos.html#estratégias-mistas"><i class="fa fa-check"></i><b>9.6.2</b> Estratégias mistas</a></li>
 </ul></li>
 <li class="chapter" data-level="9.7" data-path="jogos-dinâmicos.html"><a href="jogos-dinâmicos.html#estratégias-comportamentais"><i class="fa fa-check"></i><b>9.7</b> Estratégias comportamentais</a></li>
 <li class="chapter" data-level="9.8" data-path="jogos-dinâmicos.html"><a href="jogos-dinâmicos.html#representação-estratégica-de-jogos-na-forma-extensiva"><i class="fa fa-check"></i><b>9.8</b> Representação estratégica de jogos na forma extensiva</a></li>
@@ -278,16 +279,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Capítulo5</span> Jogos na Forma Normal<a href="jogos-na-forma-normal.html#jogos-na-forma-normal" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Jogos estáticos de Informação Completa (como o DP) envolvem considerações estratégicas sobre o que os outros jogadores irão fazer.</p>
 <p>Um jogo de informação completa é caracterizado pelas seguintes quatro informações serem de <strong>conhecimento comum</strong>:
-1. todas as possíveis ações de todas as jogadores,</p>
+1. todas as possíveis ações de todas as jogadoras,</p>
 <ol start="2" style="list-style-type: decimal">
 <li><p>todos os possíves resultados,</p></li>
-<li><p>Como a combinação de cada ação de todos os jogadores afetam qual resultado irá acontecer e se materializar, e</p></li>
+<li><p>Como a combinação de cada ação de todas as jogadoras afeta qual resultado irá acontecer e se materializar, e</p></li>
 <li><p>As preferências de todas jogadoras sobre os resultados.</p></li>
 </ol>
 <p>Vejam que o DP satisfaz esse requerimento.</p>
 <div id="conhecimento-comum." class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Conhecimento Comum.<a href="jogos-na-forma-normal.html#conhecimento-comum." class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Definição 2. Um evento <span class="math inline">\(E\)</span> é conhecimento comum se todo mundo sabe <span class="math inline">\(E\)</span>, todo mundo sabe que todos sabem <span class="math inline">\(E\)</span>, todo mundo sabe que todo mundo sabe que todos sabem <span class="math inline">\(E\)</span> e assim por diante, até infinito.</p>
+<p>Definição 5.1 Um evento <span class="math inline">\(E\)</span> é conhecimento comum se todo mundo sabe <span class="math inline">\(E\)</span>, todo mundo sabe que todos sabem <span class="math inline">\(E\)</span>, todo mundo sabe que todo mundo sabe que todos sabem <span class="math inline">\(E\)</span> e assim por diante, até infinito.</p>
 <p>Um exemplo simples em que podemos assumir que um evento é conhecimento comum. Suponha que duas pessoas saiam da sala e, andando na rua, começa a chover e eles correm para não se molhar. É razoável assumir que é conhecimento comum que está chovendo para essas duas pessoas.</p>
 </div>
 <div id="estratégias" class="section level2 hasAnchor" number="5.2">
@@ -302,18 +303,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Uma outra forma de dizer o plano de ação é que deve começar por uma bandeira, e em seguida a jogada <span class="math inline">\(y\)</span> é dada por <span class="math inline">\(4 - x\)</span> bandeiras, em que <span class="math inline">\(x\)</span> é quanto o outro time pegou na rodada anterior.</p>
 <p>O time azul não tem saída, mas, caso o outro time erre (como aconteceu no jogo), sua instrução poderia ser:
 Se houver 20, 16, 12, 8 ou 4 bandeiras, escolha qualquer número. Porém, se o número de bandeiras for diferente desses números, escolha tantas bandeiras quanto forem necessárias para sobrarem 20, 16, 12, 8 ou 4.</p>
-<p>Uma vez que o jogo é analisado e uma plano de ação é definido, tantgo faz quem pega as bandeiras. Até um robô com as instruções poderia fazer um serviço. Tal plano de ação, que define o que fazer em cada contigência, é o que chamamos de estratégia em teoria dos jogos.</p>
+<p>Uma vez que o jogo é analisado e uma plano de ação é definido, tanto faz quem pega as bandeiras. Até um robô com as instruções poderia fazer um serviço. Tal plano de ação, que define o que fazer em cada contigência, é o que chamamos de estratégia em teoria dos jogos.</p>
 <p>Pensemos em outro exemplo, como o jogo infantil pedra, tesoura e papel. Imagine que você quer jogar esse jogo, mas irá jogar por intermédio de um amigo, e você deve passar instruções sobre como jogar. Então, uma estratégia, pode ser: “jogue pedra”, e outra poderia ser “jogue papel”. A noção de estratégia é distinta de uma ação ou movimento em um jogo, embora isso não fique tão claro em jogos na forma normal ou estratégica. A razão é que, em muitos casos (como no Dilema do Prisioneiro, ou no jogo de pedra-papel-tesoura), as estratégias disponíveis para os jogadores coincidem com as ações.</p>
 <p>Quando introduzirmos a forma extensiva do jogo, a diferença entre estratégia e ação ficará mais clara. Por enquanto, é importante sabermos que os dois conceitos são distintos, ainda que possam coincidir na prática em jogos simultâneos de dois jogadores.</p>
 <p>Vamos então introduzir formalmente algumas definições relativas à noção de estratégia.</p>
-<p>Definição 2.1: Uma estratégia pura para um jogador <span class="math inline">\(i\)</span> é um plano determinístico de ação. O conjunto de todas as estratégias puras para o jogador <span class="math inline">\(i\)</span> é chamado de <span class="math inline">\(S_i\)</span>. Um perfil de estratégias puras <span class="math inline">\(s = \{s_1, s_2, ..., s_n\}, s_i \in S_i\)</span> para todo <span class="math inline">\(i = 1, 2, ..., n\)</span> descreve uma combinação particular de estratégias puras escolhidas por todos os jogadores <span class="math inline">\(n\)</span> no jogo.</p>
+<p>Definição 5.2: Uma estratégia pura para uma jogadora <span class="math inline">\(i\)</span> é um plano determinístico de ação. O conjunto de todas as estratégias puras para o jogador <span class="math inline">\(i\)</span> é chamado de <span class="math inline">\(S_i\)</span>. Um perfil de estratégias puras <span class="math inline">\(s = \{s_1, s_2, ..., s_n\}, s_i \in S_i\)</span> para todo <span class="math inline">\(i = 1, 2, ..., n\)</span> descreve uma combinação particular de estratégias puras escolhidas por todos as <span class="math inline">\(n\)</span> jogadoras no jogo.</p>
 <p>Vamos entender a definição primeiro por meio de um exemplo. No caso do Dilema do Prisioneiro, temos dois jogadores, ou seja, o conjunto de jogadores é dado por <span class="math inline">\(N = \{1,2\}\)</span> e <span class="math inline">\(n = 2\)</span>. O conjunto de todas as estratégias pura do jogador 1 é formada por duas estratégias, confessar e não-conessar. Podemos, portanto, escrever <span class="math inline">\(S_1 = \{(\text{Confessar}, \text{não-confessar})\}\)</span>. Similarmente para o jogador 2, de modo que <span class="math inline">\(S_i = \{(\text{Confessar, não-confessar})\}\)</span>, para <span class="math inline">\(i \in {1,2}\)</span>.</p>
 <p>Uma combinação particular de estratégias puras escolhida pelos dois jogadores pode ser o equilíbrio do jogo, ou seja, <span class="math inline">\(s = \{(\text{confessar, confessar})\}\)</span>, em que <span class="math inline">\(s_1 = s_2\)</span>, que é a estratégia confessar.</p>
 </div>
 <div id="jogos-na-forma-normal-ou-estratégica" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">5.3</span> Jogos na forma normal ou estratégica<a href="jogos-na-forma-normal.html#jogos-na-forma-normal-ou-estratégica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Um jogo na forma estratégica ou normal incluem três componentes:
-1. Um conjunto finito de jogadores <span class="math inline">\(N = \{1, 2, ..., n\}\)</span></p>
+1. Um conjunto finito de jogadoras <span class="math inline">\(N = \{1, 2, ..., n\}\)</span></p>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Uma coleção de conjuntos de estratégias puras, <span class="math inline">\(\{S_1, S_2, ...., S_n\}\)</span></p></li>
 <li><p>Um conjunto de funções de payoff, <span class="math inline">\(\{v_1, v_2, .., v_n\}\)</span>, cada uma atribuindo um valor de payoff para cada combinação de estratégias, ou seja, um conjunto de funções <span class="math inline">\(v_i: S_1 * S_2 * ... * S_n \to R\)</span> para cada <span class="math inline">\(i \in N\)</span></p></li>
@@ -328,29 +329,35 @@ Se houver 20, 16, 12, 8 ou 4 bandeiras, escolha qualquer número. Porém, se o n
 <p>Retornando finalmente ao nosso exemplo das funções de payoff. Eu tenho o produto cartesiano dos conjuntos de estratégias de cada jogador. De modo que cada elemento desse conjunto é um par ordenado de cada estratégia, ou seja, todas as combinações de estratégias existentes estão nesse conjunto e cada combinação é um elemento do conjunto. E para cada jogador, eu tenho o payoff (que é um número real) resultante de cada combinação de estratégia.</p>
 <p>Vamos aplicar isso para o DP?</p>
 <ol style="list-style-type: decimal">
-<li><p>Um conjunto finito de jogadores <span class="math inline">\(N = \{1, 2\}\)</span></p></li>
+<li><p>Um conjunto finito de jogadoras <span class="math inline">\(N = \{1, 2\}\)</span></p></li>
 <li><p><span class="math inline">\(S_1 = \{\text{Confessa, não-confessa}\}\)</span> e <span class="math inline">\(S_2 = \{\text{Confessa, não_-confessa}\}\)</span>. Ou, mais genericamente, <span class="math inline">\(S_i = \{\text{Confessa, não-confessa}\}\)</span> para <span class="math inline">\(i \in \{1,2\}\)</span></p></li>
-<li><p><span class="math inline">\(v_1: \{\text{(Confessa, Confessa), (Confessa, não-confessa), (não-confessa, confessa), (não-confessa, confessa)}\} \to R\)</span>.
-Mais especificamente, Seja <span class="math inline">\(v_i(s_1, s_2)\)</span> o payoff para o jogador <span class="math inline">\(i\)</span> se o jogador <span class="math inline">\(i\)</span> joga <span class="math inline">\(s_1\)</span> e o jogador <span class="math inline">\(2\)</span> joga <span class="math inline">\(s_2\)</span>. Então:</p></li>
+<li><p><span class="math inline">\(u_1: \{\text{(Confessa, Confessa), (Confessa, não-confessa), (não-confessa, confessa), (não-confessa, confessa)}\} \to R\)</span>.
+Mais especificamente:</p></li>
 </ol>
 <p><span class="math display">\[\begin{equation}
-v_1(s_1, s_2) =
+u_1(s_1, s_2) =
 \begin{cases}
-    5 &amp; \text{if }~~ Confessa,Confessa \\
+    -10 &amp; \text{if }~~ Confessa,Confessa \\
     0 &amp; \text{if }~~ Confessa,Não-confessa \\
-    10 &amp; \text{if }~~ Não-confessa,Confessa \\
-    2&amp; \text{otherwise.}
+    -20 &amp; \text{if }~~ Não-confessa,Confessa \\
+    1&amp; \text{Não-confessa, Não-confessa}
 \end{cases}
 \end{equation}\]</span></p>
-<p>E similarmente para o jogador 2, já que os payoffs são simétricos.</p>
-<ol start="3" style="list-style-type: decimal">
-<li>Um conjunto de funções de payoff, <span class="math inline">\({v_1, v_2, .., v_n}\)</span>, cada atribuindo um valor de payoff para cada combinação de estratégias, ou seja, um conjunto de funções <span class="math inline">\(v_i: S_1 * S_2 * ... * S_n \to R\)</span> para cada <span class="math inline">\(i \in N\)</span></li>
-</ol>
+<p>E para a jogadora 2, temos:</p>
+<p><span class="math display">\[\begin{equation}
+u_2(s_1, s_2) =
+\begin{cases}
+    -10 &amp; \text{if }~~ Confessa,Confessa \\
+    -20 &amp; \text{if }~~ Confessa,Não-confessa \\
+    0 &amp; \text{if }~~ Não-confessa,Confessa \\
+    1&amp; \text{Não-confessa, Não-confessa}
+\end{cases}
+\end{equation}\]</span></p>
 </div>
 <div id="votos-em-comissão" class="section level2 hasAnchor" number="5.4">
 <h2><span class="header-section-number">5.4</span> Votos em comissão<a href="jogos-na-forma-normal.html#votos-em-comissão" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Consideremos o seguinte exemplo. Suponha que uma comissão, formada por três pessoas, tem de votar se implementam uma nova política ou mantém o status quo (qualquer que seja ele). Por exemplo, uma comissão de professores deve decidir se continuam com uma política de aquisição de livros para a biblioteca uma vez por ano (status quo) ou duas vezes por ano (nova política). Ou um Conselho de uma empresa deve decidir se aumentam o salário do CEO (nova política) ou não (status quo), ou um júri se condenam alguém (nova política) ou deixam a pessoa livre (status quo). Por fim, pode ser uma comissão de legisladores que devem decidir se aprovam um projeto de lei ou uma nomeação para algum cargo público.</p>
-<p>Cada membro pode votat “sim” (S) ou “não” (N). Para simplificar, consideremos que o status quo dá um payoff de 0 (zero) para cada jogador. Jogadores 1 e 2 preferem a nova política, portanto seus payoffs para ela pode ser 1. Já o jogador 3 prefere o stats quo, então consideremos o payoff dela -1 para o jogador 3. Por fim, suponha que se houver uma maioria favorável à nova política, ela é adotada. Caso contrário, permanence o status quo.</p>
+<p>Cada membro pode votat “sim” (S) ou “não” (N). Para simplificar, consideremos que o status quo dá um payoff de 0 (zero) para cada jogadora. Jogadoras 1 e 2 preferem a nova política, portanto seus payoffs podem ser 1. Já a jogadora 3 prefere o stats quo, então consideremos o payoff dela -1 para a jogadora 3. Por fim, suponha que se houver uma maioria favorável à nova política, ela é adotada. Caso contrário, permanence o status quo.</p>
 <p>Como descrever esse jogo formalmente?
 Jogadores: <span class="math inline">\(N = \{1,2,3\}\)</span>
 Conjuntos de estratégias: <span class="math inline">\(S_i = \{S, N, A\}\)</span>, para <span class="math inline">\(i \in \{1,2,3\}\)</span>
@@ -360,17 +367,17 @@ Payoffs: Seja <span class="math inline">\(P\)</span> o conjunto de perfis de est
 <p><span class="math inline">\(Q = \begin{bmatrix} (N,N,N) &amp; (N,N,S)\\ (N,S,N) &amp; (S, N, N) \end{bmatrix}\)</span></p>
 <p>Então os payoffs podem ser escritos como (aqui, para <span class="math inline">\(i \in \{1,2\}\)</span>):</p>
 <p><span class="math display">\[\begin{equation}
-v_i(s_1, s_2) =
+v_i(s_1, s_2, s_3) =
 \begin{cases}
-    1 &amp; \text{if }~~ (s_1, s_2) \in P \\
-    0 &amp; \text{if }~~ (s_1, s_2) \in Q \\
+    1 &amp; \text{if }~~ (s_1, s_2, s_3) \in P \\
+    0 &amp; \text{if }~~ (s_1, s_2, s_3) \in Q \\
 \end{cases}
 \end{equation}\]</span></p>
 <p><span class="math display">\[\begin{equation}
-v_3(s_1, s_2) =
+v_3(s_1, s_2, s_3) =
 \begin{cases}
-    0 &amp; \text{if }~~ (s_1, s_2) \in P \\
-    1 &amp; \text{if }~~ (s_1, s_2) \in Q \\
+    -1 &amp; \text{if }~~ (s_1, s_2, s_3) \in P \\
+    0 &amp; \text{if }~~ (s_1, s_2, s_3) \in Q \\
 \end{cases}
 \end{equation}\]</span></p>
 </div>

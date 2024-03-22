@@ -102,6 +102,7 @@ jogo-da-confiança
 informações
 jogos-de-informação-perfeita-e-imperfeita
 estratégias-1
+estratégias-puras
 estratégias-mistas
 estratégias-comportamentais
 representação-estratégica-de-jogos-na-forma-extensiva
