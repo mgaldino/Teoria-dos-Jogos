@@ -58,7 +58,7 @@ Uma combinação particular de estratégias puras escolhida pelos dois jogadores
 ## Jogos na forma normal ou estratégica
 
 Um jogo na forma estratégica ou normal incluem três componentes:
-1. Um conjunto finito de jogadores $N = \{1, 2, ..., n\}$
+1. Um conjunto finito de jogadoras $N = \{1, 2, ..., n\}$
 
 2. Uma coleção de conjuntos de estratégias puras, $\{S_1, S_2, ...., S_n\}$
 
@@ -83,33 +83,40 @@ Retornando finalmente ao nosso exemplo das funções de payoff. Eu tenho o produ
 Vamos aplicar isso para o DP?
 
 
-1. Um conjunto finito de jogadores $N = \{1, 2\}$
+1. Um conjunto finito de jogadoras $N = \{1, 2\}$
 
 2. $S_1 = \{\text{Confessa, não-confessa}\}$ e $S_2 = \{\text{Confessa, não_-confessa}\}$. Ou, mais genericamente, $S_i = \{\text{Confessa, não-confessa}\}$ para $i \in \{1,2\}$
 
-3. $v_1: \{\text{(Confessa, Confessa), (Confessa, não-confessa), (não-confessa, confessa), (não-confessa, confessa)}\} \to R$.
-Mais especificamente, Seja $v_i(s_1, s_2)$ o payoff para o jogador $i$ se o jogador $i$ joga $s_1$ e o jogador $2$ joga $s_2$. Então:
+3. $u_1: \{\text{(Confessa, Confessa), (Confessa, não-confessa), (não-confessa, confessa), (não-confessa, confessa)}\} \to R$.
+Mais especificamente:
 
 \begin{equation}
-v_1(s_1, s_2) = 
+u_1(s_1, s_2) = 
 \begin{cases}
-    5 & \text{if }~~ Confessa,Confessa \\
+    -10 & \text{if }~~ Confessa,Confessa \\
     0 & \text{if }~~ Confessa,Não-confessa \\
-    10 & \text{if }~~ Não-confessa,Confessa \\
-    2& \text{otherwise.}
+    -20 & \text{if }~~ Não-confessa,Confessa \\
+    1& \text{Não-confessa, Não-confessa}
 \end{cases}
 \end{equation}
 
-E similarmente para o jogador 2, já que os payoffs são simétricos.
+E para a jogadora 2, temos:
 
-3. Um conjunto de funções de payoff, ${v_1, v_2, .., v_n}$, cada atribuindo um valor de payoff para cada combinação de estratégias, ou seja, um conjunto de funções $v_i: S_1 * S_2 * ... * S_n \to R$ para cada $i \in N$
-
+\begin{equation}
+u_2(s_1, s_2) = 
+\begin{cases}
+    -10 & \text{if }~~ Confessa,Confessa \\
+    -20 & \text{if }~~ Confessa,Não-confessa \\
+    0 & \text{if }~~ Não-confessa,Confessa \\
+    1& \text{Não-confessa, Não-confessa}
+\end{cases}
+\end{equation}
 
 ## Votos em comissão
 
 Consideremos o seguinte exemplo. Suponha que uma comissão, formada por três pessoas, tem de votar se implementam uma nova política ou mantém o status quo (qualquer que seja ele). Por exemplo, uma comissão de professores deve decidir se continuam com uma política de aquisição de livros para a biblioteca uma vez por ano (status quo) ou duas vezes por ano (nova política). Ou um Conselho de uma empresa deve decidir se aumentam o salário do CEO (nova política) ou não (status quo), ou um júri se condenam alguém (nova política) ou deixam a pessoa livre (status quo). Por fim, pode ser uma comissão de legisladores que devem decidir se aprovam um projeto de lei ou uma nomeação para algum cargo público.
 
-Cada membro pode votat "sim" (S) ou "não" (N). Para simplificar, consideremos que o status quo dá um payoff de 0 (zero) para cada jogador. Jogadores 1 e 2 preferem a nova política, portanto seus payoffs para ela pode ser 1. Já o jogador 3 prefere o stats quo, então consideremos o payoff dela -1 para o jogador 3. Por fim, suponha que se houver uma maioria favorável à nova política, ela é adotada. Caso contrário, permanence o status quo.
+Cada membro pode votat "sim" (S) ou "não" (N). Para simplificar, consideremos que o status quo dá um payoff de 0 (zero) para cada jogadora. Jogadoras 1 e 2 preferem a nova política, portanto seus payoffs para ela pode ser 1. Já a jogadora 3 prefere o stats quo, então consideremos o payoff dela -1 para a jogadora 3. Por fim, suponha que se houver uma maioria favorável à nova política, ela é adotada. Caso contrário, permanence o status quo.
 
 Como descrever esse jogo formalmente?
 Jogadores: $N = \{1,2,3\}$
