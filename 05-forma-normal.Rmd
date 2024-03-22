@@ -3,11 +3,11 @@
 Jogos estáticos de Informação Completa (como o DP) envolvem considerações estratégicas sobre o que os outros jogadores irão fazer.
 
 Um jogo de informação completa é caracterizado pelas seguintes quatro informações serem de **conhecimento comum**:
-1. todas as possíveis ações de todas as jogadores,
+1. todas as possíveis ações de todas as jogadoras,
 
 2. todos os possíves resultados,
 
-3. Como a combinação de cada ação de todos os jogadores afetam qual resultado irá acontecer e se materializar, e
+3. Como a combinação de cada ação de todas as jogadoras afetam qual resultado irá acontecer e se materializar, e
 
 4. As preferências de todas jogadoras sobre os resultados.
 
@@ -15,7 +15,7 @@ Vejam que o DP satisfaz esse requerimento.
 
 ## Conhecimento Comum.
 
-Definição 2. Um evento $E$ é conhecimento comum se todo mundo sabe $E$, todo mundo sabe que todos sabem $E$, todo mundo sabe que todo mundo sabe que todos sabem $E$ e assim por diante, até infinito.
+Definição 5.1 Um evento $E$ é conhecimento comum se todo mundo sabe $E$, todo mundo sabe que todos sabem $E$, todo mundo sabe que todo mundo sabe que todos sabem $E$ e assim por diante, até infinito.
 
 Um exemplo simples em que podemos assumir que um evento é conhecimento comum. Suponha que duas pessoas saiam da sala e, andando na rua, começa a chover e eles correm para não se molhar. É razoável assumir que é conhecimento comum que está chovendo para essas duas pessoas.
 
@@ -49,7 +49,7 @@ Quando introduzirmos a forma extensiva do jogo, a diferença entre estratégia e
 
 Vamos então introduzir formalmente algumas definições relativas à noção de estratégia.
 
-Definição 2.1: Uma estratégia pura para um jogador $i$ é um plano determinístico de ação. O conjunto de todas as estratégias puras para o jogador $i$ é chamado de $S_i$. Um perfil de estratégias puras $s = \{s_1, s_2, ..., s_n\}, s_i \in S_i$ para todo $i = 1, 2, ..., n$ descreve uma combinação particular de estratégias puras escolhidas por todos os jogadores $n$ no jogo.
+Definição 5.2: Uma estratégia pura para uma jogadora $i$ é um plano determinístico de ação. O conjunto de todas as estratégias puras para o jogador $i$ é chamado de $S_i$. Um perfil de estratégias puras $s = \{s_1, s_2, ..., s_n\}, s_i \in S_i$ para todo $i = 1, 2, ..., n$ descreve uma combinação particular de estratégias puras escolhidas por todos as jogadoras $n$ no jogo.
 
 Vamos entender a definição primeiro por meio de um exemplo. No caso do Dilema do Prisioneiro, temos dois jogadores, ou seja, o conjunto de jogadores é dado por $N = \{1,2\}$ e $n = 2$. O conjunto de todas as estratégias pura do jogador 1 é formada por duas estratégias, confessar e não-conessar. Podemos, portanto, escrever $S_1 = \{(\text{Confessar}, \text{não-confessar})\}$. Similarmente para o jogador 2, de modo que $S_i = \{(\text{Confessar, não-confessar})\}$, para $i \in {1,2}$.
 
