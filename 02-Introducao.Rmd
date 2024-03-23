@@ -18,7 +18,7 @@ Para dar concretude, imaginem que a Polícia Federal prendeu dois executivos sus
 
 O que você faria?
 
-Para analisar o DP, é comum construimos uma matriz de *payoffs*. Ela é uma tabela, que contém nas linhas e colunas as ações disponíveis para cada jogadora, e nas células temos os *payoffs", que são as consequências ou resultados das combinações de ações de cada jogadora.
+Para analisar o DP, é comum construirmos uma matriz de *payoffs*. Ela é uma tabela, que contém nas linhas e colunas as ações disponíveis para cada jogadora, e nas células temos os *payoffs*, que são as consequências ou resultados das combinações de ações de cada jogadora.
 
 A matriz abaixo apresenta uma possibilidade para o Dilema do Prisioneiro:
 ```{r results = "asis", echo=FALSE}
@@ -36,7 +36,7 @@ payoff.mat <- matrix(all_pairs, nrow=2)
 dimnames(payoff.mat) <- c(rep(list(c("Coopera","Não coopera")), 2))
 results = "asis"
 
-# Plot 
+# Plot
 kable(payoff.mat)
 
 ```
@@ -59,11 +59,11 @@ Ocorrências prosaicas do dia a dia frequentemente refletem um cenário análogo
 
 ## Dilema da Segurança
 
-Nas Relações Internacionais, o chamado Dilema da Segurança entre duas potência pode ser resumido da seguinte forma: ambos os países se beneficiam mais se ambos se desarmarem do que se ambos se armarem, mas cada um tem uma vantagem individual se for o único a se armar. Portanto, em equilíbrio, temos uma corrida armamentista. Mais uma vez, há similaridade com o Dilema do Prisioneiro aqui, já que a cooperação seria mutuamente benéfica, mas os países acabam em uma situação racionalmente indidivudal mas que é pior para todos.
+Nas Relações Internacionais, o chamado Dilema da Segurança entre duas potência pode ser resumido da seguinte forma: ambos os países se beneficiam mais se ambos se desarmarem do que se ambos se armarem, mas cada um tem uma vantagem individual se for o único a se armar. Portanto, em equilíbrio, temos uma corrida armamentista. Mais uma vez, há similaridade com o Dilema do Prisioneiro aqui, já que a cooperação seria mutuamente benéfica, mas os países acabam em uma situação racionalmente individual mas que é pior para todos.
 
 ## Cuidar da casa
 
-A limpeza de uma casa é algo que benefícia a todos os membros da casa. No entanto, limpar a casa é custoso e limpar apenas a sujeira que você causou tem pouco impacto sobre a limpeza geral da casa, especialmente quando a casa é grande. Assim, mais uma vez temos uma esturtura similar ao Dilema do Prisioneiro, em que a cooperação seria benéfica, mas o equilíbrio é a não-cooperação, já que embora todos prefiram uma casa limpa a uma suja, o equilíbrio é ninguém limpar a casa. 
+A limpeza de uma casa é algo que beneficia a todos os membros da casa. No entanto, limpar a casa é custoso e limpar apenas a sujeira que você causou tem pouco impacto sobre a limpeza geral da casa, especialmente quando a casa é grande. Assim, mais uma vez temos uma estrutura similar ao Dilema do Prisioneiro, em que a cooperação seria benéfica, mas o equilíbrio é a não-cooperação, já que embora todos prefiram uma casa limpa a uma suja, o equilíbrio é ninguém limpar a casa.
 
 <div class="blackbox">
 <h2>Implicações da Teoria dos Jogos para questões mais complexas</h2>
@@ -107,4 +107,3 @@ $s_{-i}$ estratégia de todas as outras jogadoras que não a jogadora $i$.
 Kollock, P. (1998). Social dilemmas: The anatomy of cooperation. Annual review of sociology, 183-214.
 
 Roxborough, I. (1992). Inflação e pacto social no Brasil e no México. Lua Nova: Revista de Cultura e Política, 197-224.
-
