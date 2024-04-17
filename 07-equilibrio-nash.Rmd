@@ -1,21 +1,12 @@
 # Equilíbrio de Nash
 
-Para introduzir o conceito mais importante da teoria dos jogos não-cooperativa, vamos começar por um jogo chamado de "p-beuaty contest".
+Para introduzir o conceito mais importante da teoria dos jogos não-cooperativa, vamos começar por um jogo chamado de "p-beauty contest".
 
 
 ## P-beauty contest
 
 Escolha um número inteiro, entre 0 e 100. Vence o desafio quem acertar a metade da média dos números escolhidos por
-todos os jogadores. Em outras palavras, vou anotar os números de cada um, computar a média e depois dividir a média
-por 2. Portanto, vocês devem advinhar não a média dos números, mas a média dividida por 2.
-
-Advinhar metade da média
-Dividir em grupos de 10 (3 grupos).
-
-Previsões: primeira vez 25. (uma rodada de dominância)
-Segunda vez 10 (às vezes 5 ou 6) - duas ou três rodadas de dominância
-Terceira vez: 3 ou 4. Mais uma rodada de dominância. Vários zeros.
-
+todos os jogadores. Em outras palavras, vou anotar os números de cada um, computar a média e depois dividir a média por 2. Portanto, vocês devem advinhar não a média dos números, mas a média dividida por 2.
 
 ## Melhor resposta
 
@@ -27,8 +18,7 @@ $v_i(s_i, s_{-i}) >= v_i(s^\prime_i, s_{-i})$ para todo $s^\prime_i \in S_i$
 
 Em palavras: a utilidade (ou payoff) do jogador $i$ resultante da sua estratégia e das estratégias dos oponentes é pelo menos tão boa quanto qualquer outra estratégia que $i$ possa vir a adotar.
 
-
-Considere o jogo da bandeira, do reality show Survivor. Se é sua vez de jogar e existem, por exemplo, 20 bandeiras, não importa o que você faça, irá perder o jogo se o outro time for racional. Portanto, sua melhor estratégia pode ser tanto 1, 2 ou 3 bandeiras. Esse exemplo mostra que a melhor estratégia pode 1: incluir múltiplas ações; 2. serem igualmente ruins e não fazer diferença nenhuma e resultar todas no mesmo payoff.
+Considere o jogo da bandeira (cujo nome original é o *Nim game*), do reality show *Survivor*. Se é sua vez de jogar e existem, por exemplo, 20 bandeiras, não importa o que você faça, irá perder o jogo se o outro time for racional. Portanto, sua melhor estratégia pode ser tanto 1, 2 ou 3 bandeiras. Esse exemplo mostra que a melhor estratégia pode 1: incluir múltiplas ações; 2. serem igualmente ruins e não fazer diferença nenhuma e resultar todas no mesmo payoff.
 
 ## Equilíbrio de Nash
 
@@ -57,15 +47,16 @@ kable(payoff.mat)
 
 Considerem o Dilema do Prisioneiro. É fácil ver também que (C,C) é também um equilíbrio de Nash.
 
-Não é coincidência que Dominância estrita, EIEED e racionazabilidade sempre sejam equilíbrios de Nash. Se um equilíbrio é de dominância estrita, o único sobrevivente de EIEED e de racionazabilidade, então é o único equilíbrio de Nash.
+Não é coincidência que Dominância estrita, EIEED e racionazabilidade sempre sejam equilíbrios de Nash. Se um equilíbrio é de dominância estrita, ou o único sobrevivente de EIEED ou de racionazabilidade, então é o único equilíbrio de Nash.
 
 Considere o seguinte jogo. Duas jogadoras devem escolher um número inteiro entre 1 e 9. Se a soma dos números for menor ou igual a dez, elas ganham o valor em reais que cada jogadora escolheu. Se a soma for maior que dez, não ganham nada. Esse jogo é dado por $G = [N = 1,2; S_i = (1, 2, ..., 9), v_i(s_1, s_2) = s_i, se s_1 + s_2 <= 10$ $0$, c.c.]$
 
 Quaaisquer pares $(1,9);(9,1)$, $(2,8), (8,2)$ etc. formam equilíbrios de Nash. Em particular, uma vez revelados, nenhum jogador possui qualquer incentivo **unilateral** a mudar sua estratégia.
 
-Vamos enfatizar a palavra **unilateral** aqui. Vamos mudar o jogo anterior para o seguinte. Em vez das jogadoras ganharem os números ecolhidos cuja soma for 10, elas (cada uma) ganham a soma dos quadrados dos núemeros escolhidos. Assim, (1,9) e (9,1) geram $1^2 + 9^2 = 1 + 81 = 82$ reais, enquanto $2^2 + 8^2 = 4 + 64 = 68$ e $5^2 + 5^2 = 50$, de forma que o melhor resultado para as jogadoras é (9,1) ou (1,9). Porém, se jogarem (2,8), nenhuma delas possui incentivo **unilateral** para mudar sua estratégia, pois elas constituem melhores respostas as estratégias umas das outras.
+Vamos enfatizar a palavra **unilateral** aqui. Vamos mudar o jogo anterior para o seguinte. Em vez das jogadoras ganharem os números ecolhidos cuja soma for 10, elas (cada uma) ganham a soma dos quadrados dos números escolhidos. Assim, (1,9) e (9,1) geram $1^2 + 9^2 = 1 + 81 = 82$ reais, enquanto $2^2 + 8^2 = 4 + 64 = 68$ e $5^2 + 5^2 = 50$, de forma que o melhor resultado para as jogadoras é (9,1) ou (1,9). Porém, se jogarem (2,8), nenhuma delas possui incentivo **unilateral** para mudar sua estratégia, pois elas constituem melhores respostas às estratégias umas das outras.
 
- Uma das lições que precisamos tirar de modelos de teoria dos jogos é que não basta boa vontade ou objetivos comuns para uma ação coletiva. É preciso que os equilíbrios sejam tal que nenhum ator tenha um incentivo unilateral para mudar sua estratégia. Em certo sentido, os equilíbrios de Nash são sustentáveis, no sentido de que não há incentivo para desviar, uma vez estando em um deles. 
+Uma das lições que precisamos tirar de modelos de teoria dos jogos é que não basta boa vontade ou objetivos comuns para uma ação coletiva. É preciso que os equilíbrios sejam tal que nenhum ator tenha um incentivo unilateral para mudar sua estratégia. Em certo sentido, os equilíbrios de Nash são sustentáveis, no sentido de que não há incentivo para desviar, uma vez estando em um deles. 
+
 ## Aplicação - Plano cruzado
 
 Na década de 80, o Brasil enfrentou um grave problema de hiperinflação, levando o país a adotar o Plano Cruzado durante a presidência de Sarney para combater a inflação. O plano incluía várias medidas, sendo o congelamento de preços como a principal delas, o que impedia que os preços umentassem sem autorização governamental. Apesar do sucesso inicial em reduzir a inflação, o plano eventualmente fracassou, e os preços voltaram a subir. Uma parte do diagnóstico do Plano Cruzado é que existia uma inércia inflacionária, baseada meramente na expectativa de que haverá inflação. Ou seja, se um agente espera que haja inflação, ele reajusta os preços. Se todos fizerem isso, a inflação acontece e se repete mês a mês. Essa situação pode ser modelada como um jogo de coordenação, em que queremos transitar de um equilíbrio ruim (todos reajustam os preços) para um equilíbiro bom (ninguém reajusta os preços). A ideia do congelamento de preços é justamente mover a economia entre equilíbrios, algo que o mercado não conseguiria fazer soznho, sem intervenção governamental.
@@ -105,7 +96,7 @@ Suponha um eleitorado com três tipos de ordenamento de preferências de candida
 
 Vamos supor adicionalmente que 40% do eleitoradotem preferências do tipo 1 o restante igualmente dividido entre o tipo 2 e 3 (30% cada).
 
-Se cada eleitor votar sinceramente (isto é, para sua candidata preferida), $A$ teira 40% dos votos, $B$ 30% e $C$ 30%. Se a regra for como no Brasil 1945-64, em que não havia segundo turno e a candidata mais votada vence, $A$ seria eleita. Se porém parearmos $A$ contra $B$, a vencedora seria $B$ com 60% dos votos, e $B$ contra $C$ também daria a vitória para $B$, com $70\%$ dos votos. Em casos como esse, em que há uma vencedora que ganha todas as disputas 2x2, chamamos de vencedora de Condorcet (Condorcet winner). $B$ e $C$, portanto, poderiam ser estratégicas e votarem não na candidata preferida para obter um resultado mais favorável. O problema que $B$ e $C$ enfrentam pode, portanto, ser modelado do seguinte modo.
+Se cada eleitor votar sinceramente (isto é, para sua candidata preferida), $A$ teria 40% dos votos, $B$ 30% e $C$ 30%. Se a regra for como no Brasil 1945-64, em que não havia segundo turno e a candidata mais votada vence, $A$ seria eleita. Se porém parearmos $A$ contra $B$, a vencedora seria $B$ com 60% dos votos, e $B$ contra $C$ também daria a vitória para $B$, com $70\%$ dos votos. Em casos como esse, em que há uma vencedora que ganha todas as disputas 2x2, chamamos de vencedora de Condorcet (*Condorcet winner*). $B$ e $C$, portanto, poderiam ser estratégicas e votarem não na candidata preferida para obter um resultado mais favorável. O problema que $B$ e $C$ enfrentam pode, portanto, ser modelado do seguinte modo.
 
 ```{r results = "asis", echo=FALSE}
 library(knitr)
@@ -118,20 +109,23 @@ results = "asis"
 kable(payoff.mat)
 ```
 
-Esse jogo é muito parecido com o jogo de coordenação Bach-Stravinsky. Há dois equilíbrios de Nash, B ganha e C ganha. Porém, a escolha de qual equilíbrio acontecerá requer coordenação entre eleitores do tipo 2 e 3. Se falharem em coordenar os votos, contudo, A ganhará. Se B ou C desistir de disputar a eleição, a coordenação estará garantida, como ocorreu no Chile em 1964. Na ausência de tal coalizão, eleitores terão muita dificuldade de coordenar seu voto.
+Esse jogo é muito parecido com o jogo de coordenação Bach-Stravinsky. Nele, há dois equilíbrios de Nash, B ganha e C ganha. Porém, a escolha de qual equilíbrio acontecerá requer coordenação entre eleitores do tipo 2 e 3. Se falharem em coordenar os votos, contudo, A ganhará. Se B ou C desistir de disputar a eleição, a coordenação estará garantida, como ocorreu no Chile em 1964. Na ausência de tal coalizão, eleitores terão muita dificuldade de coordenar seu voto.
 
 Do ponto de vista da Ciência Política, é importante enfatizar alguns pontos dessa discussão:
-1. É muito mais fácil para as elites polítics coordenarem entre si do que entre os eleitores, que não possuem uma forma fácil de comunicação.
-2. Informações sobre candidatas com maiores intenções de voto em simulações de segundo turno permite ajudar os eleitores a tomarem decisões melhores e coordenarem seus votos. Portanto, quando vocês virem pessoas reclamando de pesquisas d intenção de voto, que isso influenciar o eleitor e faz com que ele vote estrategicamente, pergunte-se: é realmente ruim que o eleitorado vote estrategicamente? Voltaremos a essa discussão em aulas futuras.
+
+1. É muito mais fácil para as elites polítics coordenarem entre si do que entre os eleitores, que não possuem uma forma fácil de comunicação e são em número muiro maior.
+
+2. Informações sobre candidatas com maiores intenções de voto em simulações de segundo turno permite os eleitores a tomarem decisões melhores e coordenarem seus votos. Portanto, quando vocês virem pessoas reclamando de pesquisas de intenção de voto, que isso influencia o eleitor e faz com que ele vote estrategicamente, pergunte-se: é realmente ruim que o eleitorado vote estrategicamente? Voltaremos a essa discussão em aulas futuras.
+
 3. Na presença de segundo turno, existe necessidade de haver coordenação antecipada? Não para evitar que A seja eleito. B ou C irá para o segundo turno contra A.
 
 
-## Aplicação - Competição eleitoram sem incerteza
+## Aplicação - Competição eleitoral sem incerteza
 
 Quando as pessoas pensam em eleições, muitos acreditam que políticos anunciam as plataformas que acreditam, e eleitores escolhem a que preferem. Contudo, na ciência política é comum assumir que, mesmo que políticos se preocupem que suas plataformas sejam implementadas, sabem que para isso primeiro precisam ganhar eleições. Portanto, seja porque estão preocupados apenas com o poder ou porque precisam estar preocupados com o poder para implementar plataformas, o fato é que uma supoição comum é assumir que políticos maximizam suas chances de serem eleitos. Essa é a base do modelo discutido por Hotelling (1929). Após contribuições de Duncan Black (Black,
 1948) e Anthony Downs (Downs, 1957), a ideia entrou definitvamente na Ciência Política e ficou conhecida como Teorema do Eleitor Mediano. 
 
-O modelo do Hotelling tem inspiração em um modelo de competição espacial entre firmas. Ele desenvolve um jogo em dois estágios, em que duas firmas, competindo em uma rua, devem escolher sua localização geográfica no primeiro estágio, e em seguida os consumidores escolhem onde vão comprar os produtos, levando em consideração não apenas o preço dos produtos, mas o custo do transporte. E ele acha um equilíbrio de Nash (sem usar esse termo, obviamente) em que as empresas tendem a se concentrar no meio da rua. E ele notou que essa ideia poderia ser aplicada par competição política entre partidos.  Nós apresentaremos aqui uma versão simplificada da ideia do Hotelling e do Teorema do Eleitor Mediano. Iremos voltar a esse modelo algumas vezes ao longo do curso, para adicionar complexidade a ele.
+O modelo do Hotelling tem inspiração em um modelo de competição espacial entre firmas. Ele desenvolve um jogo em dois estágios, em que duas firmas, competindo em uma rua, devem escolher sua localização geográfica no primeiro estágio, e em seguida os consumidores escolhem onde vão comprar os produtos, levando em consideração não apenas o preço dos produtos, mas o custo do transporte. E ele acha um equilíbrio de Nash (sem usar esse termo, obviamente) em que as empresas tendem a se concentrar no meio da rua. E ele notou que essa ideia poderia ser aplicada par competição política entre partidos.  Nós apresentaremos aqui uma versão simplificada da ideia do Hotelling e do Teorema do Eleitor Mediano.
 
 O cenário que está sendo modelado é, claramente, o da competição política dos EUA. Suponha, portanto, dois partidos, que se importam apenas em ganhar a eleição. Existem 101 eleitores, com preferências uniformimente distribuídas em uma única dimensão do espectro político-ideológico (esquerda-direita). Em particular, suponha que o eleitor mais a esquerda está na posição -50, em seguida -49 e assim por diante, cada um com um número inteiro, até a extrema-direita, +50.
 
@@ -159,20 +153,56 @@ Existe um único equilíbrio de Nash, em que ambos candidatos jogam (0,0), que �
 
 Essa é a base para o teorema do eleitor mediano, presente já no trabalho do Hotelling.
 
+## Generalizando o modelo de Hotteling
 
-#### Competição eleitoral em espaços multidimensionais
+Normalmente, o modelo de Hotteling é apresentado com funções de utilidade contínuas^[Esse e outros modelos apresentados aqui foram adaptados de Formal Models of Domestic Politics, de Scott Gehlbach]. Assim, a utilidade pode ser descrita como $u_ i(x) = |x - x_i|$. Às vezes, em vez de usar a distância euclidiana, utilizamos funções quadráticas: $u_ i(x) = (x - x_i)^2$. E vamos supor um contínuo de eleitores, cada um com um ponto ideal $x_i$ único, estritamente crescente em algum intervalo (digamos, $0-1$), de tal modo que há um único ponto ideal mediano, $x_m$.
+
+Eleitores continuam votando sinceramente e se houver empate na distância, eleitores se abstém. Sejam $x_a$ e $x_b$ a plataforma anunciada por A e B, respecitivamente. Seja $\pi_A(x_a, x_b)$ a probabilidade que o partido A ganhe a eleição. Então, essa probabilidade é $1$ se a fração de eleitores que preferem estritamente $x_a$ a $x_b$ é maior que meio, $0$ se a fração de eleitores que preferem estritamente $x_a$ a $x_b$ é menor que meio, e $1/2$ caso contrário (isto é, em caso de empate).
+
+Para achar o equilíbrio de Nash, derivamos a melhor resposta de A e B. Comecemos por B, dado que A anuniciou $x_a$. Se $x_a < x_m$, então B ganha com certeza adotando qualquer posição mais próxima do eleitor mediano que A. Por outro lado, se $x_b = x_a$ ou $x_b = x_m + (x_m - x_a)$, então há empate e a probabilidade é $1/2$ e se $x_b < x_a$ ou $x_b > x_m + (x_m - x_a)$ B perde com certeza.
+
+Lógica similar se aplica a $x_a > x_m$. Portanto, quando $x_a \neq x_m$, qualquer $x_b$ mais próximos de $x_m$ gera vitória com certeza. Por fim, quando $x_a = x_m$, a única melhor resposta é $x_b = x_a = x_m$, já que de outro modo perderá com certeza. Raciocínio similar se aplica para derivarmos a melhor resposta de $A$, de modo que as melhores respostas simultâneas são justamente $x_a = x_b$.
+
+O equilíbrio de Nash, portanto, é dado por $x_a^{\star} = x_b^{\star} = x_m$.
+
+
+## Competição eleitoral em espaços multidimensionais
 
 O nosso modelo de competição política assumiu um espaço político unidimensional -- por exemplo esquerda-direita. Mas às vezes o espaço político possui mais de uma dimensão, de modo que vale investigar como espaços multidimensionais impactam nossos resultados.
 
-Vamos considerar um espaço multidimensional em que as partes devem decidir como alocar um orçamento de tamanho $1$. Esse jogo é às vezes chamado de jogo de dividir a torta.
+Vamos considerar um espaço multidimensional em que três partes (1, 2 e 3) devem decidir como alocar um orçamento de tamanho $1$. Esse jogo é às vezes chamado de jogo de dividir a torta ou bolo. Seja $q_1$ a parcela do bolo que fica com a jogadora $1$, $q_2$ para $2$ e $1- q_1 - q_2$ a parcela para $3$. As jogadoras preferem mais bolo a menos. Então, não há vencedor de Condorcet aqui. Para ver isso, assuma que existe um vencedor de Condorcet $(q_1, q_2)$. Como a distribuição soma $1$, alguém está recebendo uma quantidade positiva. Portanto, uma coalizão alternativa pode ser construída, divididndo essa quantidade entre as duas outras jogadoras, o que atrairá o voto dessas duas jogadoras. Portanto, não existe vencedor de Condorcet.
+
+Podemos aplicar uma lógica similar a uma competição de três partidos, $1, 2, 3$.
 
 
-#### O modelo de Wittman
+## O modelo de Wittman
 
-#### Competição multipartidária
+Wittman (1973)^[inserir ref] foi o primeiro a formular um modelo de políticos ou partidos *policy-seeking* em vez *office-seeking*. Suponha que temos dois partidos $E$ e $D$
+com pontos ideais $0$ e $1$, e funcções utilidades dadas por $-|x|$ para $E$ e $-|x-1|$ para $D$ se a política $x$ for implementada. Suponha ademais que o eleito mediano $x_m$ está entre os ponos ideais dos dois partidos. Os partidos $E$ e $D$ maximizam a utilidade esperada escolhendo uma plataforma $x_E$ e $x_D$, respectivamente. Seja $\pi(x_E, x_D)$ a probailidade do partido $E$ ganhar a eleição. A função que $E$ maximiza é:
+$$\max_{x_E} \pi(x_E, x_D)(-|x_L|) + (1 - \pi(x_E, x_D))(-|x_D|)$$
+Já $D$ maximiza:
+$$\max_{x_D} \pi(x_E, x_D)(-|x_D-1|) + (1-\pi(x_E, x_D))(-|x_E-1|)$$
+É fácil ver que existe um Equilíbrio de Nash no qual ambos partidos anunciam $x_m$ e ganham com probabilidade $1/2$. Para ver que é um EN, notem que se um deles desviar, perde a eleição com certeza e a política implementada é a mesma. Então, não há ganho e a utilidade é a mesma de antes (o EN não é estrito). E esse é o único EN. A prova é um pouco mais complicada, mas similar ao que fizemos antes. Antes é só necessário eliminar estratégias dominadas (anunciar plataforma fora do espectro $0-1$ e que $x_E < X_m < x_D$) e que $|x_E - x_m| = |x_m - x_D|$.
 
+## Competição multipartidária
 
-### Aplicação - Modelo sobre guerra
+Até aqui analisamos apenas competição bipartidária. Consideremos um modelo com três partidos A, B e C, que novamente maximizam probabilidade de vitória. A outra mudança é que se eleitores são indiferentes entre dois partidos, votam por um deles com probabilidade $1/2$ em vez de se absterem. Mantento a eleição de um turno em que vence o partido com mais votos (maioria simples, em vez de absoluta), o que acontece? 
+
+Primeiro, vejamos que **não** é um equilíbrio de Nash todos os partidos anunciarem o ponto mediano. Um deles teria incentivo para desviar unilateralmente, anunciando uma plataforma aribtrariamente próxima de $x_m$, ganhando quase metade dos votos e deixando os demais dividindo a outra metade e ganhando a eleição. Existe EN?
+
+Depende da distribuição de preferência dos eleitores. Assuma que eleitores tenham funções de utilidade euclidianas e distribuidas uniformemente no $[0-1]$. Portanto, as seguintes plataformas constituem um EN:
+$x_A = x_B = \frac{1}{3}$, e $x_c = 2/3$ e C ganha, pois recebe metade dos votos e A e B dividem a outra metade. Nenhum partido tem incentivo para desviar, pois não conseguem melhorar com qualquer outra estratégia. Obviamente, podemos trocar os rótulos e teremos igualmente equilíbrios de Nash, ou seja, $X_A = X_C$ e B ganha, ou $X_B = X_C$ e A ganha.
+
+Portanto, temos três equilíbrios de Nash, e similares entre si. A disputa entre os partidos é para quem ver quem ocupa a posição $2/3$, enquanto os outro dois precisam disputar votos do mesmo espectro político entre si.
+
+Outro problema do modelo é: se $A$ e $B$ (por exemplo) sabem que vão perder, porque entram na disputa em primeiro lugar? E aí precisamos modelar os benefícios de disputar uma eleição em que vocÊ sabe que vai perder, para tentar ganhar no futuro e aí precisamos modelar a entrada e saída endógena de partidos em eleições.
+
+Por fim, vale notar que o equilíbrio só existe se partidosmaximizam a chance de vitória, não o número de votos ou o percentual de votos. Se maximizassem o percentual de votos, C poderia ganhar mais votos mudando sua posição em direção a $1/3$. Só que aí não haveria mais equilíbrio de Nash no jogo.
+
+Se tivermos quatro partidos, então, com as suposições do jogo anterior, temos o seguinte equilíbrio de Nash:
+$x_A = x_B = \frac{1}{4}$ e $x_C = x_D = \frac{3}{4}$.
+
+## Aplicação - Modelo sobre guerra
 
 Nós agora estamos preparados para entender como a literatura tem utilizado teoria dos jogos para modelar e discutir fenômenos relevantes. Aqui iremos retomar aplicações que discutem a ocorrência de guerras.
 
