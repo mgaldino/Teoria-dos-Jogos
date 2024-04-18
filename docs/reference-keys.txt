@@ -92,8 +92,7 @@ pedra-papel-tesoura
 exercícios-3
 carregando-pacotes-exigidos-ggplot2
 warning-package-ggplot2-was-built-under-r-version-4.3.2
-need-help-getting-started-try-the-r-graphics
-cookbook-httpsr-graphics.org
+keep-up-to-date-with-changes-at-httpswww.tidyverse.orgblog
 jogos-multi-estágio
 introdução-1
 loren-ipson
