@@ -1,7 +1,7 @@
 # Jogos Dinâmicos
 
 ## Introdução
-
+Vamos falar de jogos din
 Considere novamente o jogo Bach e Stravinsky. Suponha que a jogadora 1 joga primeiro e e a jogadora 2 pode observar a esoclha de 1. Imagine que ela vai para um lugar, liga para a amiga e diz: estou aqui no lugar tal (espetáculo do Bach ou do Stravinsky).
 
 Veja que em termos de equilíbrios de Nash, continuamos com os mesmos dois equilíbrios de antes. Porém, não faz sentido achar que o equilíbrio (S,S) será jogado, pois a jogadora 1 sabe que, se for para Bach, 2 também irá. Jogos na forma normal não capturam muito bem a noção de jogos sequenciais e racionalidade sequencial.

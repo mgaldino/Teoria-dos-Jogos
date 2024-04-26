@@ -284,7 +284,7 @@ kable(payoff.mat)
 
 ```
 
-```
+
 
 ```{exercise}
 Considere o jogo do *happy hour* que você resolveu no capítulo 5. Ache os equilíbrios de Nash em estratégias puras.
