@@ -266,6 +266,7 @@ Fearon irá sugerir que o que pode explicar a guerra nesse paradigma é, portant
 Commitment problems (dificuldade de se comprometer). Potência em ascenção não pode fazer um compromisso crível de ser um hegemon benigno no futuro.^
 
 ## Exercícios
+
 ```{exercise}
 Ache todos os equilíbrios de Nash em estratégias puras do jogo abaixo.
 
@@ -296,7 +297,14 @@ Escreva a matriz de payoff dos seguintes jogos apresentados em aula: Dilema do P
 ```
 
 ```{exercise}
-Considere o seguinte jogo representado na forma normal:
+Considere o seguinte jogo representado na forma normal e responda Às seguintes perguntas:
+a) Existe alguma estratégia estritamente dominada para algum (ou ambos) jogador(es)? Se sim, qual?
+  
+b) existe um equilírio de estratégia estritamente dominante? Se sim, qual?
+  
+c) Existe algum equilíbrio de Eliminação Iterativa de Estratégias Estritamente Dominadas (EIEED)? Se sim, qual? Ele é ótimo de pareto?
+  
+d) quais os equilíbrios de Nash em estratégias puras?
 
 
 ```{r results = "asis", echo=FALSE}
@@ -315,13 +323,11 @@ kable(payoff.mat)
 
 ```
 
-a) Existe alguma estratégia estritamente dominada para algum (ou ambos) jogador(es)? Se sim, qual?
-b) existe um equilírio de estratégia estritamente dominante? Se sim, qual?
-c) Existe algum equilíbrio de Eliminação Iterativa de Estratégias Estritamente Dominadas (EIEED)? Se sim, qual? Ele é ótimo de pareto?
-d) quais os equilíbrios de Nash em estratégias puras?
-```
+
 ```{exercise}
-Para esta questão, considere que uma estratégia A é fracamente dominada por B se B é fracamente preferida à A, ou seja, $u(A) >= u(B)$, independentemente das estratégias dos demais jogadores. Veja que isso implica que uma estratégia estritamente dominada é fracamente dominada, mas o contrário não é necessariamente verdade. Considere então o seguinte jogo. 
+Para esta questão, considere que uma estratégia A é fracamente dominada por B se B é fracamente preferida à A, ou seja, $u(A) >= u(B)$, independentemente das estratégias dos demais jogadores. Veja que isso implica que uma estratégia estritamente dominada é fracamente dominada, mas o contrário não é necessariamente verdade. Considere então o seguinte jogo e responda:
+
+  a) Identifique, para a jogadora 2, a estratégia fracamente dominada.
 
 ```{r results = "asis", echo=FALSE}
 library(knitr)
@@ -339,11 +345,14 @@ kable(payoff.mat)
 
 ```
 
-a) Identifique, para a jogadora 2, a estratégia fracamente dominada.
-```
-```{exercise}
-Nesta questão, iremos considerar a Eliminação Iterativa de Estratégias Fracamente Dominadas (EIEFD), definida de maneira similar à EIEED em classe (em vez de eliminar apenas estratégias estritamente dominadas, eliminamos as estratégias fracamente dominadas). Considere o seguinte jogo representado na forma normal:
 
+
+```{exercise}
+Nesta questão, iremos considerar a Eliminação Iterativa de Estratégias Fracamente Dominadas (EIEFD), definida de maneira similar à EIEED em classe (em vez de eliminar apenas estratégias estritamente dominadas, eliminamos as estratégias fracamente dominadas). Considere o seguinte jogo representado na forma normal e responda:
+
+  a) Mostre que EIEFD pode levar a resultados diferentes usando ordens de eliminação de estratégias distintas. Dica: Implemente a EIEFD por uma estratégia fracamente dominada e depois repita o procedimento começando pela eliminação de outra estratégia fracamente dominada e compare os resultados.
+
+b) A apicação de EIEED em diferentes ordens, diferentemente de EIEFD, gera sempre o mesmo resultado. Como você interpreta essa diferença em termos das previsões de cada tipo de solução de um jogo? 
 
 ```{r results = "asis", echo=FALSE}
 library(knitr)
@@ -361,9 +370,7 @@ kable(payoff.mat)
 
 ```
 
-a) Mostre que EIEFD pode levar a resultados diferentes usando ordens de eliminação de estratégias distintas. Dica: Implemente a EIEFD por uma estratégia fracamente dominada e depois repita o procedimento começando pela eliminação de outra estratégia fracamente dominada e compare os resultados.
-b) A apicação de EIEED em diferentes ordens, diferentemente de EIEFD, gera sempre o mesmo resultado. Como você interpreta essa diferença em termos das previsões de cada tipo de solução de um jogo? 
-```
+
 
 ```{exercise}
 Em um pênalti no jogo de futebol, suponha que os jogadores podem chutar na esquerda, no centro ou no canto direito (desconsidere a altura da bola). Similarmente, o goleiro pode escolher umas das três opções para tentar agarrar a bola. Suponha também que batedores e goleiros devem escolher simultaneamente aonde a bola irá. Se o goleiro pular na mesma direção da bola, o goleiro ganha e o batedor perde. Se pular em uma direção diferente, o batedor ganha. Escreva o a matriz de payoff. Existe algum equilíbrio de Nash em estratégias puras? Se sim, quais são eles?

@@ -23,7 +23,7 @@
 <meta name="author" content="Manoel Galdino" />
 
 
-<meta name="date" content="2024-04-18" />
+<meta name="date" content="2024-04-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -284,15 +284,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="equilíbrio-de-nash-em-estratégias-mistas" class="section level1 hasAnchor" number="8">
 <h1><span class="header-section-number">Capítulo8</span> Equilíbrio de Nash em Estratégias Mistas<a href="equilíbrio-de-nash-em-estratégias-mistas.html#equilíbrio-de-nash-em-estratégias-mistas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Considere o jogo “cara” ou “coroa” a seguir. Nesse jogo, dois jogadores escolhem entre cara (heads) ou coroa (tails) ao mesmo tempo. Se as escolhas forem iguais, o Jogador 1 ganha um ponto. Caso contrário, o Jogador 2 ganha um ponto. O objetivo dos jogadores é maximizar sua pontuação.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb4-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb4-2"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb4-2" tabindex="-1"></a><span class="co"># Definindo a matriz de payoff</span></span>
-<span id="cb4-3"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb4-3" tabindex="-1"></a>payoff.mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>), </span>
-<span id="cb4-4"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb4-4" tabindex="-1"></a>                     <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, </span>
-<span id="cb4-5"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb4-5" tabindex="-1"></a>                     <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;Cara&quot;</span>, <span class="st">&quot;Coroa&quot;</span>), </span>
-<span id="cb4-6"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb4-6" tabindex="-1"></a>                                     <span class="fu">c</span>(<span class="st">&quot;Cara&quot;</span>, <span class="st">&quot;Coroa&quot;</span>)))</span>
-<span id="cb4-7"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb4-7" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb4-8" tabindex="-1"></a><span class="co"># Renderizando a tabela de payoff</span></span>
-<span id="cb4-9"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb4-9" tabindex="-1"></a><span class="fu">kable</span>(payoff.mat)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb2-2"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-2" tabindex="-1"></a><span class="co"># Definindo a matriz de payoff</span></span>
+<span id="cb2-3"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-3" tabindex="-1"></a>payoff.mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>), </span>
+<span id="cb2-4"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-4" tabindex="-1"></a>                     <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, </span>
+<span id="cb2-5"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-5" tabindex="-1"></a>                     <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;Cara&quot;</span>, <span class="st">&quot;Coroa&quot;</span>), </span>
+<span id="cb2-6"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-6" tabindex="-1"></a>                                     <span class="fu">c</span>(<span class="st">&quot;Cara&quot;</span>, <span class="st">&quot;Coroa&quot;</span>)))</span>
+<span id="cb2-7"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-7" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-8" tabindex="-1"></a><span class="co"># Renderizando a tabela de payoff</span></span>
+<span id="cb2-9"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-9" tabindex="-1"></a><span class="fu">kable</span>(payoff.mat)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -316,15 +316,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <p>Esse jogo é similar ao de par ou ímpar, que estamos acostumados</p>
 <p>Exercício 8.1: jogue par ou ímpar com outra pessoa por 5 rodadas.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb5-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb5-2"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb5-2" tabindex="-1"></a><span class="co"># Definindo a matriz de payoff</span></span>
-<span id="cb5-3"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb5-3" tabindex="-1"></a>payoff.mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>), </span>
-<span id="cb5-4"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb5-4" tabindex="-1"></a>                     <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, </span>
-<span id="cb5-5"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb5-5" tabindex="-1"></a>                     <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;Par&quot;</span>, <span class="st">&quot;Ímpar&quot;</span>), </span>
-<span id="cb5-6"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb5-6" tabindex="-1"></a>                                     <span class="fu">c</span>(<span class="st">&quot;Par&quot;</span>, <span class="st">&quot;Ímpar&quot;</span>)))</span>
-<span id="cb5-7"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb5-7" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb5-8" tabindex="-1"></a><span class="co"># Renderizando a tabela de payoff</span></span>
-<span id="cb5-9"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb5-9" tabindex="-1"></a><span class="fu">kable</span>(payoff.mat)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb3-2"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-2" tabindex="-1"></a><span class="co"># Definindo a matriz de payoff</span></span>
+<span id="cb3-3"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-3" tabindex="-1"></a>payoff.mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>), </span>
+<span id="cb3-4"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-4" tabindex="-1"></a>                     <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, </span>
+<span id="cb3-5"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-5" tabindex="-1"></a>                     <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;Par&quot;</span>, <span class="st">&quot;Ímpar&quot;</span>), </span>
+<span id="cb3-6"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-6" tabindex="-1"></a>                                     <span class="fu">c</span>(<span class="st">&quot;Par&quot;</span>, <span class="st">&quot;Ímpar&quot;</span>)))</span>
+<span id="cb3-7"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-7" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-8" tabindex="-1"></a><span class="co"># Renderizando a tabela de payoff</span></span>
+<span id="cb3-9"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-9" tabindex="-1"></a><span class="fu">kable</span>(payoff.mat)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -541,13 +541,13 @@ Se um conjunto de estatégias disponíveis para um jogador é <span class="math 
 <div id="exercícios-4" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> Exercícios<a href="equilíbrio-de-nash-em-estratégias-mistas.html#exercícios-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-62" class="exercise"><strong>Exercise 8.1  </strong></span>Qual o equilíbrio de Nash em Estratégias Mistas (ENEM) do Dilema do Prisioneiro?</p>
+<p><span id="exr:unnamed-chunk-61" class="exercise"><strong>Exercise 8.1  </strong></span>Qual o equilíbrio de Nash em Estratégias Mistas (ENEM) do Dilema do Prisioneiro?</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-63" class="exercise"><strong>Exercise 8.2  </strong></span>Qual o equilíbrio de Nash em Estratégias Mistas (ENEM)do jogo do Chicken??</p>
+<p><span id="exr:unnamed-chunk-62" class="exercise"><strong>Exercise 8.2  </strong></span>Qual o equilíbrio de Nash em Estratégias Mistas (ENEM)do jogo do Chicken??</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-64" class="exercise"><strong>Exercise 8.3  </strong></span>Considere o seguinte jogo representado na forma estratégica:</p>
+<p><span id="exr:unnamed-chunk-63" class="exercise"><strong>Exercise 8.3  </strong></span>Considere o seguinte jogo representado na forma estratégica:</p>
 </div>
 <table>
 <thead>
@@ -574,7 +574,7 @@ Se um conjunto de estatégias disponíveis para um jogador é <span class="math 
 <li>Existe algum equilíbrio de Nash em Estratégias Puras (ENEP)? Se sim, qual (ou quais)?</li>
 <li>Quantos equilíbrios de Nash em estratégias mistas existem?</li>
 </ol>
-<pre><code>::: {.exercise #unnamed-chunk-65}
+<pre><code>::: {.exercise #unnamed-chunk-64}
 Considere o seguinte jogo representado na forma estratégica:
 
 
@@ -591,7 +591,7 @@ b) Existe ENEM em que os jogadores aleatorizam entre A e B? Explique.
 c) Existe ENEM em que os jogadores aleatorizam entre B e c? Explique.
 </code></pre>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-66" class="exercise"><strong>Exercise 8.4  </strong></span>Uma funcionária (jogadora 1) que trabalha para uma chefe (jogadora 2) pode tanto trabalhar (T) quanto enrolar (E), enquanto sua chefe pode tanto monitorar a funcionária (M) quanto ignorá-la (I). Como em muitos relacionamentos entre funcionária e chefe, se a funcionária estiver trabalhando, a chefe prefere não monitorá-la, mas se a chefe não estiver monitorando, a funcionária prefere enrolar. A matriz de payoff abaixo representa uma situação como essa.</p>
+<p><span id="exr:unnamed-chunk-65" class="exercise"><strong>Exercise 8.4  </strong></span>Uma funcionária (jogadora 1) que trabalha para uma chefe (jogadora 2) pode tanto trabalhar (T) quanto enrolar (E), enquanto sua chefe pode tanto monitorar a funcionária (M) quanto ignorá-la (I). Como em muitos relacionamentos entre funcionária e chefe, se a funcionária estiver trabalhando, a chefe prefere não monitorá-la, mas se a chefe não estiver monitorando, a funcionária prefere enrolar. A matriz de payoff abaixo representa uma situação como essa.</p>
 </div>
 <table>
 <thead>
@@ -620,7 +620,7 @@ c) Existe ENEM em que os jogadores aleatorizam entre B e c? Explique.
 </ol>
 <p>```</p>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-68" class="exercise"><strong>Exercise 8.5  </strong></span>Qual o equilíbrio de Nash em Estratégias Mistas (ENEM) do Dilema do Prisioneiro?</p>
+<p><span id="exr:unnamed-chunk-67" class="exercise"><strong>Exercise 8.5  </strong></span>Qual o equilíbrio de Nash em Estratégias Mistas (ENEM) do Dilema do Prisioneiro?</p>
 </div>
 </div>
 <div id="referências-2" class="section level2 hasAnchor" number="8.3">
