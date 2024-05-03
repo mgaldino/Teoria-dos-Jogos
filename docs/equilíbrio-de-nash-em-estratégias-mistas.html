@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo8 Equilíbrio de Nash em Estratégias Mistas | Introdução à Teoria dos Jogos para Ciências Sociais</title>
   <meta name="description" content="Capítulo8 Equilíbrio de Nash em Estratégias Mistas | Introdução à Teoria dos Jogos para Ciências Sociais" />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo8 Equilíbrio de Nash em Estratégias Mistas | Introdução à Teoria dos Jogos para Ciências Sociais" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Manoel Galdino" />
 
 
-<meta name="date" content="2024-04-26" />
+<meta name="date" content="2024-05-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -547,7 +547,9 @@ Se um conjunto de estatégias disponíveis para um jogador é <span class="math 
 <p><span id="exr:unnamed-chunk-62" class="exercise"><strong>Exercise 8.2  </strong></span>Qual o equilíbrio de Nash em Estratégias Mistas (ENEM)do jogo do Chicken??</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-63" class="exercise"><strong>Exercise 8.3  </strong></span>Considere o seguinte jogo representado na forma estratégica:</p>
+<p><span id="exr:unnamed-chunk-63" class="exercise"><strong>Exercise 8.3  </strong></span>Para as perguntas abaixo, considere o seguinte jogo representado na forma estratégica:
+a) Existe algum equilíbrio de Nash em Estratégias Puras (ENEP)? Se sim, qual (ou quais)?
+b) Quantos equilíbrios de Nash em estratégias mistas existem?</p>
 </div>
 <table>
 <thead>
@@ -570,28 +572,50 @@ Se um conjunto de estatégias disponíveis para um jogador é <span class="math 
 </tr>
 </tbody>
 </table>
-<ol style="list-style-type: lower-alpha">
-<li>Existe algum equilíbrio de Nash em Estratégias Puras (ENEP)? Se sim, qual (ou quais)?</li>
-<li>Quantos equilíbrios de Nash em estratégias mistas existem?</li>
-</ol>
-<pre><code>::: {.exercise #unnamed-chunk-64}
-Considere o seguinte jogo representado na forma estratégica:
-
-
-:::
-
-|   |A      |B     |C      |
-|:--|:------|:-----|:------|
-|A  |(4,4)  |(0,5) |(-1,0) |
-|B  |(5,0)  |(1,1) |(0,0)  |
-|C  |(0,-1) |(0,0) |(1,1)  |
-
-a) Existe algum equilíbrio de Nash em Estratégias Puras (ENEP)? Se sim, qual (ou quais)?
-b) Existe ENEM em que os jogadores aleatorizam entre A e B? Explique.
-c) Existe ENEM em que os jogadores aleatorizam entre B e c? Explique.
-</code></pre>
 <div class="exercise">
-<p><span id="exr:unnamed-chunk-65" class="exercise"><strong>Exercise 8.4  </strong></span>Uma funcionária (jogadora 1) que trabalha para uma chefe (jogadora 2) pode tanto trabalhar (T) quanto enrolar (E), enquanto sua chefe pode tanto monitorar a funcionária (M) quanto ignorá-la (I). Como em muitos relacionamentos entre funcionária e chefe, se a funcionária estiver trabalhando, a chefe prefere não monitorá-la, mas se a chefe não estiver monitorando, a funcionária prefere enrolar. A matriz de payoff abaixo representa uma situação como essa.</p>
+<p><span id="exr:unnamed-chunk-64" class="exercise"><strong>Exercise 8.4  </strong></span>Considere o seguinte jogo representado na forma estratégica para as perguntas abaixo:
+a) Existe algum equilíbrio de Nash em Estratégias Puras (ENEP)? Se sim, qual (ou quais)?</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><p>Existe ENEM em que os jogadores aleatorizam entre A e B? Explique.</p></li>
+<li><p>Existe ENEM em que os jogadores aleatorizam entre B e c? Explique.</p></li>
+</ol>
+</div>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">A</th>
+<th align="left">B</th>
+<th align="left">C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">A</td>
+<td align="left">(4,4)</td>
+<td align="left">(0,5)</td>
+<td align="left">(-1,0)</td>
+</tr>
+<tr class="even">
+<td align="left">B</td>
+<td align="left">(5,0)</td>
+<td align="left">(1,1)</td>
+<td align="left">(0,0)</td>
+</tr>
+<tr class="odd">
+<td align="left">C</td>
+<td align="left">(0,-1)</td>
+<td align="left">(0,0)</td>
+<td align="left">(1,1)</td>
+</tr>
+</tbody>
+</table>
+<div class="exercise">
+<p><span id="exr:unnamed-chunk-65" class="exercise"><strong>Exercise 8.5  </strong></span>Uma funcionária (jogadora 1) que trabalha para uma chefe (jogadora 2) pode tanto trabalhar (T) quanto enrolar (E), enquanto sua chefe pode tanto monitorar a funcionária (M) quanto ignorá-la (I). Como em muitos relacionamentos entre funcionária e chefe, se a funcionária estiver trabalhando, a chefe prefere não monitorá-la, mas se a chefe não estiver monitorando, a funcionária prefere enrolar. A matriz de payoff abaixo representa uma situação como essa. Responda às seguintes perguntas:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>escreva a fução de melhor resposta de cada jogadora (isto é, para a jogadora 1, qual probabilidade <span class="math inline">\(p\)</span> ela deve escolher para cada possível escolha de probabilidade <span class="math inline">\(q\)</span> da jogadora 2).</p></li>
+<li><p>qual o equilíbrio de Nash do jogo?</p></li>
+</ol>
 </div>
 <table>
 <thead>
@@ -614,14 +638,6 @@ c) Existe ENEM em que os jogadores aleatorizam entre B e c? Explique.
 </tr>
 </tbody>
 </table>
-<ol style="list-style-type: lower-alpha">
-<li>escreva a fução de melhor resposta de cada jogadora (isto é, para a jogadora 1, qual probabilidade <span class="math inline">\(p\)</span> ela deve escolher para cada possível escolha de probabilidade <span class="math inline">\(q\)</span> da jogadora 2).</li>
-<li>qual o equilíbrio de Nash do jogo?</li>
-</ol>
-<p>```</p>
-<div class="exercise">
-<p><span id="exr:unnamed-chunk-67" class="exercise"><strong>Exercise 8.5  </strong></span>Qual o equilíbrio de Nash em Estratégias Mistas (ENEM) do Dilema do Prisioneiro?</p>
-</div>
 </div>
 <div id="referências-2" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> Referências<a href="equilíbrio-de-nash-em-estratégias-mistas.html#referências-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>

@@ -33,8 +33,8 @@ exr:unnamed-chunk-53
 exr:unnamed-chunk-61
 exr:unnamed-chunk-62
 exr:unnamed-chunk-63
+exr:unnamed-chunk-64
 exr:unnamed-chunk-65
-exr:unnamed-chunk-67
 fig:bach-strav
 fig:confianca
 fig:bach-strav-simultaneo

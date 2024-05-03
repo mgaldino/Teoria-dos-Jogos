@@ -232,8 +232,9 @@ Se um conjunto de estatégias disponíveis para um jogador é $S = {s_1, s_2, ..
 ```
 
 ```{exercise}
-Considere o seguinte jogo representado na forma estratégica:
-
+Para as perguntas abaixo, considere o seguinte jogo representado na forma estratégica:
+a) Existe algum equilíbrio de Nash em Estratégias Puras (ENEP)? Se sim, qual (ou quais)?
+b) Quantos equilíbrios de Nash em estratégias mistas existem?
 
 ```{r  alto-baixo, results = "asis", echo=FALSE}
 library(knitr)
@@ -251,12 +252,14 @@ kable(payoff.mat)
 
 ```
 
-a) Existe algum equilíbrio de Nash em Estratégias Puras (ENEP)? Se sim, qual (ou quais)?
-b) Quantos equilíbrios de Nash em estratégias mistas existem?
 
-```
 ```{exercise}
-Considere o seguinte jogo representado na forma estratégica:
+Considere o seguinte jogo representado na forma estratégica para as perguntas abaixo:
+a) Existe algum equilíbrio de Nash em Estratégias Puras (ENEP)? Se sim, qual (ou quais)?
+  
+b) Existe ENEM em que os jogadores aleatorizam entre A e B? Explique.
+
+c) Existe ENEM em que os jogadores aleatorizam entre B e c? Explique.
 
 
 ```{r a-b-c, results = "asis", echo=FALSE}
@@ -275,14 +278,14 @@ kable(payoff.mat)
 
 ```
 
-a) Existe algum equilíbrio de Nash em Estratégias Puras (ENEP)? Se sim, qual (ou quais)?
-b) Existe ENEM em que os jogadores aleatorizam entre A e B? Explique.
-c) Existe ENEM em que os jogadores aleatorizam entre B e c? Explique.
 
-```
 
 ```{exercise}
-Uma funcionária (jogadora 1) que trabalha para uma chefe (jogadora 2) pode tanto trabalhar (T) quanto enrolar (E), enquanto sua chefe pode tanto monitorar a funcionária (M) quanto ignorá-la (I). Como em muitos relacionamentos entre funcionária e chefe, se a funcionária estiver trabalhando, a chefe prefere não monitorá-la, mas se a chefe não estiver monitorando, a funcionária prefere enrolar. A matriz de payoff abaixo representa uma situação como essa.
+Uma funcionária (jogadora 1) que trabalha para uma chefe (jogadora 2) pode tanto trabalhar (T) quanto enrolar (E), enquanto sua chefe pode tanto monitorar a funcionária (M) quanto ignorá-la (I). Como em muitos relacionamentos entre funcionária e chefe, se a funcionária estiver trabalhando, a chefe prefere não monitorá-la, mas se a chefe não estiver monitorando, a funcionária prefere enrolar. A matriz de payoff abaixo representa uma situação como essa. Responda às seguintes perguntas:
+  
+a) escreva a fução de melhor resposta de cada jogadora (isto é, para a jogadora 1, qual probabilidade $p$ ela deve escolher para cada possível escolha de probabilidade $q$ da jogadora 2).
+
+b) qual o equilíbrio de Nash do jogo?
 
 ```{r results = "asis", echo=FALSE}
 library(knitr)
@@ -298,15 +301,6 @@ results = "asis"
 # Plot 
 kable(payoff.mat)
 
-```
-
-a) escreva a fução de melhor resposta de cada jogadora (isto é, para a jogadora 1, qual probabilidade $p$ ela deve escolher para cada possível escolha de probabilidade $q$ da jogadora 2).
-b) qual o equilíbrio de Nash do jogo?
-
-```
-
-```{exercise}
- Qual o equilíbrio de Nash em Estratégias Mistas (ENEM) do Dilema do Prisioneiro?
 ```
 
 
