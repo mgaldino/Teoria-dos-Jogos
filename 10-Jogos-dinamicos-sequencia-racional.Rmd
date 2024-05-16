@@ -4,7 +4,10 @@
 
 ## Racionalidade sequencial e indução reversa
 
-Contudo, quando o jogo é de informação imperfeita, não podemos aplicar a indução reversa. Caso em que é mais vantajoso usar uma formalização desenvolvida por Selten (?, ano?). Antes, vamos introduzir a noção de subjogo.
+Nós já vimos que podemos usar a indução reversa para achar os únicos equilíbrios e Nash que demandam racionalidade dos jogadores dentro e fora do caminho de equilíbrio. Em outras palavras, os jogadores precisam jogar racionalmente em todo conjunto de informação. Chamamos esse princípio de racionalidade sequencial, pois implica que as jogadoras estão jogando racionalmente em cada estágio da sequência do jogo, seja dentro ou fora do caminho de equilíbrio.
+
+
+Contudo, quando o jogo é de informação imperfeita, não podemos aplicar a indução reversa para achar jogadas sequencialmente racional. Além disso, jogos que não são finitos tambpouco podem se beneficiar da indução reversa. Caso em que é mais vantajoso usar uma formalização desenvolvida por Selten (1975) de subjogo próprio (frequentemente chamada apenas de subjogo).
 
 ## Subjogo
 
@@ -18,12 +21,21 @@ Um subjogo é qualquer parte de um jogo na forma extensiva que satisfaz as segui
 
 Em um jogo de informação imperfeita, acrescentamos:
 
-4. Se contiver qualquer nós de um conjunto de informação, ele conterá todos os nós do conjunto de informação.
+4. Se contiver qualquer nó de um conjunto de informação, ele conterá todos os nós do conjunto de informação.
 
 
 Nós chamamos de subjogo próprio todos os subjogos que não são a árvore do jogo na sua totalidade.
 
+Definição: Um subjogo próprio $G$ de um jogo na forma extensiva $\Gamma$ consiste apenas de um nó e todos os seus sucessores em $\Gamma$ com a propriedade que se $x \in G$ e $x' \in h(x)$ então $x' \in G$.
+
 ## Equilíbrio de Nash Perfeito de Subjogo
+
+A ideia é que iremos demandar que as jogadores joguem racionalmente em sequência em cada subjogo do jogo na forma extensiva. E chamaremos a isso de equilíbrio de Nash perfeito de subjogo.
+
+Fato: em jogos de informação perfeita finitos, os equilíbrios que sobrevivem a indução reversa são equilíbrios de Nash perfeitos de subjogo.
+
+
+
 
 
 ## Exercícios

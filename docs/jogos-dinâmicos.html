@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo9 Jogos Dinâmicos | Introdução à Teoria dos Jogos para Ciências Sociais</title>
   <meta name="description" content="Capítulo9 Jogos Dinâmicos | Introdução à Teoria dos Jogos para Ciências Sociais" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo9 Jogos Dinâmicos | Introdução à Teoria dos Jogos para Ciências Sociais" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Manoel Galdino" />
 
 
-<meta name="date" content="2024-05-03" />
+<meta name="date" content="2024-05-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -396,18 +396,29 @@ Assim, a estratégia <span class="math inline">\(BB\)</span> quer dizer, jogue B
 </div>
 <div id="estratégias-mistas" class="section level3 hasAnchor" number="9.6.2">
 <h3><span class="header-section-number">9.6.2</span> Estratégias mistas<a href="jogos-dinâmicos.html#estratégias-mistas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Uma estratégia mista para a jogadora <span class="math inline">\(i\)</span> é uma distribuição de probabilidade sobre suas estratégias puras <span class="math inline">\(s_i \in S_i\)</span>.</p>
+<p>Uma vez que uma estratégia mista é uma aleatorização de estratégias puras, perdemos o componente dinâmico do jogo, já que as probabilidades devem ser definidas antes do jogo começar e uma vez sorteada a estratégia a jogar, joga a escolhida independentemente da dinâmica do jogo.</p>
+<p>No caso do jogo Bach-Strvinski, a jogadora 2 teria de aleatorizar entre (BB, BS, SB, SS). Mas não poderia ter uma estratégia do tipo, se 1 jogar “Bach”, jogo B, e se jogar “Stravinski”, jogo S com probabilidade <span class="math inline">\(2/3\)</span>.</p>
 </div>
 </div>
 <div id="estratégias-comportamentais" class="section level2 hasAnchor" number="9.7">
 <h2><span class="header-section-number">9.7</span> Estratégias comportamentais<a href="jogos-dinâmicos.html#estratégias-comportamentais" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Definição: perfect recall (memória perfeita)</p>
+<p>Para permitir esse tipo de comportamento, definiremos o conceito de estratégia comportamental: ela especifica para cada conjunto de informação <span class="math inline">\(h_i \in H_i\)</span> uma distribuição de probabilidade independente sobre <span class="math inline">\(A_i(h_i)\)</span> e é denotada por $_i:H_i A_i(h_i), em que <span class="math inline">\(\sigma_i(a_i(h_i))\)</span> é a probabilidade que a jogadora <span class="math inline">\(i\)</span> joga a ação <span class="math inline">\(a_i(h_i) \in A_i(h_i)\)</span> no conjunto de informação <span class="math inline">\(h_i\)</span>.</p>
+<p>Pergunta: dada uma estratégia mista (não comportamental), podemos achar uma estratégia comportamental que leva ao mesmo resultado? Sim, sempre é possível fazer essa operação.</p>
+<p>E o oposto, dada uma estratégia comportamental, podemos achar uma mista que leva ao mesmo resultado? Sim, em jogos de lembrança perfeita (perfect recall).</p>
+<p>E um jogo é de lembrança perfeita se nenhuma jogadora jamais esquece uma informação que soube previamente.</p>
+<p>Portanto, estratégias mistas e comportamentais são equivalentes nessas classes de jogos, no sentido de que a mesma distribuição de resultados sempre pode ser alcançada com estratégias mistas e comportamentais.
+Definição: perfect recall (memória perfeita)</p>
 </div>
 <div id="representação-estratégica-de-jogos-na-forma-extensiva" class="section level2 hasAnchor" number="9.8">
 <h2><span class="header-section-number">9.8</span> Representação estratégica de jogos na forma extensiva<a href="jogos-dinâmicos.html#representação-estratégica-de-jogos-na-forma-extensiva" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
 <div id="equilíbrio-de-nash-e-caminhos-de-jogada" class="section level2 hasAnchor" number="9.9">
 <h2><span class="header-section-number">9.9</span> Equilíbrio de Nash e Caminhos de jogada<a href="jogos-dinâmicos.html#equilíbrio-de-nash-e-caminhos-de-jogada" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Definição: … um conjunto de informação está <strong>no caminho de equilíbrio</strong> se …</p>
+<p>Como vimos, um dos equilíbrios de Nash do jogo Bach-Stravinski é (Bach, BB), e outro é (Bach, BS). E a diferença desses dois equilíbrio é o que a jogadora 2 joga no conjunto de informação fora do equilíbrio.</p>
+<p>Vejam que na forma extensiva, cara resultado é associado a um único caminho de jogo, já que há um único caminho do nó raiz para cada nó terminal. Isso segue da definição que cada nó deve ser precedido por apenas um nó. Em termos de equilíbrio de Nash, isso significa que se um perfil de estratégia <span class="math inline">\(s^{\star}\)</span> é um equilíbrio de Nash, então cada jogadora prefere seguir o caminho predito pelo equilíbrio do que escolher outro alternativo, dado o que as demais estão fazendo. O que nos leva a mais uma definição:</p>
+<p>Seja <span class="math inline">\(\sigma^{\star} = (\sigma_1^{\star}, ..., \sigma_n^{\star})\)</span> um perfil de estratégias comportamentais de equilíbrio de Nash em um jogo na forma extensiva. Dizemos que um conjunto de informação está no caminho de equilíbrio se dado <span class="math inline">\(\sigma^{\star}\)</span> ele é alcançado com probabilidade positiva. E dizemos que um conjunto de informação está fora do caminho de equilíbrio se dado <span class="math inline">\(\sigma^{\star}\)</span> ele nunca é alcançado.</p>
+<p>Portanto, equilíbrios de Nash envolvem crenças do que irá ocorrer no caminho de equilíbrio e fora dele. Entretanto, deixa claro que ameaças não-críveis são aceitas pelas jogadores. Basicamente diz para jogadoras agirem racionalmente no caminho de equilíbrio, dadas as crenças dentro e fora do caminho de equilíbrio. Mas se as crenças no caminho fora de equilíbrio são importantes, agir racionalmente fora dele também deveriqa ser, certo?</p>
 
 </div>
 </div>

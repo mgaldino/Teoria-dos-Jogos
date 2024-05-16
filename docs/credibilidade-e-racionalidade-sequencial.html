@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo10 Credibilidade e racionalidade sequencial | Introdução à Teoria dos Jogos para Ciências Sociais</title>
   <meta name="description" content="Capítulo10 Credibilidade e racionalidade sequencial | Introdução à Teoria dos Jogos para Ciências Sociais" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo10 Credibilidade e racionalidade sequencial | Introdução à Teoria dos Jogos para Ciências Sociais" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Manoel Galdino" />
 
 
-<meta name="date" content="2024-05-03" />
+<meta name="date" content="2024-05-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -288,7 +288,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="racionalidade-sequencial-e-indução-reversa" class="section level2 hasAnchor" number="10.2">
 <h2><span class="header-section-number">10.2</span> Racionalidade sequencial e indução reversa<a href="credibilidade-e-racionalidade-sequencial.html#racionalidade-sequencial-e-indução-reversa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Contudo, quando o jogo é de informação imperfeita, não podemos aplicar a indução reversa. Caso em que é mais vantajoso usar uma formalização desenvolvida por Selten (?, ano?). Antes, vamos introduzir a noção de subjogo.</p>
+<p>Nós já vimos que podemos usar a indução reversa para achar os únicos equilíbrios e Nash que demandam racionalidade dos jogadores dentro e fora do caminho de equilíbrio. Em outras palavras, os jogadores precisam jogar racionalmente em todo conjunto de informação. Chamamos esse princípio de racionalidade sequencial, pois implica que as jogadoras estão jogando racionalmente em cada estágio da sequência do jogo, seja dentro ou fora do caminho de equilíbrio.</p>
+<p>Contudo, quando o jogo é de informação imperfeita, não podemos aplicar a indução reversa para achar jogadas sequencialmente racional. Além disso, jogos que não são finitos tambpouco podem se beneficiar da indução reversa. Caso em que é mais vantajoso usar uma formalização desenvolvida por Selten (1975) de subjogo próprio (frequentemente chamada apenas de subjogo).</p>
 </div>
 <div id="subjogo" class="section level2 hasAnchor" number="10.3">
 <h2><span class="header-section-number">10.3</span> Subjogo<a href="credibilidade-e-racionalidade-sequencial.html#subjogo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -301,18 +302,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>Em um jogo de informação imperfeita, acrescentamos:</p>
 <ol start="4" style="list-style-type: decimal">
-<li>Se contiver qualquer nós de um conjunto de informação, ele conterá todos os nós do conjunto de informação.</li>
+<li>Se contiver qualquer nó de um conjunto de informação, ele conterá todos os nós do conjunto de informação.</li>
 </ol>
 <p>Nós chamamos de subjogo próprio todos os subjogos que não são a árvore do jogo na sua totalidade.</p>
+<p>Definição: Um subjogo próprio <span class="math inline">\(G\)</span> de um jogo na forma extensiva <span class="math inline">\(\Gamma\)</span> consiste apenas de um nó e todos os seus sucessores em <span class="math inline">\(\Gamma\)</span> com a propriedade que se <span class="math inline">\(x \in G\)</span> e <span class="math inline">\(x&#39; \in h(x)\)</span> então <span class="math inline">\(x&#39; \in G\)</span>.</p>
 </div>
 <div id="equilíbrio-de-nash-perfeito-de-subjogo" class="section level2 hasAnchor" number="10.4">
 <h2><span class="header-section-number">10.4</span> Equilíbrio de Nash Perfeito de Subjogo<a href="credibilidade-e-racionalidade-sequencial.html#equilíbrio-de-nash-perfeito-de-subjogo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A ideia é que iremos demandar que as jogadores joguem racionalmente em sequência em cada subjogo do jogo na forma extensiva. E chamaremos a isso de equilíbrio de Nash perfeito de subjogo.</p>
+<p>Fato: em jogos de informação perfeita finitos, os equilíbrios que sobrevivem a indução reversa são equilíbrios de Nash perfeitos de subjogo.</p>
 </div>
 <div id="exercícios-5" class="section level2 hasAnchor" number="10.5">
 <h2><span class="header-section-number">10.5</span> Exercícios<a href="credibilidade-e-racionalidade-sequencial.html#exercícios-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ache todos os subjogos do jogo abaixo.</p>
-<pre><code>## Carregando pacotes exigidos: ggplot2</code></pre>
-<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.3.2</code></pre>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
 <p>Modelo o jogo como uma árvore (forma extensiva) e ache todos os subjogos do jogo abaixo. (exercício 156.2c do Osborne).</p>
 <p>Os políticos Rosa e Ernesto precisam tomar uma posição sobre um assunto. As opções são Berlim (B) ou Havana (H). Eles escolhem sequencialmente. Uma terceira pessoa, Karl, determina quem escolhe primeiro. Tanto Rosa quanto Ernesto se importam apenas com as ações que escolhem, não com quem escolhe primeiro. Rosa prefere o resultado em que ambos escolhem B ao resultado em que ambos escolhem H, e prefere esse resultado a qualquer um dos casos em que ela e Ernesto escolhem ações diferentes; ela é indiferente entre esses dois últimos resultados. As preferências de Ernesto diferem das de Rosa no sentido de que os papéis de B e H são invertidos. As preferências de Karl são as mesmas que as de Ernesto. Modele essa situação como um jogo extensivo com informação perfeita. (Especifique os componentes do jogo e represente o jogo em um diagrama.)</p>
