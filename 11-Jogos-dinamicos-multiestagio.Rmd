@@ -1,7 +1,53 @@
-# Jogos Multi-estágio
+# Barganha
 
 ## Introdução
 
-loren ipson
+O jogo do ultimato é talvez o jogo mais simples de barganha que existe. No entanto, ele é útil porque pode ser generalizado e trazer *insights* úteis.
 
-## loren ipson
+## Jogo do Ultimato
+
+O jogo do ultimato consiste no seguinte. Serena e Martín precisam decidir como dividr um pedaço de bolo de tamanho $1$. O pai informa que primeiro Serena fará uma proposta de divisão de $x$ para ela e $1-X$ para MArtín. Se a proposta for aceita, o bolo é dividido daquela forma. Se for negada, ninguém fica com o bolo (porque não chegaram a um acordo).
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r ultimato, echo=FALSE, message=FALSE, warning=FALSE}
+library(DiagrammeR)
+
+grViz("
+digraph ultimatum_game {
+  rankdir=LR;
+  node [shape=rectangle, style=filled, fillcolor=lightgrey];
+
+  Start [label='Início'];
+  Serena [label='Serena faz uma proposta'];
+  Accept [label='(X, 1-X)'];
+  Reject [label='(0,0)'];
+
+  Start -> Serena [label='Proposta de Serena'];
+  Serena -> Accept [label='Proposta Aceita'];
+  Serena -> Reject [label='Proposta Rejeitada'];
+}
+")
+```
+
+É fácil ver que a proposta $(1,0)$, isto é, Serena pega todo o bolo e Martín fica sem nada é um equilíbrio de Nash, pois nem Serena nem Martín podem melhorar unilateralmente.
+
+## 2 períodos
+
+Vamos modificar o jogo do ultimato e admitir que se alguém não gosta da proposta da outra pessoa, pode fazer uma contraproposta, sempre de maneira alternada. Porém, o jogo acaba em até $T$ rodadas se um acordo não for alcançado e ninguém fica com o bolo neste caso.
+
+Como existe passagem de tempo, precisamos descontar o futuro. Vamos assumir que ambos Serena e Martín descontam o futuro em $0 < \delta_i < 1$, isto é, um acordo alcançado no período $t$ com uma parcela $s_i$ gera um payoff ou utilidade equivalente a $s_i \delta_i^{t-1}$ no presente.
+
+Exercício: desenhe a árvore do jogo para $T = 2$.
+
+O Equilíbrio de Nash Pefeito em Subjogo pode ser achado por indução reversa. Vamos antes chamar Serena de jogadora 1 e MArtín de jogador 2.
+
+No período 2, temos um novo jogo do ultimato, e Martín irá oferecer todo o bolo para si e nada para Serena, e isso é um equilíbrio de Nash. Designando a oferta no período $t$ por $x_t$, a oferta é $x_2 = 0$ e $1 - x_2 = 1$. Gerando um payoff de  $(0, \delta_2)$. No período 1, sabendo disso, Serena irá oferecer $1 - \delta_2$ para ela e $1 - (1 - \delta_2) = \delta_2$ para Martín, ele aceita e o jogo acaba. As estratégias de equilíbrio são: Serena oferta $1 - \delta_2$ para ela, e Martín aceita qualquer oferta $geq \delta_2$ e rejeita se for menor, caso em que propõe $x_2 = 0$ e Serena aceita qualquer oferta no período 2.
+
+## T períodos
+
+Considere agora o caso para T períodos, para $T < \infty$, isto é, T finito. Assuma que jogador 2 faz a última proposta, isto é, T é par. No último período, 2 pegará todo o bolo para si e nada para 1, que aceitará a proposta, formando um equilíbrio.
+
+Sabendo disso, no período $T-1$, 1 oferecerá $(1 - \delta_2, \delta_2)$. Portanto, no período $T-2$, 2 oferecerá $\delta_1(1 - \delta_2), 1 - \delta_1(1 - \delta_2)$. Antecipando esse resultado, no período $T-3$, teremos de proposta de 1: $1 - [1 - \delta_1(1 - \delta_2)], 1 - \delta_1(1 - \delta_2) = \delta_1(1 - \delta_2), 1 - \delta_1(1 - \delta_2)$ e assim por diante.
