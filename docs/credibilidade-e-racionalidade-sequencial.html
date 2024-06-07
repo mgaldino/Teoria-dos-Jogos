@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo10 Credibilidade e racionalidade sequencial | Introdução à Teoria dos Jogos para Ciências Sociais</title>
   <meta name="description" content="Capítulo10 Credibilidade e racionalidade sequencial | Introdução à Teoria dos Jogos para Ciências Sociais" />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo10 Credibilidade e racionalidade sequencial | Introdução à Teoria dos Jogos para Ciências Sociais" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Manoel Galdino" />
 
 
-<meta name="date" content="2024-05-16" />
+<meta name="date" content="2024-06-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="jogos-dinâmicos.html"/>
-<link rel="next" href="jogos-multi-estágio.html"/>
+<link rel="next" href="barganha.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,6 +52,10 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script>
 
 
 <style type="text/css">
@@ -257,10 +261,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.4" data-path="credibilidade-e-racionalidade-sequencial.html"><a href="credibilidade-e-racionalidade-sequencial.html#equilíbrio-de-nash-perfeito-de-subjogo"><i class="fa fa-check"></i><b>10.4</b> Equilíbrio de Nash Perfeito de Subjogo</a></li>
 <li class="chapter" data-level="10.5" data-path="credibilidade-e-racionalidade-sequencial.html"><a href="credibilidade-e-racionalidade-sequencial.html#exercícios-5"><i class="fa fa-check"></i><b>10.5</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="jogos-multi-estágio.html"><a href="jogos-multi-estágio.html"><i class="fa fa-check"></i><b>11</b> Jogos Multi-estágio</a>
+<li class="chapter" data-level="11" data-path="barganha.html"><a href="barganha.html"><i class="fa fa-check"></i><b>11</b> Barganha</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="jogos-multi-estágio.html"><a href="jogos-multi-estágio.html#introdução-3"><i class="fa fa-check"></i><b>11.1</b> Introdução</a></li>
-<li class="chapter" data-level="11.2" data-path="jogos-multi-estágio.html"><a href="jogos-multi-estágio.html#loren-ipson"><i class="fa fa-check"></i><b>11.2</b> loren ipson</a></li>
+<li class="chapter" data-level="11.1" data-path="barganha.html"><a href="barganha.html#introdução-3"><i class="fa fa-check"></i><b>11.1</b> Introdução</a></li>
+<li class="chapter" data-level="11.2" data-path="barganha.html"><a href="barganha.html#jogo-do-ultimato"><i class="fa fa-check"></i><b>11.2</b> Jogo do Ultimato</a></li>
+<li class="chapter" data-level="11.3" data-path="barganha.html"><a href="barganha.html#períodos"><i class="fa fa-check"></i><b>11.3</b> 2 períodos</a></li>
+<li class="chapter" data-level="11.4" data-path="barganha.html"><a href="barganha.html#t-períodos"><i class="fa fa-check"></i><b>11.4</b> T períodos</a></li>
+<li class="chapter" data-level="11.5" data-path="barganha.html"><a href="barganha.html#infinitos-períodos"><i class="fa fa-check"></i><b>11.5</b> Infinitos períodos</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="barganha.html"><a href="barganha.html#valor-de-continuação"><i class="fa fa-check"></i><b>11.5.1</b> Valor de Continuação</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -315,6 +325,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="exercícios-5" class="section level2 hasAnchor" number="10.5">
 <h2><span class="header-section-number">10.5</span> Exercícios<a href="credibilidade-e-racionalidade-sequencial.html#exercícios-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ache todos os subjogos do jogo abaixo.</p>
+<pre><code>## Carregando pacotes exigidos: ggplot2</code></pre>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.3.2</code></pre>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
 <p>Modelo o jogo como uma árvore (forma extensiva) e ache todos os subjogos do jogo abaixo. (exercício 156.2c do Osborne).</p>
 <p>Os políticos Rosa e Ernesto precisam tomar uma posição sobre um assunto. As opções são Berlim (B) ou Havana (H). Eles escolhem sequencialmente. Uma terceira pessoa, Karl, determina quem escolhe primeiro. Tanto Rosa quanto Ernesto se importam apenas com as ações que escolhem, não com quem escolhe primeiro. Rosa prefere o resultado em que ambos escolhem B ao resultado em que ambos escolhem H, e prefere esse resultado a qualquer um dos casos em que ela e Ernesto escolhem ações diferentes; ela é indiferente entre esses dois últimos resultados. As preferências de Ernesto diferem das de Rosa no sentido de que os papéis de B e H são invertidos. As preferências de Karl são as mesmas que as de Ernesto. Modele essa situação como um jogo extensivo com informação perfeita. (Especifique os componentes do jogo e represente o jogo em um diagrama.)</p>
@@ -334,7 +346,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="jogos-dinâmicos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="jogos-multi-estágio.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="barganha.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

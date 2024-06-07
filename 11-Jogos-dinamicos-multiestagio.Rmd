@@ -6,7 +6,7 @@ O jogo do ultimato é talvez o jogo mais simples de barganha que existe. No enta
 
 ## Jogo do Ultimato
 
-O jogo do ultimato consiste no seguinte. Serena e Martín precisam decidir como dividr um pedaço de bolo de tamanho $1$. O pai informa que primeiro Serena fará uma proposta de divisão de $x$ para ela e $1-X$ para MArtín. Se a proposta for aceita, o bolo é dividido daquela forma. Se for negada, ninguém fica com o bolo (porque não chegaram a um acordo).
+O jogo do ultimato consiste no seguinte. Serena e Martín precisam decidir como dividir um pedaço de bolo de tamanho $1$. O pai informa que primeiro Serena fará uma proposta de divisão de $X$ para ela e $1-X$ para Martín. Se a proposta for aceita, o bolo é dividido daquela forma. Se for negada, ninguém fica com o bolo (porque não chegaram a um acordo).
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -40,14 +40,60 @@ Vamos modificar o jogo do ultimato e admitir que se alguém não gosta da propos
 
 Como existe passagem de tempo, precisamos descontar o futuro. Vamos assumir que ambos Serena e Martín descontam o futuro em $0 < \delta_i < 1$, isto é, um acordo alcançado no período $t$ com uma parcela $s_i$ gera um payoff ou utilidade equivalente a $s_i \delta_i^{t-1}$ no presente.
 
-Exercício: desenhe a árvore do jogo para $T = 2$.
+Exercício: desenhe a árvore do jogo para dois períodos.
 
-O Equilíbrio de Nash Pefeito em Subjogo pode ser achado por indução reversa. Vamos antes chamar Serena de jogadora 1 e MArtín de jogador 2.
+O Equilíbrio de Nash Pefeito em Subjogo pode ser achado por indução reversa. Vamos antes chamar Serena de jogadora 1 e Martín de jogador 2.
 
-No período 2, temos um novo jogo do ultimato, e Martín irá oferecer todo o bolo para si e nada para Serena, e isso é um equilíbrio de Nash. Designando a oferta no período $t$ por $x_t$, a oferta é $x_2 = 0$ e $1 - x_2 = 1$. Gerando um payoff de  $(0, \delta_2)$. No período 1, sabendo disso, Serena irá oferecer $1 - \delta_2$ para ela e $1 - (1 - \delta_2) = \delta_2$ para Martín, ele aceita e o jogo acaba. As estratégias de equilíbrio são: Serena oferta $1 - \delta_2$ para ela, e Martín aceita qualquer oferta $geq \delta_2$ e rejeita se for menor, caso em que propõe $x_2 = 0$ e Serena aceita qualquer oferta no período 2.
+No período 2 (o último), temos um novo jogo do ultimato, e Martín irá oferecer todo o bolo para si e nada para Serena, e isso é um equilíbrio de Nash. Designando a oferta no período $t$ por $x_t$, e considerando  a oferta é $x_2 = 0$ e $1 - x_2 = 1$. Gerando um payoff de  $(0, 1)$. No período 1, sabendo disso, Serena irá oferecer $\delta_2$ para Martín $1 - \delta_2$ para e ele aceita e o jogo acaba. As estratégias de equilíbrio são: Serena oferta $1 - \delta_2$ para ela, e Martín aceita qualquer oferta $geq \delta_2$ e rejeita se for menor, caso em que propõe $x_1 = 0$ e Serena aceita qualquer oferta no período 2.
 
 ## T períodos
 
-Considere agora o caso para T períodos, para $T < \infty$, isto é, T finito. Assuma que jogador 2 faz a última proposta, isto é, T é par. No último período, 2 pegará todo o bolo para si e nada para 1, que aceitará a proposta, formando um equilíbrio.
+Considere agora o caso para T períodos, para $T < \infty$, isto é, $T$ finito. Assuma que $T = 2n$, isto é, $T$ é par.  No último período, $T$, 2 pegará todo o bolo para si e nada para 1, que aceitará a proposta, formando um equilíbrio.
 
-Sabendo disso, no período $T-1$, 1 oferecerá $(1 - \delta_2, \delta_2)$. Portanto, no período $T-2$, 2 oferecerá $\delta_1(1 - \delta_2), 1 - \delta_1(1 - \delta_2)$. Antecipando esse resultado, no período $T-3$, teremos de proposta de 1: $1 - [1 - \delta_1(1 - \delta_2)], 1 - \delta_1(1 - \delta_2) = \delta_1(1 - \delta_2), 1 - \delta_1(1 - \delta_2)$ e assim por diante.
+Sabendo disso, no período $T-1$, 1 oferecerá $\delta_2$, ficando com $1 - \delta_2$. Portanto, no período $T-2$, 2 oferecerá $\delta_1(1 - \delta_2)$, e obtendo $1 - \delta_1(1 - \delta_2)$. Antecipando esse resultado, no período $T-3$, teremos de proposta de 1: $\delta_2 (1 - \delta_1(1 - \delta_2))$ para 2 e $1 - \delta_2 (1 - \delta_1(1 - \delta_2))$ para si. No período $T-4$, 2 obterá $1 - \delta1(1 - \delta_2 (1 - \delta_1(1 - \delta_2)))$e assim por diante. Temos então um padrão claro:
+
+Do ponto de vista de 1, no primeiro período ele fará uma proposta que 2 aceitará e obterá:$1 - \delta_2(1 - \delta_1 (1 - \delta_2(1 - \delta_1))) \cdot (\ldots)$.
+
+Vamos supor que $t = 2n$ períodos, de modo a garantir que T é par e 1 joga por último.
+
+Expandindo o produto, temos:
+1. $X_1 = 1 - \delta_2 + \delta_2\delta_1 (1 - \delta_2(1 - \delta_1))) \cdot (\ldots)$
+2. $X_1 = 1 - \delta_2 + \delta_2\delta_1 - \delta_2^2\delta_1(1 - \delta_1))) \cdot (\ldots)$
+3. $X_1 = 1 - \delta_2 + \delta_2\delta_1 - \delta_2^2\delta_1 + \delta_2^2\delta_1^2 \cdot (\ldots)$
+
+Podemos escrever isso como:
+4. $X_1 = 1 - \delta_2\delta_1^0 + \delta_2\delta_1 - \delta_2^2\delta_1 + \delta_2^2\delta_1^2 + \ldots + \delta_2^{2n -1}\delta_1^{2n-1} - \delta_2^{2n}\delta_1^{2n-1}$
+
+Por fim, podemos usar o somatório para reescrever a soma acima:
+
+5. $\sum_{t=0}^{2n-1}(1-\delta_2)(\delta_2\delta_1)^t = (1-\delta_2) \sum_{t=0}^{2n} (\delta_2\delta_1)^t$
+
+A soma de uma P.G. finita é dada por $S_n = \frac{a_1(1 - r^n)}{1-r}$, em que $r$ é a razão. E nossa soma é uma P.G. finita com primeiro termo $1$ e razão $r = \delta_2\delta_1$.
+Logo, temos:
+$\sum_{t=0}^{2n-1} (\delta_2\delta_1)^t = \frac{1(1 - (\delta_2\delta_1)^{2n})}{1-\delta_2\delta_1}$.
+
+Multiplicando pela constante $(1-\delta_2)$:
+
+$(1-\delta_2) \frac{1 - (\delta_2\delta_1)^{2n}}{1-\delta_2\delta_1}$
+
+Se $\delta_1 = \delta_2$, a expressão acima simplifica para:
+
+$(1-\delta) \frac{1 - \delta^{2n}}{1-\delta^2} = \frac{1 - \delta^{2n}}{1 + \delta}$
+
+Quando $n \to \infty$, $\delta^{2n} \to 0$, e a equação fica:
+
+$\frac{1}{1 + \delta}$. E 2, naturalmene, ficará com o complemento, $1 - \frac{1}{1 + \delta} = \frac{\delta}{1 + \delta}$.
+
+## Infinitos períodos
+
+Com infinitos períodos, há múltiplos equilíbrios. Um equilíbrio de Nash, por exemplo, é um em que Serena nas rodadas ímpares sempre oferece $1$ para si e $0$ para Martín, e rejeita todas as ofertas feitas por ele nas rodadas pares exceto se receber $1$. Já Martín, nas rodadas ímpares, sempre oferece $1$ para aSeren e $0$ para si e aceita qualquer proposta de Serena nas rodadas pares. Esse par de estratégias encerra o jogo na rodada inicial e é um equilíbrio de Nash, pois ninguém pode melhorar sua situação, dado o que a outra jogadora está fazendo. Obviamente, não é equilíbrio de Nash Perfeito em Subjogos, pois a ameaça de Serena sempre rejeitar tudo que Martín oferecer não é crível, isto é, não é sequencialmente racional. E nós sabemos que sem racionalidade sequencial não há ENPS.
+
+De fato, se chegarmos no período 2, a estratégia de sempre rejeitar as ofertas de Martín implica que se ele não ofercer $1$ para Serena, ela rejeitará a oferta e iremos para o período 3. Se por acaso ela obtiver $1$ e o jogo acabar, esse payoff terá de ser descontado (em relação ao período 2) em $\delta_1$, de forma que se Martín, no período 2 oferecer um valor maior do que esse payoff descontado(mas menor que 1), naquele subjogo Serena deveria aceitar essa oferta. Por isso que sua estratégia de sempre rejeitar qualquer coisa menor que $1$ não é crível e, portanto, não constituir um ENPS.
+
+### Valor de Continuação
+
+O valor de continuação, definido mais genericamente, é o valor esperado de payoffs ou utilidades futuras, dado o estado atual e a adoção de estratégia ótima do ponto atual em diante.
+
+Em nosso contexto de berganha de Rubinstein, é o valor esperado que uma jogadora irá receber se um acordo não for fechado no período atual (jogando estratégia ótima, isto é, ENPS). Rubinstein (1982) provou que há um único ENPS: quando é chamado a jogar, a jogadora $i$ propõe para si $\frac{1 - \delta_j}{1 - \delta_i\delta_j}$ e para a outra jogadora $\frac{\delta_j(1 - \delta_i)}{1 - \delta_i\delta_j}$. E a jogadora $j$ aceita qualquer proposta maior ou igual a essa.
+
+ 

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Introdução à Teoria dos Jogos para Ciências Sociais</title>
   <meta name="description" content="Introdução à Teoria dos Jogos para Ciências Sociais" />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Introdução à Teoria dos Jogos para Ciências Sociais" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Manoel Galdino" />
 
 
-<meta name="date" content="2024-05-16" />
+<meta name="date" content="2024-06-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,10 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.11/grViz.js"></script>
 
 
 <style type="text/css">
@@ -257,10 +261,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.4" data-path="credibilidade-e-racionalidade-sequencial.html"><a href="credibilidade-e-racionalidade-sequencial.html#equilíbrio-de-nash-perfeito-de-subjogo"><i class="fa fa-check"></i><b>10.4</b> Equilíbrio de Nash Perfeito de Subjogo</a></li>
 <li class="chapter" data-level="10.5" data-path="credibilidade-e-racionalidade-sequencial.html"><a href="credibilidade-e-racionalidade-sequencial.html#exercícios-5"><i class="fa fa-check"></i><b>10.5</b> Exercícios</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="jogos-multi-estágio.html"><a href="jogos-multi-estágio.html"><i class="fa fa-check"></i><b>11</b> Jogos Multi-estágio</a>
+<li class="chapter" data-level="11" data-path="barganha.html"><a href="barganha.html"><i class="fa fa-check"></i><b>11</b> Barganha</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="jogos-multi-estágio.html"><a href="jogos-multi-estágio.html#introdução-3"><i class="fa fa-check"></i><b>11.1</b> Introdução</a></li>
-<li class="chapter" data-level="11.2" data-path="jogos-multi-estágio.html"><a href="jogos-multi-estágio.html#loren-ipson"><i class="fa fa-check"></i><b>11.2</b> loren ipson</a></li>
+<li class="chapter" data-level="11.1" data-path="barganha.html"><a href="barganha.html#introdução-3"><i class="fa fa-check"></i><b>11.1</b> Introdução</a></li>
+<li class="chapter" data-level="11.2" data-path="barganha.html"><a href="barganha.html#jogo-do-ultimato"><i class="fa fa-check"></i><b>11.2</b> Jogo do Ultimato</a></li>
+<li class="chapter" data-level="11.3" data-path="barganha.html"><a href="barganha.html#períodos"><i class="fa fa-check"></i><b>11.3</b> 2 períodos</a></li>
+<li class="chapter" data-level="11.4" data-path="barganha.html"><a href="barganha.html#t-períodos"><i class="fa fa-check"></i><b>11.4</b> T períodos</a></li>
+<li class="chapter" data-level="11.5" data-path="barganha.html"><a href="barganha.html#infinitos-períodos"><i class="fa fa-check"></i><b>11.5</b> Infinitos períodos</a>
+<ul>
+<li class="chapter" data-level="11.5.1" data-path="barganha.html"><a href="barganha.html#valor-de-continuação"><i class="fa fa-check"></i><b>11.5.1</b> Valor de Continuação</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -284,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Introdução à Teoria dos Jogos para Ciências Sociais</h1>
 <p class="author"><em>Manoel Galdino</em></p>
-<p class="date"><em>2024-05-16</em></p>
+<p class="date"><em>2024-06-07</em></p>
 </div>
 <div id="prefácio" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Capítulo1</span> Prefácio<a href="index.html#prefácio" class="anchor-section" aria-label="Anchor link to header"></a></h1>

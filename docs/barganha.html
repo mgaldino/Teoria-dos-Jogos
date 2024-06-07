@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo8 Equilíbrio de Nash em Estratégias Mistas | Introdução à Teoria dos Jogos para Ciências Sociais</title>
-  <meta name="description" content="Capítulo8 Equilíbrio de Nash em Estratégias Mistas | Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <title>Capítulo11 Barganha | Introdução à Teoria dos Jogos para Ciências Sociais</title>
+  <meta name="description" content="Capítulo11 Barganha | Introdução à Teoria dos Jogos para Ciências Sociais" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo8 Equilíbrio de Nash em Estratégias Mistas | Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <meta property="og:title" content="Capítulo11 Barganha | Introdução à Teoria dos Jogos para Ciências Sociais" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo8 Equilíbrio de Nash em Estratégias Mistas | Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <meta name="twitter:title" content="Capítulo11 Barganha | Introdução à Teoria dos Jogos para Ciências Sociais" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="equilíbrio-de-nash.html"/>
-<link rel="next" href="jogos-dinâmicos.html"/>
+<link rel="prev" href="credibilidade-e-racionalidade-sequencial.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -291,377 +291,80 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="equilíbrio-de-nash-em-estratégias-mistas" class="section level1 hasAnchor" number="8">
-<h1><span class="header-section-number">Capítulo8</span> Equilíbrio de Nash em Estratégias Mistas<a href="equilíbrio-de-nash-em-estratégias-mistas.html#equilíbrio-de-nash-em-estratégias-mistas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Considere o jogo “cara” ou “coroa” a seguir. Nesse jogo, dois jogadores escolhem entre cara (heads) ou coroa (tails) ao mesmo tempo. Se as escolhas forem iguais, o Jogador 1 ganha um ponto. Caso contrário, o Jogador 2 ganha um ponto. O objetivo dos jogadores é maximizar sua pontuação.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb2-2"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-2" tabindex="-1"></a><span class="co"># Definindo a matriz de payoff</span></span>
-<span id="cb2-3"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-3" tabindex="-1"></a>payoff.mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>), </span>
-<span id="cb2-4"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-4" tabindex="-1"></a>                     <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, </span>
-<span id="cb2-5"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-5" tabindex="-1"></a>                     <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;Cara&quot;</span>, <span class="st">&quot;Coroa&quot;</span>), </span>
-<span id="cb2-6"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-6" tabindex="-1"></a>                                     <span class="fu">c</span>(<span class="st">&quot;Cara&quot;</span>, <span class="st">&quot;Coroa&quot;</span>)))</span>
-<span id="cb2-7"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-7" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-8" tabindex="-1"></a><span class="co"># Renderizando a tabela de payoff</span></span>
-<span id="cb2-9"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb2-9" tabindex="-1"></a><span class="fu">kable</span>(payoff.mat)</span></code></pre></div>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="right">Cara</th>
-<th align="right">Coroa</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Cara</td>
-<td align="right">1</td>
-<td align="right">-1</td>
-</tr>
-<tr class="even">
-<td align="left">Coroa</td>
-<td align="right">-1</td>
-<td align="right">1</td>
-</tr>
-</tbody>
-</table>
-<p>Esse jogo é similar ao de par ou ímpar, que estamos acostumados</p>
-<p>Exercício 8.1: jogue par ou ímpar com outra pessoa por 5 rodadas.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb3-2"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-2" tabindex="-1"></a><span class="co"># Definindo a matriz de payoff</span></span>
-<span id="cb3-3"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-3" tabindex="-1"></a>payoff.mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>), </span>
-<span id="cb3-4"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-4" tabindex="-1"></a>                     <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>, </span>
-<span id="cb3-5"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-5" tabindex="-1"></a>                     <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;Par&quot;</span>, <span class="st">&quot;Ímpar&quot;</span>), </span>
-<span id="cb3-6"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-6" tabindex="-1"></a>                                     <span class="fu">c</span>(<span class="st">&quot;Par&quot;</span>, <span class="st">&quot;Ímpar&quot;</span>)))</span>
-<span id="cb3-7"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-7" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-8" tabindex="-1"></a><span class="co"># Renderizando a tabela de payoff</span></span>
-<span id="cb3-9"><a href="equilíbrio-de-nash-em-estratégias-mistas.html#cb3-9" tabindex="-1"></a><span class="fu">kable</span>(payoff.mat)</span></code></pre></div>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="right">Par</th>
-<th align="right">Ímpar</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Par</td>
-<td align="right">1</td>
-<td align="right">-1</td>
-</tr>
-<tr class="even">
-<td align="left">Ímpar</td>
-<td align="right">-1</td>
-<td align="right">1</td>
-</tr>
-</tbody>
-</table>
-<p>Após o jogo, podemos perceber que os jogadores possuem interesses opostos e vocês esperam que o outro não consiga antecipar o que você irá fazer. Nesse caso, ele será indiferente entre jogar qualquer uma de suas estratégias, pois esperar que, na média, ambas gerem o mesmo payoff médio.</p>
-<p>Uma estratégia mista é justamente um antidoto contra as tentativas dos outros jogadores advinharem o que você irá fazer. Considere o jogo de tênis. No saque, se seu adversiário antecipar o que você irá fazer, ele terá uma vantagem. Então, você precisa jogar de um jeito que ele não consiga angtecipar ou advinhar suas estratégias.</p>
-<p>Considere o seguinte jogo.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">C</th>
-<th align="left">D</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">A</td>
-<td align="left">(4,25)</td>
-<td align="left">(12,5)</td>
-</tr>
-<tr class="even">
-<td align="left">B</td>
-<td align="left">(16,10)</td>
-<td align="left">(8,15)</td>
-</tr>
-</tbody>
-</table>
-<p>É fácil ver que não há equilíbrio de Nash em estratégias puras. Vocês viram que no jogo do par ou ímpar, o ideal é jogar cada estratégia com 50% de chance. Vamos tentar colocar alguma probabilidade nesse jogo? Que tal 50% para cada estratégia também?</p>
-<p>Vamos calcular o payoff (utilidade) esperado das novas estratégias, para poder preenhcer a nova matriz de payoff aumentada.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">C</th>
-<th align="left">D</th>
-<th align="left">50% C, 50% D</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">A</td>
-<td align="left">(4,25)</td>
-<td align="left">(12,5)</td>
-<td align="left">(8,15)</td>
-</tr>
-<tr class="even">
-<td align="left">B</td>
-<td align="left">(16,10)</td>
-<td align="left">(8,15)</td>
-<td align="left">(12.00,12.50)</td>
-</tr>
-<tr class="odd">
-<td align="left">50% C, 50% D</td>
-<td align="left">(10.00,17.50)</td>
-<td align="left">(10,10)</td>
-<td align="left">(10.00,13.75)</td>
-</tr>
-</tbody>
-</table>
-<p>Vamos calcular o Equilíbrio de Nash, se existe?</p>
-<p>Novamente, não existe equilíbrio de Nash. Lembremos que estamos querendo deixar os jogadores indeferentes entre suas estratégias. Então, devemos procurar probabilidades que os deixem indiferentes. Isso significa que eles não poderão antecipar a estratégia do outro jogador se for um equilíbrio de Nash (é a melhor resposta simultaneamente).</p>
-<p>Como achar essas probabilidades? O payoff esperado de jogar A e B, para o jogador 1 deve ser o mesmo, pois ele é indiferente dado o que o jogador 2 está fazendo. E a estratégia mista de 1 deve deixar 2 indiferente entre jogar C e D.
-Formalmente:
-Se 2 está misturando suas estratpegias para deixar 1 indiferente, então a utilidade esperada de 1 jogar A, dado que 2 está jogando C com probabilidade <span class="math inline">\(p_2c\)</span> e D com probabilidade $ 1 - p_2c$, deve ser a mesma de 1 jogar B, dado que 2 está jogando C com probabilidade <span class="math inline">\(p_2c\)</span> e D com o complemento.</p>
-<p>Para o jogador 1, <span class="math inline">\(E[U(A)] = E[U(B)]\)</span> e para o jogador 2, <span class="math inline">\(E[U(C)] = E[U(D)]\)</span>.
-Como calcular a utilidade esperada de jogar “A”? Suponha que o jogador 1 escolhe a com probabilidade <span class="math inline">\(p_1\)</span>, e B com probabilidade <span class="math inline">\(1-p_2\)</span>. Então:</p>
-<p><span class="math inline">\(E[U(A)] = p_2c*U(A| 2 joga C) + (1-p_2c)*U(A| dado 2 joga D ) = p_2c*4 + (1-p_2c)*12\)</span></p>
-<p><span class="math inline">\(E[U(A)] = p_2c*4 + 12 -p_2c*12 = 12 - 8*p_2c\)</span></p>
-<p><span class="math inline">\(E[U(B)] = p_2c*U(B| 2 joga C) + (1-p_2c)*U(B| dado 2 joga D ) = p_2c*16 + (1-p_2c)*8\)</span></p>
-<p><span class="math inline">\(E[U(B)] = p_2c*16 + 8 -8*p_2c = 8 + 8*p_2c\)</span></p>
-<p>Se 1 está indiferente, então:
-<span class="math inline">\(E[U(A)] = E[U(B)]\)</span></p>
-<p><span class="math inline">\(12 - 8*p_2c = 8 + 8*p_2c\)</span></p>
-<p><span class="math inline">\(12 - 8 = 8*p_2c + 8*p_2c\)</span></p>
-<p><span class="math inline">\(4 = 16*p_2c\)</span></p>
-<p><span class="math inline">\(p_2c = 4/16\)</span></p>
-<p><span class="math inline">\(p_2c = 1/4\)</span></p>
-<p><span class="math inline">\(p_2d = 3/4\)</span></p>
-<p>E agora fazemos a mesma coisa para o jogador 2.
-<span class="math inline">\(E[U(C)] = E[U(D)]\)</span></p>
-<p><span class="math inline">\(p_1a*U(C| 1 joga A) + (1-p_1a)*U(C| dado 1 joga B ) = p_1a*U(D| 1 joga A) + (1-p_1a)*U(B| dado 1 joga B )\)</span></p>
-<p><span class="math inline">\(p_1a*25 + (1-p_1a)*10 = p_1a*5 + (1-p_1a)*15\)</span></p>
-<p><span class="math inline">\(p_1a*25 + 10 -p_1a*10 = p_1a*5 + 15 - p_1a*15\)</span></p>
-<p><span class="math inline">\(p_1a*15 + 10 = 15 - p_1a*10\)</span></p>
-<p><span class="math inline">\(p_1a*25 = 5\)</span></p>
-<p><span class="math inline">\(p_1a = 5/25\)</span></p>
-<p><span class="math inline">\(p_1b = 4/5\)</span></p>
-<p>Nossa matriz agora fica:</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">C</th>
-<th align="left">D</th>
-<th align="left">1/4 C, 3/4 D</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">A</td>
-<td align="left">(4,25)</td>
-<td align="left">(12,5)</td>
-<td align="left">(10,10)</td>
-</tr>
-<tr class="even">
-<td align="left">B</td>
-<td align="left">(16,10)</td>
-<td align="left">(8,15)</td>
-<td align="left">(10.00,13.75)</td>
-</tr>
-<tr class="odd">
-<td align="left">1/5 C, 4/5 D</td>
-<td align="left">(13.60,13.00)</td>
-<td align="left">(8.80,13.00)</td>
-<td align="left">(10,13)</td>
-</tr>
-</tbody>
-</table>
-<p>Podemos ver, em primeiro lugar, que na nova matriz de payoff, 1 é indiferente entre jogar A, B ou sua estratégia mista de equilíbrio se 2 de fato está misturando suas estratégias C e D com as probabilidade de equilíbrio. Notem que ele sempre ganha 10.</p>
-<p>Do mesmo jeito, 2 sempre ganha 13 se 1 está em sua estratégia mista.
-Por fim, vemos que ambas são estratégias de equilíbrio de Nash. E, nesse caso, a única estratégia mista (ou pura) de equilíbrio.</p>
-<p>Vamos agora fazer o mesmo exercício para o jogo do par ou ímpar e para pedra, papel tesoura.</p>
-<p>Aplicação em ciência política.</p>
-<p>Suponha duas candidatas, 1 e 2, que devem decidir onde alocar seus dias finais de campanha, seja no estado A ou estado B, nos EUA. As pesquisas indicam que esses são os estados que podem decidir a batalha. Suponha que as probabilidades de cada candidata ganhar a eleição são dadas como segue:</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">A</th>
-<th align="left">B</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">A</td>
-<td align="left">(0.5,0.5)</td>
-<td align="left">(0.9,0.1)</td>
-</tr>
-<tr class="even">
-<td align="left">B</td>
-<td align="left">(0.9,0.1)</td>
-<td align="left">(0.6,0.6)</td>
-</tr>
-</tbody>
-</table>
-<p>Vamos calcular o ENEM (Eq. Nash em Estratégias Mistas)?</p>
-<p>Ambas vão para A com prob 3/7 (aprox. 0.43) e B com prob 4/7 (aprox. 0.57).</p>
-<p>Agora, suponha que, antes de implementar essas estratégias, novas pesquisas saem e a probabilidade muda. Se 1 for para B sozinha, sua prob é .7 e não .9. Isso é conhecimento comum. Portanto, isso poderia nos levar a crer que ela deveria gastar mais tempo em A, ou aumentar a probabilidade de ir para A. Mas os novos equilíbrios indicam que 1 agora vai para A com pob 1/5 e visitar b com 4/5. Isso porque 2 vai mudar sua estratégia e aumentar a prob de visitar A (de 3/7 para 3/5). E se ambos vão para A, a prob de 1 ganhar é menor do que se ela for para B sozinha.</p>
-<p>Esse tipo de coisa acontece com frequência em esportes. Um jogador veterano atacante se machuca e alguém das divisões de base entra no lugar. E aí, ele comeca a receber mais passes e tem mais oportunidades de gol e, por isso, marca mais gols do que o veterano. Ocorre que, como ele tem menos chance de criar jogadas e fazer gols, é melhor deixar ele mais livre e marcar outros jogadores. Isso aumenta a chance de gol do novato, mas diminui a de todos os outros jogadores. Então, embora ele esteja marcando mais gols que o veterano, o time no geral estará com desempenho pior.</p>
-<div id="pedra-papel-tesoura" class="section level2 hasAnchor" number="8.1">
-<h2><span class="header-section-number">8.1</span> Pedra-papel-tesoura<a href="equilíbrio-de-nash-em-estratégias-mistas.html#pedra-papel-tesoura" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Considere o jogo pedra-papel-tesoura. Assuma que vencer gera um payoff de 1, empate 0 e perder de -1. A matriz de payoff pode ser representada do seguinte modo:</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">Pedra</th>
-<th align="left">Papel</th>
-<th align="left">Tesoura</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Pedra</td>
-<td align="left">(0,0)</td>
-<td align="left">(-1,1)</td>
-<td align="left">(1,-1)</td>
-</tr>
-<tr class="even">
-<td align="left">Papel</td>
-<td align="left">(1,-1)</td>
-<td align="left">(0,0)</td>
-<td align="left">(-1,1)</td>
-</tr>
-<tr class="odd">
-<td align="left">Tesoura</td>
-<td align="left">(-1,1)</td>
-<td align="left">(1,-1)</td>
-<td align="left">(0,0)</td>
-</tr>
-</tbody>
-</table>
-<p>A correspondência de melhor resposta do jogador 1 para suas crenças a respeito do jogador 2 pode ser escrita da seguinte forma:
-<span class="math inline">\(s_1(s_2) =\)</span> Papel quando <span class="math inline">\(s_2 = Pedra\)</span>
-<span class="math inline">\(s_1(s_2) =\)</span> Tesoura quando <span class="math inline">\(s_2 = Papel\)</span>
-<span class="math inline">\(s_1(s_2) =\)</span> Pedra quando <span class="math inline">\(s_2 = Tesoura\)</span></p>
-<p>E de maneira análoga para o jogador 2. É fácil ver que não existe equilíbrio de Nahs em estratégias puras nesse jogo. Raciocínios do tipo: “se ele acha que vou jogar pedra, então ele jogará papel, de forma que devo jogar tesoura. Porém, se ele antecipar isso, ele jogará pedra, de forma que devo jogar papel. Mas ele pode antecipar isso também e jogar tesoura, mas aí eu jogo pedra…” leva a uma regressão que nunca terminará. Em certo sentido, tanto faz o que você joga, porque não é possível advinhar o que você o outro jogador irá fazer. Mas dizer tanto faz pode ser pensado como se você aleatorizasse e jogasse cada uma das três ações com a mesma probabilidade <span class="math inline">\(1/3\)</span>, e o mesmo o jogador 2. Nesse caso, dizemos que os jogadores estão jogando uma estratégia mista. Neste caso em particular, joga cada uma das t^Res ações com probabilidade <span class="math inline">\(1/3\)</span>.</p>
-<p>Definição do Ronaldo Fiani (p. 192):</p>
-<p>Quando, em vez de escolher entre suas estratégias uma dada estratégia para jogá-la com certeza, um jogador decide alternar entre suas estratégias aleatoriamente, atribuindo uma probabilidade a cada estratégia a ser escolhida, diz-se que o jogador utiliza estratégias mistas. Caso contrário, diz-se que emprega estratégias puras.</p>
-<p>Nós vamos definir estratégias mistas da seguinte forma:
-Se o conjunto de estrartégias disponíveis para um jogador é <span class="math inline">\(S = (s_1, s_2, ..., s_m)\)</span>, então uma estratégia mista para aquele jogador é uma loteria sobre <span class="math inline">\(S\)</span>, <span class="math inline">\(p = (p_1, p_2, ..., p_m)\)</span>. Diz-se que o jogador escolheu a estratégia <span class="math inline">\(p\)</span> se ele usa esta loteria para determinar qual estratégia pura irá implementar no jogo.</p>
-<p>Em outras plavras, uma estratégia mista é uma distribuição de probabilidade que determina como uma estratégia pura será jogada por meio da realização dessa distribuição.</p>
-<p>Definição 8.1.
-Se um conjunto de estatégias disponíveis para um jogador é <span class="math inline">\(S = {s_1, s_2, ..., s_n}\)</span>, então uma <strong>estratégia mista</strong> para aquele jogador é uma loteria sobre <span class="math inline">\(S\)</span>, <span class="math inline">\(p = (p_1, p_2, ..., p_n)\)</span>. Diz-se que o jogador escolhe essa estratégia <span class="math inline">\(p\)</span> se ele usa essa loteria para determinar que estratégia pura irá implmentar quando de fato jogar o jogo.</p>
+<div id="barganha" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Capítulo11</span> Barganha<a href="barganha.html#barganha" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introdução-3" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Introdução<a href="barganha.html#introdução-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>O jogo do ultimato é talvez o jogo mais simples de barganha que existe. No entanto, ele é útil porque pode ser generalizado e trazer <em>insights</em> úteis.</p>
 </div>
-<div id="exercícios-4" class="section level2 hasAnchor" number="8.2">
-<h2><span class="header-section-number">8.2</span> Exercícios<a href="equilíbrio-de-nash-em-estratégias-mistas.html#exercícios-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="exercise">
-<p><span id="exr:unnamed-chunk-61" class="exercise"><strong>Exercise 8.1  </strong></span>Qual o equilíbrio de Nash em Estratégias Mistas (ENEM) do Dilema do Prisioneiro?</p>
+<div id="jogo-do-ultimato" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Jogo do Ultimato<a href="barganha.html#jogo-do-ultimato" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>O jogo do ultimato consiste no seguinte. Serena e Martín precisam decidir como dividir um pedaço de bolo de tamanho <span class="math inline">\(1\)</span>. O pai informa que primeiro Serena fará uma proposta de divisão de <span class="math inline">\(X\)</span> para ela e <span class="math inline">\(1-X\)</span> para Martín. Se a proposta for aceita, o bolo é dividido daquela forma. Se for negada, ninguém fica com o bolo (porque não chegaram a um acordo).</p>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-800cfc6131085e9cce69" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-800cfc6131085e9cce69">{"x":{"diagram":"\ndigraph ultimatum_game {\n  rankdir=LR;\n  node [shape=rectangle, style=filled, fillcolor=lightgrey];\n\n  Start [label=\"Início\"];\n  Serena [label=\"Serena faz uma proposta\"];\n  Accept [label=\"(X, 1-X)\"];\n  Reject [label=\"(0,0)\"];\n\n  Start -> Serena [label=\"Proposta de Serena\"];\n  Serena -> Accept [label=\"Proposta Aceita\"];\n  Serena -> Reject [label=\"Proposta Rejeitada\"];\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p>É fácil ver que a proposta <span class="math inline">\((1,0)\)</span>, isto é, Serena pega todo o bolo e Martín fica sem nada é um equilíbrio de Nash, pois nem Serena nem Martín podem melhorar unilateralmente.</p>
 </div>
-<div class="exercise">
-<p><span id="exr:unnamed-chunk-62" class="exercise"><strong>Exercise 8.2  </strong></span>Qual o equilíbrio de Nash em Estratégias Mistas (ENEM)do jogo do Chicken??</p>
+<div id="períodos" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> 2 períodos<a href="barganha.html#períodos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Vamos modificar o jogo do ultimato e admitir que se alguém não gosta da proposta da outra pessoa, pode fazer uma contraproposta, sempre de maneira alternada. Porém, o jogo acaba em até <span class="math inline">\(T\)</span> rodadas se um acordo não for alcançado e ninguém fica com o bolo neste caso.</p>
+<p>Como existe passagem de tempo, precisamos descontar o futuro. Vamos assumir que ambos Serena e Martín descontam o futuro em <span class="math inline">\(0 &lt; \delta_i &lt; 1\)</span>, isto é, um acordo alcançado no período <span class="math inline">\(t\)</span> com uma parcela <span class="math inline">\(s_i\)</span> gera um payoff ou utilidade equivalente a <span class="math inline">\(s_i \delta_i^{t-1}\)</span> no presente.</p>
+<p>Exercício: desenhe a árvore do jogo para dois períodos.</p>
+<p>O Equilíbrio de Nash Pefeito em Subjogo pode ser achado por indução reversa. Vamos antes chamar Serena de jogadora 1 e Martín de jogador 2.</p>
+<p>No período 2 (o último), temos um novo jogo do ultimato, e Martín irá oferecer todo o bolo para si e nada para Serena, e isso é um equilíbrio de Nash. Designando a oferta no período <span class="math inline">\(t\)</span> por <span class="math inline">\(x_t\)</span>, e considerando a oferta é <span class="math inline">\(x_2 = 0\)</span> e <span class="math inline">\(1 - x_2 = 1\)</span>. Gerando um payoff de <span class="math inline">\((0, 1)\)</span>. No período 1, sabendo disso, Serena irá oferecer <span class="math inline">\(\delta_2\)</span> para Martín <span class="math inline">\(1 - \delta_2\)</span> para e ele aceita e o jogo acaba. As estratégias de equilíbrio são: Serena oferta <span class="math inline">\(1 - \delta_2\)</span> para ela, e Martín aceita qualquer oferta <span class="math inline">\(geq \delta_2\)</span> e rejeita se for menor, caso em que propõe <span class="math inline">\(x_1 = 0\)</span> e Serena aceita qualquer oferta no período 2.</p>
 </div>
-<div class="exercise">
-<p><span id="exr:unnamed-chunk-63" class="exercise"><strong>Exercise 8.3  </strong></span>Para as perguntas abaixo, considere o seguinte jogo representado na forma estratégica:
-a) Existe algum equilíbrio de Nash em Estratégias Puras (ENEP)? Se sim, qual (ou quais)?
-b) Quantos equilíbrios de Nash em estratégias mistas existem?</p>
-</div>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">Esquerda</th>
-<th align="left">Centro</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Alto</td>
-<td align="left">(3,3)</td>
-<td align="left">(3,3)</td>
-</tr>
-<tr class="even">
-<td align="left">Baixo</td>
-<td align="left">(3,3)</td>
-<td align="left">(3,3)</td>
-</tr>
-</tbody>
-</table>
-<div class="exercise">
-<p><span id="exr:unnamed-chunk-64" class="exercise"><strong>Exercise 8.4  </strong></span>Considere o seguinte jogo representado na forma estratégica para as perguntas abaixo:
-a) Existe algum equilíbrio de Nash em Estratégias Puras (ENEP)? Se sim, qual (ou quais)?</p>
-<ol start="2" style="list-style-type: lower-alpha">
-<li><p>Existe ENEM em que os jogadores aleatorizam entre A e B? Explique.</p></li>
-<li><p>Existe ENEM em que os jogadores aleatorizam entre B e c? Explique.</p></li>
+<div id="t-períodos" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> T períodos<a href="barganha.html#t-períodos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Considere agora o caso para T períodos, para <span class="math inline">\(T &lt; \infty\)</span>, isto é, <span class="math inline">\(T\)</span> finito. Assuma que <span class="math inline">\(T = 2n\)</span>, isto é, <span class="math inline">\(T\)</span> é par. No último período, <span class="math inline">\(T\)</span>, 2 pegará todo o bolo para si e nada para 1, que aceitará a proposta, formando um equilíbrio.</p>
+<p>Sabendo disso, no período <span class="math inline">\(T-1\)</span>, 1 oferecerá <span class="math inline">\(\delta_2\)</span>, ficando com <span class="math inline">\(1 - \delta_2\)</span>. Portanto, no período <span class="math inline">\(T-2\)</span>, 2 oferecerá <span class="math inline">\(\delta_1(1 - \delta_2)\)</span>, e obtendo <span class="math inline">\(1 - \delta_1(1 - \delta_2)\)</span>. Antecipando esse resultado, no período <span class="math inline">\(T-3\)</span>, teremos de proposta de 1: <span class="math inline">\(\delta_2 (1 - \delta_1(1 - \delta_2))\)</span> para 2 e <span class="math inline">\(1 - \delta_2 (1 - \delta_1(1 - \delta_2))\)</span> para si. No período <span class="math inline">\(T-4\)</span>, 2 obterá <span class="math inline">\(1 - \delta1(1 - \delta_2 (1 - \delta_1(1 - \delta_2)))\)</span>e assim por diante. Temos então um padrão claro:</p>
+<p>Do ponto de vista de 1, no primeiro período ele fará uma proposta que 2 aceitará e obterá:<span class="math inline">\(1 - \delta_2(1 - \delta_1 (1 - \delta_2(1 - \delta_1))) \cdot (\ldots)\)</span>.</p>
+<p>Vamos supor que <span class="math inline">\(t = 2n\)</span> períodos, de modo a garantir que T é par e 1 joga por último.</p>
+<p>Expandindo o produto, temos:
+1. <span class="math inline">\(X_1 = 1 - \delta_2 + \delta_2\delta_1 (1 - \delta_2(1 - \delta_1))) \cdot (\ldots)\)</span>
+2. <span class="math inline">\(X_1 = 1 - \delta_2 + \delta_2\delta_1 - \delta_2^2\delta_1(1 - \delta_1))) \cdot (\ldots)\)</span>
+3. <span class="math inline">\(X_1 = 1 - \delta_2 + \delta_2\delta_1 - \delta_2^2\delta_1 + \delta_2^2\delta_1^2 \cdot (\ldots)\)</span></p>
+<p>Podemos escrever isso como:
+4. <span class="math inline">\(X_1 = 1 - \delta_2\delta_1^0 + \delta_2\delta_1 - \delta_2^2\delta_1 + \delta_2^2\delta_1^2 + \ldots + \delta_2^{2n -1}\delta_1^{2n-1} - \delta_2^{2n}\delta_1^{2n-1}\)</span></p>
+<p>Por fim, podemos usar o somatório para reescrever a soma acima:</p>
+<ol start="5" style="list-style-type: decimal">
+<li><span class="math inline">\(\sum_{t=0}^{2n-1}(1-\delta_2)(\delta_2\delta_1)^t = (1-\delta_2) \sum_{t=0}^{2n} (\delta_2\delta_1)^t\)</span></li>
 </ol>
+<p>A soma de uma P.G. finita é dada por <span class="math inline">\(S_n = \frac{a_1(1 - r^n)}{1-r}\)</span>, em que <span class="math inline">\(r\)</span> é a razão. E nossa soma é uma P.G. finita com primeiro termo <span class="math inline">\(1\)</span> e razão <span class="math inline">\(r = \delta_2\delta_1\)</span>.
+Logo, temos:
+<span class="math inline">\(\sum_{t=0}^{2n-1} (\delta_2\delta_1)^t = \frac{1(1 - (\delta_2\delta_1)^{2n})}{1-\delta_2\delta_1}\)</span>.</p>
+<p>Multiplicando pela constante <span class="math inline">\((1-\delta_2)\)</span>:</p>
+<p><span class="math inline">\((1-\delta_2) \frac{1 - (\delta_2\delta_1)^{2n}}{1-\delta_2\delta_1}\)</span></p>
+<p>Se <span class="math inline">\(\delta_1 = \delta_2\)</span>, a expressão acima simplifica para:</p>
+<p><span class="math inline">\((1-\delta) \frac{1 - \delta^{2n}}{1-\delta^2} = \frac{1 - \delta^{2n}}{1 + \delta}\)</span></p>
+<p>Quando <span class="math inline">\(n \to \infty\)</span>, <span class="math inline">\(\delta^{2n} \to 0\)</span>, e a equação fica:</p>
+<p><span class="math inline">\(\frac{1}{1 + \delta}\)</span>. E 2, naturalmene, ficará com o complemento, <span class="math inline">\(1 - \frac{1}{1 + \delta} = \frac{\delta}{1 + \delta}\)</span>.</p>
 </div>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">A</th>
-<th align="left">B</th>
-<th align="left">C</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">A</td>
-<td align="left">(4,4)</td>
-<td align="left">(0,5)</td>
-<td align="left">(-1,0)</td>
-</tr>
-<tr class="even">
-<td align="left">B</td>
-<td align="left">(5,0)</td>
-<td align="left">(1,1)</td>
-<td align="left">(0,0)</td>
-</tr>
-<tr class="odd">
-<td align="left">C</td>
-<td align="left">(0,-1)</td>
-<td align="left">(0,0)</td>
-<td align="left">(1,1)</td>
-</tr>
-</tbody>
-</table>
-<div class="exercise">
-<p><span id="exr:unnamed-chunk-65" class="exercise"><strong>Exercise 8.5  </strong></span>Uma funcionária (jogadora 1) que trabalha para uma chefe (jogadora 2) pode tanto trabalhar (T) quanto enrolar (E), enquanto sua chefe pode tanto monitorar a funcionária (M) quanto ignorá-la (I). Como em muitos relacionamentos entre funcionária e chefe, se a funcionária estiver trabalhando, a chefe prefere não monitorá-la, mas se a chefe não estiver monitorando, a funcionária prefere enrolar. A matriz de payoff abaixo representa uma situação como essa. Responda às seguintes perguntas:</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>escreva a fução de melhor resposta de cada jogadora (isto é, para a jogadora 1, qual probabilidade <span class="math inline">\(p\)</span> ela deve escolher para cada possível escolha de probabilidade <span class="math inline">\(q\)</span> da jogadora 2).</p></li>
-<li><p>qual o equilíbrio de Nash do jogo?</p></li>
-</ol>
-</div>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">M</th>
-<th align="left">I</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">T</td>
-<td align="left">(1,1)</td>
-<td align="left">(1,2)</td>
-</tr>
-<tr class="even">
-<td align="left">E</td>
-<td align="left">(0,2)</td>
-<td align="left">(2,1)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="referências-2" class="section level2 hasAnchor" number="8.3">
-<h2><span class="header-section-number">8.3</span> Referências<a href="equilíbrio-de-nash-em-estratégias-mistas.html#referências-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Gauriot, R., Page, L., &amp; Wooders, J. (2023). Expertise, gender, and equilibrium play. Quantitative Economics, 14(3), 981-1020.</p>
+<div id="infinitos-períodos" class="section level2 hasAnchor" number="11.5">
+<h2><span class="header-section-number">11.5</span> Infinitos períodos<a href="barganha.html#infinitos-períodos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Com infinitos períodos, há múltiplos equilíbrios. Um equilíbrio de Nash, por exemplo, é um em que Serena nas rodadas ímpares sempre oferece <span class="math inline">\(1\)</span> para si e <span class="math inline">\(0\)</span> para Martín, e rejeita todas as ofertas feitas por ele nas rodadas pares exceto se receber <span class="math inline">\(1\)</span>. Já Martín, nas rodadas ímpares, sempre oferece <span class="math inline">\(1\)</span> para aSeren e <span class="math inline">\(0\)</span> para si e aceita qualquer proposta de Serena nas rodadas pares. Esse par de estratégias encerra o jogo na rodada inicial e é um equilíbrio de Nash, pois ninguém pode melhorar sua situação, dado o que a outra jogadora está fazendo. Obviamente, não é equilíbrio de Nash Perfeito em Subjogos, pois a ameaça de Serena sempre rejeitar tudo que Martín oferecer não é crível, isto é, não é sequencialmente racional. E nós sabemos que sem racionalidade sequencial não há ENPS.</p>
+<p>De fato, se chegarmos no período 2, a estratégia de sempre rejeitar as ofertas de Martín implica que se ele não ofercer <span class="math inline">\(1\)</span> para Serena, ela rejeitará a oferta e iremos para o período 3. Se por acaso ela obtiver <span class="math inline">\(1\)</span> e o jogo acabar, esse payoff terá de ser descontado (em relação ao período 2) em <span class="math inline">\(\delta_1\)</span>, de forma que se Martín, no período 2 oferecer um valor maior do que esse payoff descontado(mas menor que 1), naquele subjogo Serena deveria aceitar essa oferta. Por isso que sua estratégia de sempre rejeitar qualquer coisa menor que <span class="math inline">\(1\)</span> não é crível e, portanto, não constituir um ENPS.</p>
+<div id="valor-de-continuação" class="section level3 hasAnchor" number="11.5.1">
+<h3><span class="header-section-number">11.5.1</span> Valor de Continuação<a href="barganha.html#valor-de-continuação" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>O valor de continuação, definido mais genericamente, é o valor esperado de payoffs ou utilidades futuras, dado o estado atual e a adoção de estratégia ótima do ponto atual em diante.</p>
+<p>Em nosso contexto de berganha de Rubinstein, é o valor esperado que uma jogadora irá receber se um acordo não for fechado no período atual (jogando estratégia ótima, isto é, ENPS). Rubinstein (1982) provou que há um único ENPS: quando é chamado a jogar, a jogadora <span class="math inline">\(i\)</span> propõe para si <span class="math inline">\(\frac{1 - \delta_j}{1 - \delta_i\delta_j}\)</span> e para a outra jogadora <span class="math inline">\(\frac{\delta_j(1 - \delta_i)}{1 - \delta_i\delta_j}\)</span>. E a jogadora <span class="math inline">\(j\)</span> aceita qualquer proposta maior ou igual a essa.</p>
 
 </div>
 </div>
+</div>
+
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="equilíbrio-de-nash.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="jogos-dinâmicos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="credibilidade-e-racionalidade-sequencial.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -692,7 +395,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/mgaldino/Teoria-dos-Jogos/edit/main/08-ENEM.Rmd",
+"link": "https://github.com/mgaldino/Teoria-dos-Jogos/edit/main/11-Jogos-dinamicos-multiestagio.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -700,7 +403,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/mgaldino/Teoria-dos-Jogos/blob/main/08-ENEM.Rmd",
+"link": "https://github.com/mgaldino/Teoria-dos-Jogos/blob/main/11-Jogos-dinamicos-multiestagio.Rmd",
 "text": null
 },
 "download": null,

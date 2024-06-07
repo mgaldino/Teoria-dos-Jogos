@@ -128,6 +128,10 @@ racionalidade-sequencial-e-indução-reversa
 subjogo
 equilíbrio-de-nash-perfeito-de-subjogo
 exercícios-5
-jogos-multi-estágio
+barganha
 introdução-3
-loren-ipson
+jogo-do-ultimato
+períodos
+t-períodos
+infinitos-períodos
+valor-de-continuação
