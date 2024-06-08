@@ -135,3 +135,15 @@ períodos
 t-períodos
 infinitos-períodos
 valor-de-continuação
+modelo-de-baron-ferejohn-de-bargana-legislativa
+ultimato-legislativo
+estratégias-fracamente-dominadas
+equilíbrio-no-ultimato-legislativo
+exercício-para-o-leitor.
+modelo-de-dois-períodos
+horizonte-infinito
+equilíbrio-estacionário
+equilíbrio-do-jogo-infinito
+aplicações
+formação-de-governos-parlamentaristas
+take-away

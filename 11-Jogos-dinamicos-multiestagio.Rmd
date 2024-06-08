@@ -96,4 +96,66 @@ O valor de continuação, definido mais genericamente, é o valor esperado de pa
 
 Em nosso contexto de berganha de Rubinstein, é o valor esperado que uma jogadora irá receber se um acordo não for fechado no período atual (jogando estratégia ótima, isto é, ENPS). Rubinstein (1982) provou que há um único ENPS: quando é chamado a jogar, a jogadora $i$ propõe para si $\frac{1 - \delta_j}{1 - \delta_i\delta_j}$ e para a outra jogadora $\frac{\delta_j(1 - \delta_i)}{1 - \delta_i\delta_j}$. E a jogadora $j$ aceita qualquer proposta maior ou igual a essa.
 
- 
+## Modelo de Baron Ferejohn de Bargana legislativa
+
+Em artigo de 1989 publicado na APSR, Baron e Ferejohn (BF daqui por diante) desenvolveram um modelo que se tornou canônico para pensar barganhas legislativas. Claramente inspirado no modelo de Rubinstein, adapta-o para o contexto do legislativo.
+
+O modelo de BF considera, como no caso de Rubinstein, como pode ser feita a distribuição de um recurso ou excedente, que é comumente referida como distribuição de um bolo de tamanho $1$. E de maneira similar ao que fizemos no caso do Rubinstein, nossa exposição se iniciará com um jogo do ultimato legislativo (um período), depois depois períodos e por fim com horizonte infinito.
+
+## Ultimato Legislativo
+
+Considere uma legislatura com $n \geq 3$, com $n$ ímpar (para facilitar desempate), indexe os legisladores em $i = 1, 2, \ldots, n$ que adota regra da maioria para deicisões legislativa (isto é, é necessário pelo menos $\frac{n+1}{2}$ votos). Uma regra de reconhecimento determina quem pode fazer uma proposta legislativa de distribuição do bolo entre os membros. Procurando modelar a ideia de que esse processo é imprevisível, os autores tratam esse fato como exógeno, por meio de uma distribuição de probabilidade, isto é, cada membrro $i$ do legislativo possui uma probabilidade $p_i$ de ser reconhecido como proponente, com $\sum_{i=1}^n p_i = 1$.
+
+Quem é escolhido faz uma proposta de distribuição do recurso $x^i = (x_1, x_2, \ldots, x_n)$, com $\sum_{i=1}^n x_i = 1$. Se a proposta é aceita, cada legislador recebe uma utilidade igual ao valor proposto para ele, isto é, $u_i = x_i$. Se a proposta for rejeitada, ele recebe um status quo, dada por $\underline{x} = (\underline{x}_1, \underline{x}_2,  \ldots, \underline{x}_n)$, em que $\sum_{i=1}^n \underline{x}_i < 1$, isto é, há menos recursos sendo distribuídos. Em particular, podemos considerar, como no modelo de Rubinstein, que $\sum_{i=1}^n \underline{x}_i = 0$, ou seja, todos recebem zero. E denotamos por $V_i$ a utilidade esperada em equilíbrio para cada legislador $i$, ou seja, será o valor de continuação do jogo em modelos de mais de um período.
+
+
+### Estratégias fracamente dominadas
+
+Uma pressuposição comum em modelos de votação é a de que os votantes (sejam eleitores ou, como aqui, legisladores) jogam estratégias fracamente dominadas. Em um contexto de modelo de teorema do eleitor mediano com dois partidos, por exemplo, essa suposição implica que voto estratégico e sincero são equivalentes. Com voto sincero, eleitores sempre votam pelo partido com plataforma mais próxima do seu ponto ideal. A importância de excluir equilíbrio em que jogadores jogam estratégias fracamente dominadas fica claro com o seguinte exemplo. Imagine dois partidos com plataformas distintas. Se os eleitores não forem pivô, seu voto não importa e não muda o resultado. Isso significa que se todos os eleitores votarem por um dos partidos, nenhum deles é pivô e, portanto, não pode melhorar unilateralmente, constituindo portanto um equilíbrio de Nash. Para evitar esse tipo de resultado se eleitores são estratégicos (ao contrário de sinceros), temos de excluir a possibilidade de jogarem estratégias fracamente dominadas, isto é, eleitores votam como se fossem pivôs (ou, o que dá no mesmo, sinceramente).
+
+Baron e Ferejohn adotam suposição similar, ou seja, legisladores votam como se fossem pivô, de modo que eliminamos um equilíbrio em que todo mundo vota a favor de uma proposta em que o proponente ganha todo o bolo, pois nenhum é pivô e, portanto, não podem melhorar desviando unilateralmente, dado o que todos os demais estão fazendo.
+
+### Equilíbrio no ultimato legislativo
+
+Como o jogo possui apenas uma rodada, quem quer que seja escolhido pode propor o mínimo possível para obter $\frac{n-1}{2}$ votos, e fica com o restante pa si, formando assim uma **mínima coalizão vencedora**. Em outras palavras, basta oferecer $x_i = \underline{x}_i$ para os $\frac{n-1}{2}$ legisladores com os menores valores de $\underline{x}$. No caso particular em que $\underline{x}_i = 0$ para todo $i$, o proponente toma todo o recurso para si e isso é um equilíbrio de Nash.
+
+### Exercício para o leitor.
+
+Considere uma legislatura com $n = 3$ e $\underline{x} = (.1, .2, .1)$. Assuma igual probabilidade de reconhecimento. Calcule o $V_i$ para as três legisladoras, a partir da utilidade esperada em cada cenário em que $1$, $2$ ou $3$ seja reconhecida. No caso de $2$, assuma que ela faz coalizão com $1$ com probabilidade $.5$, e coalizão com $3$ com probabilidade $.5$ (isto é, joga uma estratégia mista). Verifique que as utilidades são uma função das características de todas as legisladores ($_pi$ e $\underline{x}$).
+
+## Modelo de dois períodos
+
+Agora vamos estender o modelo para dois períodos. Se uma proposta não for aprovada no primeiro período, uma nova pessoa é sorteada (possivelmente a mesma de antes) para ser a proponente no segundo período, de acordo com as mesmas probabilidades de antes. Legisladoras descontam o futuro por $\delta_i$, e de maneira simplifcada, $\delta_i = \delta$. Se nenhuma política for aprovada ao final do segundo período, recebem o status quo $\underline{x} = (\underline{x}_1, \underline{x}_2,  \ldots, \underline{x}_n)$, em particular $x_i = 0$ para todo $i$. E denotamos por $V_{it}$ o valor de continuação do jogo no período $t$, isto é, a utilidade esperada em equilíbrio.
+
+Utilizando indução reversa, como na barganha de Rubinstein, verificamos que no segundo período temos o jogo do ultimato legislativo e a proponente obtém tudo para si. No primeiro período, se a proposta não for aprovada, e antes de alguém ser escolhida para fazer nova proposta, a utilidade esperada $V_{it} = \delta/n$ para todas as legisladores. Logo, no período 1, a proponente precisa oferecer apenas $\delta/n$ para $\frac{n-1}{2}$ legisladoras e retém $1 - \frac{(n-1)}{2}\frac{\delta}{n} > \frac{1}{2}$.
+
+E qual a utilidade esperada no período $1$, isto é, $V_{i1}$? Assumindo que todas as legisladores podem ser escolhidas para fazer parte da coalizão vencedora com igual probabilidade, então o valor de continuação no período 1 é o ganho se for reconhecida como proponente (com probabilidade $1/n$) mais o ganho se fizer parte da coalizão vencedora (com probabilidade $1/2$ e com probabilidade $\frac{(n-1)}{n}$ de não ser proponente, isto é, probabilidade conjunta $\frac{(n-1)}{n} \frac{1}{2}$):
+
+$V_{i1} = \frac{1}{n}[1 - \frac{(n-1)}{2}\frac{\delta}{n}] + \frac{(n-1)}{n} \frac{1}{2} \frac{\delta}{n} = \frac{1}{n}$.
+
+Portanto, a utilidade esperada é a mesma do jogo do ultimato, o que se estende a todos os jogos finitos com número arbitrários de períodos. Esse resultado é diferente da barganha de Rubinstein, e a razão é que lá as proponentes são alternadas, e aqui, em cada período, todas têm a mesma probabilidade de propor.
+
+## Horizonte infinito
+
+No modelo de horizonte infinito, o jogo continua indefinidamente enquanto uma proposta não for aprovada. BF adotam um refinamento no conceito de equilíbrio em relação ao já tradicional Equilíbrio de Nash Perfeito em Subjogos, pois há múltiplos equilíbrios. Então supõem que estratégias são estacionárias, obtendo assim Equilíbrio de Nash Perfeito em Subjogos Estacionário.
+
+### Equilíbrio Estacionário
+
+Explicar.
+
+### Equilíbrio do jogo infinito
+
+Falar que é o mesmo equilíbrio do jogo finito.
+
+## Aplicações
+
+### Formação de governos parlamentaristas
+
+Considere três partidos, A, B e C, em que A obteve $45\%$ das cadeiras, B obteve $35\%$ e C $20\%$. Qual o valor de continuação do jogo de cada partido?
+
+## Take away
+
+O poder de propor ou controlar a agenda é uma dimensão importante do poder. 
+
+Podemos definir a quantidade de poder de um agente como a quantidade de recursos de um bolo de tamanho $1$ que esse agente espera obter em equilíbrio. Vemos que no modelo de BF, a proponente obtém mais de 50% do bolo, enquanto as demais esperam obter $\delta/n$. Em um parlamento com $101$ legisladoras, por exemplo, e considerando $\delta = 1$, isso significa $1\%$. Então a proponente é 50x mais poderosa.
+

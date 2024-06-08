@@ -23,7 +23,7 @@
 <meta name="author" content="Manoel Galdino" />
 
 
-<meta name="date" content="2024-06-07" />
+<meta name="date" content="2024-06-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -271,6 +271,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="11.5.1" data-path="barganha.html"><a href="barganha.html#valor-de-continuação"><i class="fa fa-check"></i><b>11.5.1</b> Valor de Continuação</a></li>
 </ul></li>
+<li class="chapter" data-level="11.6" data-path="barganha.html"><a href="barganha.html#modelo-de-baron-ferejohn-de-bargana-legislativa"><i class="fa fa-check"></i><b>11.6</b> Modelo de Baron Ferejohn de Bargana legislativa</a></li>
+<li class="chapter" data-level="11.7" data-path="barganha.html"><a href="barganha.html#ultimato-legislativo"><i class="fa fa-check"></i><b>11.7</b> Ultimato Legislativo</a>
+<ul>
+<li class="chapter" data-level="11.7.1" data-path="barganha.html"><a href="barganha.html#estratégias-fracamente-dominadas"><i class="fa fa-check"></i><b>11.7.1</b> Estratégias fracamente dominadas</a></li>
+<li class="chapter" data-level="11.7.2" data-path="barganha.html"><a href="barganha.html#equilíbrio-no-ultimato-legislativo"><i class="fa fa-check"></i><b>11.7.2</b> Equilíbrio no ultimato legislativo</a></li>
+<li class="chapter" data-level="11.7.3" data-path="barganha.html"><a href="barganha.html#exercício-para-o-leitor."><i class="fa fa-check"></i><b>11.7.3</b> Exercício para o leitor.</a></li>
+</ul></li>
+<li class="chapter" data-level="11.8" data-path="barganha.html"><a href="barganha.html#modelo-de-dois-períodos"><i class="fa fa-check"></i><b>11.8</b> Modelo de dois períodos</a></li>
+<li class="chapter" data-level="11.9" data-path="barganha.html"><a href="barganha.html#horizonte-infinito"><i class="fa fa-check"></i><b>11.9</b> Horizonte infinito</a>
+<ul>
+<li class="chapter" data-level="11.9.1" data-path="barganha.html"><a href="barganha.html#equilíbrio-estacionário"><i class="fa fa-check"></i><b>11.9.1</b> Equilíbrio Estacionário</a></li>
+<li class="chapter" data-level="11.9.2" data-path="barganha.html"><a href="barganha.html#equilíbrio-do-jogo-infinito"><i class="fa fa-check"></i><b>11.9.2</b> Equilíbrio do jogo infinito</a></li>
+</ul></li>
+<li class="chapter" data-level="11.10" data-path="barganha.html"><a href="barganha.html#aplicações"><i class="fa fa-check"></i><b>11.10</b> Aplicações</a>
+<ul>
+<li class="chapter" data-level="11.10.1" data-path="barganha.html"><a href="barganha.html#formação-de-governos-parlamentaristas"><i class="fa fa-check"></i><b>11.10.1</b> Formação de governos parlamentaristas</a></li>
+</ul></li>
+<li class="chapter" data-level="11.11" data-path="barganha.html"><a href="barganha.html#take-away"><i class="fa fa-check"></i><b>11.11</b> Take away</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -300,8 +318,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="jogo-do-ultimato" class="section level2 hasAnchor" number="11.2">
 <h2><span class="header-section-number">11.2</span> Jogo do Ultimato<a href="barganha.html#jogo-do-ultimato" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>O jogo do ultimato consiste no seguinte. Serena e Martín precisam decidir como dividir um pedaço de bolo de tamanho <span class="math inline">\(1\)</span>. O pai informa que primeiro Serena fará uma proposta de divisão de <span class="math inline">\(X\)</span> para ela e <span class="math inline">\(1-X\)</span> para Martín. Se a proposta for aceita, o bolo é dividido daquela forma. Se for negada, ninguém fica com o bolo (porque não chegaram a um acordo).</p>
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-58ebc7023f056e4d3b1e" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-58ebc7023f056e4d3b1e">{"x":{"diagram":"\ndigraph ultimatum_game {\n  rankdir=LR;\n  node [shape=rectangle, style=filled, fillcolor=lightgrey];\n\n  Start [label=\"Início\"];\n  Serena [label=\"Serena faz uma proposta\"];\n  Accept [label=\"(X, 1-X)\"];\n  Reject [label=\"(0,0)\"];\n\n  Start -> Serena [label=\"Proposta de Serena\"];\n  Serena -> Accept [label=\"Proposta Aceita\"];\n  Serena -> Reject [label=\"Proposta Rejeitada\"];\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e03c6ed0c6b34a20da02" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-e03c6ed0c6b34a20da02">{"x":{"diagram":"\ndigraph ultimatum_game {\n  rankdir=LR;\n  node [shape=rectangle, style=filled, fillcolor=lightgrey];\n\n  Start [label=\"Início\"];\n  Serena [label=\"Serena faz uma proposta\"];\n  Accept [label=\"(X, 1-X)\"];\n  Reject [label=\"(0,0)\"];\n\n  Start -> Serena [label=\"Proposta de Serena\"];\n  Serena -> Accept [label=\"Proposta Aceita\"];\n  Serena -> Reject [label=\"Proposta Rejeitada\"];\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>É fácil ver que a proposta <span class="math inline">\((1,0)\)</span>, isto é, Serena pega todo o bolo e Martín fica sem nada é um equilíbrio de Nash, pois nem Serena nem Martín podem melhorar unilateralmente.</p>
 </div>
 <div id="períodos" class="section level2 hasAnchor" number="11.3">
@@ -346,8 +364,63 @@ Logo, temos:
 <h3><span class="header-section-number">11.5.1</span> Valor de Continuação<a href="barganha.html#valor-de-continuação" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>O valor de continuação, definido mais genericamente, é o valor esperado de payoffs ou utilidades futuras, dado o estado atual e a adoção de estratégia ótima do ponto atual em diante.</p>
 <p>Em nosso contexto de berganha de Rubinstein, é o valor esperado que uma jogadora irá receber se um acordo não for fechado no período atual (jogando estratégia ótima, isto é, ENPS). Rubinstein (1982) provou que há um único ENPS: quando é chamado a jogar, a jogadora <span class="math inline">\(i\)</span> propõe para si <span class="math inline">\(\frac{1 - \delta_j}{1 - \delta_i\delta_j}\)</span> e para a outra jogadora <span class="math inline">\(\frac{\delta_j(1 - \delta_i)}{1 - \delta_i\delta_j}\)</span>. E a jogadora <span class="math inline">\(j\)</span> aceita qualquer proposta maior ou igual a essa.</p>
-
 </div>
+</div>
+<div id="modelo-de-baron-ferejohn-de-bargana-legislativa" class="section level2 hasAnchor" number="11.6">
+<h2><span class="header-section-number">11.6</span> Modelo de Baron Ferejohn de Bargana legislativa<a href="barganha.html#modelo-de-baron-ferejohn-de-bargana-legislativa" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Em artigo de 1989 publicado na APSR, Baron e Ferejohn (BF daqui por diante) desenvolveram um modelo que se tornou canônico para pensar barganhas legislativas. Claramente inspirado no modelo de Rubinstein, adapta-o para o contexto do legislativo.</p>
+<p>O modelo de BF considera, como no caso de Rubinstein, como pode ser feita a distribuição de um recurso ou excedente, que é comumente referida como distribuição de um bolo de tamanho <span class="math inline">\(1\)</span>. E de maneira similar ao que fizemos no caso do Rubinstein, nossa exposição se iniciará com um jogo do ultimato legislativo (um período), depois depois períodos e por fim com horizonte infinito.</p>
+</div>
+<div id="ultimato-legislativo" class="section level2 hasAnchor" number="11.7">
+<h2><span class="header-section-number">11.7</span> Ultimato Legislativo<a href="barganha.html#ultimato-legislativo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Considere uma legislatura com <span class="math inline">\(n \geq 3\)</span>, com <span class="math inline">\(n\)</span> ímpar (para facilitar desempate), indexe os legisladores em <span class="math inline">\(i = 1, 2, \ldots, n\)</span> que adota regra da maioria para deicisões legislativa (isto é, é necessário pelo menos <span class="math inline">\(\frac{n+1}{2}\)</span> votos). Uma regra de reconhecimento determina quem pode fazer uma proposta legislativa de distribuição do bolo entre os membros. Procurando modelar a ideia de que esse processo é imprevisível, os autores tratam esse fato como exógeno, por meio de uma distribuição de probabilidade, isto é, cada membrro <span class="math inline">\(i\)</span> do legislativo possui uma probabilidade <span class="math inline">\(p_i\)</span> de ser reconhecido como proponente, com <span class="math inline">\(\sum_{i=1}^n p_i = 1\)</span>.</p>
+<p>Quem é escolhido faz uma proposta de distribuição do recurso <span class="math inline">\(x^i = (x_1, x_2, \ldots, x_n)\)</span>, com <span class="math inline">\(\sum_{i=1}^n x_i = 1\)</span>. Se a proposta é aceita, cada legislador recebe uma utilidade igual ao valor proposto para ele, isto é, <span class="math inline">\(u_i = x_i\)</span>. Se a proposta for rejeitada, ele recebe um status quo, dada por <span class="math inline">\(\underline{x} = (\underline{x}_1, \underline{x}_2, \ldots, \underline{x}_n)\)</span>, em que <span class="math inline">\(\sum_{i=1}^n \underline{x}_i &lt; 1\)</span>, isto é, há menos recursos sendo distribuídos. Em particular, podemos considerar, como no modelo de Rubinstein, que <span class="math inline">\(\sum_{i=1}^n \underline{x}_i = 0\)</span>, ou seja, todos recebem zero. E denotamos por <span class="math inline">\(V_i\)</span> a utilidade esperada em equilíbrio para cada legislador <span class="math inline">\(i\)</span>, ou seja, será o valor de continuação do jogo em modelos de mais de um período.</p>
+<div id="estratégias-fracamente-dominadas" class="section level3 hasAnchor" number="11.7.1">
+<h3><span class="header-section-number">11.7.1</span> Estratégias fracamente dominadas<a href="barganha.html#estratégias-fracamente-dominadas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Uma pressuposição comum em modelos de votação é a de que os votantes (sejam eleitores ou, como aqui, legisladores) jogam estratégias fracamente dominadas. Em um contexto de modelo de teorema do eleitor mediano com dois partidos, por exemplo, essa suposição implica que voto estratégico e sincero são equivalentes. Com voto sincero, eleitores sempre votam pelo partido com plataforma mais próxima do seu ponto ideal. A importância de excluir equilíbrio em que jogadores jogam estratégias fracamente dominadas fica claro com o seguinte exemplo. Imagine dois partidos com plataformas distintas. Se os eleitores não forem pivô, seu voto não importa e não muda o resultado. Isso significa que se todos os eleitores votarem por um dos partidos, nenhum deles é pivô e, portanto, não pode melhorar unilateralmente, constituindo portanto um equilíbrio de Nash. Para evitar esse tipo de resultado se eleitores são estratégicos (ao contrário de sinceros), temos de excluir a possibilidade de jogarem estratégias fracamente dominadas, isto é, eleitores votam como se fossem pivôs (ou, o que dá no mesmo, sinceramente).</p>
+<p>Baron e Ferejohn adotam suposição similar, ou seja, legisladores votam como se fossem pivô, de modo que eliminamos um equilíbrio em que todo mundo vota a favor de uma proposta em que o proponente ganha todo o bolo, pois nenhum é pivô e, portanto, não podem melhorar desviando unilateralmente, dado o que todos os demais estão fazendo.</p>
+</div>
+<div id="equilíbrio-no-ultimato-legislativo" class="section level3 hasAnchor" number="11.7.2">
+<h3><span class="header-section-number">11.7.2</span> Equilíbrio no ultimato legislativo<a href="barganha.html#equilíbrio-no-ultimato-legislativo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Como o jogo possui apenas uma rodada, quem quer que seja escolhido pode propor o mínimo possível para obter <span class="math inline">\(\frac{n-1}{2}\)</span> votos, e fica com o restante pa si, formando assim uma <strong>mínima coalizão vencedora</strong>. Em outras palavras, basta oferecer <span class="math inline">\(x_i = \underline{x}_i\)</span> para os <span class="math inline">\(\frac{n-1}{2}\)</span> legisladores com os menores valores de <span class="math inline">\(\underline{x}\)</span>. No caso particular em que <span class="math inline">\(\underline{x}_i = 0\)</span> para todo <span class="math inline">\(i\)</span>, o proponente toma todo o recurso para si e isso é um equilíbrio de Nash.</p>
+</div>
+<div id="exercício-para-o-leitor." class="section level3 hasAnchor" number="11.7.3">
+<h3><span class="header-section-number">11.7.3</span> Exercício para o leitor.<a href="barganha.html#exercício-para-o-leitor." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Considere uma legislatura com <span class="math inline">\(n = 3\)</span> e <span class="math inline">\(\underline{x} = (.1, .2, .1)\)</span>. Assuma igual probabilidade de reconhecimento. Calcule o <span class="math inline">\(V_i\)</span> para as três legisladoras, a partir da utilidade esperada em cada cenário em que <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span> ou <span class="math inline">\(3\)</span> seja reconhecida. No caso de <span class="math inline">\(2\)</span>, assuma que ela faz coalizão com <span class="math inline">\(1\)</span> com probabilidade <span class="math inline">\(.5\)</span>, e coalizão com <span class="math inline">\(3\)</span> com probabilidade <span class="math inline">\(.5\)</span> (isto é, joga uma estratégia mista). Verifique que as utilidades são uma função das características de todas as legisladores (<span class="math inline">\(_pi\)</span> e <span class="math inline">\(\underline{x}\)</span>).</p>
+</div>
+</div>
+<div id="modelo-de-dois-períodos" class="section level2 hasAnchor" number="11.8">
+<h2><span class="header-section-number">11.8</span> Modelo de dois períodos<a href="barganha.html#modelo-de-dois-períodos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Agora vamos estender o modelo para dois períodos. Se uma proposta não for aprovada no primeiro período, uma nova pessoa é sorteada (possivelmente a mesma de antes) para ser a proponente no segundo período, de acordo com as mesmas probabilidades de antes. Legisladoras descontam o futuro por <span class="math inline">\(\delta_i\)</span>, e de maneira simplifcada, <span class="math inline">\(\delta_i = \delta\)</span>. Se nenhuma política for aprovada ao final do segundo período, recebem o status quo <span class="math inline">\(\underline{x} = (\underline{x}_1, \underline{x}_2, \ldots, \underline{x}_n)\)</span>, em particular <span class="math inline">\(x_i = 0\)</span> para todo <span class="math inline">\(i\)</span>. E denotamos por <span class="math inline">\(V_{it}\)</span> o valor de continuação do jogo no período <span class="math inline">\(t\)</span>, isto é, a utilidade esperada em equilíbrio.</p>
+<p>Utilizando indução reversa, como na barganha de Rubinstein, verificamos que no segundo período temos o jogo do ultimato legislativo e a proponente obtém tudo para si. No primeiro período, se a proposta não for aprovada, e antes de alguém ser escolhida para fazer nova proposta, a utilidade esperada <span class="math inline">\(V_{it} = \delta/n\)</span> para todas as legisladores. Logo, no período 1, a proponente precisa oferecer apenas <span class="math inline">\(\delta/n\)</span> para <span class="math inline">\(\frac{n-1}{2}\)</span> legisladoras e retém <span class="math inline">\(1 - \frac{(n-1)}{2}\frac{\delta}{n} &gt; \frac{1}{2}\)</span>.</p>
+<p>E qual a utilidade esperada no período <span class="math inline">\(1\)</span>, isto é, <span class="math inline">\(V_{i1}\)</span>? Assumindo que todas as legisladores podem ser escolhidas para fazer parte da coalizão vencedora com igual probabilidade, então o valor de continuação no período 1 é o ganho se for reconhecida como proponente (com probabilidade <span class="math inline">\(1/n\)</span>) mais o ganho se fizer parte da coalizão vencedora (com probabilidade <span class="math inline">\(1/2\)</span> e com probabilidade <span class="math inline">\(\frac{(n-1)}{n}\)</span> de não ser proponente, isto é, probabilidade conjunta <span class="math inline">\(\frac{(n-1)}{n} \frac{1}{2}\)</span>):</p>
+<p><span class="math inline">\(V_{i1} = \frac{1}{n}[1 - \frac{(n-1)}{2}\frac{\delta}{n}] + \frac{(n-1)}{n} \frac{1}{2} \frac{\delta}{n} = \frac{1}{n}\)</span>.</p>
+<p>Portanto, a utilidade esperada é a mesma do jogo do ultimato, o que se estende a todos os jogos finitos com número arbitrários de períodos. Esse resultado é diferente da barganha de Rubinstein, e a razão é que lá as proponentes são alternadas, e aqui, em cada período, todas têm a mesma probabilidade de propor.</p>
+</div>
+<div id="horizonte-infinito" class="section level2 hasAnchor" number="11.9">
+<h2><span class="header-section-number">11.9</span> Horizonte infinito<a href="barganha.html#horizonte-infinito" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>No modelo de horizonte infinito, o jogo continua indefinidamente enquanto uma proposta não for aprovada. BF adotam um refinamento no conceito de equilíbrio em relação ao já tradicional Equilíbrio de Nash Perfeito em Subjogos, pois há múltiplos equilíbrios. Então supõem que estratégias são estacionárias, obtendo assim Equilíbrio de Nash Perfeito em Subjogos Estacionário.</p>
+<div id="equilíbrio-estacionário" class="section level3 hasAnchor" number="11.9.1">
+<h3><span class="header-section-number">11.9.1</span> Equilíbrio Estacionário<a href="barganha.html#equilíbrio-estacionário" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Explicar.</p>
+</div>
+<div id="equilíbrio-do-jogo-infinito" class="section level3 hasAnchor" number="11.9.2">
+<h3><span class="header-section-number">11.9.2</span> Equilíbrio do jogo infinito<a href="barganha.html#equilíbrio-do-jogo-infinito" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Falar que é o mesmo equilíbrio do jogo finito.</p>
+</div>
+</div>
+<div id="aplicações" class="section level2 hasAnchor" number="11.10">
+<h2><span class="header-section-number">11.10</span> Aplicações<a href="barganha.html#aplicações" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="formação-de-governos-parlamentaristas" class="section level3 hasAnchor" number="11.10.1">
+<h3><span class="header-section-number">11.10.1</span> Formação de governos parlamentaristas<a href="barganha.html#formação-de-governos-parlamentaristas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Considere três partidos, A, B e C, em que A obteve <span class="math inline">\(45\%\)</span> das cadeiras, B obteve <span class="math inline">\(35\%\)</span> e C <span class="math inline">\(20\%\)</span>. Qual o valor de continuação do jogo de cada partido?</p>
+</div>
+</div>
+<div id="take-away" class="section level2 hasAnchor" number="11.11">
+<h2><span class="header-section-number">11.11</span> Take away<a href="barganha.html#take-away" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>O poder de propor ou controlar a agenda é uma dimensão importante do poder.</p>
+<p>Podemos definir a quantidade de poder de um agente como a quantidade de recursos de um bolo de tamanho <span class="math inline">\(1\)</span> que esse agente espera obter em equilíbrio. Vemos que no modelo de BF, a proponente obtém mais de 50% do bolo, enquanto as demais esperam obter <span class="math inline">\(\delta/n\)</span>. Em um parlamento com <span class="math inline">\(101\)</span> legisladoras, por exemplo, e considerando <span class="math inline">\(\delta = 1\)</span>, isso significa <span class="math inline">\(1\%\)</span>. Então a proponente é 50x mais poderosa.</p>
+
 </div>
 </div>
 
