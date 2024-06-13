@@ -6,9 +6,9 @@ Vamos discutir aqui modelos formais de discriminação (usualmente racial, mas p
 
 Gerard et. al. (2021).
 
-## Descriminação
+## Discriminação
 
-Como a literatura de economia tem definido descriminação?
+Como a literatura de economia tem definido Discriminação?
 Arrow (1973) argumenta do seguinte modo (tradução do GPT): 
 ""O fato de que diferentes grupos de trabalhadores, sejam eles qualificados ou não qualificados, negros ou brancos, homens ou mulheres, recebam salários diferentes convida à explicação de que os diferentes grupos devem diferir de acordo com alguma característica valorizada no mercado. Na teoria econômica padrão, pensamos primeiro nas diferenças de produtividade. A noção de discriminação envolve o conceito adicional de que características pessoais do trabalhador, não relacionadas à produtividade, também são valorizadas no mercado."
 

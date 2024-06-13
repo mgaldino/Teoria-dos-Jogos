@@ -293,7 +293,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12" data-path="tópicos-especiais.html"><a href="tópicos-especiais.html"><i class="fa fa-check"></i><b>12</b> Tópicos Especiais</a>
 <ul>
 <li class="chapter" data-level="12.1" data-path="tópicos-especiais.html"><a href="tópicos-especiais.html#introdução-4"><i class="fa fa-check"></i><b>12.1</b> Introdução</a></li>
-<li class="chapter" data-level="12.2" data-path="tópicos-especiais.html"><a href="tópicos-especiais.html#descriminação"><i class="fa fa-check"></i><b>12.2</b> Descriminação</a></li>
+<li class="chapter" data-level="12.2" data-path="tópicos-especiais.html"><a href="tópicos-especiais.html#discriminação"><i class="fa fa-check"></i><b>12.2</b> Discriminação</a></li>
 <li class="chapter" data-level="12.3" data-path="tópicos-especiais.html"><a href="tópicos-especiais.html#taste-based-discrimination"><i class="fa fa-check"></i><b>12.3</b> Taste-Based Discrimination</a></li>
 <li class="chapter" data-level="12.4" data-path="tópicos-especiais.html"><a href="tópicos-especiais.html#discriminação-estatística"><i class="fa fa-check"></i><b>12.4</b> Discriminação estatística</a>
 <ul>
@@ -360,6 +360,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">10.4</span> Equilíbrio de Nash Perfeito de Subjogo<a href="credibilidade-e-racionalidade-sequencial.html#equilíbrio-de-nash-perfeito-de-subjogo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A ideia é que iremos demandar que as jogadores joguem racionalmente em sequência em cada subjogo do jogo na forma extensiva. E chamaremos a isso de equilíbrio de Nash perfeito de subjogo.</p>
 <p>Fato: em jogos de informação perfeita finitos, os equilíbrios que sobrevivem a indução reversa são equilíbrios de Nash perfeitos de subjogo.</p>
+<p>Equilíbrio de Nash Perfeito em Subjogos</p>
+<p>Definição informal: Um equilíbrio perfeito em subjogos é um perfil estratégico <span class="math inline">\(s^*\)</span> com a propriedade de que, em nenhum subjogo, qualquer jogador <span class="math inline">\(i\)</span> pode se sair melhor escolhendo uma estratégia diferente de <span class="math inline">\(s^*_i\)</span>, dado que todos os outros jogadores <span class="math inline">\(j\)</span> aderem a <span class="math inline">\(s^*_j\)</span>.</p>
+<p>Nessa definição (informal), requeremos que a estratrégia de cada jogadora seja ótima para toda história após ser a vez dela jogar, e não apenas no início do jogo, como no equlíbrio de Nash.</p>
+<p>Todo jogo extensivo finito com informação perfeita possui (pelo menos) um equilíbrio perfeito de subjogo.</p>
+<p>Um jogo finito significa que em nenhum momento um jogador possui infinitas opções de ações. Para dar um exemplo trivial (do Osborne): um único jogador escolhe um número menor que 1 e recebe um pagamento igual ao número que ela escolhe. Não há um número maior que todos os outros números menores que um, então o jogador único não possui uma ação ótima, e assim o jogo não possui um equilíbrio perfeito de subjogo.</p>
 </div>
 <div id="exercícios-5" class="section level2 hasAnchor" number="10.5">
 <h2><span class="header-section-number">10.5</span> Exercícios<a href="credibilidade-e-racionalidade-sequencial.html#exercícios-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -368,12 +373,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Modelo o jogo como uma árvore (forma extensiva) e ache todos os subjogos do jogo abaixo. (exercício 156.2c do Osborne).</p>
 <p>Os políticos Rosa e Ernesto precisam tomar uma posição sobre um assunto. As opções são Berlim (B) ou Havana (H). Eles escolhem sequencialmente. Uma terceira pessoa, Karl, determina quem escolhe primeiro. Tanto Rosa quanto Ernesto se importam apenas com as ações que escolhem, não com quem escolhe primeiro. Rosa prefere o resultado em que ambos escolhem B ao resultado em que ambos escolhem H, e prefere esse resultado a qualquer um dos casos em que ela e Ernesto escolhem ações diferentes; ela é indiferente entre esses dois últimos resultados. As preferências de Ernesto diferem das de Rosa no sentido de que os papéis de B e H são invertidos. As preferências de Karl são as mesmas que as de Ernesto. Modele essa situação como um jogo extensivo com informação perfeita. (Especifique os componentes do jogo e represente o jogo em um diagrama.)</p>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
-<p>Existem 6 subjogos próprios e 7 subjogos no total, contando o jogo inteiro como um subjogo.</p>
-<p>Equilíbrio de Nash Perfeito em Subjogos</p>
-<p>Definição informal: Um equilíbrio perfeito em subjogos é um perfil estratégico <span class="math inline">\(s^*\)</span> com a propriedade de que, em nenhum subjogo, qualquer jogador <span class="math inline">\(i\)</span> pode se sair melhor escolhendo uma estratégia diferente de <span class="math inline">\(s^*_i\)</span>, dado que todos os outros jogadores <span class="math inline">\(j\)</span> aderem a <span class="math inline">\(s^*_j\)</span>.</p>
-<p>Nessa definição (informal), requeremos que a estratrégia de cada jogadora seja ótima para toda história após ser a vez dela jogar, e não apenas no início do jogo, como no equlíbrio de Nash.</p>
-<p>Todo jogo extensivo finito com informação perfeita possui (pelo menos) um equilíbrio perfeito de subjogo.</p>
-<p>Um jogo finito significa que em nenhum momento um jogador possui infinitas opções de ações. Para dar um exemplo trivial (do Osborne): um único jogador escolhe um número menor que 1 e recebe um pagamento igual ao número que ela escolhe. Não há um número maior que todos os outros números menores que um, então o jogador único não possui uma ação ótima, e assim o jogo não possui um equilíbrio perfeito de subjogo.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Modele o jogo do Ultimato com três períodos e:</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>conte quantos subjogos existem.</li>
+<li>Ache o equilíbrio de Nash Perfeito em Subjogos</li>
+</ol>
+<ol start="4" style="list-style-type: decimal">
+<li>Considere um jogo de dois períodos em que um trabalhador busca emprego.No período 1, ele recebe uma oferta de um salário <span class="math inline">\(S_1\)</span> e deve decidir se aceita ou não. Se aceitar, este é seu salário e para de procurar emprego. Caso não aceite, continua no período 2, e recebe uma oferta de salário <span class="math inline">\(S_2 &gt; S_1\)</span> com probabilidade <span class="math inline">\(p\)</span> e <span class="math inline">\(0\)</span>, isto é, não recebe oferta com probabilidade <span class="math inline">\(1-p\)</span>.</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>Desenho o jogo na forma extensiva.</li>
+<li>Calcule quantos subjogos existem.</li>
+<li>Suponha que <span class="math inline">\(S_2 = 2S_1\)</span> e <span class="math inline">\(p=.8\)</span>? Qual o equilíbrio de Nash perfeito em Subjogos do jogo.</li>
+</ol>
 
 </div>
 </div>

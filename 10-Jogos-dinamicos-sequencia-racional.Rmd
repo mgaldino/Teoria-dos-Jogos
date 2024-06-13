@@ -36,6 +36,17 @@ Fato: em jogos de informação perfeita finitos, os equilíbrios que sobrevivem 
 
 
 
+Equilíbrio de Nash Perfeito em Subjogos
+
+Definição informal: Um equilíbrio perfeito em subjogos é um perfil estratégico $s^*$ com a propriedade de que, em nenhum subjogo, qualquer jogador $i$ pode se sair melhor escolhendo uma estratégia diferente de $s^*_i$, dado que todos os outros jogadores $j$ aderem a $s^*_j$.
+
+Nessa definição (informal), requeremos que a estratrégia de cada jogadora seja ótima para toda história após ser a vez dela jogar, e não apenas no início do jogo, como no equlíbrio de Nash.
+
+
+Todo jogo extensivo finito com informação perfeita possui (pelo menos) um equilíbrio perfeito de subjogo. 
+
+Um jogo finito significa que em nenhum momento um jogador possui infinitas opções de ações. Para dar um exemplo trivial (do Osborne):  um único jogador escolhe um número menor que 1 e recebe um pagamento igual ao número que ela escolhe. Não há um número maior que todos os outros números menores que um, então o jogador único não possui uma ação ótima, e assim o jogo não possui um equilíbrio perfeito de subjogo.
+
 
 
 ## Exercícios
@@ -79,15 +90,11 @@ g1 <- extensive_form(
    show_node_id = TRUE)
 ```
 
-Existem 6 subjogos próprios e 7 subjogos no total, contando o jogo inteiro como um subjogo.
+3. Modele o jogo do Ultimato com três períodos e: 
+a) conte quantos subjogos existem.
+b) Ache o equilíbrio de Nash Perfeito em Subjogos
 
-Equilíbrio de Nash Perfeito em Subjogos
-
-Definição informal: Um equilíbrio perfeito em subjogos é um perfil estratégico $s^*$ com a propriedade de que, em nenhum subjogo, qualquer jogador $i$ pode se sair melhor escolhendo uma estratégia diferente de $s^*_i$, dado que todos os outros jogadores $j$ aderem a $s^*_j$.
-
-Nessa definição (informal), requeremos que a estratrégia de cada jogadora seja ótima para toda história após ser a vez dela jogar, e não apenas no início do jogo, como no equlíbrio de Nash.
-
-
-Todo jogo extensivo finito com informação perfeita possui (pelo menos) um equilíbrio perfeito de subjogo. 
-
-Um jogo finito significa que em nenhum momento um jogador possui infinitas opções de ações. Para dar um exemplo trivial (do Osborne):  um único jogador escolhe um número menor que 1 e recebe um pagamento igual ao número que ela escolhe. Não há um número maior que todos os outros números menores que um, então o jogador único não possui uma ação ótima, e assim o jogo não possui um equilíbrio perfeito de subjogo.
+4. Considere um jogo de dois períodos em que um trabalhador busca emprego.No período 1, ele recebe uma oferta de um salário $S_1$ e deve decidir se aceita ou não. Se aceitar, este é seu salário e para de procurar emprego. Caso não aceite, continua no período 2, e recebe uma oferta de salário $S_2 > S_1$ com probabilidade $p$ e $0$, isto é, não recebe oferta com probabilidade $1-p$. 
+a) Desenho o jogo na forma extensiva.
+b) Calcule quantos subjogos existem.
+c) Suponha que $S_2 = 2S_1$ e $p=.8$? Qual o equilíbrio de Nash perfeito em Subjogos do jogo.
