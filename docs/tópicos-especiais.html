@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo9 Jogos Dinâmicos | Introdução à Teoria dos Jogos para Ciências Sociais</title>
-  <meta name="description" content="Capítulo9 Jogos Dinâmicos | Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <title>Capítulo12 Tópicos Especiais | Introdução à Teoria dos Jogos para Ciências Sociais</title>
+  <meta name="description" content="Capítulo12 Tópicos Especiais | Introdução à Teoria dos Jogos para Ciências Sociais" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo9 Jogos Dinâmicos | Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <meta property="og:title" content="Capítulo12 Tópicos Especiais | Introdução à Teoria dos Jogos para Ciências Sociais" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo9 Jogos Dinâmicos | Introdução à Teoria dos Jogos para Ciências Sociais" />
+  <meta name="twitter:title" content="Capítulo12 Tópicos Especiais | Introdução à Teoria dos Jogos para Ciências Sociais" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="equilíbrio-de-nash-em-estratégias-mistas.html"/>
-<link rel="next" href="credibilidade-e-racionalidade-sequencial.html"/>
+<link rel="prev" href="barganha.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -330,154 +330,145 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="jogos-dinâmicos" class="section level1 hasAnchor" number="9">
-<h1><span class="header-section-number">Capítulo9</span> Jogos Dinâmicos<a href="jogos-dinâmicos.html#jogos-dinâmicos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="introdução-1" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> Introdução<a href="jogos-dinâmicos.html#introdução-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Vamos falar de jogos din
-Considere novamente o jogo Bach e Stravinsky. Suponha que a jogadora 1 joga primeiro e e a jogadora 2 pode observar a esoclha de 1. Imagine que ela vai para um lugar, liga para a amiga e diz: estou aqui no lugar tal (espetáculo do Bach ou do Stravinsky).</p>
-<p>Veja que em termos de equilíbrios de Nash, continuamos com os mesmos dois equilíbrios de antes. Porém, não faz sentido achar que o equilíbrio (S,S) será jogado, pois a jogadora 1 sabe que, se for para Bach, 2 também irá. Jogos na forma normal não capturam muito bem a noção de jogos sequenciais e racionalidade sequencial.</p>
-<p>A forma estratégica do jogo, de fato, não traz informações nem sobre a ordem dos movimentos, nem as ações disponíveis para cada jogadora na sua vez de jogar.</p>
-<p>Por isso, iremos alterar a representação de nosso jogo, para a forma extensiva, que tornará explícito <strong>a ordem</strong> em que as jogadoras jogam, e o que cada jogadora <strong>sabe</strong> quando é sua vez de jogar. Nesse cenário, estratégias referem-se a planos contingentes de ações (como no jogo da bandeira), em vez de ações não-contigentes.</p>
-<p>Iremos introduzir a noção de indução reversa ou indução para trás como uma forma de solucionar jogos. Noção que for formalizada por Selten (1965) como equilíbrio de subjogo-perfeito e contempla situações em que jogadoras se movem simultaneamente em múltiplos períodos e a indução reversa não pode ser aplicada.</p>
-<p>Comecemos então pela introdução do que significa descrever um jogo na forma extensiva.</p>
+<div id="tópicos-especiais" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">Capítulo12</span> Tópicos Especiais<a href="tópicos-especiais.html#tópicos-especiais" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introdução-4" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> Introdução<a href="tópicos-especiais.html#introdução-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Vamos discutir aqui modelos formais de discriminação (usualmente racial, mas poderiam ser igualmente aplicados a discriminação de gênero ou outras características) que surgiram na economia ao longos dos últimos 50 anos.</p>
+<p>Gerard et. al. (2021).</p>
 </div>
-<div id="jogo-na-forma-extensiva" class="section level2 hasAnchor" number="9.2">
-<h2><span class="header-section-number">9.2</span> Jogo na forma extensiva<a href="jogos-dinâmicos.html#jogo-na-forma-extensiva" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Um jogo na forma extensiva pode ser visto como uma generalização multi-estágio de árvores de decisão.</p>
-<div class="figure"><span style="display:block;" id="fig:bach-strav"></span>
-<img src="imagens/jogo-extensivo.png" alt="Representação do Jogo da coordenação" width="100%" />
-<p class="caption">
-Figure 9.1: Representação do Jogo da coordenação
-</p>
-</div>
-<p>A árvore do jogo é lida de cima para baixo. No topo está quem joga primeiro. O retângulo com o nome da jogadora é chamado de nó. No primeiro nó, Serena tem duas ações possíveis, “Bach” e “Stravinski”. Uma vez que ela escolha sua ação, é a vez da Nina, que também tem duas opções (“bach” e “stravinsky”, em caixa baixa, para distinguir as ações das duas jogadoras). Se Serena escolheu Bach, Nina está no galho da esquerda. Se Serena escolheu Stravinsky, Nina está no galo da direita. E uma vez que Nina faça sua escolha, o jogo acaba e os payoffs finais são mostrados. O primeiro payoff é da jogadora 1, e o segundo da jogadora 2.</p>
-<p>Assim, com a forma extensiva, temos como antes:</p>
+<div id="descriminação" class="section level2 hasAnchor" number="12.2">
+<h2><span class="header-section-number">12.2</span> Descriminação<a href="tópicos-especiais.html#descriminação" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Como a literatura de economia tem definido descriminação?
+Arrow (1973) argumenta do seguinte modo (tradução do GPT):
+““O fato de que diferentes grupos de trabalhadores, sejam eles qualificados ou não qualificados, negros ou brancos, homens ou mulheres, recebam salários diferentes convida à explicação de que os diferentes grupos devem diferir de acordo com alguma característica valorizada no mercado. Na teoria econômica padrão, pensamos primeiro nas diferenças de produtividade. A noção de discriminação envolve o conceito adicional de que características pessoais do trabalhador, não relacionadas à produtividade, também são valorizadas no mercado.”</p>
+<p>Essa definição é reconhecidamente problemática. Eis algunas problemas:</p>
 <ol style="list-style-type: decimal">
-<li>Número de jogadoras, <span class="math inline">\(N\)</span>.</li>
-<li>Payoffs ou funções de utilidade em função dos resultados, <span class="math inline">\(\{u_i(\cdot)\}_{i \in N}\)</span></li>
+<li><p>Ela pressupõe que é possível distinguir a produtividade das características pessoais. Porém, se no mundo da publicidade o consumidor valoriza mais atores brancos que negros (homens versus mulheres etc.), brancos geram mais valor que negros e, portanto, a produtividade está associada à raça.</p></li>
+<li><p>A tecnologia, que impacta a produtividade, não é neutra. Fotografias de pessoas brancas historicamente possuiam melhor qualidade, pois foram historicamente calibradas para tons de pele mais claros. Por muitos anos, os padrões de calibração de filmes fotográficos e câmeras de vídeo foram baseados em modelos de referência com pele clara, conhecidos como “Shirley cards”. Nesse caso, a qualidade de filmes com atores brancos seria melhor do que com atores negros, e portanto, brancos seriam mais “produtivos” por causa da tecnologia.</p></li>
 </ol>
-<p>E acrescentamos:</p>
-<ol start="3" style="list-style-type: decimal">
-<li>Ordem dos movimentos</li>
-<li>Ações das jogadoras quando for a vez delas de se moverem.</li>
-<li>O conhecimento que as jogadoras possuem quando é sua vez de se moverem.</li>
-</ol>
-<p>O ponto 5 é importante para distinguir entre Nina joga depois da Serena de um lado, e Nina joga depois da Serena sabendo o que Serena jogou antes dela.</p>
-<p>Por fim, mantemos uma suposição feita em nossos jogos anteriores, agora estendida aos itens 1-6, que é:</p>
-<ol start="7" style="list-style-type: decimal">
-<li>É conhecimento comum toda a estrutura do jogo representada pelos itens 1-6 para todas as jogadoras.</li>
-</ol>
-<div id="definição-de-árovre-de-um-jogo" class="section level3 hasAnchor" number="9.2.1">
-<h3><span class="header-section-number">9.2.1</span> Definição de árovre de um jogo<a href="jogos-dinâmicos.html#definição-de-árovre-de-um-jogo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Uma <strong>árvore do jogo</strong> é formada por um conjunto de nós <span class="math inline">\(x \in X\)</span> com uma relação de precedência <span class="math inline">\(x &gt; x&#39;\)</span>, que significa “<span class="math inline">\(x\)</span> precede a <span class="math inline">\(x&#39;\)</span>”. Ou seja, <span class="math inline">\(x\)</span> vem antes de <span class="math inline">\(x&#39;\)</span>. Cada nó só tem um predecessor. A relação de precedência é transitiva (<span class="math inline">\(x &gt; x&#39;, x&#39; &gt; x&#39;&#39; \implies x &gt; x&#39;&#39;\)</span>), assimetrica <span class="math inline">\((x &gt; x&#39; \implies \neg (x&#39; &gt; x))\)</span>, isto é, <span class="math inline">\(x\)</span> precede <span class="math inline">\(x&#39;\)</span>, mas <span class="math inline">\(x&#39;\)</span> não precede <span class="math inline">\(x\)</span>, e incompleta (nem todos os pares podem ser ordenados). Há um nó especial, chamado raiz da árvore, denotada por <span class="math inline">\(n_1\)</span>, que precede quaisquer outros nós <span class="math inline">\(x \in X\)</span>. Nós que não precedem outros nós são chamados de nós terminais, denotados pelo conjunto <span class="math inline">\(Z \subset X\)</span>. Nós terminais denotam o fim do jogo, com os payoffs associados. Cada nó <span class="math inline">\(x\)</span> que não é terminal é atribuído a um jogador <span class="math inline">\(i(x)\)</span> com o conjunto de ações <span class="math inline">\(A_i(x)\)</span>, ou para natureza.</p>
-<p>É uma definição longa, masque captura a estrutura “física” do jogo, ao mesmo tempo em que ignora as ações (escolhas) das jogadoras e o que sabem quando jogam.</p>
+<p>Outro exemplo é a iluminação. Para tons de pele mais escuros, a luz precisa ser controlada cuidadosamente para evitar sombras excessivas que podem ocultar detalhes faciais. Se o técnico que cuida disso não souber fazer os ajustes necessários, novamente a produtividade dos artistas negros será menor.</p>
+</div>
+<div id="taste-based-discrimination" class="section level2 hasAnchor" number="12.3">
+<h2><span class="header-section-number">12.3</span> Taste-Based Discrimination<a href="tópicos-especiais.html#taste-based-discrimination" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>O prêmio nobel de Economia Gary Becker apresentou o primeiro modelo canônico de discriminação racial (1957). Nesse modelo, a discriminação ocorre porque empresas comandadas por pessoas brancas têm preferências por contratar pessoas brancas versus pessoas negras. Ou seja, por preconceito pessoal delas. Então, ao contratar pessoas negrar isso gera uma “desutilidade” ou utilidade negativa para o contratante, de forma que, a pesar de igualmente produtivo a uma pessoa branca, o contratante paga salário menor por causa dessa disutilidade ou para receber o mesmo salário deve ser mais produtivo.</p>
+<p>Para que haja um diferencial de salários em equilíbrio no mercado, é preciso que haha um número suficientemente grande de empresas discriminatórias. A razão é que se o número for pequeno, trabalhadores negros iriam acabar trabalhando só em firmas que não discriminam, ganhando um salário igual aos brancos, e as firmas discriminadoras contratariam apenas brancos, e não haveria diferencial de salários em equilíbrio.</p>
+<p>Se houver um número grande de empresas discriminadoras, então trablhadores negros iriam primeiro buscar emprego nas empresas não-discriminadoras ou nas menos discriminadoras. As mais discriminadoras não contratariam, porque a desutilidade seria muito grande. Assim, o “último” trabalhador contratado pela firma no limite da discriminação é o que vai determinar o salário de equilíbro. Todos competem igualmente por essa vaga e ela determina o diferencial de salário. Ou seja, é a empresa marginal na discriminação, e não da discriminação média, que determina o diferencial. E a empresa marginal depende do número de trabalhadores negros e da distribuição da discriminação entre firmas.</p>
+<p>Do ponto de vista teórico, o problema desse modelo é que empresas sem preconceito seriam mais lucrativas e deveriam dominar o mercado, eliminando assim a discriminação.</p>
+<p>Mais recentemente, em particular a partir do trabalho de Black (1995), a literatura tem explicado como pode haver persistência de desigualdade salarial entre grupos raciais mesmo em um mercado competitivo. A ideia é introduzir fricção no mercado de trabalho, isto é, trabalhadoras não acham emprego imediatamente. Precusam procurar até achar, e esse tempo é custoso. Portanto, elas possuem um salário de reserva, que é quanto esperam ganhar se continuarem procurando emprego, em vez de aceitaram uma proposta qualquer. É como o valor de continuação do jogo que vimos no modelo de Baron-Ferejohn de barganhas no legislativo.</p>
+<p>Se a trabalhadora negra sabe que poderá receber ofertas piores de empresas discriminadoras, demorará mais tempo que uma pessoa branca para arranjar um emprego que pague sua produtividade marginal. Como o tempo é custoso, isso rebaixa seu salário de reserva, tornando um equilíbrio haver diferencial de salários permanentes. Portanto, o efeito se dá via rebaixamento de expectativas.</p>
+</div>
+<div id="discriminação-estatística" class="section level2 hasAnchor" number="12.4">
+<h2><span class="header-section-number">12.4</span> Discriminação estatística<a href="tópicos-especiais.html#discriminação-estatística" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Phelps (1972) propôs uma explicação alternativa para a discriminação. A ideia é que não observamos diretamente a produtividade dos trabalhadores, e precisamos usar sinais correlacionados com produtividade. Eis o modelo.</p>
+<p>Cada trabalhador tem uma identidade <span class="math inline">\(j \in \{B,W\}\)</span> e um tipo de produtiidade <span class="math inline">\(p\)</span>, que vem de uma distribuição <span class="math inline">\(N(\mu_j, \sigma^2_j)\)</span>. Um empregador quer contratar a trabalhadora e pagar o salário igual à produtividade dela. Entretando, o empregador só observa a identidade e um sinal da produtividade (digamos, currículo ou resultado de um teste): <span class="math inline">\(\theta = p + e\)</span>, em que <span class="math inline">\(e \sim N(0, \sigma^2_{ej})\)</span>.</p>
+<p>É possível mostrar que a produtividade esperada da trabalhadoras é:</p>
+<p><span class="math inline">\(\mathbb{E}(p|\theta, j) = \theta \frac{\sigma^2_j}{\sigma^2_j + \sigma^2_{ej}} + \mu_j \frac{\sigma^2_{ej}}{\sigma^2_j + \sigma^2_{ej}}\)</span></p>
+<p>Digamos que <span class="math inline">\(e = 0\)</span>, isto é, a variância é zero, ou seja, o sinal é sem ruído. Então, a produtividade inferida depende da identidade. Em particular,</p>
+<p><span class="math inline">\(\mathbb{E}(p|\theta, j) = \theta \frac{\sigma^2_j}{\sigma^2_j} + \mu_j\frac{0}{\sigma^2_j} = \theta = p\)</span>. Ou seja, todas as trabalhadoras recebem igual à sua produtividade, independentemente da sua identidade.</p>
+<div id="definição-de-discriminação-estatística-individual" class="section level3 hasAnchor" number="12.4.1">
+<h3><span class="header-section-number">12.4.1</span> Definição de discriminação estatística individual<a href="tópicos-especiais.html#definição-de-discriminação-estatística-individual" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>“Uma abordagem possível é definir a discriminação em um nível individual: a discriminação estatística surge quando duas pessoas, com o mesmo resultado observável (realização do sinal θ), mas com identidades diferentes, recebem inferências de produtividade diferentes – e, portanto, salários diferentes – do empregador.”</p>
+<p>Se por outro lado o ruído é diferente de zero, então a produtividade inferida vai diferir entre os grupos. “Por exemplo, suponha que <span class="math inline">\(\sigma^2_B &gt; \sigma^2_W\)</span>, de forma que o sinal é mais ruidoso para os indivíduos do grupo B. A inferência de produtividade feita pelo empregador é, portanto, mais sensível ao sinal para o grupo W do que para o grupo B. Especificamente, uma pessoa do grupo B que obtém uma realização de sinal acima da média é interpretada como tendo uma produtividade esperada mais baixa do que uma pessoa do grupo W com a mesma realização de sinal. Por outro lado, uma pessoa do grupo B com uma realização de sinal abaixo da média é vista como mais produtiva do que se pertencesse ao grupo W.”</p>
+<p>Aqui, a discriminação ocorre ao nível individual, mas não no nível de grupo. Ou seja, há discriminação positiva e negativa que na média se compensam ao nível do grupo.</p>
+<p>Uma forma de se obter discriminação estatística ao nível do grupo é determinar que a escala salarial é não linear com relação Pa produtividade. Se, por exemplo, supusermos que empregadores são avessos ao risco, é possível mostrar que isso gera escala não-linear e, como consequência, trabalahdores do grupo <span class="math inline">\(W\)</span> ganhando salários maiores, em média, do que trabalhadores do grupo <span class="math inline">\(B\)</span>.</p>
 </div>
 </div>
-<div id="jogo-da-confiança" class="section level2 hasAnchor" number="9.3">
-<h2><span class="header-section-number">9.3</span> Jogo da confiança<a href="jogos-dinâmicos.html#jogo-da-confiança" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="figure"><span style="display:block;" id="fig:confianca"></span>
-<img src="imagens/jogo-confianca.png" alt="Representação do Jogo da Confiança" width="100%" />
-<p class="caption">
-Figure 9.2: Representação do Jogo da Confiança
-</p>
+<div id="equilíbrio-da-discriminação-estatística" class="section level2 hasAnchor" number="12.5">
+<h2><span class="header-section-number">12.5</span> Equilíbrio da discriminação estatística<a href="tópicos-especiais.html#equilíbrio-da-discriminação-estatística" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Um ponto mencionado inicialmente por Arrow é que, antecipando que serão remunerados diferentes, indivíduos de grupos diferentes podem tomar decisões diferentes de investimento em capital humano, criando profecias auto-realizáveis. O modelo de Coate and Loury (1993) é um exemplo desse tipo de situação</p>
+<p>Empresas possuem tarefas simples e complexas e precisam contratar um continuum de trabalhadores. Eles podem ser habilidosos (skilled - S) ou não-habilidosos (Unskilled- U) e pertencem a duas identidades, <span class="math inline">\(B\)</span> e <span class="math inline">\(W\)</span>. Se o trabalhador é alocado para a tarefa simples, o salário é <span class="math inline">\(0\)</span> e a firma tem lucro <span class="math inline">\(0\)</span>. Se for alocado para um trabalho complexo, recebe um salário positivo. A firma tem um payoff positivo se a pessoa no trabalho complexo é S, e negativo se é U.</p>
+<p>“Para calcular a probabilidade posterior bayesiana de que um trabalhador é qualificado, a firma usa a realização do sinal observado, bem como um prévio, que é dado pela suposição da firma sobre a proporção geral de trabalhadores que escolheram investir na aquisição de habilidades. Essa suposição prévia também pode depender da identidade do trabalhador – por exemplo, a firma pode pensar que trabalhadores do grupo W investem na aquisição de habilidades em uma proporção maior do que trabalhadores do grupo B. É aqui que a natureza autorrealizável do modelo se manifesta: Porque a suposição prévia da firma afeta sua interpretação do sinal imperfeito de habilidade, os incentivos para investir na aquisição de habilidades são, eles próprios, afetados pela suposição da firma.</p>
+<p>Em equilíbrio, a suposição da firma deve ser precisa. No entanto, devido à complementaridade entre a suposição prévia da firma e as ações dos trabalhadores, pode haver múltiplos equilíbrios, com diferentes níveis de investimento. De fato, Coate e Loury (1993) mostram que, sob algumas suposições sobre a distribuição dos custos de investimento, existem pelo menos dois desses equilíbrios. Além disso, os múltiplos equilíbrios são classificados por Pareto, de forma que tanto as firmas quanto os trabalhadores estão em melhor situação em equilíbrios onde as firmas (corretamente) supõem que uma proporção maior de trabalhadores adquire habilidades.”</p>
+<p>Moro and Norman (2004), relax Coate and
+Loury’s (1993) assumption of exogenous wages. They propose a general equilibrium model
+of statistical discrimination, where wages offered to workers of different identities are interdependent.
+Among other results, the authors show that the dominant identity may benefit from
+the discriminatory treatment of the disadvantaged group.</p>
+<p>statistical discrimination arises because workers of different identities play different equilibria.</p>
+<div id="novas-modificações" class="section level3 hasAnchor" number="12.5.1">
+<h3><span class="header-section-number">12.5.1</span> Novas modificações<a href="tópicos-especiais.html#novas-modificações" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Discuto agora um exemplo de modificação recente que ilustra como a literatura tem avançado, a partir do estudo de Bardhi, Guo e Strulovici (2023).</p>
+<p>Esses cenários representam propriedades inerentes ao tipo de tarefa realizada em uma determinada empresa. Por exemplo, a pesquisa científica pode ser vista como um ambiente de aprendizado por conquistas, onde a maioria das notícias observadas – como um novo artigo publicado ou uma concessão de bolsa – são notícias positivas sobre o tipo subjacente do pesquisador. Por outro lado, o trabalho de um vigia noturno ou de um piloto de avião ocorre em ambientes de aprendizado por falhas, onde as notícias observadas publicamente são geralmente negativas – por exemplo, uma tentativa de roubo bem-sucedida ou um pouso de emergência.</p>
+<p>O principal resultado de Bardhi, Guo e Strulovici (2023) é que, dependendo do ambiente de aprendizado subjacente, uma pequena diferença na qualidade esperada ex-ante entre o trabalhador A e o trabalhador B pode levar a grandes diferenças nas trajetórias de carreira e, consequentemente, nos ganhos.</p>
 </div>
-<p>O jogador p1 joga primeiro. Logo, <span class="math inline">\(i(n_1) = p_1\)</span>.</p>
+<div id="ambiente-de-aprendizado-por-conquistas-breakthrough-learning" class="section level3 hasAnchor" number="12.5.2">
+<h3><span class="header-section-number">12.5.2</span> Ambiente de Aprendizado por Conquistas (Breakthrough Learning):<a href="tópicos-especiais.html#ambiente-de-aprendizado-por-conquistas-breakthrough-learning" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Descrição: Inicialmente, a firma aloca o trabalhador A (com expectativa ligeiramente superior) para a tarefa. Se A realiza uma conquista (como um sucesso significativo), é identificado como de alta qualidade e continua na tarefa permanentemente. Se nenhuma conquista é observada, a avaliação da firma sobre A diminui gradualmente até igualar a expectativa sobre o trabalhador B. A partir desse ponto, A e B são tratados de forma igual.
+Implicação: Quando as diferenças iniciais entre A e B são pequenas, o tempo para que A e B sejam tratados de forma simétrica é curto. Portanto, as trajetórias de carreira e recompensas esperadas para A e B são quase iguais, tornando a discriminação no início da carreira auto-corretiva.</p>
 </div>
-<div id="informações" class="section level2 hasAnchor" number="9.4">
-<h2><span class="header-section-number">9.4</span> Informações<a href="jogos-dinâmicos.html#informações" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Quais informações cada jogador tem quando é sua vez de jogar? Uma jogadora pode ter informação bem fina sobre onde está no jogo, ou bem grosseira. Vamos então introduzir a seguinte definição:</p>
-<p>Definição conjunto de informações:</p>
-<p>Cada jogador <span class="math inline">\(i\)</span> tem uma coleção de conjuntos de informação <span class="math inline">\(h_i\)</span> the particiona (divide) os nós do jogo no qual uma jogadora <span class="math inline">\(i\)</span> move com as seguintes propriedades:</p>
-<ol style="list-style-type: decimal">
-<li>Se <span class="math inline">\(h_i\)</span> é uma conjunto unitário (<em>singleton</em>) que inclui apenas <span class="math inline">\(x\)</span>, então a jogadora <span class="math inline">\(i\)</span> que se move em <span class="math inline">\(x\)</span> sabe que está em <span class="math inline">\(x\)</span>.</li>
-<li>Se <span class="math inline">\(x \neq x&#39;\)</span> e se ambos <span class="math inline">\(x \in h_i\)</span> e <span class="math inline">\(x&#39; \in h_i\)</span> então a jogadora <span class="math inline">\(i\)</span> que se move em <span class="math inline">\(x\)</span> não sabe se está em em <span class="math inline">\(x\)</span> ou <span class="math inline">\(x&#39;\)</span>.</li>
-<li>Se <span class="math inline">\(x \neq x&#39;\)</span> e se ambos <span class="math inline">\(x\)</span> e <span class="math inline">\(x&#39; \in h_i\)</span>, então <span class="math inline">\(A_i(x) = A_i(x&#39;)\)</span>.</li>
-</ol>
-<p>Vamos entender esta definição formal. Considere novamente o jogo do Bach e Stravinsky na forma extensiva.</p>
-<div class="figure"><span style="display:block;" id="fig:bach-strav-simultaneo"></span>
-<img src="imagens/jogo-extensivo2.png" alt="Representação do Jogo da coordenação simultâneo" width="100%" />
-<p class="caption">
-Figure 9.3: Representação do Jogo da coordenação simultâneo
-</p>
-</div>
-<p>No gráfico 9.1. temos <span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span>… como nós. Considere quando a jogadora Nina se move em <span class="math inline">\(x_1\)</span>. A questão é: ela sabe que está em <span class="math inline">\(x_1\)</span>? Ou não sabe se está em <span class="math inline">\(x_1\)</span> ou <span class="math inline">\(x_2\)</span>? Se a gente escreve <span class="math inline">\(h_2 = {x_2}\)</span>, então isso significa que o conjunto de informações em <span class="math inline">\(x_1\)</span> é um conjunto unitário. Portanto, a jogadora a jogadora possui informação que diz “estou em x_2”, que é capturado pela propriedade 1 da definição. Nesse caso, segue-se que a jogadora 2 também tem outro conjunto de informação $h_2 = {x_3}.</p>
-<p>Se, por outro lado, Nina não sabe se está em <span class="math inline">\(x_1\)</span> ou <span class="math inline">\(x_2\)</span>, como no jogo do Bach e Stravinsky simultâneo (figura 9.3), então deve ser verdade que sua informação é de que está em <span class="math inline">\(x_1\)</span> ou <span class="math inline">\(x_2\)</span>, mas não sabe em qual dos dois. Nesse caso, escrevemos <span class="math inline">\(h_2 = {x_1, x_2}\)</span>. Esta é a propriedade 2.</p>
-<p>Finalmente, a propriedade 3 é essencial para manter a lógica da informação, em particular quando as ações disponíveis em cada nós forem diferentes para uma jogadora. Considere o jogo da confiança. Se ela não sabe se está no nó <span class="math inline">\(x_1\)</span> (onde o jogo terminou e não tem o que fazer) ou <span class="math inline">\(x_2\)</span>, então ela não pode saber quais as ações disponíveis para ela.</p>
-<p>Por fim, em alguns casos é possível acrescentar eventos aleatórios. Por exemplo, o jogo acima poderia ser modificado para incluir a chance de chover. Suponha que o espetáculo de Bach é a céu aberto, e o de Stravinski, não. Então, se choveu os payoffs das jogadoras é diferente de se não choveu. Vamos supor que elas preferem ficar juntas sob chuva que separadas. Como representar essa possibilidade? A forma como fazemos isso é criar uma jogadora fictícia, que é a natureza, que joga aleatoriamente sem considerações estratégicas. Essa probabilidade é exógena, no sentido de que é fixa e determinada antes do jogo começar, de modo que não depende das escolhas das jogadoras.</p>
-<p>Eis como ficaria o jogo nesse caso:</p>
-<div class="figure"><span style="display:block;" id="fig:bach-strav-natureza"></span>
-<img src="imagens/jogo-bofsex-nature.png" alt="Representação do Jogo da coordenação, com a natureza movendo primerio" width="100%" />
-<p class="caption">
-Figure 9.4: Representação do Jogo da coordenação, com a natureza movendo primerio
-</p>
-</div>
-<p>Na <a href="jogos-dinâmicos.html#fig:bach-strav-natureza">9.4</a>, temos algumas mudanças. O primeiro nó está representado por um círculo vazado, para indicar que é a natureza quem está jogando (e não terá um payoff). Os demais nós são representados por círculos prreenchidos, sólidos. Portanto, a natureza joga e “escolhe” se fará sol ou chuva. Na prática as leis da natureza irão operar, e podemos calcular probabilidades (no caso, 50% de chance de chover), mas a jogadorta Serena só sabeá se haverá sol ou chuva na hora do espetáculo, após ter feito sua jogada. Isso significa que Serena não sabe em qual nós está, se no da esquerda, com chuva, ou no da direita, com sol. Para indicar essa ausência de informação, é comum circularmos com uma linha tracejada os nós nos quais uma jogadora não tem informação sobre qual nó ela está. Uma vez que Serena Joga, é a vez de Nina jogar. Note que não circulamos nós de Nina com linha tracejada, de modo que isso significa que Nina sabe em qual nó está, ou seja, sabe não apenas o que Serena jogou, mas o que a natureza jogou. Como é difícil imaginar tal situação, o melhor seria indicar também que Nina não sabe o que a Natureza jogou, mas sabe o que a Serena jogou. A árovre do jogo ficartão então.</p>
-<div class="figure"><span style="display:block;" id="fig:bach-strav-natureza1"></span>
-<img src="imagens/jogo-bofsex-nature1.png" alt="Representação do Jogo da coordenação, com a natureza movendo primerio, conjunto de informações corretos." width="100%" />
-<p class="caption">
-Figure 9.5: Representação do Jogo da coordenação, com a natureza movendo primerio, conjunto de informações corretos.
-</p>
-</div>
-<p>Nessa árvore, vale destacar dois aspectos que são diferentes da árvore anterior. Em primeiro lugar, nós descrevemos a informação completa sobre em qual nó Nina está por meio de linha tracejada curva. Poderíamos ter usado o círculo tracejado, que daria na mesma. São duas formas distintas de representar a mesma coisa e estamos incluindo aqui para fins de completude. Em segundo lugar, note os nós que estão conectados pela linha. Quando é a vez de Nina jogar, ela não sabe o que a natureza jogou, mas sabe o que Serena jogou. Isso significa que se Serena jogou “Bach”, Nina não sabe se está no ramo “Bach” com chuva ou no ramo “Bach” som sol. Similarmente, se Serena jogou “Stravinski”, Nina não sabe em qual dos dois galhos de “Stravinski” ela está. É preciso, portanto, ter cuidado quando conectar nós, pois se fizemos errado, o jogo fica completamente outro.</p>
-</div>
-<div id="jogos-de-informação-perfeita-e-imperfeita" class="section level2 hasAnchor" number="9.5">
-<h2><span class="header-section-number">9.5</span> Jogos de informação perfeita e imperfeita<a href="jogos-dinâmicos.html#jogos-de-informação-perfeita-e-imperfeita" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Os jogos na forma normal eram chamados de jogos de informação completa, pois todas as jogadores conheciam as ações disponíveis e as funções de payoff de todas as jogadoras, e isso era conhecimento comum.</p>
-<p>Agora, nós temos uma situação em que uma jogadora pode ter conhecimento perfeito ou imperfeito do nó em que está, a depender do particionamento do conjunto de informações. Portanto, vale a pena distinguir entre dois tipos de jogos de informação completa.</p>
-<p>Definição: Um jogo de informação completa no qual cada conjunto de informação é um conjunto unitário e não há jogadas da natureza é chamado um <strong>jogo de informação perfeita</strong>. Um jogo no qual pelo menos um conjunto de informação contém vários nós ou um jogo com movimentop da natureza é chamado um <strong>jogo de informação imperfeita</strong>.</p>
-</div>
-<div id="estratégias-1" class="section level2 hasAnchor" number="9.6">
-<h2><span class="header-section-number">9.6</span> Estratégias<a href="jogos-dinâmicos.html#estratégias-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Nós já havíamos definido uma estratégia como um plano de ação contigente. Contudo, em jogos na forma normal, essa definição era pouco útil, pois estratégias (puras) coincidiam com as ações disponíveis para as jogadoras. Na forma externsiva, a nossa definição de estratégia se revelará mais útil.</p>
-<div id="estratégias-puras" class="section level3 hasAnchor" number="9.6.1">
-<h3><span class="header-section-number">9.6.1</span> Estratégias puras<a href="jogos-dinâmicos.html#estratégias-puras" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Consideremos novamente o jogo sequencial Bach-Stravinski na sua forma mais simples, representado pelo gráfico 9.1. Serena é a primeira a jogar e seu conjunto de informação possui apenas um nó e para ela uma estratégia pura é tão simples quanto jogar B ou S. Para Nina, a situação é um pouco mais complexa, posto que ela possui dois conjuntos de informação, um para cada estrarégia de Serena. Portanto, não basta dizer que as duas ações B e S são as estratégias de Ninas.</p>
-<p><strong>Estratégias Puras em Jogos na forma Extensiva</strong>: Uma <strong>estratégia pura</strong> para a jogadora <span class="math inline">\(i\)</span> é um plano completo de ação que descreve qual ação a jogadora <span class="math inline">\(i\)</span> escolherá em cada um de seus conjuntos de informação.</p>
-<p>No jogo Bach-Stravinski 9.2, vemos que a estratégia de Serena é apenas <span class="math inline">\(\{\text{Bach},\text{Stravinski}\}\)</span>, e a de nina, <span class="math inline">\(\{\text{B},\text{S}\}\)</span>, pois ambas as jogadoras possuem apenas um conjunto de informação. Em outras palavras, o jogo na forma extensiva é idêntico ao jogo na forma estratégica. Já no jogo sequencial, como vimos, Nina tem dois con juntos de informação disintos no qual ela pode escolher entre duas ações (B,S), a depender de qual foi o movimento de Serena. Portanto, um plano completo de ação para Nina deve ter instruções do que fazer para cada escolha de Serena.</p>
-<p>A escolha do conjunto de ações <span class="math inline">\(\{\text{B},\text{S}\}\)</span> deve ser contigente ao que Serena escolheu, do tipo: “Se Serena escolher Bach, escolha B”, ou “Se Serena escolher Bach, Nina escolherá S, já se Serena escolher Stravinski, Nina escolherá S” e assim por diante. Para resumir, descreveremos o conjunto de estratégias da seguinte forma:</p>
-<p><span class="math display">\[
-S_{\text{Nina}} = \{BB, BS, SB, SS\}
-\]</span>
-Assim, a estratégia <span class="math inline">\(BB\)</span> quer dizer, jogue B se Serena escolher Bach, e jogue B se Serena escolher Stravinski. Por outro lado, <span class="math inline">\(BS\)</span> quer dizer, jogue B se Serena escolher Bach, e jogue S se Serena escolher Stravinski, e assim por diante. Para Serena, o conjunto de estratégias continua <span class="math inline">\(S_{\text{Serena}} = \{Bach, Stravinski\}\)</span>.</p>
-<p>Agora podemos definir formalmente o que é uma estratégia pura, se adotarmos algumas notações específicas. Seja <span class="math inline">\(H_i\)</span> a coleção de todos os conjuntos de informação no qual a jogadora <span class="math inline">\(i\)</span> joga, e seja <span class="math inline">\(h_i \in H_i\)</span> um dos conjuntos de informação de <span class="math inline">\(i\)</span>. Seja <span class="math inline">\(A_i(h_i)\)</span> as ações que a jogadora <span class="math inline">\(i\)</span> pode tomar em <span class="math inline">\(h_i\)</span>, e seja <span class="math inline">\(A_i\)</span> o conjunto de todas as ações da jogadora <span class="math inline">\(i\)</span>, <span class="math inline">\(A_i = \cup_{h_i \in H_i}A_i(h_i)\)</span>, isto é, a união de todos os elementos em todos os conjuntos <span class="math inline">\(A_i(h_i)\)</span>.</p>
-<p>Definição 9.3: Uma estratégia pura para uma jogadora <span class="math inline">\(i\)</span> é um mapeamento <span class="math inline">\(s_i:H_i \rightarrow A_i\)</span> que atribui uma ação <span class="math inline">\(s_i(h_i) \in A_i(h_i)\)</span> para todo conjunto de informação <span class="math inline">\(h_i \in H_i\)</span>. Denotamos por <span class="math inline">\(S_i\)</span> o conjunto de todos os mapeamentos de estratégias puras <span class="math inline">\(s_i \in S_i\)</span>.</p>
-</div>
-<div id="estratégias-mistas" class="section level3 hasAnchor" number="9.6.2">
-<h3><span class="header-section-number">9.6.2</span> Estratégias mistas<a href="jogos-dinâmicos.html#estratégias-mistas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Uma estratégia mista para a jogadora <span class="math inline">\(i\)</span> é uma distribuição de probabilidade sobre suas estratégias puras <span class="math inline">\(s_i \in S_i\)</span>.</p>
-<p>Uma vez que uma estratégia mista é uma aleatorização de estratégias puras, perdemos o componente dinâmico do jogo, já que as probabilidades devem ser definidas antes do jogo começar e uma vez sorteada a estratégia a jogar, joga a escolhida independentemente da dinâmica do jogo.</p>
-<p>No caso do jogo Bach-Strvinski, a jogadora 2 teria de aleatorizar entre (BB, BS, SB, SS). Mas não poderia ter uma estratégia do tipo, se 1 jogar “Bach”, jogo B, e se jogar “Stravinski”, jogo S com probabilidade <span class="math inline">\(2/3\)</span>.</p>
+<div id="ambiente-de-aprendizado-por-falhas-breakdown-learning" class="section level3 hasAnchor" number="12.5.3">
+<h3><span class="header-section-number">12.5.3</span> Ambiente de Aprendizado por Falhas (Breakdown Learning):<a href="tópicos-especiais.html#ambiente-de-aprendizado-por-falhas-breakdown-learning" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Descrição: A firma começa alocando o trabalhador A. Se A falha (como um incidente significativo), é identificado como de baixa qualidade e substituído permanentemente por B. Se nenhuma falha ocorre, A continua sendo empregado e sua avaliação melhora. B só é considerado se A falhar, resultando em B raramente ter a chance de mostrar suas habilidades.
+Implicação: Nesse cenário, a discriminação inicial entre A e B pode se agravar ao longo do tempo. Mesmo que A e B sejam quase iguais, A e B terão trajetórias de carreira e recompensas esperadas muito diferentes, com A mantendo uma vantagem considerável.
+Conclusões do Trecho:</p>
+<p>Heidhues, Köszegi e Strack (2019) também propõem um modelo comportamental de interpretação dos resultados individuais, onde as diferenças entre grupos são provocadas pela consideração do observador de que é possível que os resultados dos indivíduos sejam afetados pela discriminação em nível de grupo. Novamente, a discriminação é provocada pela existência de alguma distinção percebida entre grupos de identidade em primeiro lugar.</p>
+<p>Contexto do Modelo:</p>
+<p>Sociedade e Grupos: A sociedade é composta por múltiplos grupos que podem se sobrepor. Cada indivíduo (agente) é parte de um desses grupos, compete com outros grupos ou é um observador neutro.
+Resultados de Reconhecimento: Os resultados observados (como conquistas ou status) são influenciados tanto pelas habilidades subjacentes dos indivíduos quanto por algum grau de incerteza ou ruído.
+Percepção da Discriminação:</p>
+<p>Interpretação do Observador: Os indivíduos acreditam que seus resultados e os de outros podem ser influenciados por discriminação em nível de grupo. Isso significa que eles pensam que alguns grupos podem ser favorecidos ou desfavorecidos.
+Objetivo do Aprendizado: Os agentes tentam descobrir os verdadeiros padrões de discriminação observando os resultados, como um aprendiz Bayesiano que atualiza suas crenças com base em novas evidências.
+Comportamento de Excesso de Confiança:</p>
+<p>Crença Sobre Habilidade Própria: Cada agente tem uma crença excessivamente confiante sobre sua própria habilidade. Eles acreditam que são mais capazes do que realmente são.
+Teimosia: Mesmo quando os resultados observados não correspondem às suas expectativas excessivamente confiantes, os agentes teimosamente mantêm a crença de que são altamente capazes.
+Impacto no Aprendizado de Discriminação:</p>
+<p>Subestimação de Habilidade: Quando os agentes observam que seus resultados são inferiores às suas expectativas, eles não revisam suas crenças sobre sua própria habilidade (devido à sua teimosia excessivamente confiante).
+Atualização de Crenças Sobre Discriminação: Em vez disso, eles ajustam suas crenças sobre a discriminação na sociedade. Eles tendem a acreditar que a discriminação é maior contra os grupos aos quais pertencem e menor contra os grupos com os quais competem.
+Longo Prazo: A longo prazo, isso leva a uma superestimação da discriminação contra seus próprios grupos e uma subestimação da discriminação contra grupos competidores.
+Resumo:
+Crenças Iniciais e Observações: Os indivíduos começam com uma crença teimosamente excessiva sobre suas próprias habilidades. Eles observam os resultados de reconhecimento (como conquistas) na sociedade.
+Interpretação de Resultados: Quando seus próprios resultados não correspondem às suas expectativas, eles não ajustam suas crenças sobre sua própria habilidade, mas sim sobre a discriminação.
+Efeito na Percepção da Discriminação: Isso leva à percepção de que a discriminação é maior contra os grupos aos quais pertencem e menor contra os grupos com os quais competem.
+Implicações Sociais: Esse processo de aprendizado tendencioso pode explicar por que as pessoas frequentemente superestimam a discriminação contra si mesmas e subestimam a discriminação contra os outros, mesmo quando os dados observacionais podem não suportar essas crenças.</p>
 </div>
 </div>
-<div id="estratégias-comportamentais" class="section level2 hasAnchor" number="9.7">
-<h2><span class="header-section-number">9.7</span> Estratégias comportamentais<a href="jogos-dinâmicos.html#estratégias-comportamentais" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Para permitir esse tipo de comportamento, definiremos o conceito de estratégia comportamental: ela especifica para cada conjunto de informação <span class="math inline">\(h_i \in H_i\)</span> uma distribuição de probabilidade independente sobre <span class="math inline">\(A_i(h_i)\)</span> e é denotada por $_i:H_i A_i(h_i), em que <span class="math inline">\(\sigma_i(a_i(h_i))\)</span> é a probabilidade que a jogadora <span class="math inline">\(i\)</span> joga a ação <span class="math inline">\(a_i(h_i) \in A_i(h_i)\)</span> no conjunto de informação <span class="math inline">\(h_i\)</span>.</p>
-<p>Pergunta: dada uma estratégia mista (não comportamental), podemos achar uma estratégia comportamental que leva ao mesmo resultado? Sim, sempre é possível fazer essa operação.</p>
-<p>E o oposto, dada uma estratégia comportamental, podemos achar uma mista que leva ao mesmo resultado? Sim, em jogos de lembrança perfeita (perfect recall).</p>
-<p>E um jogo é de lembrança perfeita se nenhuma jogadora jamais esquece uma informação que soube previamente.</p>
-<p>Portanto, estratégias mistas e comportamentais são equivalentes nessas classes de jogos, no sentido de que a mesma distribuição de resultados sempre pode ser alcançada com estratégias mistas e comportamentais.
-Definição: perfect recall (memória perfeita)</p>
+<div id="críticas" class="section level2 hasAnchor" number="12.6">
+<h2><span class="header-section-number">12.6</span> Críticas<a href="tópicos-especiais.html#críticas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Small and Pager (2020) recognize that research in economics – both empirical and theoretical
+– has traditionally adopted either the taste-based or the statistical discrimination perspectives,
+focusing substantially on assessing which approach is a more appropriate description of discrimination
+as a sociological phenomenon. They go on to criticize this economic research
+agenda, arguing that it misses “what sociologists and others have called ‘institutional discrimination,’
+‘structural discrimination,’ and ‘institutional racism,’ which are all terms used
+to refer to the idea that something other than individuals may discriminate by race.” In their
+essay, they define “institutional discrimination” as “differential treatment that may be caused
+by organizational rules or by people following the law,” and say that it need not result from
+personal prejudice or from rational guesses on the basis of group characteristics.</p>
+<p>all either rooted on personal prejudices
+or based on rationally (or irrationally) biased beliefs.</p>
+<div id="normas-sociais-como-instituições" class="section level3 hasAnchor" number="12.6.1">
+<h3><span class="header-section-number">12.6.1</span> Normas Sociais como instituições<a href="tópicos-especiais.html#normas-sociais-como-instituições" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>According to Young (2015), “As normas sociais são padrões de comportamento que se autoimpõem dentro de um grupo: todos se conformam, todos esperam que os outros se conformem, e todos desejam se conformar quando esperam que todos os outros se conformem. As normas sociais são frequentemente mantidas por múltiplos mecanismos, incluindo o desejo de coordenar, o medo de ser sancionado, a sinalização de pertencimento a um grupo, ou simplesmente seguir o exemplo dos outros.”</p>
 </div>
-<div id="representação-estratégica-de-jogos-na-forma-extensiva" class="section level2 hasAnchor" number="9.8">
-<h2><span class="header-section-number">9.8</span> Representação estratégica de jogos na forma extensiva<a href="jogos-dinâmicos.html#representação-estratégica-de-jogos-na-forma-extensiva" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="equilíbrio-de-nash-e-caminhos-de-jogada" class="section level2 hasAnchor" number="9.9">
-<h2><span class="header-section-number">9.9</span> Equilíbrio de Nash e Caminhos de jogada<a href="jogos-dinâmicos.html#equilíbrio-de-nash-e-caminhos-de-jogada" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Como vimos, um dos equilíbrios de Nash do jogo Bach-Stravinski é (Bach, BB), e outro é (Bach, BS). E a diferença desses dois equilíbrio é o que a jogadora 2 joga no conjunto de informação fora do equilíbrio.</p>
-<p>Vejam que na forma extensiva, cara resultado é associado a um único caminho de jogo, já que há um único caminho do nó raiz para cada nó terminal. Isso segue da definição que cada nó deve ser precedido por apenas um nó. Em termos de equilíbrio de Nash, isso significa que se um perfil de estratégia <span class="math inline">\(s^{\star}\)</span> é um equilíbrio de Nash, então cada jogadora prefere seguir o caminho predito pelo equilíbrio do que escolher outro alternativo, dado o que as demais estão fazendo. O que nos leva a mais uma definição:</p>
-<p>Seja <span class="math inline">\(\sigma^{\star} = (\sigma_1^{\star}, ..., \sigma_n^{\star})\)</span> um perfil de estratégias comportamentais de equilíbrio de Nash em um jogo na forma extensiva. Dizemos que um conjunto de informação está no caminho de equilíbrio se dado <span class="math inline">\(\sigma^{\star}\)</span> ele é alcançado com probabilidade positiva. E dizemos que um conjunto de informação está fora do caminho de equilíbrio se dado <span class="math inline">\(\sigma^{\star}\)</span> ele nunca é alcançado.</p>
-<p>Portanto, equilíbrios de Nash envolvem crenças do que irá ocorrer no caminho de equilíbrio e fora dele. Entretanto, deixa claro que ameaças não-críveis são aceitas pelas jogadores. Basicamente diz para jogadoras agirem racionalmente no caminho de equilíbrio, dadas as crenças dentro e fora do caminho de equilíbrio. Mas se as crenças no caminho fora de equilíbrio são importantes, agir racionalmente fora dele também deveriqa ser, certo?</p>
+<div id="discriminação-institucionalsistêmica" class="section level2 hasAnchor" number="12.7">
+<h2><span class="header-section-number">12.7</span> Discriminação institucional/sistêmica<a href="tópicos-especiais.html#discriminação-institucionalsistêmica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Bohren, Hull and Imas (2023) introduze uma noção de discriminação sistêmica, diferenciando da discriminação direta. Os autores apresentam um exemplo motivador que é útil.</p>
+<p>Na primeira etapa, um recrutador se encontra com um candidato potencial e faz uma avaliação. Esse recrutador é tendencioso e avalia consistentemente as candidatas do sexo feminino de forma menos favorável do que os candidatos do sexo masculino com habilidades iguais.</p>
+<p>Na segunda etapa, um gerente de contratação na empresa observa a avaliação do recrutador e toma a decisão de contratar.</p>
+<p>Suponha que um econometrista só consiga observar a segunda etapa do processo de contratação: ele vê as avaliações de todos os candidatos potenciais e as decisões de contratação. Analisando esses dados, o econometrista pode não encontrar diferenças estatisticamente significativas entre as probabilidades de contratação para candidatas femininas e candidatos masculinos, condicionadas à avaliação do recrutador. Nesse ponto, o econometrista pode concluir que o processo de contratação não é discriminatório, pois candidatos do sexo masculino e feminino com resultados observáveis iguais têm a mesma probabilidade de serem contratados.</p>
+<p>Bohren, Hull e Imas (2023) sugerem, em vez disso, que o econometrista deve concluir que “não há discriminação direta por parte do gerente de contratação.”
+## Referências</p>
+<p>Gerard, F., Lagos, L., Severnini, E., &amp; Card, D. (2021). Assortative matching or exclusionary hiring? The impact of employment and pay policies on racial wage differences in Brazil. American Economic Review, 111(10), 3418-3457.</p>
 
 </div>
 </div>
+
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="equilíbrio-de-nash-em-estratégias-mistas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="credibilidade-e-racionalidade-sequencial.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="barganha.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -508,7 +499,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/mgaldino/Teoria-dos-Jogos/edit/main/09-Jogos-dinamicos.Rmd",
+"link": "https://github.com/mgaldino/Teoria-dos-Jogos/edit/main/12-Topicos-especiais.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -516,7 +507,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/mgaldino/Teoria-dos-Jogos/blob/main/09-Jogos-dinamicos.Rmd",
+"link": "https://github.com/mgaldino/Teoria-dos-Jogos/blob/main/12-Topicos-especiais.Rmd",
 "text": null
 },
 "download": null,

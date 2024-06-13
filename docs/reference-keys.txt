@@ -147,3 +147,16 @@ equilíbrio-do-jogo-infinito
 aplicações
 formação-de-governos-parlamentaristas
 take-away
+tópicos-especiais
+introdução-4
+descriminação
+taste-based-discrimination
+discriminação-estatística
+definição-de-discriminação-estatística-individual
+equilíbrio-da-discriminação-estatística
+novas-modificações
+ambiente-de-aprendizado-por-conquistas-breakthrough-learning
+ambiente-de-aprendizado-por-falhas-breakdown-learning
+críticas
+normas-sociais-como-instituições
+discriminação-institucionalsistêmica
