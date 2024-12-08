@@ -6,3 +6,51 @@ Até o momento nós lidamos com jogos em que os agentes possuem informação com
 
 Wm certo sentido, jogos simultâneos representam situações em que que os jogadores não sabem o que os demais escolherem, e devem fazer conjecturas sobre as escolhas dos outros, e elas devem ser mutuamente consistente para que possamos achar o equilíbrio do jogo. John Harsany foi possivelmente o primeiro a perceber a similaridade entre crenças sobre ações e crenças sobre preferências ou quem são os jogadores. Harsany, que viria a ganhar o prêmio Nobel de economia juntamente com Nash e Selten (ue desenvolveu a noção de subjogo perfeito), desenvolvou uma forma elegante de pensar sobre as crenças que podemos formar sobre as características dos jogadores, o que iremos chamar de tipos dos jogadores. E nós chamamos jogos em que jogadores podem ser de diferentes tipos de *jogos de informação incompleta*.
 
+### Exemplo
+
+Um exemplo pode ser útil.
+
+loren ipson
+
+### Aplicação - votação em um júri
+
+Uma das aplicações clássicas de jogos Bayesianos é a de votação de um júri, desenvolvido no trabalho de Feddersen e Pesendorfer (1998). Neste artigo eles mostram que a regra da unanimidade (em que é necessário unanimidade para condenar um acusado) pode mais prejudicar do que ajuda pessoas que estao em julgamento, quando comparada com regra da maioria. Para entender o modelo e seus resultados, vamos começar supondo que o júri é formado por uma única pessoa, já que este é o caso mais simples.
+
+A única jurada deve decidir se **s**entencia à reclusão ou **a**bsolve um réu acusado de um crime, ou seja, decide o resultado $x \in \{a,s\}$. A jurada não sabem se o acusado é **C**ulpado ou **I**nocente. Portanto, o conjunto de estado das variáveis é $\Omega \in \{C,I\}$. A jurada atribui probabilidade a priori $\pi$ ao estado $C$, ou seja, acredita a priori que a probabilidade do réu ser culpado é $\pi$. Por fim, se condenar uma pessoa culpada ou absolver um inocente, recebem $0$ de utilidade. De outro lado, se prender um inocente obtem $-q$ e se absolver um culpado recebem $-(1-q)$ de utilidade, em que $q \in (0,1)$. A ideia é que $q$ representa o nível de "dúvida razoável" da jurada para condenar. Se ela acha que para condenar alguém deve ter $80/%$ de certeza, então $q=.8$ e se ela condenar um inocente obtém um payoff de $-.8$ e se absolver um culpado o payoff é $-(1-.8) = -0.2$. Ou seja, se o nível de dúvida razoável é maior que $.5$, isso significa que é pior condenar um inocente do que absolver um culpado. Se $q=.5$, a jurada vê como igualmente ruim errar condenando um inocente ou absolvendo um culpado.
+
+
+
+Dada a probabilidade a priori, podemos calcular a utilidade esperada da jurada sem novas informações adicionais. $\mathbb{E}[U_i(\text{veredito de culpado})] = 0\pi + -q(1-\pi) = -q + q\pi$ e $\mathbb{E}[U_i(\text{veredito de inocente})] = -(1-q)\pi + 0(1-\pi) = -\pi + q\pi$. Queremos saber se $-q + q\pi > -1 + q\pi$ e, portanto, a jurada deve condenar ou não.
+$-q + q\pi > -\pi + q\pi = -q  > -pi = q < \pi$
+
+Ou seja, se a probabilidade a priori do réu ser culpado é maior do que o ponto de corte de dúvida razoável, deve condenar. Se não, deve absolver. Agora, vamos supor que ela observa um sinal correlacionado com o verdadeiro estado mundo, isto é, um sinal informativo. Pode ser alguma evidência da defesa ou da acusação. Para simplificar, vamos supor que apenas um único sinal é observado. Essa informação é um sinal binário sobre a culpabilidade do réu $\theta_i \in \{0,1\}$, e por sinal informativo queremos dizer que é mais provável receber um sinal $\theta_i = 1$ quando o réu é culpado do que quando o réu é inocente e vice-versa. Vamos supor que $Pr(\theta_i = 1|\omega = C) = Pr(\theta_i = 0|\omega = I) = p > 1/2$. Disso se segue que $Pr(\theta_i = 1|\omega = I) = Pr(\theta_i = 0|\omega = C) = 1- p$.
+
+Suponha inicialmente que o singal foi $1$, isto é, de que o réu é culpado. A probabilidade a posteriori pode ser calculada usando o teorema de Bayes:
+
+$$Pr(C|1) = \frac{Pr(C)Pr(1|C)}{Pr(1)} = \frac{\pi p}{Pr(C)Pr(1|C) + Pr(I)Pr(1|I)} = \frac{\pi p}{\pi p + (1-\pi)(1-p)}$$
+De maneira similar, podemos computar a probabilidade a posteri após observar um sinal de inocëncia:
+
+$$Pr(I|1) = \frac{Pr(I)Pr(1|I)}{Pr(1)} = \frac{\ (1-\pi)(1-p)}{(1-\pi)(1-p) + \pi p}$$
+$1-\pi < .5$ e $q\pi < .25$ e a utilidade esperada de condenar é $< -.25$. Por raciocínio análogo, a utilidade esperada de absolver é   Ou seja, têm mais a ganhar condenando do que absolvendo. Vejam que a estratégia de escolher votar pela absolvição $a$ é fracamente dominada por sentença $S$. Se escolhermos eliminar estratégias fracamente dominadas, o que sobra é o equilíbrio de Nash em que todos condenam.
+
+Podemos agora computar as utilidades esperadas de setenciamento e absolvição.
+$$\mathbb{E}[U_i(\text{veredito de culpado})] = 0Pr(C|1) + -q(1-Pr(I|1)) = -q\frac{\ (1-\pi)(1-p)}{(1-\pi)(1-p) + \pi p}$$
+
+$$\mathbb{E}[U_i(\text{Inocente})] =-(1-q)Pr(C|1) + 0(1-Pr(I|1)) = -(1-q)\frac{\pi p}{\pi p + (1-\pi)(1-p)}$$ 
+A jurada prefere condenar quando $-q\frac{\ (1-\pi)(1-p)}{(1-\pi)(1-p) + \pi p} > -(1-q)\frac{\pi p}{\pi p + (1-\pi)(1-p)}$. Rearranjando, temos: $q < \frac{\ (1-\pi)(1-p)}{(1-\pi)(1-p) + \pi p}$, ou seja, $q < Pr(C|1)$. Em palavras: como anteriormente, a jurada prefere condenar se probabilidade (a posteriori) de o réu ser culpado for maior do que o nível de "dúvida razoável". Note também que se $\pi = .5$, isto é, a probabilidade a priori da culpabilidade do réu é de $50\%$, então $Pr(C|1) = p$, a probabilidade de observar um sinal de culpado, dado que é culpado. 
+
+Se fizermos raciocínio smilar para o caso dela observar um sinal de inocente, podemos calcular qual o valor de $q$ que torna preferível absolver o réu, e isso é dado por: $q > \frac{\pi(1-p)}{(1-\pi) p + \pi(1-p)}$. Novamente, supondo que $\pi = .5$, podemos simplificar e concluir que ela votará pela absolvição sempre que $q > 1- p$. Juntanto o que concluímos antes, temos que a jurada votará com seu sinal sempre que $1 - p < q < p$. Se $q = .5$, como o sinal é informativo $p > .5$, então ela sempre votará com seu sinal. Dizemos que se ela vota de acordo com seu sinal, sua votação é informativa.
+
+### Votando contra seu sinal
+
+O que acontece se tivermos $n$ juradas?
+
+Suponha agora que a promotoria e dedefesa apresentam informações sobre o verdadeiro estado da natureza (se o réu é culpado ou inocente). Aqui, vamos trabalhar com apenas uma informação sendo apresentada para cada jurado. A ideia é que cada jurado possui alguma expertise que o permite avaliar com mais qualidade uma das informações recebidas e as demais eles descartam. Em temros de teoria dos jogos, dizemos que cada jurado recebe uma informação privada. Essa informação é um sinal binário sobre a culpabilidade do réu $\theta_i \in \{0,1\}$, correlacionado com a verdade, ou seja, o sinal é informativo, de tal forma que uma jurada é mais provável de receber um sinal $\theta_i = 1$ quando o réu é culpado do que quando o réu é inocente. Vamos supor que $Pr(\theta_i = 1|\omega = C) = Pr(\theta_i = 0|\omega = I) = p > 1/2$. Disso se segue que $Pr(\theta_i = 1|\omega = I) = Pr(\theta_i = 0|\omega = C) = 1- p$.
+
+
+Após receber seu sinal privado, a jurada seleciona seu voto $v(\theta_i)$ de forma a maximizar a probabilidade da decisão correta. Se todas as juradas adotarem comportamento sincero, isto é, $v_i(1) = s$ e $v_i(0) = a$.
+
+Vamos aqui trabalhar com uma versão simplificada. Suponha que haja três jurados, ou seja, três jogadores $N = \{1,2,3\}$, que são responsáveis por.
+## Referências
+
+Feddersen, T., & Pesendorfer, W. (1998). Convicting the innocent: The inferiority of unanimous jury verdicts under strategic voting. American Political science review, 92(1), 23-35.
