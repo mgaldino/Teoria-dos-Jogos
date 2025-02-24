@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo1 Jogos Bayesianos | 12-Jogos-Bayesianos.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo1 Jogos Bayesianos | 12-Jogos-Bayesianos.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo1 Jogos Bayesianos | 12-Jogos-Bayesianos.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">TJ CS</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#jogos-bayesianos"><i class="fa fa-check"></i><b>1</b> Jogos Bayesianos</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#introdução"><i class="fa fa-check"></i><b>1.1</b> Introdução</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path=""><a href="#exemplo"><i class="fa fa-check"></i><b>1.1.1</b> Exemplo</a></li>
+<li class="chapter" data-level="1.1.2" data-path=""><a href="#aplicação---votaçao-em-um-júri"><i class="fa fa-check"></i><b>1.1.2</b> Aplicação - votaçAo em um júri</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="jogos-bayesianos" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Capítulo1</span> Jogos Bayesianos<a href="#jogos-bayesianos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introdução" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Introdução<a href="#introdução" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Até o momento nós lidamos com jogos em que os agentes possuem informação completa ou crenças comuns sobre movimentos da natureza, por exemplo. É comum que os agentes saibam mais sobre si mesmo do que dos demais. Políticos sabem suas preferências mais que eleitores, grupos de interesse mais sobre seus setores do que políticos e burocratas, líderes políticos mais sobre sua decisão de ir à guerra do que outros estados. Essas são situações em que temos assimetria de informação.</p>
+<p>Wm certo sentido, jogos simultâneos representam situações em que que os jogadores não sabem o que os demais escolherem, e devem fazer conjecturas sobre as escolhas dos outros, e elas devem ser mutuamente consistente para que possamos achar o equilíbrio do jogo. John Harsany foi possivelmente o primeiro a perceber a similaridade entre crenças sobre ações e crenças sobre preferências ou quem são os jogadores. Harsany, que viria a ganhar o prêmio Nobel de economia juntamente com Nash e Selten (ue desenvolveu a noção de subjogo perfeito), desenvolvou uma forma elegante de pensar sobre as crenças que podemos formar sobre as características dos jogadores, o que iremos chamar de tipos dos jogadores. E nós chamamos jogos em que jogadores podem ser de diferentes tipos de <em>jogos de informação incompleta</em>.</p>
+<div id="exemplo" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Exemplo<a href="#exemplo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Um exemplo pode ser útil.</p>
+<p>loren ipson</p>
+</div>
+<div id="aplicação---votaçao-em-um-júri" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Aplicação - votaçAo em um júri<a href="#aplicação---votaçao-em-um-júri" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Uma das aplicações clássicas de jogos Bayesianos é a de votação de um júri, desenvolvido no trabalho de Feddersen e Pesendorfer (1998). Neste artigo eles mostram que a regra da unanimidade (em que é necessário unanimidade para condenar um acusado) mais prejudica do que ajuda pessoas que estao em julgamento. Vamos aqui trabalhar com uma versão simplificada. Suponha que haja três jurados, ou seja, três jogadores <span class="math inline">\(N = \{1,2,3\}\)</span>, que são responsáveis por decidir se <strong>s</strong>entenciam à reclusão ou <strong>a</strong>bsolvem um acusado de um crime, ou seja, decidem o resultado <span class="math inline">\(x \in \{a,s\}\)</span>. Os jurados não sabem se o acusado é <strong>C</strong>ulpado ou <strong>I</strong>nocente. Portanto, o conjunto de estado das variáveis <span class="math inline">\(\Omega \in \{C,I\}\)</span>. Os jurados atributem probabilidade a priori <span class="math inline">\(\pi &gt; 1/2\)</span> ao estado <span class="math inline">\(C\)</span>, ou seja, acreditam a priori que a probabilidade do réu ser culpado é maior que <span class="math inline">\(50\%\)</span>. Por fim, se condenarem uma pessoa culpada ou absolverem um inocente, recebem <span class="math inline">\(1\)</span> de utilidade. De outro lado, se prenderem um inocente ou absolverem um culpado, recebem <span class="math inline">\(0\)</span> de utilidade.</p>
+<p>Dada a probabilidade a priori, podemos calcular a utilidade esperada de cada jurado sem novas informações adicionais. <span class="math inline">\(\mathbb{E}[U_i(\text{veredito de culpado})] = 1\pi + 0(1-\pi) = \pi\)</span> e <span class="math inline">\(\mathbb{E}[U_i(\text{veredito de inocente})] = 0\pi + 1(1-\pi) = 1 - \pi\)</span>. Ou seja, têm mais a ganhar condenando do que absolvendo. Vejam que a estratégia de escolher votar pela absolvição <span class="math inline">\(a\)</span> é fracamente dominada por setencia <span class="math inline">\(S\)</span>. Se escolhermos eliminar estratégias fracamente dominadas, o que sobra é o equilíbrio de Nash em que todos condenam.</p>
+<p>Suponha agora que a promotoria e dedefesa apresentam informações sobre o verdadeiro estado da natureza (se o réu é culpado ou inocente). Aqui, vamos trabalhar com apenas uma informação sendo apresentada para cada jurado. A ideia é que cada jurado possui alguma expertise que o permite avaliar com mais qualidade uma das informações recebidas e as demais eles descartam. Em temros de teoria dos jogos, dizemos que cada juraod recebe uma informação privada. Essa informação é um sinal binário sobre a culpabilidade do réu <span class="math inline">\(\theta_i \in \{0,1\}\)</span>, correlacionado com a verdade, ou seja, o sinal é informativo, de tal forma que uma jurada é mais provável de receber um sinal <span class="math inline">\(\theta_i = 1\)</span> quando o réu é culpado do que quando o réu é inocente. Vamos supor que <span class="math inline">\(Pr(\theta_i = 1|\omega = C) = Pr(\theta_i = 0|\omega = I) = p &gt; 1/2\)</span>. Disso se segue que <span class="math inline">\(Pr(\theta_i = 1|\omega = I) = Pr(\theta_i = 0|\omega = C) = 1- p\)</span>.</p>
+<p>Após receber seu sinal privado, a jurada
+## Referências</p>
+<p>Feddersen, T., &amp; Pesendorfer, W. (1998). Convicting the innocent: The inferiority of unanimous jury verdicts under strategic voting. American Political science review, 92(1), 23-35.</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/mgaldino/Teoria-dos-Jogos/edit/main/%s",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/mgaldino/Teoria-dos-Jogos/blob/main/%s",
+"text": null
+},
+"download": null,
+"search": false,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
