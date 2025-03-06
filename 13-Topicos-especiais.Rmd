@@ -10,7 +10,7 @@ Gerard et. al. (2021).
 
 Como a literatura de economia tem definido Discriminação?
 Arrow (1973) argumenta do seguinte modo (tradução do GPT): 
-""O fato de que diferentes grupos de trabalhadores, sejam eles qualificados ou não qualificados, negros ou brancos, homens ou mulheres, recebam salários diferentes convida à explicação de que os diferentes grupos devem diferir de acordo com alguma característica valorizada no mercado. Na teoria econômica padrão, pensamos primeiro nas diferenças de produtividade. A noção de discriminação envolve o conceito adicional de que características pessoais do trabalhador, não relacionadas à produtividade, também são valorizadas no mercado."
+"O fato de que diferentes grupos de trabalhadores, sejam eles qualificados ou não qualificados, negros ou brancos, homens ou mulheres, recebam salários diferentes convida à explicação de que os diferentes grupos devem diferir de acordo com alguma característica valorizada no mercado. Na teoria econômica padrão, pensamos primeiro nas diferenças de produtividade. A noção de discriminação envolve o conceito adicional de que características pessoais do trabalhador, não relacionadas à produtividade, também são valorizadas no mercado."
 
 Essa definição é reconhecidamente problemática. Eis algunas problemas:
 
@@ -38,13 +38,13 @@ Se a trabalhadora negra sabe que poderá receber ofertas piores de empresas disc
 
 Phelps (1972) propôs uma explicação alternativa para a discriminação. A ideia é que não observamos diretamente a produtividade dos trabalhadores, e precisamos usar sinais correlacionados com produtividade. Eis o modelo.
 
-Cada trabalhador tem uma identidade $j \in \{B,W\}$ e um tipo de produtiidade $p$, que vem de uma distribuição $N(\mu_j, \sigma^2_j)$. Um empregador quer contratar a trabalhadora e pagar o salário igual à produtividade dela. Entretando, o empregador só observa a identidade e um sinal da produtividade (digamos, currículo ou resultado de um teste): $\theta = p + e$, em que $e \sim N(0, \sigma^2_{ej})$.
+Cada trabalhador tem uma identidade $j \in \{B,W\}$ (chamado de tipo) e uma produtividade $p$, que vem de uma distribuição $N(\mu_j, \sigma^2_j)$. Um empregador quer contratar a trabalhadora e pagar o salário igual à produtividade dela. Entretando, o empregador só observa a identidade e um sinal da produtividade (digamos, currículo ou resultado de um teste): $\theta = p + e$, em que $e \sim N(0, \sigma^2_{ej})$.
 
-É possível mostrar que a produtividade esperada da trabalhadoras é:
+É possível mostrarˆ[a derivação encontra-se ao final do capítulo, para os interessados] que a produtividade esperada da trabalhadora é:
 
 $\mathbb{E}(p|\theta, j) = \theta \frac{\sigma^2_j}{\sigma^2_j + \sigma^2_{ej}} + \mu_j \frac{\sigma^2_{ej}}{\sigma^2_j + \sigma^2_{ej}}$
 
-Digamos que $e = 0$, isto é, a variância é zero, ou seja, o sinal é sem ruído. Então, a produtividade inferida depende da identidade. Em particular, 
+Digamos que $e = 0$, isto é, a variância é zero, ou seja, o sinal é sem ruído. Então, a produtividade inferida independe da identidade. Em particular, 
 
 $\mathbb{E}(p|\theta, j) = \theta \frac{\sigma^2_j}{\sigma^2_j} + \mu_j\frac{0}{\sigma^2_j} = \theta = p$. Ou seja, todas as trabalhadoras recebem igual à sua produtividade, independentemente da sua identidade.
 
@@ -157,3 +157,83 @@ Bohren, Hull e Imas (2023) sugerem, em vez disso, que o econometrista deve concl
 ## Referências
 
 Gerard, F., Lagos, L., Severnini, E., & Card, D. (2021). Assortative matching or exclusionary hiring? The impact of employment and pay policies on racial wage differences in Brazil. American Economic Review, 111(10), 3418-3457.
+
+## Derivação do modelo de Phelps.
+
+Sejam
+\[
+p \sim N(\mu_j, \sigma_j^2) \quad \text{e} \quad e \sim N(0, \sigma_{ej}^2),
+\]
+com o sinal observado definido por
+\[
+\theta = p + e.
+\]
+
+A distribuição normal de $p$ dada acima pode ser pensada como uma priori, cuja densidade tem fórmula igual a:
+\textbf{Prior:}
+\[
+f(p) = \frac{1}{\sqrt{2\pi\sigma_j^2}} \exp\left(-\frac{(p-\mu_j)^2}{2\sigma_j^2}\right).
+\]
+
+Assim, podemos aplicar o teorema de Bayes, que diz que a probabilidade a posteriori, após observar um sinal, é proporcional à priori multiplicado pela verossimilhança. Esta, por sua vez, é dada por:
+
+Dado que o sinal é definido por \(\theta = p + e\) e \(e \sim N(0, \sigma_{ej}^2)\), temos que
+\[
+\theta|p \sim N(p, \sigma_{ej}^2).
+\]
+Assim, a função de densidade condicional é:
+\[
+f(\theta|p) = \frac{1}{\sqrt{2\pi \sigma_{ej}^2}} \exp\left(-\frac{(\theta-p)^2}{2\sigma_{ej}^2}\right).
+\]
+
+
+Pelo teorema de Bayes:
+\[
+f(p|\theta,j) \propto f(\theta|p) f(p)
+\propto \exp\left(-\frac{(p-\mu_j)^2}{2\sigma_j^2} -\frac{(\theta-p)^2}{2\sigma_{ej}^2}\right).
+\]
+
+Reescrevendo o expoente:
+\[
+-\frac{(p-\mu_j)^2}{2\sigma_j^2} -\frac{(\theta-p)^2}{2\sigma_{ej}^2}
+= -\frac{1}{2}\left[\frac{(p-\mu_j)^2}{\sigma_j^2} + \frac{(p-\theta)^2}{\sigma_{ej}^2}\right].
+\]
+
+Observando que
+\[
+\frac{(p-\mu_j)^2}{\sigma_j^2} + \frac{(p-\theta)^2}{\sigma_{ej}^2}
+= \left(\frac{1}{\sigma_j^2}+\frac{1}{\sigma_{ej}^2}\right)p^2 - 2\left(\frac{\mu_j}{\sigma_j^2}+\frac{\theta}{\sigma_{ej}^2}\right)p + \text{constante},
+\]
+definindo
+\[
+A = \frac{1}{\sigma_j^2}+\frac{1}{\sigma_{ej}^2} \quad \text{e} \quad B = \frac{\mu_j}{\sigma_j^2}+\frac{\theta}{\sigma_{ej}^2},
+\]
+podemos completar o quadrado:
+\[
+\frac{(p-\mu_j)^2}{\sigma_j^2} + \frac{(p-\theta)^2}{\sigma_{ej}^2}
+= A\left[p - \frac{B}{A}\right]^2 + \text{constante}.
+\]
+
+Assim,
+\[
+f(p|\theta,j) \propto \exp\left(-\frac{A}{2}\left[p - \frac{B}{A}\right]^2\right),
+\]
+o que mostra que \( p|\theta,j \sim N\left(\mu_{\text{post}},\sigma^2_{\text{post}}\right) \), onde
+\[
+\mu_{\text{post}} = \frac{B}{A} = \frac{\frac{\mu_j}{\sigma_j^2}+\frac{\theta}{\sigma_{ej}^2}}{\frac{1}{\sigma_j^2}+\frac{1}{\sigma_{ej}^2}}
+\]
+e
+\[
+\sigma^2_{\text{post}} = \frac{1}{A} = \frac{\sigma_j^2\sigma_{ej}^2}{\sigma_j^2+\sigma_{ej}^2}.
+\]
+
+Simplificando a média:
+\[
+\mu_{\text{post}} = \frac{\mu_j\sigma_{ej}^2+\theta\sigma_j^2}{\sigma_j^2+\sigma_{ej}^2}
+= \frac{\sigma_j^2}{\sigma_j^2+\sigma_{ej}^2}\theta + \frac{\sigma_{ej}^2}{\sigma_j^2+\sigma_{ej}^2}\mu_j.
+\]
+
+Portanto, a esperança condicional é:
+\[
+\mathbb{E}(p|\theta,j) = \mu_{\text{post}} = \frac{\sigma_j^2}{\sigma_j^2+\sigma_{ej}^2}\theta + \frac{\sigma_{ej}^2}{\sigma_j^2+\sigma_{ej}^2}\mu_j.
+\]

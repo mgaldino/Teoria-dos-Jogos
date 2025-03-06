@@ -1,23 +1,24 @@
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Seleciona todos os elementos <strong> que contêm o texto "Exercise" dentro de <div class="exercise">
-  document.querySelectorAll('div.exercise strong').forEach(function(el) {
-    el.textContent = el.textContent.replace('Exercise', 'Exercício');
-  });
-});
-</script>
+<!-- <script> -->
+<!-- document.addEventListener("DOMContentLoaded", function() { -->
+<!--   // Seleciona todos os elementos <strong> que contêm o texto "Exercise" dentro de <div class="exercise"> -->
+<!--   document.querySelectorAll('div.exercise strong').forEach(function(el) { -->
+<!--     el.textContent = el.textContent.replace('Exercise', 'Exercício'); -->
+<!--   }); -->
+<!-- }); -->
+<!-- </script> -->
 
 # Racionalidade e Relações de Preferência
 
+Racionalidade  é um conceito obviamente muito importante em qualquer teoria social e com implicações filosóficas. Pensadores da Grécia Antiga, como Aristóteles, definiam o ser humano como um animal racional, diferentemente portanto dos demais animais. Com os modelos de Linguagem Generativa, discussões sobre Inteligência Artificial retomaram, com muita confusão e "hype" sobre o que é inteligência e o que seria inteligência articial. Para além das questões filosóficas, importa para nós principalmente que racionalidade é uma presuposição chave para nossa teoria do comportamento dos agentes. A Teoria dos Jogos envolve, fundamentalmente, em especificar como agentes tomam decisões e, portanto, comportam-se em situações estratégicas. De modo que a tomada de decisão merece ser investigada em profundidade.
 
 ## Tomada de decisão
 
-Em uma eleição, cada eleitor tem um problema de decisão: em quem deve votar, dentre as várias alternativas (incluindo Nulo, branco e não ir votar). Similarmente, quando você vai almoçar, deve escolher qual comida irá comer. Ou pela manhã, quando for se arrumar para sair de casa, qual roupa vestir. Todos esses problemas se assemelham em um aspecto: uma pessoa (ou, como iremos chamar em Teoria dos Jogos, uma jogadora) deve escolher entre várias alternativas e cada escolha gerará um resultado, que pode ser melhor ou pior para a jogadora (e eventualmente outras jogadoras).
+Existe um capo da ciência voltado à **Teoria da Decisão**, que grosso modo diz respeito a como agentes tomam decisões em situações não-estratégicas. A Teoria dos Jogos se diferencia da Teoria da Decisão, portanto, pelo compoente estratégico. Mas isso não significa que não compartilhem elementos chave sobre os pressupostos comportamentais de como agentes tomam decisões. Em uma eleição, cada eleitor tem um problema de decisão: em quem deve votar, dentre as várias alternativas (incluindo Nulo, branco e não ir votar). Similarmente, quando você vai almoçar, deve escolher qual comida irá comer. Ou pela manhã, quando for se arrumar para sair de casa, qual roupa vestir. Todos esses problemas se assemelham em um aspecto: uma pessoa (ou, como iremos chamar em Teoria dos Jogos, uma jogadora) deve escolher entre várias alternativas e cada escolha gerará um resultado, que pode ser melhor ou pior para a jogadora (e eventualmente outras jogadoras).
 
 A tomada de decisão consiste de três elementos fundamentais:
 1. Ações : as alternativas que uma jogadora pode escolher
 2. Resultados: as consequências de cada ação
-3. Preferências: quais resultados as jogadoras preferem mais ou menos. E vamos designar essas preferências pela relação (binária) de preferência $\succcurlyeq$, que significa, "pelo menos tão bom quanto", ou seja, se escrevo $x \succcurlyeq y$, então $x$ é pelo menos tõ bom quanto $y$ (e potencialmente melhor que $y$).
+3. Preferênciasˆ[Na escola eu aprendi que o verbo preferir não permite o uso de advérbios para qualificação de intensidade. Seria gramaticalmente errado dizer: prefiro muito ou mais goiaba à maçã. A razão é que a preferência seria um conector binário, que indica ordem, mas não quantidade. Como veremos, essa nocão gramatical do português será útil, mas em algum momento deve ser abandonada quando entramos na seara da incerteza]: quais resultados as jogadoras preferem. E vamos designar essas preferências pela relação (binária) de preferência $\succcurlyeq$, que significa, "pelo menos tão bom quanto", ou seja, se escrevo $x \succcurlyeq y$, então $x$ é pelo menos tõ bom quanto $y$ (e potencialmente melhor que $y$).
 
 ## Relações
 
@@ -41,17 +42,19 @@ Similarmente, podemos dizer que existe uma relação binária chamada "antecesso
 
 ## Racionalidade
 
-Falamos em ação racional no DP. Mas o que é ser racional? A partir da noção de relação de preferência, podemos definir racionalidade a partir de dois axiomas:
+O Dilema do Prisioneiro é um jogo estudado inicialmente pelos matemáticos  Merrill Flood e Melvin Dresherin em 1950, como parte da investigação da Corporação Rand sobre Teoria dos Jogos, por possíveis aplicações em estratégia nuclear global. O título "dilema do prisioneiro" e a estrutura de payoffs associada à história dos prisioneiros foi criada pelo matemático Albert Tuckerˆ[Kuhn, Steven, "Prisoner’s Dilemma", The Stanford Encyclopedia of Philosophy (Winter 2024 Edition), Edward N. Zalta & Uri Nodelman (eds.), URL = <https://plato.stanford.edu/archives/win2024/entries/prisoner-dilemma/>]. Nós consideramos que os jogadores são racionais no Dilema do Prisioneiro (DP). Mas o que é ser racional? A partir da noção de relação de preferência, podemos definir racionalidade com dois axiomas:
 
 1. Axioma da completude. A relação de preferência  $\succcurlyeq$ é completa. Ou seja, para quaisquer dois resultados $x, y \in X$ é possível ranqueá-los pela relação de preferência, tal que ou $x \succcurlyeq y$ ou $y \succcurlyeq x$ ou $x \sim y$.
 
-O axioma da completude me diz apenas que, se eu tiver dois resultados, sempre vou poder dizer qual prefiro (incluindo dizer que sou indiferente). Porém, não posso ficar na dúvida e não conseguir decidir qual é preferido (ou se sou indiferente). Portanto, é um axioma que requer pouco das pessoas para poder chamá-las de racionais.
+O axioma da completude me diz apenas que, se eu tiver dois resultados, sempre vou poder dizer qual prefiro (incluindo dizer que sou indiferente). Porém, não posso ficar na dúvida e não conseguir decidir qual é preferido (ou se sou indiferente). Portanto, é um axioma que requer pouco das pessoas para poder chamá-las de racionais. Porém, vale notar que alguns estudiosos têm insistindo que indiferença é diferente de indecisãoˆ[Para um exemplo que explicar a diferença entre um e outro, cf. o começo do trabalgo de Eliaz, K., & Ok, E. A. (2006). Indifference or indecisiveness? Choice-theoretic foundations of incomplete preferences. Games and economic behavior, 56(1), 61-86.]. Se um indivíduo possui preferências incompletas, isso significa que ele está indeciso sobre sua preferência em relação a duas alternativas.
 
 O segundo axioma é um pouco mais exigente e irá garantir que podemos ranquear $todos$ os resultados.
 
 2. Axioma da transitividade.  A relação de preferência  $\succcurlyeq$ é transitiva. Ou seja, para quaisquer três resultados $x, y e z \in X$, se $x \succcurlyeq y$ e $y \succcurlyeq z$, então $x \succcurlyeq z$.
 
-O axioma da completude me diz que posso ranquear quaisquer dois resultados, e o axioma da transitividade me diz que não há contradição no meu ranqueamento. Para ver porque a condição de transitividade é mais demandante, considere o seguinte exemplo. Algumas pessoas preferem estritamente café sem açúcar a café com duas colheres de açúcar. Vamos supor que duas colheres de açúcar são 100 gramas de açúcar. A maioria das pessoas é indiferente entre café com 100 gramas e café com 99 gramas, porque a diferença de sabor é imperceptível. Igualmente, é indiferente entre café com 98 gramas e café com 99 gramas. E assim por diante, de modo que é indiferente a café com duas gramas de açúcar e uma grama, e também é indiferente a café com uma grama e café sem açúcar. Porém, prefere café sem açúcar a café com duas colheres de açúcar. As preferências não são transitivas.
+O axioma da completude me diz que posso ranquear quaisquer dois resultados, e o axioma da transitividade me diz que não há contradição no meu ranqueamento. Para ver porque a condição de transitividade é mais demandante, considere o seguinte exemplo. Algumas pessoas preferem estritamente café sem açúcar a café com duas colheres de açúcar. Vamos supor que duas colheres de açúcar são 100 gramas de açúcar. A maioria das pessoas é indiferente entre café com 100 gramas e café com 99 gramas, porque a diferença de sabor é imperceptível. Igualmente, é indiferente entre café com 98 gramas e café com 99 gramas. E assim por diante, de modo que é indiferente a café com duas gramas de açúcar e uma grama, e também é indiferente a café com uma grama e café sem açúcar. Porém, prefere café sem açúcar a café com duas colheres de açúcar. Logo, as preferências não são transitivas. Essse exemplo ilustra que um axioma aparentemente inócuo para definir racionalidade, em uma situaçõa simples, como a preferência entre café com e sem açucar, pode significar que na verdade tal pessoa não é racional. 
+
+A intransitividade, nesse caso, parece advir na verdade da violação do axioma da completude. Talvez as pessoas não sejam capazes de ranquear duas versoes de café com uma diferença muito pequena de açucar. Ou então, uma violação direta da intransitividade mesmo. De todo modo, são dois axiomas bastante simples em certo sentido e, no entanto, esses dois axiomas em conjunto podem vir a se revelar mais demandantes.
 
 De todo modo, parece razoável exigir que pessoas racionais tenham preferências transitivas. A razão para isso é porque, se elas não tiverem de fato preferências transitivas, é possível explorar essa irracionalidade. Tomando o exemplo acima, suponha que um café sem açúcar seja mais caro que um café com açúcar (digamos que a loja é patrocinada por uma empresa de açúcar, de modo que ela ganha mais dinheiro se vende café com açúcar). Em tese a pessoa aceitaria fazer 100 trocas de um café pelo outro com uma diferença de uma grama, tendo pagado mais caro pelo produto que poderia ser comprado mais barato. E o ciclo começaria de novo, até a pessoa ficar completamente sem dinheiro.
 
@@ -82,6 +85,7 @@ O que estamos dizendo é que a função de utilidade $u$ recebe resultados do co
 Veja que o número real a ser atribuído não tem sigifnicado algum e pode ser qualquer valor, desde que a relação de ordem seja preservada. A função de utilidade é uma construção ordinal, porque os payoffs são ordinais. Se um resultado gerar utilidade 10 e outro utilidade 5, não podemos dizer de verdade que o primeiro é duas vezes preferido ao segundo.
 
 ## Utilidade Ordinal
+
 Não função de utilidade definida acima, a utilidade é ordinal. Uma das consequências é que podemos fazer quaisquer transformações na função utilidade que preservem a ordem de preferência. Esse tipo de transformação é chamado de transformação monotônica.
 
 ------

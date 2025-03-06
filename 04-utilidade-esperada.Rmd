@@ -1,6 +1,6 @@
 # Incerteza, risco e utilidade esperada
 
-Raramente nossas decisões não estão envoltas em incertezas. Considere o problema de decisão do eleitorado. É preciso avaliar as alternativas disponíveis, esperando um certo resultado, que é incerto. Políticos não cumprem promessas, circunstâncias mudam, pessoas morrem e seus vices assumem etc.
+Frequentemente nossas decisões estão envoltas em incertezas. Considere o problema de decisão do eleitorado. É preciso avaliar as alternativas disponíveis, esperando um certo resultado, que é incerto. Políticos não cumprem promessas, circunstâncias mudam, pessoas morrem e seus vices assumem etc.
 
 Similarmente, imagine uma gestora pública municipal que foi apresentada a uma nova pesquisa, que sugere que é melhor que crianças entrem na escola uma hora mais tarde. Porém, isso mudará a organização dos cuidadores das crianças, professores e toda a dinâmica escolar, além do que o estudo foi feito em poucas escolas, não necessariamente se generalizando para todo o município. decidindo se adotar uma nova política pública ou continua com a anterior. Será que vale a pena esta nova política pública? Como é uma política nova, há incerteza sobre os benefícios que podem advir dela, bem como dificuldades não antecipadas inteiramente. Portanto, nosso modelo de tomada de decisão precisa incorporar incerteza de algum modo.
 

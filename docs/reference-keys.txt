@@ -147,8 +147,13 @@ equilíbrio-do-jogo-infinito
 aplicações
 formação-de-governos-parlamentaristas
 take-away
-tópicos-especiais
+jogos-bayesianos
 introdução-4
+exemplo
+aplicação---votação-em-um-júri
+votando-contra-seu-sinal
+tópicos-especiais
+introdução-5
 discriminação
 taste-based-discrimination
 discriminação-estatística
@@ -160,3 +165,4 @@ ambiente-de-aprendizado-por-falhas-breakdown-learning
 críticas
 normas-sociais-como-instituições
 discriminação-institucionalsistêmica
+derivação-do-modelo-de-phelps.
