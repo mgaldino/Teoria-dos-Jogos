@@ -377,7 +377,7 @@ Em um pênalti no jogo de futebol, suponha que os jogadores podem chutar na esqu
 ```
 
 ```{exercise}
-Três jogadoras vivem em um bairro e podem contribuir para custear uma iluminação de um poste. O valor da iluminação é $3$ unidades monetárias para cada jogadora e o valor de ficarem sem iluminação é $0$. A associação do Bairro pede que cada jogadora contribua $1$ unidade monetária cada (ou nada). Se pelo menos duas jogadoras contribuírem, a iluminação é instalada. Se uma ou nenhuma pessoa contribuir, a iluminação não é instalada e quem deu o dinheiro não terá ele de volta. Escreva a forma normal do jogo, a matriz de payoff e ache os equilíbrios de Nash em estratégias puras.
+Três jogadoras vivem em um bairro e podem contribuir para custear uma iluminação de um poste. O valor (utilidade ou payoff) da iluminação é $3$ unidades monetárias para cada jogadora e o valor (utilidade/payoff) de ficarem sem iluminação é $0$. A associação do Bairro pede que cada jogadora contribua $1$ unidade monetária cada (ou nada). Se pelo menos duas jogadoras contribuírem, a iluminação é instalada. Se uma ou nenhuma pessoa contribuir, a iluminação não é instalada e quem deu o dinheiro não terá ele de volta. Escreva a forma normal do jogo, a matriz de payoff e ache os equilíbrios de Nash em estratégias puras.
 ```
 
 ```{exercise}
