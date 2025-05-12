@@ -40,6 +40,11 @@ fig:confianca
 fig:bach-strav-simultaneo
 fig:bach-strav-natureza
 fig:bach-strav-natureza1
+exr:unnamed-chunk-72
+exr:unnamed-chunk-73
+exr:unnamed-chunk-74
+exr:unnamed-chunk-75
+exr:unnamed-chunk-76
 prefácio
 introdução
 dilema-do-prisioneiro
@@ -112,7 +117,7 @@ referências-2
 jogos-dinâmicos
 introdução-1
 jogo-na-forma-extensiva
-definição-de-árovre-de-um-jogo
+definição-de-árvore-de-um-jogo
 jogo-da-confiança
 informações
 jogos-de-informação-perfeita-e-imperfeita
@@ -149,9 +154,15 @@ formação-de-governos-parlamentaristas
 take-away
 jogos-bayesianos
 introdução-4
+exemplo-inicial
+jogo-bayesiano-incumbente-democrata-ou-golpista
+jogo-da-coordenação-bayesiano
 exemplo
 aplicação---votação-em-um-júri
 votando-contra-seu-sinal
+cumplicidade-ou-duplicidade
+referências-3
+exercícios-6
 tópicos-especiais
 introdução-5
 discriminação

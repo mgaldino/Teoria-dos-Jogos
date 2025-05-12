@@ -42,7 +42,7 @@ Por fim, mantemos uma suposição feita em nossos jogos anteriores, agora estend
 
 7. É conhecimento comum toda a estrutura do jogo representada pelos itens 1-6 para todas as jogadoras.
 
-### Definição de árovre de um jogo
+### Definição de árvore de um jogo
 
 Uma **árvore do jogo** é formada por um conjunto de nós $x \in X$ com uma relação de precedência $x > x'$, que significa "$x$ precede a $x'$". Ou seja, $x$ vem antes de $x'$. Cada nó só tem um predecessor. A relação de precedência é transitiva ($x > x', x' > x'' \implies x > x''$), assimetrica $(x > x' \implies \neg (x' > x))$, isto é, $x$ precede $x'$, mas $x'$ não precede  $x$, e incompleta (nem todos os pares podem ser ordenados). Há um nó especial, chamado raiz da árvore, denotada por $n_1$, que precede quaisquer outros nós $x \in X$. Nós que não precedem outros nós são chamados de nós terminais, denotados pelo conjunto $Z \subset X$. Nós terminais denotam o fim do jogo, com os payoffs associados. Cada nó $x$ que não é terminal é atribuído a um jogador $i(x)$ com o conjunto de ações $A_i(x)$, ou para natureza.
 

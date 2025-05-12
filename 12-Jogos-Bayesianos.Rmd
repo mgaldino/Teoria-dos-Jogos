@@ -2,9 +2,134 @@
 
 ## Introdução
 
+Nós iremos analisar agora os chamados jogos Bayesianos, às vezes também chamados de jogos com informação incompleta.
+
 Até o momento nós lidamos com jogos em que os agentes possuem informação completa ou crenças comuns sobre movimentos da natureza, por exemplo. É comum que os agentes saibam mais sobre si mesmo do que dos demais. Políticos sabem suas preferências mais que eleitores, grupos de interesse mais sobre seus setores do que políticos e burocratas, líderes políticos mais sobre sua decisão de ir à guerra do que outros estados. Essas são situações em que temos assimetria de informação.
 
-Wm certo sentido, jogos simultâneos representam situações em que que os jogadores não sabem o que os demais escolherem, e devem fazer conjecturas sobre as escolhas dos outros, e elas devem ser mutuamente consistente para que possamos achar o equilíbrio do jogo. John Harsany foi possivelmente o primeiro a perceber a similaridade entre crenças sobre ações e crenças sobre preferências ou quem são os jogadores. Harsany, que viria a ganhar o prêmio Nobel de economia juntamente com Nash e Selten (ue desenvolveu a noção de subjogo perfeito), desenvolvou uma forma elegante de pensar sobre as crenças que podemos formar sobre as características dos jogadores, o que iremos chamar de tipos dos jogadores. E nós chamamos jogos em que jogadores podem ser de diferentes tipos de *jogos de informação incompleta*.
+Em certo sentido, jogos simultâneos representam situações em que que os jogadores não sabem o que os demais escolhem, e devem fazer conjecturas sobre as escolhas dos outros, e elas devem ser mutuamente consistente para que possamos achar o equilíbrio do jogo. John Harsany foi possivelmente o primeiro a perceber a similaridade entre crenças sobre ações e crenças sobre preferências ou quem são os jogadores. Harsany, que viria a ganhar o prêmio Nobel de economia juntamente com Nash e Selten (que desenvolveu a noção de subjogo perfeito), desenvolvou uma forma elegante de pensar sobre as crenças que podemos formar sobre as características dos jogadores, o que iremos chamar de tipos dos jogadores. E nós chamamos jogos em que jogadores podem ser de diferentes tipos de *jogos de informação incompleta*.
+
+Vale destacar que nós consideramos que a incerteza ou assitemria de informação é sempre sobre os payoffs. Isso porque assimetria sobre estratégias sempre podem ser convertidas em assimetria de informação sobre payoffs. Digamos que não sabemos se o conjunto de estratégias disponíveis para a jogadora 1 é $\{A,B\}$ ou $\{A, B, C\}$. Nesse caso, podemos dizer que tempos dois tipos de jogadoras, uma em que $C$ é uma estratégia estritamente dominada por $A$ e $B$ (e portanto nunca é jogada), ou um tipo em que $C$ não é estritamente dominada e deve ser considerada como uma opção.
+
+Anteriomente, nós tínhamos três informações básicas para estruturar um jogo estático simultâneo de informação completa:
+
+1. Jogadoras
+
+2. Estratégias
+
+3. Payoffs/Preferências/Utilidades
+
+Agora, vamos precisar complexificar a estrutura 1 sobre as jogadoras. Diremos que as jogadoras possuem tipos, e precisamos ter crenças a priori sobre os tipos das jogadoras. Então, nosso jogo de informação incompleta é descrito por:
+
+1. Jogadoras
+  1.1 Tipos
+  1.2 Crenças (comuns) a priori sobre os tipos
+  
+2. Estratégias
+
+3. Payoffs/Preferências/Utilidades
+
+## Exemplo inicial
+
+Nos tempos atuais, parece-mais do que apropriado introduzir a ideia de informação incompleta por meio de um jogo em um regime político democrático em que o líder poder ser do tipo golpista ou democrático. Considere dois partidos, incumbente e oposição. O incumbente pode ser um golpista, alguém que não aceitará transição pacífica caso perca eleição, ou um democrata, alguém que aceitará a transição pacífica de poder. A oposição pode escolher entre fazer oposição regular (business as usual) ou bloquear tudo (não-cooperar). Similarmente, o incumbente pode governar normalmente (business as usual) ou tentar acabar com a possibilidade de eleições livres (não cooperar).
+
+
+
+## Jogo Bayesiano: Incumbente Democrata ou Golpista
+
+```{r results = "asis", echo=FALSE, message=FALSE}
+library(knitr)
+
+# Função para formatar os payoffs
+pair <- function(x, y) sprintf("(%d,%d)", x, y)
+
+# Matriz de payoff para incumbente democrata
+# Linhas: Incumbente (C = Cooperar, NC = Não Cooperar)
+# Colunas: Oposição (C = Cooperar, NC = Não Cooperar)
+payoffs_democrata <- matrix(
+  c(
+    pair(2, 3), pair(2, 3),  # Incumbente C
+    pair(3, 2), pair(1, 1)   # Incumbente NC
+  ),
+  nrow = 2,
+  byrow = TRUE
+)
+dimnames(payoffs_democrata) <- list(
+  "Incumbente" = c("C (Cooperar)", "NC (Não Cooperar)"),
+  "Oposição" = c("C (Cooperar)", "NC (Não Cooperar)")
+)
+
+# Matriz de payoff para incumbente golpista
+payoffs_golpista <- matrix(
+  c(
+    pair(2, 3), pair(2, 3),  # Incumbente C
+    pair(3, 1), pair(1, 2)   # Incumbente NC
+  ),
+  nrow = 2,
+  byrow = TRUE
+)
+dimnames(payoffs_golpista) <- list(
+  "Incumbente" = c("C (Cooperar)", "NC (Não Cooperar)"),
+  "Oposição" = c("C (Cooperar)", "NC (Não Cooperar)")
+)
+
+# Apresentar as matrizes
+cat("**Matriz de payoff - Incumbente Democrata**\n\n")
+kable(payoffs_democrata)
+
+cat("\n\n**Matriz de payoff - Incumbente Golpista**\n\n")
+kable(payoffs_golpista)
+```
+
+## Jogo da coordenação Bayesiano
+
+Vamos retomar o jogo da coordenação. Porém, há incerteza se a jogadora é uma boa amiga ou má amiga. Se ela é uma boa amiga, prefere ir para os mesmo concerto (Bash ou Stravinski) que a amiga, a ficar sozinha. Já uma má amiga prefere ir pra seu show preferido a ficar sozinha. Digamos que a incerteza é apenas sobre a jogadora 2. A jogadora 1 é uma boa amiga sem dúvida. Dizemos nesse caso que temos um jogo de informação incompleta de um lado somente. Temos então, no fundo, dois jogos possíveis, um em que a jogadora 1 está diante de uma boa amiga, e outro em que joga com uma má amiga.
+
+O primeiro jgoo é como antes:
+
+```{r results = "asis", echo=FALSE}
+library(knitr)
+# Define Variables
+M=1
+R=2
+P=0
+
+library(knitr)
+# Assign Pairs
+pair <- function(x,y) sprintf("(%d,%d)", x,y)
+all_pairs <- c(pair(R,M), pair(P,P), pair(P,P), pair(M,R))
+payoff.mat <- matrix(all_pairs, nrow=2)
+dimnames(payoff.mat) <- c(rep(list(c("Bach","Stravinski")), 2))
+results = "asis"
+
+# Plot 
+kable(payoff.mat)
+
+```
+
+
+O segundo jogo (da amiga má) fica:
+
+```{r results = "asis", echo=FALSE}
+library(knitr)
+# Define Variables
+M=1
+R=2
+P=0
+
+library(knitr)
+# Assign Pairs
+pair <- function(x,y) sprintf("(%d,%d)", x,y)
+all_pairs <- c(pair(2,0), pair(0,1), pair(0,2), pair(1,0))
+payoff.mat <- matrix(all_pairs, nrow=2)
+dimnames(payoff.mat) <- c(rep(list(c("Bach","Stravinski")), 2))
+results = "asis"
+
+# Plot 
+kable(payoff.mat)
+
+```
+
+Veja que nós construimos os payoffs/utilidades para indicar que a amiga má prefere ficar sozinha a ficar com a amiga.
 
 ### Exemplo
 
@@ -51,6 +176,50 @@ Suponha agora que a promotoria e dedefesa apresentam informações sobre o verda
 Após receber seu sinal privado, a jurada seleciona seu voto $v(\theta_i)$ de forma a maximizar a probabilidade da decisão correta. Se todas as juradas adotarem comportamento sincero, isto é, $v_i(1) = s$ e $v_i(0) = a$.
 
 Vamos aqui trabalhar com uma versão simplificada. Suponha que haja três jurados, ou seja, três jogadores $N = \{1,2,3\}$, que são responsáveis por.
+
+## Cumplicidade ou duplicidade
+
+Quando estamos lidando com tipos de agentes ou jogadoras, em geral não conseguimos fazer distinção entre cumplicidade e duplicidade. Quando alguém colabora com um regime político odioso, pode fazê-lo com cumplicidade ou duplicidade. No primeiro caso, racionaliza para sim mesmo suas ações, cometendo uma espécie de auto-engano. Diz, por exemplo "o regime é horrível, mas é melhor eu atuar por dentro do que por fora, para o bem comum". Já no segundo caso, a duplicidade tem a ver com ser "duas caras", ou seja, um esforço deliberado para esconder suas reais motivações. 
+
+
 ## Referências
 
 Feddersen, T., & Pesendorfer, W. (1998). Convicting the innocent: The inferiority of unanimous jury verdicts under strategic voting. American Political science review, 92(1), 23-35.
+
+
+## Exercícios
+
+```{exercise}
+Considere o jogo do chicken em que, se ambos desviam, ganham um payoff de $0$, se um desvia e o outro não, quem desvia ganha zeor, e quem não desvia ganha $R$m, de respeito dos pares, e se ambos não desviam, dividem o respeito da "galera", R, e soferem perda $k$, ou seja gaham um payoff $\frac{R}{2} - k$. Podemos pensar que $k$ é a  punição por um acidente pelos pais, e o valor de $k$ depende se os pais são duros (H) ou lenientes (L). Se os pais são do tipo $H$, então $k=H$, e se são do tipo $L$, $h = L$.
+
+a) Escreva as duas matrizes de payoff, supondo que $R=8$, $H=16$ e $L=0$.
+
+b) Ache o equilíbrio de Nash em estratégias puras (se existir) de cada matriz de payoff.
+
+c) Suponha que as probabilidade dos pais serem do tipo $H$ ou $L$ é 50% para ambos os adolescentes, e independentes entre si.
+Um influencer, que sabe um pouco de teoria dos jogos, decide usar esse modelo para dizer que mover uma sociedade em que todos os pais são lenientes terão efeitos negativos sobre o comportamento de adolescentes. Faça uma análise de equilíbrio para verficiar se é possível justificar essa afirmação do influencer? E se $H=0$ e $L=8$?
+```
+
+```{exercise}
+Conflito armado: Considere a seguinte situação estratégia: dois países rivais planejam disputar um território. Cada país pode escolher atacar (A) ou não atacar (N). Além disso, cada país pode ter um exército poderoso (P) ou fraco (F) com igual probabilidade, e independente de cada exército. Cada país sabe o próprio tipo de exército. Um exército pode capturar um território se ele ataca e o rival não ou seu rival ataque, mas é um rival do tipo fraco e seu país é poderoso. Se ambos atacarem e forem de igual força, ninguém capturar o território. O território vale $m$ se conquistado e cada exércio tem um custo iagual a $p$ se é poderosos e $f$ se é fraco, em que $p < f$. Se um exército ataca e o rival não, nenhum custo é incorrido por ambos os lados. 
+
+a) Escreva o jogo na forma normal.
+b) Identifique todos os equilíbrios de Nash Bayesianos em estratégias puras para este jogo se $m=3$, $f=2$ e $p=1$.
+c) E se $m=3$, $f=4$ e $p=2$.
+```
+
+```{exercise}
+Considere o jogo do júri em que $p = \frac{3}{4}$ e $\pi = \fra{2}{3}$.
+
+a) Suponha que $n$ = 2. Caracterize o conjunto de equilíbrios de Nash Bayesianos do jogo.
+b) Suponha que $n >2$. Considere também que, em vez da regra da maioria, nós utilizamos unanimidade (se todos votam por condenar, o réu é condenado, se pelo menos um jurado vota por absolver, o réu é absolvido). Caracterize o equilíbrio de Nash Bayeriano do jogo.
+```
+
+```{exercise}
+a) Descreva o que é demandado dos jogadores em termos de racionalidade nos conceito de: Equilíbrio de estratégia estritamente dominante, equlíbrio de Eliminação Iterativa de Estratégia Estritamente Dominada, Equilíbrio de Nash em estratégias puras, Equilíbrio de Nash Perfeito de Subjogo (em estratégias puras) e Equilíbrio de Nash Bayesiano.
+b) Discuta o que se ganha e o que se perde quando movemos de um conceito de equilíbrio pouco demandante para um altamente demendante em termos de racionalidade. Em particular, discuta a questão do realismo dos pressupostos e assertividade das previsões da teoria.
+```
+
+```{exercise}
+a) Considere que uma empresa quer montar um painel para um evento com duas palestrantes. Ela pode escolher entre a palestrante A, B ou C (ou seja, escolher duas de três). Cada palestrante pode falar bem, neutro ou mal do produto X da empresa. Cada palestrante que falar bem gera utilidade de 1, 0 se fizer fala neutra e -1 se falar mal. Suponha que as probabiliades de cada palestrante falar bem, neutro ou mal são dadas pela tabela abaixo. Qual deve ser a composição do painel?  
+```
