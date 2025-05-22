@@ -115,7 +115,7 @@ Prova de existência:
 
 Prova de unicidade do ENPS.
 
-Antes, vamso explicar os conceitos de supremo e ínfimo. Se um máximo existir, então ele é um supremo. Se um mínimo existir, então ele é um ínfimo. Considere o conjunto dos números reais maiores que zero e menores que 1. Não existe mínimo nem máximo. Porém, existem ínfimos e supremos. $0$ é o ínfimo, e $1$ é o supremo.
+Antes, vamoa explicar os conceitos de supremo e ínfimo. Se um máximo existir, então ele é um supremo. Se um mínimo existir, então ele é um ínfimo. Considere o conjunto dos números reais maiores que zero e menores que 1. Não existe mínimo nem máximo. Porém, existem ínfimos e supremos. $0$ é o ínfimo, e $1$ é o supremo.
 
 1. Sejam $M$ e $m$ supremo e ínfimo do valor de continuação de um respondente, respectivamente. 
 2. Um proponente pode obter pelo menos 1 - M. Portanto $m \geq \delta(1-M)$.
