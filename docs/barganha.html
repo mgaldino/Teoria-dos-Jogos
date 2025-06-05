@@ -23,7 +23,7 @@
 <meta name="author" content="Manoel Galdino" />
 
 
-<meta name="date" content="2025-05-22" />
+<meta name="date" content="2025-06-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -359,8 +359,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="jogo-do-ultimato" class="section level2 hasAnchor" number="11.2">
 <h2><span class="header-section-number">11.2</span> Jogo do Ultimato<a href="barganha.html#jogo-do-ultimato" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>O jogo do ultimato consiste no seguinte. Serena e Martín precisam decidir como dividir um pedaço de bolo de tamanho <span class="math inline">\(1\)</span>. O pai informa que primeiro Serena fará uma proposta de divisão de <span class="math inline">\(X\)</span> para ela e <span class="math inline">\(1-X\)</span> para Martín. Se a proposta for aceita, o bolo é dividido daquela forma. Se for negada, ninguém fica com o bolo (porque não chegaram a um acordo).</p>
-<div class="grViz html-widget html-fill-item" id="htmlwidget-7e6650c0c40853e70f57" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-7e6650c0c40853e70f57">{"x":{"diagram":"\ndigraph ultimatum_game {\n  rankdir=LR;\n  node [shape=rectangle, style=filled, fillcolor=lightgrey];\n\n  Start [label=\"Início\"];\n  Serena [label=\"Serena faz uma proposta\"];\n  Accept [label=\"(X, 1-X)\"];\n  Reject [label=\"(0,0)\"];\n\n  Start -> Serena [label=\"Proposta de Serena\"];\n  Serena -> Accept [label=\"Proposta Aceita\"];\n  Serena -> Reject [label=\"Proposta Rejeitada\"];\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-ea5e3799c7005b4f9b61" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-ea5e3799c7005b4f9b61">{"x":{"diagram":"\ndigraph ultimatum_game {\n  rankdir=LR;\n  node [shape=rectangle, style=filled, fillcolor=lightgrey];\n\n  Start [label=\"Início\"];\n  Serena [label=\"Serena faz uma proposta\"];\n  Accept [label=\"(X, 1-X)\"];\n  Reject [label=\"(0,0)\"];\n\n  Start -> Serena [label=\"Proposta de Serena\"];\n  Serena -> Accept [label=\"Proposta Aceita\"];\n  Serena -> Reject [label=\"Proposta Rejeitada\"];\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>É fácil ver que a proposta <span class="math inline">\((1,0)\)</span>, isto é, Serena pega todo o bolo e Martín fica sem nada é um equilíbrio de Nash, pois nem Serena nem Martín podem melhorar unilateralmente.</p>
 <p>De maneira genérica, o jogo do ultimato pode ser generalizado da seguinte forma<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>:</p>
 <p><img src="imagens/Rubinstein.png" width="609" /></p>
@@ -490,7 +490,30 @@ m\geq \frac{\delta}{(1 + \delta)}
 </div>
 <div id="equilíbrio-do-jogo-infinito" class="section level3 hasAnchor" number="11.10.2">
 <h3><span class="header-section-number">11.10.2</span> Equilíbrio do jogo infinito<a href="barganha.html#equilíbrio-do-jogo-infinito" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Falar que é o mesmo equilíbrio do jogo finito.</p>
+<p>Aqui, tempos potencialmente infinitas rodadas, isto é, <span class="math inline">\(t = 1, 2, \dots, \infty\)</span>.</p>
+<p>Vamos trabalhar com proposta sem possibilidade de emendas, ou seja, a proposta é votada em cada período <span class="math inline">\(t\)</span> sem modificação.</p>
+<p>Sob regra aberta, um outro legislador <span class="math inline">\(j \neq i\)</span> é aleatoriamente escolhido para fazer uma proposta de emenda <span class="math inline">\(x_j\)</span> e legisladores escolhem entre <span class="math inline">\(x_i\)</span> e <span class="math inline">\(_x_j\)</span>.</p>
+<p>É possível provar que qualquer distribuição é um ENPS. Por isso, BF restringem os equilíbrios a estratégias estacionárias.</p>
+<p>Uma estratégia <span class="math inline">\(\sgima_i\)</span> para qualquer jogadora <span class="math inline">\(i \in N\)</span> consiste de:</p>
+<ol style="list-style-type: decimal">
+<li><p>uma proposta mista <span class="math inline">\(\pi_i \in \Delta X\)</span> apresentada no período em que <span class="math inline">\(i\)</span> é a proponente.</p></li>
+<li><p>uma estratégia de votação <span class="math inline">\(v_i: X \to [0,1]\)</span>, em que <span class="math inline">\(v_i(x)\)</span> é a probabilidade de que <span class="math inline">\(i\)</span> aceita a proposta <span class="math inline">\(x\)</span>.</p></li>
+</ol>
+<p>Proposição: Em um equilíbrio estacionário simétrico, qualquer proponente <span class="math inline">\(i\)</span> selecionado no período <span class="math inline">\(t\)</span> escolhe <span class="math inline">\(x_i\)</span> tal que <span class="math inline">\(x_i^i = 1 - \frac{\delta (n-1)}{2n}\)</span> e <span class="math inline">\(x^i_j = \frac{\delta}{n}\)</span> para <span class="math inline">\(\frac{n-1}{2}\)</span> legisladoras escolhidas aleatoriamente. Cada legisladoras <span class="math inline">\(j \neq i\)</span> aceita qualquer proposta <span class="math inline">\(x_i\)</span> tal que <span class="math inline">\(x^i_j \geq \frac{\delta}{n}\)</span>.</p>
+<p>Remark: a proposta é aceita no primeiro período e não há espera.</p>
+<p>Esboço da prova:</p>
+<p>Invocando simetria, seja <span class="math inline">\(v_i = v\)</span> o payoff de equilíbrio estacionário de cada jogadora <span class="math inline">\(i\)</span> no começo do jogo. Como o bolo é 1, então <span class="math inline">\(v \leq \frac{1}{n}\)</span>.</p>
+<p>Suponha que <span class="math inline">\(i\)</span> faz uma proposta <span class="math inline">\(x_i\)</span>. Uma jogadora <span class="math inline">\(j\)</span> aceita a proposta se e somente se <span class="math inline">\(x^i_j \geq \delta v\)</span>. Ou seja, como <span class="math inline">\(j\)</span> espera ganhar <span class="math inline">\(v\)</span> se formos para o período seguinte, então aplicamos o desconto <span class="math inline">\(\delta\)</span> ao valor de continuação do jogo.</p>
+<p>Sabemos que <span class="math inline">\(i\)</span> precisa de <span class="math inline">\(\frac{n-1}{2}\)</span> votos de <span class="math inline">\(j \neq i\)</span> legisladoras. Por simetria, a proposta deve ser a mesma para todas as legisladoras contempladas, ou seja, <span class="math inline">\(\deltav\)</span> para <span class="math inline">\(\frac{n-1}{2}\)</span> legisladoras, com a mesma probabilidade.</p>
+<p>Logo, o payoff para <span class="math inline">\(i\)</span> é <span class="math inline">\(1 - \frac{\delta (n-1)}{2n}\)</span>. Em equilíbrio, a proposta feita é essa e é aceita na primeira rodada.</p>
+<p>Vamos calcular os payoffs <span class="math inline">\(v\)</span> e <span class="math inline">\(v_i\)</span>.</p>
+<p>Em cada período, cada legisladora tem uma probabilidade <span class="math inline">\(\frac{1}{n}\)</span> de ser escolhida como proponente e obtém payoff <span class="math inline">\(v_i\)</span>. Se <span class="math inline">\(i\)</span> não é escolhida com probabilidade <span class="math inline">\(\frac{n-1}{n}\)</span> e ganha <span class="math inline">\(v\)</span> com probabiliade <span class="math inline">\(1\2\)</span>. Então, o payoff estacionário é:
+<span class="math display">\[
+v = \frac{v}{n} + \frac{n-1}{n} \frac{1}{2} \delta v = \frac{v}{n} + \frac{n-1}{2n} \delta v
+\]</span></p>
+<p>Resolvendo para <span class="math inline">\(v\)</span>, temos:</p>
+<p><span class="math inline">\(v = \frac{1}{n}\)</span> e <span class="math inline">\(v_i = 1 - \frac{n-1}{2n}\delta v\)</span></p>
+<p>Sobre regra aberta, é possível mostrar que proponente tem seu poder diminuído e, portanto, fica com menos do bolo. A intuição agora é que cada outra legisladora pode ser a última proponente com probabilidade meio, de um novo status quo (a proposta da primeira proponente), então isso reduz o poder da jogadora escolhida para propor primeiro.</p>
 </div>
 </div>
 <div id="a-suposição-de-imprevisibilidade" class="section level2 hasAnchor" number="11.11">

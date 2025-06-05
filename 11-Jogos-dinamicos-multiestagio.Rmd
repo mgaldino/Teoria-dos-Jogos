@@ -194,7 +194,46 @@ Vamos considerar o seguinte exemplo para capturar a ideia de estacionariedade. D
 
 ### Equilíbrio do jogo infinito
 
-Falar que é o mesmo equilíbrio do jogo finito.
+Aqui, tempos potencialmente infinitas rodadas, isto é, $t = 1, 2, \dots, \infty$.
+
+Vamos trabalhar com proposta sem possibilidade de emendas, ou seja, a proposta é votada em cada período $t$ sem modificação.
+
+Sob regra aberta, um outro legislador $j \neq i$ é aleatoriamente escolhido para fazer uma proposta de emenda $x_j$ e legisladores escolhem entre $x_i$ e $_x_j$.
+
+É possível provar que qualquer distribuição é um ENPS. Por isso, BF restringem os equilíbrios a estratégias estacionárias.
+
+Uma estratégia $\sgima_i$ para qualquer jogadora $i \in N$ consiste de:
+
+1. uma proposta mista $\pi_i \in \Delta X$ apresentada no período em que $i$ é a proponente. 
+
+2. uma estratégia de votação $v_i: X \to [0,1]$, em que $v_i(x)$ é a probabilidade de que $i$ aceita a proposta $x$.
+
+Proposição: Em um equilíbrio estacionário simétrico, qualquer proponente $i$ selecionado no período $t$ escolhe $x_i$ tal que $x_i^i = 1 - \frac{\delta (n-1)}{2n}$ e $x^i_j = \frac{\delta}{n}$ para $\frac{n-1}{2}$ legisladoras escolhidas aleatoriamente. Cada legisladoras $j \neq i$ aceita qualquer proposta $x_i$ tal que $x^i_j \geq \frac{\delta}{n}$.
+
+Remark: a proposta é aceita no primeiro período e não há espera.
+
+Esboço da prova: 
+
+Invocando simetria, seja $v_i = v$ o payoff de equilíbrio estacionário de cada jogadora $i$ no começo do jogo.  Como o bolo é 1, então $v \leq \frac{1}{n}$.
+
+Suponha que $i$ faz uma proposta $x_i$. Uma jogadora $j$ aceita a proposta se e somente se $x^i_j \geq \delta v$. Ou seja, como $j$ espera ganhar $v$ se formos para o período seguinte, então aplicamos o desconto $\delta$ ao valor de continuação do jogo.
+
+Sabemos que $i$ precisa de $\frac{n-1}{2}$ votos de $j \neq i$ legisladoras. Por simetria, a proposta deve ser a mesma para todas as legisladoras contempladas, ou seja, $\deltav$ para $\frac{n-1}{2}$ legisladoras, com a mesma probabilidade.
+
+Logo, o payoff para $i$ é $1 - \frac{\delta (n-1)}{2n}$. Em equilíbrio, a proposta feita é essa e é aceita na primeira rodada.
+
+Vamos calcular os payoffs $v$ e $v_i$.
+
+Em cada período, cada legisladora tem uma probabilidade $\frac{1}{n}$ de ser escolhida como proponente e obtém payoff $v_i$. Se $i$ não é escolhida com probabilidade $\frac{n-1}{n}$ e ganha $v$ com probabiliade $1\2$. Então, o payoff estacionário é:
+$$
+v = \frac{v}{n} + \frac{n-1}{n} \frac{1}{2} \delta v = \frac{v}{n} + \frac{n-1}{2n} \delta v
+$$
+
+Resolvendo para $v$, temos:
+
+$v = \frac{1}{n}$ e $v_i = 1 - \frac{n-1}{2n}\delta v$
+
+Sobre regra aberta, é possível mostrar que proponente tem seu poder diminuído e, portanto, fica com menos do bolo. A intuição agora é que cada outra legisladora pode ser a última proponente com probabilidade meio, de um novo status quo (a proposta da primeira proponente), então isso reduz o poder da jogadora escolhida para propor primeiro.
 
 ## A suposição de imprevisibilidade
 
