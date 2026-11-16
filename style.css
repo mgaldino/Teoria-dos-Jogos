@@ -22,3 +22,14 @@ pre code {
 .center {
   text-align: center;
 }
+.book-cover {
+  margin: 1.5rem auto 2.5rem;
+  text-align: center;
+}
+.book-cover img {
+  display: block;
+  width: 480px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}

@@ -1,6 +1,8 @@
 --- 
 title: "Introdução à Teoria dos Jogos para Ciências Sociais"
 author: "Manoel Galdino"
+url: "https://mgaldino.github.io/Teoria-dos-Jogos"
+cover-image: "cover-teoria-jogos-v1.png"
 date: "`r Sys.Date()`"
 site:
    bookdown::bookdown_site:
@@ -8,6 +10,10 @@ site:
 ---
 
 # Prefácio
+
+<div class="book-cover">
+<img src="cover-teoria-jogos-v1.png" alt="Capa de Introdução à Teoria dos Jogos para Ciências Sociais: Manoel Galdino; caminhos ramificados e pontos de decisão." width="480" height="720" />
+</div>
 
 Esse livro é o resultado das notas de aulas do curso de graduação da USP Teoria dos Jogos para Cientistas Sociais.
 
