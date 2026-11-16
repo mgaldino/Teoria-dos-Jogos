@@ -56,7 +56,7 @@ Daniel Bernoulli, matemático, percebeu que o valor monetário é diferente a de
 
 Duas críticas forma feitas à proposta de Bernoulli. Em primeiro lugar, a arbitrariedade do uso de logarítmo. Em segundo lugar, como medir utilidades? Nós já vimos que podemos trabalhar com utilidades ordinais. Mas utilidade cardinal é bem mais complicado.
 
-Tivemos de esperar até o trabalho de von Neumann e Morgenstern (VNM), com o livro Game Theory and Economic Behavior (1944) para haver uma reabilitação das ideias propostas por Bernoulli. A ideia chave de VNM é que é possível estimar a intensidade de preferências em uma escala intervalar (em que os pontos máximos e mínimos são arbitŕarios, como na escala de Celcius e Farenheit) a partir da elicitação de preferências sobre loterias. Com representações numéricas de utilidade, podemos calcular a utilidade esperada (à maneira do valor esperado), exceto que a utilidade marginal pode ser decrescente e, portanto, evitar o paradoxo de São Petersburgo.
+Tivemos de esperar até o trabalho de von Neumann e Morgenstern (VNM), com o livro Theory of Games and Economic Behavior (1944) para haver uma reabilitação das ideias propostas por Bernoulli. A ideia chave de VNM é que é possível estimar a intensidade de preferências em uma escala intervalar (em que os pontos máximos e mínimos são arbitŕarios, como na escala de Celcius e Farenheit) a partir da elicitação de preferências sobre loterias. Com representações numéricas de utilidade, podemos calcular a utilidade esperada (à maneira do valor esperado), exceto que a utilidade marginal pode ser decrescente e, portanto, evitar o paradoxo de São Petersburgo.
 
 Para tanto, é preciso introduzir o conceito de loterias, o que faremos a seguir.
 
@@ -74,7 +74,7 @@ Aplicando a definição para a mega-sena, e considerando um caso simplificado em
 
 Suponha que uma loteria tem quatro possíveis prêmios (resultados): $x_1, x_2, x_3, x_4$. Suponha que os prêmios foram ordenados em ordem ascendente de preferência, isto é, $x_4 \succ x_3 \succ x_2 \succ x_1$. Agora, atribua valores de utilidade arbitrários para o prêmio mais desejado e o menos desejado. Digamos: $u(x_4) = 1$ e $u(x_1) = 0$.
 
-Veja que atribuir um máximo e mínimo arbitrário é algo que fazemos quando criamos as escalas de graus Celcius e Farenheit. Na primeira, escolhemos o máximo ($100 ^{\circ}C$) e mínimo ($0 ^{\circ}C$) como os pontos de ebulição e congelamento da água, em condições normais de atmosfera e pressão. Na segunda, definimos ($212 ^{\circ}F$) como o ponto de ebulição da água e ($32 ^{\circ}F$) como o ponto de congelamento da água. Claro que sabemos que podemos ter valores abaixo do mínimo e acima do máximo, mas para uma amostra de dados dentro desse intervalo, estamos fazendo essencialmente a mesma coisa.
+Veja que atribuir um máximo e mínimo arbitrário é algo que fazemos quando criamos as escalas de graus Celcius e Farenheit. Na primeira, escolhemos o máximo ($100 ^{\circ}C$) e mínimo ($0 ^{\circ}C$) como os pontos de ebulição e congelamento da água, em condições normais de atmosfera e pressão. Na segunda, definimos ($212 ^{\circ}F$) como o ponto de ebulição da água e ($32 ^{\circ}F$) como o ponto de congelamento da água. Claro que sabemos que podemos ter valores abaixo do mínimo e acima do máximo, mas para uma amostra de dados dentro desse intervalo, estamos fazendo essencialmente a mesma coisa. Nas duas escalas, as comparações entre diferenças são preservadas: aquecer de $10 ^{\circ}C$ para $20 ^{\circ}C$ equivale a aquecer de $20 ^{\circ}C$ para $30 ^{\circ}C$, e o mesmo vale na outra escala (de $50 ^{\circ}F$ para $68 ^{\circ}F$ e de $68 ^{\circ}F$ para $86 ^{\circ}F$).
 
 Voltando ao nosso exemplo. Como nas escalas Celcius e Farenheit, podemos atribuir quaisquer outros números como máximo e mínimo para a utilidade. Contudo, é conveniente matematicamente (já veremos o porquê) usar zero e um. Usando esses dois valores de utilidade como ancoragem, o ponto do teorema de VNM é que existe uma forma garantida de atribuir utilidades numéricas para as preferências de cada um dos prêmios, de forma que podemos trabalhar com o caĺculo de utilidade esperada. O procedimento é o seguinte. Considere qualquer outro prêmio (por exemplo, $x_2$). Pergutamos então a cada jogador qual a probabilidade $p_2$ que tornaria ela indiferente entre ganhar $x_2$ com certeza e $x_4$ com probabilidade $p_2$ e $x_1$ com probabilidade $1 - p_2$. Veja que quanto mais valioso for $x_2$, maior deve ser $p_2$, a chance de ganhar $x_4$ o prêmio mais valorizado, para que a pessoa aceite trocar algo certo por aldo duvidoso. Assim, $p_2$ mede a desejabilidade do prêmio $x_2$.
 A gente repete esse experimento com $x_3$ e assim teremos uma medida da desejabilidade de todos os prêmios.
@@ -96,7 +96,7 @@ Eu sei que nós gastamos tempo repetindo e enfatizando que a teoria da utilidade
 
 Isso significa que agora os números refletem a intensidade da preferência, e não apenas mais a ordem. Isso pode alterar as decisões doa agentes, ainda que a ordem de preferências seja mantida.
 
-Na verdade, para ser mais preciso, o que VNM mostram é que se alguns axiomas forem satisfeitos, então agentes racionais se comportatão como se tivessem respondido a essas perguntas desse experimento. Mas não precisam de fato fazer esse experimento para se comportarem desse jeito. Mais ainda, em situações de incerteza, agentes racionais escolherão o que maximizar sua utilidade esperada.
+Na verdade, para ser mais preciso, o que VNM mostram é que se alguns axiomas forem satisfeitos, então agentes racionais se comportatão como se tivessem respondido a essas perguntas desse experimento. Mas não precisam de fato fazer esse experimento para se comportarem desse jeito. Mais ainda, em situações de incerteza, agentes racionais escolherão o que maximizar sua utilidade esperada. Ao adotar esses axiomas, estamos excluindo uma utilidade do próprio jogo, ou seja, o agente não deriva utilidade do risco como tal.
 
 A Teoria da Utilidade Esperada, portanto, ajuda a explicar porque pessoas contratam seguros ou apostam em loterias como a mega-sena. Embora o valor esperado seja negativo em ambas as escolhas, as pessoas possuem utilidades distintas de cada opção (jogar ou não jogar, contratar ou não-contratar seguro).
 
@@ -162,8 +162,9 @@ Suponha que um indivíduo enfrenta uma loteria L que oferece uma chance de $50\%
 L? E qual o valor esperado da loteria? Nesse caso, o valor esperado e a utilidade esperado são iguais? Como você interpreta isso?
 
 ```
+
 ```{exercise}
-Uma jogadora, Alice, tem a escolha entre um emprego seguro que paga uma renda certa de $50.000 por ano ou um empreendimento que pode render \$100.000 anual com probabilidade de $50\%$ ou \$10.000 com probabilidade de $50\%$.
+Uma jogadora, Alice, tem a escolha entre um emprego seguro que paga uma renda certa de 50.000 por ano ou um empreendimento que pode render 100.000 anual com probabilidade de 50$\%$ ou 10.000 com probabilidade de 50$\%$.
 
 a) Calcule o valor esperado de ambas as opções.
 
@@ -182,6 +183,22 @@ b) Divida a utilidade da vitória e derrota por 100. Verifique que a utilidade e
 c) Suponha que a função de utilidade do território em disputa em uma solução diplomática é $u(x) = 300x$, em que $x$ é o percentual (entre 0 e 1) de controle por um país do território em disputa. Se houver guerra, a função de utilidade do controle do território passa a ser $u(x) = 300x - 100$. Lemebrando que, se um país vence a guerra, o controle é $100\%$ para o vencedor e $0\%$ para o perdedor. Suponha que se uma solução diplomática for acordada, ela é implementada com certeza. Se B oferecer metade do território em disputa para A, ambos os países prefeririam essa solução à guerra?
   
 d) Qual o tamanho mínimo do território que B deveria oferecer a A para que este fosse indiferente entre fazer ou não a guerra?
+```
+
+```{exercise}
+Um eleitor tem ponto ideal $x_i$ e utilidade $u(x) = -(x - x_i)^2$ sobre a política $x$. A política que será adotada é incerta: é uma variável aleatória $X$, com média $\mu = E[X]$ e variância $\sigma^2 = Var(X)$.
+
+Lembre que a esperança é linear: para constantes $a$ e $b$ e variáveis aleatórias $X$ e $Y$, $E[aX + b] = aE[X] + b$ e $E[X + Y] = E[X] + E[Y]$. Em particular, a esperança de uma constante é a própria constante. Lembre também que a variância é o valor esperado do quadrado do desvio em relação à média: $Var(X) = E[(X - E[X])^2]$.
+
+a) Mostre que $Var(X) = E[X^2] - \mu^2$. Dica: expanda o quadrado e use a linearidade da esperança.
+
+b) Mostre que a utilidade esperada do eleitor é $E[u(X)] = -(\mu - x_i)^2 - \sigma^2$. Dica: escreva $X - x_i = (X - \mu) + (\mu - x_i)$ antes de elevar ao quadrado.
+
+c) Duas políticas incertas têm média $x_i$. A primeira tem variância 1 e a segunda, variância 4. Qual o eleitor prefere? Agora compare uma política certa em $x_i + 1$ com uma política incerta de média $x_i$ e variância 1. Qual o eleitor prefere?
+
+d) Verifique o resultado de (b) diretamente: suponha que $X$ vale $x_i - 2$ ou $x_i + 2$, com probabilidade $1/2$ cada.
+
+e) O eleitor deriva utilidade do risco como tal? De onde vem a penalidade pela variância?
 ```
 ## Referências
 

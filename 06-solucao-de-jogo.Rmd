@@ -155,7 +155,7 @@ kable(payoff.mat)
 
 Por fim, "Direita" é estritamente dominada por "Centro" para o jogador 2, de modo que o equilíbrio do jogo é ("Médio", "Centro"), com payoffs (1,5).
 
-Vejam que esse equilíbrio é inferior ao par de estratégias ("Alto", "Esquerda"). Ou seja, é um equilíbrio que é Pareto inferior.
+Vejam que esse equilíbrio é inferior ao par de estratégias ("Baixo", "Esquerda"), que dá payoffs (3, 7) e melhora a situação dos dois jogadores. Ou seja, é um equilíbrio que é Pareto inferior.
 
 Notem que o equilíbrio depende dos seguintes passos: 1. O jogador "1" é racional e elimina a estratégia "Baixo". No passo 2. o jogador "2" é racional e sabe que "1" é racional, portanto sabendo que "baixo" nuncaserá jogada, elimina de suas estratégias a jogada "Esquerda". No terceiro passo, o jogador 1, racional, sabe que dois é racional e sabe que 1 é racional e, portanto, eliminou a estratégia "Esquerda". Por isso ele pode eliminar "Alto" do jogo. No quarto passo, o jogador 2 sabe que 1 fez a primeira eliminação, que 1 sabe que 2 elimnou "Esquerda", e 2 sabe, com isso, que 1 elimina "Alto". Pode, portanto, eliminar "Direita".
 

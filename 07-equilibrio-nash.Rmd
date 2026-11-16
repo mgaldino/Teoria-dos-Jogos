@@ -155,7 +155,7 @@ Essa é a base para o teorema do eleitor mediano, presente já no trabalho do Ho
 
 ## Generalizando o modelo de Hotteling
 
-Normalmente, o modelo de Hotteling é apresentado com funções de utilidade contínuas^[Esse e outros modelos apresentados aqui foram adaptados de Formal Models of Domestic Politics, de Scott Gehlbach]. Assim, a utilidade pode ser descrita como $u_ i(x) = |x - x_i|$. Às vezes, em vez de usar a distância euclidiana, utilizamos funções quadráticas: $u_ i(x) = (x - x_i)^2$. E vamos supor um contínuo de eleitores, cada um com um ponto ideal $x_i$ único, estritamente crescente em algum intervalo (digamos, $0-1$), de tal modo que há um único ponto ideal mediano, $x_m$.
+Normalmente, o modelo de Hotteling é apresentado com funções de utilidade contínuas^[Esse e outros modelos apresentados aqui foram adaptados de Formal Models of Domestic Politics, de Scott Gehlbach]. Assim, a utilidade pode ser descrita como $u_ i(x) = -|x - x_i|$. Às vezes, em vez de usar a distância euclidiana, utilizamos funções quadráticas: $u_ i(x) = -(x - x_i)^2$. E vamos supor um contínuo de eleitores, cada um com um ponto ideal $x_i$ único, estritamente crescente em algum intervalo (digamos, $0-1$), de tal modo que há um único ponto ideal mediano, $x_m$.
 
 Eleitores continuam votando sinceramente e se houver empate na distância, eleitores se abstém. Sejam $x_a$ e $x_b$ a plataforma anunciada por A e B, respecitivamente. Seja $\pi_A(x_a, x_b)$ a probabilidade que o partido A ganhe a eleição. Então, essa probabilidade é $1$ se a fração de eleitores que preferem estritamente $x_a$ a $x_b$ é maior que meio, $0$ se a fração de eleitores que preferem estritamente $x_a$ a $x_b$ é menor que meio, e $1/2$ caso contrário (isto é, em caso de empate).
 
@@ -297,7 +297,7 @@ Escreva a matriz de payoff dos seguintes jogos apresentados em aula: Dilema do P
 ```
 
 ```{exercise}
-Considere o seguinte jogo representado na forma normal e responda Às seguintes perguntas:
+Considere o seguinte jogo representado na forma normal e responda às seguintes perguntas:
 a) Existe alguma estratégia estritamente dominada para algum (ou ambos) jogador(es)? Se sim, qual?
   
 b) existe um equilírio de estratégia estritamente dominante? Se sim, qual?
