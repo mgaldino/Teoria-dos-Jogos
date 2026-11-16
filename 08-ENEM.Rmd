@@ -166,7 +166,7 @@ library(knitr)
 pair <- function(x,y) sprintf("(%.1f,%.1f)", x,y)
 
 # Definindo a matriz de payoff
-payoff.mat <- matrix(c(pair(.5, .5), pair(.9, .1), pair(.9, .1), pair(.6, .6)), 
+payoff.mat <- matrix(c(pair(.5, .5), pair(.9, .1), pair(.9, .1), pair(.6, .4)), 
                      nrow = 2, ncol = 2, 
                      dimnames = list(c("A", "B"), 
                                      c("A", "B")))

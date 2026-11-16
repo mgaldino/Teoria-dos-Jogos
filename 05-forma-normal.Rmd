@@ -96,7 +96,7 @@ u_1(s_1, s_2) =
     -10 & \text{if }~~ Confessa,Confessa \\
     0 & \text{if }~~ Confessa,Não-confessa \\
     -20 & \text{if }~~ Não-confessa,Confessa \\
-    1& \text{Não-confessa, Não-confessa}
+    -1& \text{Não-confessa, Não-confessa}
 \end{cases}
 \end{equation}
 
@@ -108,7 +108,7 @@ u_2(s_1, s_2) =
     -10 & \text{if }~~ Confessa,Confessa \\
     -20 & \text{if }~~ Confessa,Não-confessa \\
     0 & \text{if }~~ Não-confessa,Confessa \\
-    1& \text{Não-confessa, Não-confessa}
+    -1& \text{Não-confessa, Não-confessa}
 \end{cases}
 \end{equation}
 

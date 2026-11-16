@@ -54,7 +54,7 @@ No período 2 (o último), temos um novo jogo do ultimato, e Martín irá oferec
 
 ## 3 Períodos.
 
-No terceiro período, Serena sabe que é um jogo ultimato e fica com tudo para si $X_3 = (1,0)$. Os payoffs são: $u_1 = \delta^2$ e $u_2 = 0$. Então, na rodada 2, Serena só aceita oferta que seja tão boa quanto pode obter no terceiro período, isto é: $u_1 \geq \delta^2$. Digamso que Martín ofereça $x$ no período 2. A utilidade nesse caso é $\delta x$, ou seja, $u_1 = \delta x$. Mas como $u_1 \geq \delta^2$, apenas $x \geq \delta$ é vantajoso, pois aí a utilidade será: $u_1 \geq \delta\delta = delta^2$. Martín, portanto, precisa oferecer pelo menos $\delta$, ficando com $1-\delta$ e payoff $u_2 = \delta(1-\delta)$. Por fim, no primeiro período, Serena sabe que Martín pode ganhar $\delta(1-\delta)$, portanto qualquer que seja o $x$ de Serena (e consequente $1-x$ para si), pode oferecer $1 - x \geq \delta(1-\delta)$ para Martín que ele irá aceitar e o jogo acaba na primeira rodada. Portanto, resolvendo a desigualdade, temos a melhor resposta de Serena: $x = 1 - \delta(1-\delta)$ com equilíbrio: Serena oferece $X = (1 - \delta + \delta^2, 1-\delta)$ e Martín aceita e o jogo acaba.
+No terceiro período, Serena sabe que é um jogo ultimato e fica com tudo para si $X_3 = (1,0)$. Os payoffs são: $u_1 = \delta^2$ e $u_2 = 0$. Então, na rodada 2, Serena só aceita oferta que seja tão boa quanto pode obter no terceiro período, isto é: $u_1 \geq \delta^2$. Digamso que Martín ofereça $x$ no período 2. A utilidade nesse caso é $\delta x$, ou seja, $u_1 = \delta x$. Mas como $u_1 \geq \delta^2$, apenas $x \geq \delta$ é vantajoso, pois aí a utilidade será: $u_1 \geq \delta\delta = delta^2$. Martín, portanto, precisa oferecer pelo menos $\delta$, ficando com $1-\delta$ e payoff $u_2 = \delta(1-\delta)$. Por fim, no primeiro período, Serena sabe que Martín pode ganhar $\delta(1-\delta)$, portanto qualquer que seja o $x$ de Serena (e consequente $1-x$ para si), pode oferecer $1 - x \geq \delta(1-\delta)$ para Martín que ele irá aceitar e o jogo acaba na primeira rodada. Portanto, resolvendo a desigualdade, temos a melhor resposta de Serena: $x = 1 - \delta(1-\delta)$ com equilíbrio: Serena oferece $X = (1 - \delta + \delta^2, \delta - \delta^2)$ e Martín aceita e o jogo acaba.
 
 ## T períodos (T ímpar)
 
@@ -111,7 +111,7 @@ O proponente obtém mais que o respondente (first mover advantage). À medida qu
 Prova de existência:
 
 1. Proponente não pode obter mais do que $\frac{1}{1 + \delta}$ no presente, e esperar é pior.
-2. Se respondente rejeita, na melhor das hipóteses obtém $\frac{1}{1 + \delta}$ no período seguinte, quando será proponente.  Dado o desconto de $\delta$, seu valor de continuação é $\frac{1}{1+\delta}$, ou seja, é o mínimo que tem de obter no presente.
+2. Se respondente rejeita, na melhor das hipóteses obtém $\frac{1}{1 + \delta}$ no período seguinte, quando será proponente.  Dado o desconto de $\delta$, seu valor de continuação é $\frac{\delta}{1+\delta}$, ou seja, é o mínimo que tem de obter no presente.
 
 Prova de unicidade do ENPS.
 
@@ -158,7 +158,7 @@ A cada período $t = 1, 2, \ldots$, um legislador é reconhecido como proponente
 
 ### Estratégias fracamente dominadas
 
-Uma pressuposição comum em modelos de votação é a de que os votantes (sejam eleitores ou, como aqui, legisladores) jogam estratégias fracamente dominadas. Em um contexto de modelo de teorema do eleitor mediano com dois partidos, por exemplo, essa suposição implica que voto estratégico e sincero são equivalentes. Com voto sincero, eleitores sempre votam pelo partido com plataforma mais próxima do seu ponto ideal. A importância de excluir equilíbrio em que jogadores jogam estratégias fracamente dominadas fica claro com o seguinte exemplo. Imagine dois partidos com plataformas distintas. Se os eleitores não forem pivô, seu voto não importa e não muda o resultado. Isso significa que se todos os eleitores votarem por um dos partidos, nenhum deles é pivô e, portanto, não pode melhorar unilateralmente, constituindo portanto um equilíbrio de Nash. Para evitar esse tipo de resultado se eleitores são estratégicos (ao contrário de sinceros), temos de excluir a possibilidade de jogarem estratégias fracamente dominadas, isto é, eleitores votam como se fossem pivôs (ou, o que dá no mesmo, sinceramente).
+Uma pressuposição comum em modelos de votação é a de que os votantes (sejam eleitores ou, como aqui, legisladores) não jogam estratégias fracamente dominadas. Em um contexto de modelo de teorema do eleitor mediano com dois partidos, por exemplo, essa suposição implica que voto estratégico e sincero são equivalentes. Com voto sincero, eleitores sempre votam pelo partido com plataforma mais próxima do seu ponto ideal. A importância de excluir equilíbrio em que jogadores jogam estratégias fracamente dominadas fica claro com o seguinte exemplo. Imagine dois partidos com plataformas distintas. Se os eleitores não forem pivô, seu voto não importa e não muda o resultado. Isso significa que se todos os eleitores votarem por um dos partidos, nenhum deles é pivô e, portanto, não pode melhorar unilateralmente, constituindo portanto um equilíbrio de Nash. Para evitar esse tipo de resultado se eleitores são estratégicos (ao contrário de sinceros), temos de excluir a possibilidade de jogarem estratégias fracamente dominadas, isto é, eleitores votam como se fossem pivôs (ou, o que dá no mesmo, sinceramente).
 
 Baron e Ferejohn adotam suposição similar, ou seja, legisladores votam como se fossem pivô, de modo que eliminamos um equilíbrio em que todo mundo vota a favor de uma proposta em que o proponente ganha todo o bolo, pois nenhum é pivô e, portanto, não podem melhorar desviando unilateralmente, dado o que todos os demais estão fazendo.
 
@@ -224,14 +224,14 @@ Logo, o payoff para $i$ é $1 - \frac{\delta (n-1)}{2n}$. Em equilíbrio, a prop
 
 Vamos calcular os payoffs $v$ e $v_i$.
 
-Em cada período, cada legisladora tem uma probabilidade $\frac{1}{n}$ de ser escolhida como proponente e obtém payoff $v_i$. Se $i$ não é escolhida com probabilidade $\frac{n-1}{n}$ e ganha $v$ com probabiliade $1\2$. Então, o payoff estacionário é:
+Em cada período, cada legisladora tem uma probabilidade $\frac{1}{n}$ de ser escolhida como proponente e obtém payoff $v_i$. Se $i$ não é escolhida (o que ocorre com probabilidade $\frac{n-1}{n}$), entra na coalizão vencedora com probabilidade $1/2$ e ganha $\delta v$. Então, o payoff estacionário é:
 $$
-v = \frac{v}{n} + \frac{n-1}{n} \frac{1}{2} \delta v = \frac{v}{n} + \frac{n-1}{2n} \delta v
+v = \frac{1}{n}\left(1 - \frac{n-1}{2}\delta v\right) + \frac{n-1}{n} \frac{1}{2} \delta v = \frac{1}{n} - \frac{n-1}{2n} \delta v + \frac{n-1}{2n} \delta v
 $$
 
 Resolvendo para $v$, temos:
 
-$v = \frac{1}{n}$ e $v_i = 1 - \frac{n-1}{2n}\delta v$
+$v = \frac{1}{n}$ e $v_i = 1 - \frac{n-1}{2}\delta v = 1 - \frac{(n-1)\delta}{2n}$
 
 Sobre regra aberta, é possível mostrar que proponente tem seu poder diminuído e, portanto, fica com menos do bolo. A intuição agora é que cada outra legisladora pode ser a última proponente com probabilidade meio, de um novo status quo (a proposta da primeira proponente), então isso reduz o poder da jogadora escolhida para propor primeiro.
 

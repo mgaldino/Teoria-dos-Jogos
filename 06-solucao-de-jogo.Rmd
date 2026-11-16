@@ -241,7 +241,7 @@ kable(payoff.mat)
 
 Se o jogador 1 acredita que 2 irá escolher "silenciar", então ele deve silenciar. E se acreditar que o outro jogador irá escolher Confessar, deve escolher confessar. Portanto, ambas as estratégias sãos racionais, a depender da crença do jogador 1 sobre o que o jogador 2 irá fazer. A suposição de racionalidade não restringe a previsão do que o jogador 1 deve fazer. Para que a gente possa restringir a previsão, precisamos fazer alguma suposição adicional. Por exemplo, que 1 acredita que 2 é racional. Se 2 for racional, o que 2 deve fazer? Um agente racional escolhe o que é melhor para si. Do ponto de vista de 2, isso significa confessar, pois essa é a melhor resposta para qualquer comportamento de 1. Portanto, supor racionalidade de 2 implica acreditar que 2 escolherá confessar. Mas se 2 irá confessar, a única ação racional para 1 é confessar.
 
-Em resumo até agora: Na variante do DP apresentada, apenas supor racionalidade de 1 não restringe suas ações, mas restringe a de 2. Adicionar a suposição de que 2 sabe ou acredita que 1 é racional é suficiente para restringir a ação de 1 e gerar uma única previsão para o jogo.
+Em resumo até agora: Na variante do DP apresentada, apenas supor racionalidade de 1 não restringe suas ações, mas restringe a de 2. Adicionar a suposição de que 1 sabe ou acredita que 2 é racional é suficiente para restringir a ação de 1 e gerar uma única previsão para o jogo.
 
 Agora, considerem uma nova variante do DP:
 
@@ -263,7 +263,7 @@ kable(payoff.mat)
 
 Eu adicionei uma nova ação para o jogador 1, que chamei de "X". O ponto é que, embora a história perca seu sentido com uma nova ação "X", para o restante das ações ainda guardar alguma similaridade com o original. Se preferirem, podem imaginar que é um outro jogo, não relacionado com o DP.
 
-Para o jogador 1, escolher "S" é racional, se ele acreditar que o outro jogador irá escolher "S". Igualmente, "C" também é racional se o outro jogador escolher "C". Porém, "X" não é racional. Para 2, S e C também são racionais, dado que ela acredite que 1 escolher S ou C e X, respectivamente. Portanto, se o jogador 1 assumir que 2 é racional, isso não ajuda 2 a decidire entre S ou C, já que ambas são consistentes com sua racionalidade e a do outro jogador.
+Para o jogador 1, escolher "S" é racional, se ele acreditar que o outro jogador irá escolher "S". Igualmente, "C" também é racional se o outro jogador escolher "C". Porém, "X" não é racional. Para 2, S é racional se ela acreditar que 1 escolherá X, e C é racional se ela acreditar que 1 escolherá S ou C. Portanto, se o jogador 1 assumir que 2 é racional, isso não ajuda 2 a decidire entre S ou C, já que ambas são consistentes com sua racionalidade e a do outro jogador.
 
 Diferentemente do jogo anterior, a suposição de ambos sã oracionais e que 1 sabe que 2 é racional não geou uma previsão única para o jogo.
 

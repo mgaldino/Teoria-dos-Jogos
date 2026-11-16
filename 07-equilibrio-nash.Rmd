@@ -47,7 +47,7 @@ kable(payoff.mat)
 
 Considerem o Dilema do Prisioneiro. É fácil ver também que (C,C) é também um equilíbrio de Nash.
 
-Não é coincidência que Dominância estrita, EIEED e racionazabilidade sempre sejam equilíbrios de Nash. Se um equilíbrio é de dominância estrita, ou o único sobrevivente de EIEED ou de racionazabilidade, então é o único equilíbrio de Nash.
+Não é coincidência que todo equilíbrio de Nash sobreviva à EIEED e à racionalizabilidade. Se um equilíbrio é de dominância estrita, ou o único sobrevivente de EIEED ou de racionazabilidade, então é o único equilíbrio de Nash.
 
 Considere o seguinte jogo. Duas jogadoras devem escolher um número inteiro entre 1 e 9. Se a soma dos números for menor ou igual a dez, elas ganham o valor em reais que cada jogadora escolheu. Se a soma for maior que dez, não ganham nada. Esse jogo é dado por $G = [N = 1,2; S_i = (1, 2, ..., 9), v_i(s_1, s_2) = s_i, se s_1 + s_2 <= 10$ $0$, c.c.]$
 
@@ -181,7 +181,7 @@ Wittman (1973)^[inserir ref] foi o primeiro a formular um modelo de políticos o
 com pontos ideais $0$ e $1$, e funcções utilidades dadas por $-|x|$ para $E$ e $-|x-1|$ para $D$ se a política $x$ for implementada. Suponha ademais que o eleito mediano $x_m$ está entre os ponos ideais dos dois partidos. Os partidos $E$ e $D$ maximizam a utilidade esperada escolhendo uma plataforma $x_E$ e $x_D$, respectivamente. Seja $\pi(x_E, x_D)$ a probailidade do partido $E$ ganhar a eleição. A função que $E$ maximiza é:
 $$\max_{x_E} \pi(x_E, x_D)(-|x_L|) + (1 - \pi(x_E, x_D))(-|x_D|)$$
 Já $D$ maximiza:
-$$\max_{x_D} \pi(x_E, x_D)(-|x_D-1|) + (1-\pi(x_E, x_D))(-|x_E-1|)$$
+$$\max_{x_D} \pi(x_E, x_D)(-|x_E-1|) + (1-\pi(x_E, x_D))(-|x_D-1|)$$
 É fácil ver que existe um Equilíbrio de Nash no qual ambos partidos anunciam $x_m$ e ganham com probabilidade $1/2$. Para ver que é um EN, notem que se um deles desviar, perde a eleição com certeza e a política implementada é a mesma. Então, não há ganho e a utilidade é a mesma de antes (o EN não é estrito). E esse é o único EN. A prova é um pouco mais complicada, mas similar ao que fizemos antes. Antes é só necessário eliminar estratégias dominadas (anunciar plataforma fora do espectro $0-1$ e que $x_E < X_m < x_D$) e que $|x_E - x_m| = |x_m - x_D|$.
 
 ## Competição multipartidária
@@ -193,7 +193,7 @@ Primeiro, vejamos que **não** é um equilíbrio de Nash todos os partidos anunc
 Depende da distribuição de preferência dos eleitores. Assuma que eleitores tenham funções de utilidade euclidianas e distribuidas uniformemente no $[0-1]$. Portanto, as seguintes plataformas constituem um EN:
 $x_A = x_B = \frac{1}{3}$, e $x_c = 2/3$ e C ganha, pois recebe metade dos votos e A e B dividem a outra metade. Nenhum partido tem incentivo para desviar, pois não conseguem melhorar com qualquer outra estratégia. Obviamente, podemos trocar os rótulos e teremos igualmente equilíbrios de Nash, ou seja, $X_A = X_C$ e B ganha, ou $X_B = X_C$ e A ganha.
 
-Portanto, temos três equilíbrios de Nash, e similares entre si. A disputa entre os partidos é para quem ver quem ocupa a posição $2/3$, enquanto os outro dois precisam disputar votos do mesmo espectro político entre si.
+Portanto, temos pelo menos três equilíbrios de Nash, similares entre si. Na verdade, há muitos outros: por exemplo, $x_A = x_B = 2/5$ e $x_C = 3/5$ também é um equilíbrio, pois C recebe metade dos votos e nenhum partido perdedor consegue vencer desviando. A disputa entre os partidos é para quem ver quem ocupa a posição $2/3$, enquanto os outro dois precisam disputar votos do mesmo espectro político entre si.
 
 Outro problema do modelo é: se $A$ e $B$ (por exemplo) sabem que vão perder, porque entram na disputa em primeiro lugar? E aí precisamos modelar os benefícios de disputar uma eleição em que vocÊ sabe que vai perder, para tentar ganhar no futuro e aí precisamos modelar a entrada e saída endógena de partidos em eleições.
 
@@ -248,13 +248,13 @@ $(1-p)*u_b(1) + p*u_b(0) - c_b= 1- p - c_b$,
 
 Suponha que a função utilidade é $u(x) = x$, que representa uma função de utilidade de neutralidade ao risco. Então, se existir algum $x^*$, tal que, $u_a(x^*) > p - c_a$ e $u_b(x^*) > 1 - p - c_b$, então $x^*$ é preferido por ambos os estados. Se existir mais de um ponto, ou mesmo um intervalo, então esse intervalo é preferível a guerra. Resolvendo o sistema de equações de desigualdade, temos que 
 $x^* > p - c_a$ e $1 -x^* > 1 - p - c_b$
-Suponha que $x^* = p - c_a - 0.1$. A primeira equação é satisfeita trivialmente, e a segunda também é satisfeita, como é fácil ver, pois $1 -( p - c_a - 0.1) = 1 -p + c_a + 0.1  > 1 - p - c_b$ , pois 1 cancela, p cancela, ficando
-$c_a + 0.1  > -c_b$. Como $c_a$ é positivo e $c_b$ é positivo, o lado esquerdo da equação é maior que o lado direito.
+Suponha que $x^* = p - c_a + 0.01$. A primeira equação é satisfeita trivialmente, e a segunda também é satisfeita desde que $c_a + c_b > 0.01$, pois $1 -( p - c_a + 0.01) = 1 -p + c_a - 0.01  > 1 - p - c_b$ , pois 1 cancela, p cancela, ficando
+$c_a - 0.01  > -c_b$, isto é, $c_a + c_b > 0.01$.
 
 Do mesmo modo, o ponto $p + c_b - .01$ também satisfaz as duas equações. Portanto, no intervalo 
-$[p - c_a - 0.1, p + c_b - .01]$, ambos os estados estão melhores do que com a guerra. De maneira geral, no intervalo aberto, posso tirar o $.01$ e ficar com: $(p - c_a, p + c_b)$.
+$[p - c_a + 0.01, p + c_b - 0.01]$ (supondo $c_a + c_b > 0.02$), ambos os estados estão melhores do que com a guerra. De maneira geral, no intervalo aberto, posso tirar o $.01$ e ficar com: $(p - c_a, p + c_b)$.
 
-Para dar concretude. Se A ucrância e B Rússia. Digamos que $p$, a probabilidade da Ucrância prevalecer fosse 10% antes da guerra começar, $c_a = 2%$ e $c_b = .05%$. Então,  $(.05 - .02, .05 + .005) = (3%, .5,5%)$. Ou seja, a Ucrânia poderia ficar com 3% do seu território + epsiolon para evitar a guerra, e a Rússia aceitaria no máximo  que a Ucrância ficasse com 5,5% do território. A intuição é que a utilidade esperada da Guerra pra Ucrância é uma utilidade equivalente a 3% do território (5% do território menos 2% de destruição da guerra). Ela não poderia dar mais de 5,5% do território, pois preferiria a guerra.
+Para dar concretude. Se A ucrância e B Rússia. Digamos que $p$, a probabilidade da Ucrância prevalecer fosse 5% antes da guerra começar, $c_a = 2\%$ e $c_b = 0.5\%$. Então, $(0.05 - 0.02, 0.05 + 0.005) = (0.03, 0.055)$, ou seja, (3%, 5,5%). Ou seja, a Ucrânia poderia ficar com 3% do seu território + epsiolon para evitar a guerra, e a Rússia aceitaria no máximo  que a Ucrância ficasse com 5,5% do território. A intuição é que a utilidade esperada da Guerra pra Ucrância é uma utilidade equivalente a 3% do território (5% do território menos 2% de destruição da guerra). Ela não poderia dar mais de 5,5% do território, pois preferiria a guerra.
 
 Quais suposições substantivas foram feitas:
 1. existe uma probabilidade $p$, objetiva, que cada estado irá ganhar a guerra. Ainda que ambos os estados tenham estimativas diferentes e conflitivas e haja incerteza sobre seu valor, existe uma probabilidade real, que eles não sabem. E essa probabilidade dá ensejo ao intervalo de negociação e eles sabem disso (se são racionais). Portanto, a princípio uma solução negociada ainda poderia ser tentada.
@@ -325,7 +325,7 @@ kable(payoff.mat)
 
 
 ```{exercise}
-Para esta questão, considere que uma estratégia A é fracamente dominada por B se B é fracamente preferida à A, ou seja, $u(A) >= u(B)$, independentemente das estratégias dos demais jogadores. Veja que isso implica que uma estratégia estritamente dominada é fracamente dominada, mas o contrário não é necessariamente verdade. Considere então o seguinte jogo e responda:
+Para esta questão, considere que uma estratégia A é fracamente dominada por B se B é fracamente preferida à A, ou seja, $u(B, s_{-i}) \geq u(A, s_{-i})$ para quaisquer estratégias $s_{-i}$ dos demais jogadores, com desigualdade estrita para pelo menos uma delas. Veja que isso implica que uma estratégia estritamente dominada é fracamente dominada, mas o contrário não é necessariamente verdade. Considere então o seguinte jogo e responda:
 
   a) Identifique, para a jogadora 2, a estratégia fracamente dominada.
 

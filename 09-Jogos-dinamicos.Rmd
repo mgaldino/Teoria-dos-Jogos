@@ -149,9 +149,9 @@ No caso do jogo Bach-Strvinski, a jogadora 2 teria de aleatorizar entre (BB, BS,
 
 Para permitir esse tipo de comportamento, definiremos o conceito de estratégia comportamental: ela especifica para cada conjunto de informação $h_i \in H_i$ uma distribuição de probabilidade independente sobre $A_i(h_i)$ e é denotada por $\sigma_i:H_i \rightarrow \Delta A_i(h_i), em que $\sigma_i(a_i(h_i))$ é a probabilidade que a jogadora $i$ joga a ação $a_i(h_i) \in A_i(h_i)$ no conjunto de informação $h_i$.
 
-Pergunta: dada uma estratégia mista (não comportamental), podemos achar uma estratégia comportamental que leva ao mesmo resultado? Sim, sempre é possível fazer essa operação.
+Pergunta: dada uma estratégia mista (não comportamental), podemos achar uma estratégia comportamental que leva ao mesmo resultado? Sim, em jogos de lembrança perfeita (perfect recall).
 
-E o oposto, dada uma estratégia comportamental, podemos achar uma mista que leva ao mesmo resultado? Sim, em jogos de lembrança perfeita (perfect recall).
+E o oposto, dada uma estratégia comportamental, podemos achar uma mista que leva ao mesmo resultado? Sim, sempre é possível fazer essa operação nos jogos que estudamos aqui, em que nenhuma jogada passa duas vezes pelo mesmo conjunto de informação.
 
 E um jogo é de lembrança perfeita se nenhuma jogadora jamais esquece uma informação que soube previamente.
 
