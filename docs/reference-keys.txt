@@ -51,7 +51,6 @@ exr:unnamed-chunk-80
 exr:unnamed-chunk-81
 exr:unnamed-chunk-82
 exr:unnamed-chunk-83
-prefácio
 introdução
 dilema-do-prisioneiro
 dilema-da-ação-coletiva

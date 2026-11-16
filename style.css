@@ -33,3 +33,11 @@ pre code {
   height: auto;
   margin: 0 auto;
 }
+.front-matter {
+  display: flex;
+  flex-direction: column;
+}
+.front-matter > .book-cover {
+  order: -1;
+  width: 100%;
+}

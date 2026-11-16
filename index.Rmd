@@ -9,7 +9,7 @@ site:
     css: style.css
 ---
 
-# Prefácio
+# Prefácio {- .front-matter}
 
 <div class="book-cover">
 <img src="cover-teoria-jogos-v1.png" alt="Capa de Introdução à Teoria dos Jogos para Ciências Sociais: Manoel Galdino; caminhos ramificados e pontos de decisão." width="480" height="720" />
